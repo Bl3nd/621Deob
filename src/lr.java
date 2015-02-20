@@ -9,7 +9,7 @@ final class lr implements ica
     static int c;
     static int d;
     private la e;
-    static GameInPacket f = new GameInPacket(111, 6);
+    static GameInPacket incomingPacket111 = new GameInPacket(111, 6);
     private nn g;
     private pl h;
     static float i;
@@ -32,7 +32,7 @@ final class lr implements ica
     
     public static void a(boolean bool) {
 	k = null;
-	f = null;
+	incomingPacket111 = null;
 	if (bool == false)
 	    outgoingPacket66 = null;
     }

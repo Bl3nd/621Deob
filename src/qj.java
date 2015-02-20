@@ -1383,9 +1383,9 @@ final class qj extends Class_r
 	Jb++;
     }
     
-    final void a(Class_e class_e) {
+    final void a(IncomingPackets incomingPackets) {
 	Mc++;
-	((qj) this).ne = ((ns) (ns) class_e).o;
+	((qj) this).ne = ((ns) (ns) incomingPackets).o;
 	if (Qg == null) {
 	    fw var_fw = new fw(80);
 	    if (!((qj) this).ig) {
@@ -1534,7 +1534,7 @@ final class qj extends Class_r
     
     final void e(int i, int i_123_) {
 	if (i != -29455)
-	    a((Class_e) null);
+	    a((IncomingPackets) null);
 	ar.S[0] = (float) uca.a(16711680, i_123_) / 1.671168E7F;
 	Hc++;
 	ar.S[3] = (float) (i_123_ >>> 24) / 255.0F;
@@ -1915,7 +1915,7 @@ final class qj extends Class_r
 	    l(692534472);
     }
     
-    final Class_e c(int i) {
+    final IncomingPackets c(int i) {
 	gc++;
 	ns var_ns = new ns(i);
 	ke.b(var_ns, (byte) 93);

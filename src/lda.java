@@ -39,7 +39,7 @@ final class lda {
     static lda I = new lda(19, GameText.z, 100);
     static lda J = new lda(20, GameText.z, 100);
     static lda K = new lda(21, GameText.z, 100);
-    static GameInPacket L = new GameInPacket(107, 7);
+    static GameInPacket incomingPacket107 = new GameInPacket(107, 7);
 
     public static void a(byte i) {
         K = null;
@@ -61,7 +61,7 @@ final class lda {
         G = null;
         y = null;
         z = null;
-        L = null;
+        incomingPacket107 = null;
         E = null;
         t = null;
         A = null;

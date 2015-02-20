@@ -12,7 +12,7 @@ class nj extends nfa
     static String[] l = new String[200];
     static boolean m;
     static int n;
-    static GameInPacket o = new GameInPacket(108, 17);
+    static GameInPacket incomingPacket108 = new GameInPacket(108, 17);
     static int p;
     
     static final String a(int[] is, byte i) {
@@ -107,7 +107,7 @@ class nj extends nfa
     }
     
     public static void b(int i) {
-	o = null;
+	incomingPacket108 = null;
 	l = null;
 	if (i != 0)
 	    m = true;
@@ -141,7 +141,7 @@ class nj extends nfa
 	int i_30_ = 64;
 	int i_31_ = 64;
 	if (i_25_ != 4095)
-	    o = null;
+	    incomingPacket108 = null;
 	int i_32_ = i_21_ - i_30_;
 	int i_33_ = i_23_ - i_31_;
 	it.J[i_30_][i_31_] = 99;

@@ -73,7 +73,7 @@ final class ik
 	}
 	if (nw.a == lda.p) {
 	    if (cd.y == null)
-		cd.y = new jm(bl.I, kl.j, ja.u, Class_e.k);
+		cd.y = new jm(bl.I, kl.j, ja.u, IncomingPackets.k);
 	    if (!cd.y.a(-17427))
 		return 0;
 	    oh.a(0, false, null);

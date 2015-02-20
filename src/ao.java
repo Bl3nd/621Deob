@@ -10,7 +10,7 @@ final class ao extends ua
     static int i;
     static int j;
     static int k = 0;
-    static GameInPacket l = new GameInPacket(12, -1);
+    static GameInPacket incomingPacket12 = new GameInPacket(12, -1);
     static int m;
     
     static final la a(boolean bool, int i, Class_r class_r, int i_0_) {
@@ -88,9 +88,9 @@ final class ao extends ua
     }
     
     public static void a(byte i) {
-	l = null;
+	incomingPacket12 = null;
 	if (i >= -99)
-	    l = null;
+	    incomingPacket12 = null;
     }
     
     ao(en var_en, int i, int i_5_, byte[] is) {
@@ -107,7 +107,7 @@ final class ao extends ua
 	ao.i++;
 	float f_9_ = f_8_ < 0.0F ? -f_8_ : f_8_;
 	if (i > -90)
-	    l = null;
+	    incomingPacket12 = null;
 	float f_10_ = f < 0.0F ? -f : f;
 	float f_11_ = !(f_7_ < 0.0F) ? f_7_ : -f_7_;
 	if (f_9_ < f_10_ && f_11_ < f_10_) {

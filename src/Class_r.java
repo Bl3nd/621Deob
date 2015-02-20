@@ -177,7 +177,7 @@ abstract class Class_r
     
     abstract void XA(int i, int i_89_, int i_90_, int i_91_, int i_92_);
     
-    abstract void a(Class_e class_e);
+    abstract void a(IncomingPackets incomingPackets);
     
     final void e(int i, int i_93_, int i_94_, int i_95_, int i_96_,
 		 int i_97_) {
@@ -216,7 +216,7 @@ abstract class Class_r
     
     abstract void V(int i, int i_110_, int i_111_, int i_112_);
     
-    abstract Class_e c(int i);
+    abstract IncomingPackets c(int i);
     
     abstract Class_q t();
     

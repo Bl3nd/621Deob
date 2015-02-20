@@ -577,7 +577,7 @@ final class Interface
         {
             grandExchangeItems = null;
             eb = null;
-            fb = null;
+            incomingPacket22 = null;
             return;
         }
     }
@@ -911,7 +911,7 @@ label0:
     Object cb[];
     int db;
     static int eb[] = new int[1];
-    static GameInPacket fb = new GameInPacket(22, 8);
+    static GameInPacket incomingPacket22 = new GameInPacket(22, 8);
     static int gb;
     Object hb[];
     boolean ib;

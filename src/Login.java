@@ -498,7 +498,7 @@ public final class Login {
 							}
 							ce.y.a((byte) 84, 3, ((BytesParser) loginStream).bytes, 1);
 						}
-						sw.currentGameInPacket = Class_e.getGameInPackets((byte) 103)[loginStream.f(false)];
+						sw.currentGameInPacket = IncomingPackets.getGameInPackets((byte) 103)[loginStream.f(false)];
 						ck.currentGameInPacketSize = loginStream.readShort(13111);
 						hk.loginStage = 11;
 					}

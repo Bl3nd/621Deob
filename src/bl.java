@@ -29,7 +29,7 @@ final class bl extends Node
     int D;
     private NativeHeapBuffer E;
     float F;
-    static GameInPacket G = new GameInPacket(106, 6);
+    static GameInPacket incomingPacket106 = new GameInPacket(106, 6);
     static GameOutPacket H = new GameOutPacket(10, 4);
     static uaa I;
     static float J = 0.25F;
@@ -280,7 +280,7 @@ final class bl extends Node
 	if (i > -86)
 	    a(81);
 	H = null;
-	G = null;
+	incomingPacket106 = null;
     }
     
     bl(daa var_daa, int i, int i_42_, int i_43_, int i_44_, int i_45_) {

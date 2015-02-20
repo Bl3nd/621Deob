@@ -8,7 +8,7 @@ import jaggl.OpenGL;
 final class aa extends Node
 {
     static int k;
-    static GameInPacket l;
+    static GameInPacket incomingPacket113;
     String m;
     static int n = 0;
     static Interface[][] o;
@@ -16,7 +16,7 @@ final class aa extends Node
     public static void a(int i) {
 	if (i != 0)
 	    a(null, null, 68, (byte) 30, null);
-	l = null;
+	incomingPacket113 = null;
 	o = null;
     }
     
@@ -47,6 +47,6 @@ final class aa extends Node
     }
     
     static {
-	l = new GameInPacket(113, 1);
+	incomingPacket113 = new GameInPacket(113, 1);
     }
 }

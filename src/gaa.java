@@ -263,7 +263,7 @@ public final class gaa extends en
     final void k(boolean bool) {
 	if (bool != true)
 	    Cg = null;
-	if (Class_e.m != ((gaa) this).Ve) {
+	if (IncomingPackets.m != ((gaa) this).Ve) {
 	    if (((gaa) this).Ve == Class_ug.H) {
 		((gaa) this).Hg.SetRenderState(19, 2);
 		((gaa) this).Hg.SetRenderState(20, 2);

@@ -17,7 +17,7 @@ final class qaa extends dfa implements vda
     static int R;
     static int S;
     static int T = 0;
-    static GameInPacket V;
+    static GameInPacket incomingPacket52;
     static int W;
     static int X;
     static int Y;
@@ -55,8 +55,8 @@ final class qaa extends dfa implements vda
     
     public static void j(int i) {
 	if (i > -79)
-	    V = null;
-	V = null;
+	    incomingPacket52 = null;
+	incomingPacket52 = null;
     }
     
     static final void b(int i, int i_1_) {
@@ -234,6 +234,6 @@ final class qaa extends dfa implements vda
     }
     
     static {
-	V = new GameInPacket(52, 1);
+	incomingPacket52 = new GameInPacket(52, 1);
     }
 }

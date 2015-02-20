@@ -1106,7 +1106,7 @@ final class nga extends Class_r
 	}
     }
     
-    final void a(Class_e class_e) {
+    final void a(IncomingPackets incomingPackets) {
 	/* empty */
     }
     
@@ -2135,7 +2135,7 @@ final class nga extends Class_r
 	}
     }
     
-    final Class_e c(int i) {
+    final IncomingPackets c(int i) {
 	return null;
     }
     

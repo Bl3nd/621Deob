@@ -13,7 +13,7 @@ final class jn extends cl
     private float z = 0.0F;
     static int A;
     static int B;
-    static GameInPacket D = new GameInPacket(54, -2);
+    static GameInPacket incomingPacket54 = new GameInPacket(54, -2);
     static int E;
     static int F;
     static int G;
@@ -33,7 +33,7 @@ final class jn extends cl
     
     public static void f(int i) {
 	I = null;
-	D = null;
+	incomingPacket54 = null;
 	y = null;
 	if (i < 110)
 	    I = null;
@@ -79,7 +79,7 @@ final class jn extends cl
 	qba var_qba = ofa.a(2, i_2_, (byte) -84);
 	var_qba.c((byte) 11);
 	if (i != 11332)
-	    D = null;
+	    incomingPacket54 = null;
 	((qba) var_qba).x = string;
     }
     

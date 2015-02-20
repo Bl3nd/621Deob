@@ -28,7 +28,7 @@ final class daa extends Class_i
     static int F;
     private int G;
     static int H;
-    static GameInPacket I = new GameInPacket(25, 7);
+    static GameInPacket incomingPacket25 = new GameInPacket(25, 7);
     static int J;
     private int K;
     static int L;
@@ -873,7 +873,7 @@ final class daa extends Class_i
 	if (i != 1)
 	    Y = null;
 	ab = null;
-	I = null;
+	incomingPacket25 = null;
 	Y = null;
     }
     

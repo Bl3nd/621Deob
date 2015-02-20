@@ -8,7 +8,7 @@ final class bh extends pp
     private il t;
     static int u;
     static int v;
-    static GameInPacket w = new GameInPacket(16, 6);
+    static GameInPacket incomingPacket16 = new GameInPacket(16, 6);
     static int x;
     static int y;
     static fh z = new fh(8, 6);
@@ -17,7 +17,7 @@ final class bh extends pp
     static int[] C = new int[13];
     
     public static void b(byte i) {
-	w = null;
+	incomingPacket16 = null;
 	A = null;
 	C = null;
 	if (i > 102) {

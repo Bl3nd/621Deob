@@ -12,10 +12,10 @@ final class sca
     static int f;
     private long g;
     static int h;
-    static GameInPacket i = new GameInPacket(97, -1);
+    static GameInPacket incomingPacket97 = new GameInPacket(97, -1);
     static int j = 0;
     static fh k = new fh(10, 3);
-    static GameInPacket l = new GameInPacket(30, -1);
+    static GameInPacket incomingPacket30 = new GameInPacket(30, -1);
     static int[] m = { 1, -1, -1, 1 };
     
     final pp a(int i, long l) {
@@ -81,8 +81,8 @@ final class sca
     }
     
     public static void a(int i) {
-	sca.i = null;
-	l = null;
+	sca.incomingPacket97 = null;
+	incomingPacket30 = null;
 	int i_8_ = 29 / ((i + 43) / 63);
 	m = null;
 	k = null;

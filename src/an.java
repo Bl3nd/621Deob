@@ -12,7 +12,7 @@ final class an
     static GameInPacket incomingPacket3 = new GameInPacket(3, 6);
     int g;
     static int h;
-    static GameInPacket i = new GameInPacket(81, 1);
+    static GameInPacket incomingPacket81 = new GameInPacket(81, 1);
     
     static final int a(int i, boolean bool, int i_0_, int i_1_) {
 	h++;
@@ -31,7 +31,7 @@ final class an
     
     public static void a(byte i) {
 	if (i == 19) {
-	    an.i = null;
+	    an.incomingPacket81 = null;
 	    incomingPacket3 = null;
 	}
     }

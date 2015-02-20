@@ -7,7 +7,7 @@ final class lu extends uc
 {
     private pea i;
     static int j;
-    static GameInPacket k;
+    static GameInPacket incomingPacket24;
     static wa[] l = new wa[14];
     private Class_fb m;
     private float[] n;
@@ -57,7 +57,7 @@ final class lu extends uc
 	if (i >= -34)
 	    l = null;
 	l = null;
-	k = null;
+	incomingPacket24 = null;
     }
     
     lu(qj var_qj, pea var_pea) {
@@ -447,7 +447,7 @@ final class lu extends uc
     
     static {
 	j = 0;
-	k = new GameInPacket(24, 3);
+	incomingPacket24 = new GameInPacket(24, 3);
 	outScreenPlayers = 0;
     }
 }

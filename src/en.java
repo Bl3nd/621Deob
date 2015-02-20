@@ -449,9 +449,9 @@ abstract class en extends Class_r
 	    ((en) this).If = -58;
     }
     
-    final void a(Class_e class_e) {
+    final void a(IncomingPackets incomingPackets) {
 	E++;
-	((en) this).F = ((Class_ob) (Class_ob) class_e).v;
+	((en) this).F = ((Class_ob) (Class_ob) incomingPackets).v;
 	((en) this).Jd = ((en) this).F.a(32768, false);
     }
     
@@ -841,7 +841,7 @@ abstract class en extends Class_r
     
     abstract void s(int i);
     
-    final Class_e c(int i) {
+    final IncomingPackets c(int i) {
 	Gc++;
 	Class_ob class_ob = new Class_ob(i);
 	mb.b(class_ob, (byte) 93);
@@ -1265,7 +1265,7 @@ abstract class en extends Class_r
 		}
 	    } else {
 		bool = true;
-		var_lea = Class_e.m;
+		var_lea = IncomingPackets.m;
 		bool_135_ = true;
 	    }
 	    if (!bool_135_ != !((en) this).Ef) {
@@ -2519,7 +2519,7 @@ abstract class en extends Class_r
 	((en) this).Oe = true;
 	((en) this).cf = 1.0F;
 	ee = -1;
-	((en) this).Ve = Class_e.m;
+	((en) this).Ve = IncomingPackets.m;
 	((en) this).tf = 8;
 	Ze = new float[16];
 	Qe = false;

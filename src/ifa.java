@@ -5,11 +5,11 @@
 final class ifa
 {
     static int a;
-    static GameInPacket b = new GameInPacket(64, 0);
+    static GameInPacket incomingPacket64 = new GameInPacket(64, 0);
     static short c = 256;
     
     public static void a(boolean bool) {
-	b = null;
+	incomingPacket64 = null;
 	if (bool != true)
 	    c = (short) 18;
     }

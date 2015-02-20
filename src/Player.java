@@ -52,11 +52,11 @@ final class Player extends Entity {
 	private byte Kd;
 	boolean Ld;
 	int Md;
-	static GameInPacket Nd = new GameInPacket(78, -1);
+	static GameInPacket incomingPacket78 = new GameInPacket(78, -1);
 	int Od;
 	static int Pd;
 	static float[] Qd = new float[4];
-	static GameInPacket Rd;
+	static GameInPacket incomingPacket70;
 	static int Sd = 0;
 
 	public final void b(boolean bool, Class_r class_r) {
@@ -736,8 +736,8 @@ final class Player extends Entity {
 
 	public static void c(boolean bool) {
 		Qd = null;
-		Rd = null;
-		Nd = null;
+		incomingPacket70 = null;
+		incomingPacket78 = null;
 		Xc = null;
 		od = null;
 		if (bool != false)
@@ -774,6 +774,6 @@ final class Player extends Entity {
 	}
 
 	static {
-		Rd = new GameInPacket(70, -2);
+		incomingPacket70 = new GameInPacket(70, -2);
 	}
 }

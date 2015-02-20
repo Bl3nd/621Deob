@@ -11,7 +11,7 @@ final class hp extends pp
     static int s;
     static int t;
     static int u;
-    static GameInPacket v;
+    static GameInPacket incomingPacket23;
     static int w;
     private mca[] x;
     private mca y;
@@ -29,7 +29,7 @@ final class hp extends pp
     static final void a(int i, LoginStream var_loginStream) {
 	E++;
 	if (i != 4)
-	    v = null;
+	    incomingPacket23 = null;
 	vp var_vp = (vp) dl.c.a(i + 97);
 	if (var_vp != null) {
 	    boolean bool = false;
@@ -371,7 +371,7 @@ final class hp extends pp
     public static void b(byte i) {
 	F = null;
 	I = null;
-	v = null;
+	incomingPacket23 = null;
 	if (i < 112)
 	    a(-127, null);
 	H = null;
@@ -431,7 +431,7 @@ final class hp extends pp
     }
     
     static {
-	v = new GameInPacket(23, 0);
+	incomingPacket23 = new GameInPacket(23, 0);
 	I = new int[2];
 	H = new float[4];
     }

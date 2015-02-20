@@ -9,7 +9,7 @@ final class Class_ef extends gga
     static int C;
     static int D;
     static long E = 0L;
-    static GameInPacket F = new GameInPacket(87, 6);
+    static GameInPacket incomingPacket87 = new GameInPacket(87, 6);
     static jf G;
     static int[] I = new int[1000];
     static hl J;
@@ -134,7 +134,7 @@ final class Class_ef extends gga
 	if (i != 0)
 	    a(77, 57, 55, -115, 106, -18, -3, 44);
 	L = null;
-	F = null;
+	incomingPacket87 = null;
 	G = null;
     }
     
@@ -142,7 +142,7 @@ final class Class_ef extends gga
 	K++;
 	((gga) this).r = f;
 	if (i != 0)
-	    F = null;
+	    incomingPacket87 = null;
     }
     
     Class_ef(int i, int i_48_, int i_49_, int i_50_, int i_51_, float f) {

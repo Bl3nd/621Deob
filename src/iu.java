@@ -9,7 +9,7 @@ final class iu
     private int b;
     static int c;
     static int d;
-    static GameInPacket e;
+    static GameInPacket incomingPacket37;
     private int f;
     private int g;
     static int h;
@@ -307,7 +307,7 @@ final class iu
 	o = null;
 	if (i != 1)
 	    a(null, (byte) 95);
-	e = null;
+	incomingPacket37 = null;
     }
     
     static final int a(int i, int i_76_, boolean bool) {
@@ -340,6 +340,6 @@ final class iu
     }
     
     static {
-	e = new GameInPacket(37, 5);
+	incomingPacket37 = new GameInPacket(37, 5);
     }
 }

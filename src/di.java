@@ -8,14 +8,14 @@ final class di implements lv
     static GameOutPacket b = new GameOutPacket(73, -1);
     static int c;
     static int[] d = new int[1];
-    static GameInPacket e;
+    static GameInPacket incomingPacket72;
     static String[] f = new String[200];
     
     public static void a(byte i) {
 	if (i < -43) {
 	    f = null;
 	    d = null;
-	    e = null;
+	    incomingPacket72 = null;
 	    b = null;
 	}
     }
@@ -76,6 +76,6 @@ final class di implements lv
     }
     
     static {
-	e = new GameInPacket(72, 3);
+	incomingPacket72 = new GameInPacket(72, 3);
     }
 }

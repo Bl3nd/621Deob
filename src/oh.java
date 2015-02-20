@@ -81,12 +81,12 @@ final class oh
 		    } catch (Throwable throwable) {
 			/* empty */
 		    }
-		    Class_e class_e;
+		    IncomingPackets incomingPackets;
 		    if (!bool_1_)
-			class_e = lg.r.c(104857600);
+			incomingPackets = lg.r.c(104857600);
 		    else
-			class_e = lg.r.c(146800640);
-		    lg.r.a(class_e);
+			incomingPackets = lg.r.c(146800640);
+		    lg.r.a(incomingPackets);
 		}
 	    } catch (Throwable throwable) {
 		lg.r = Class_r.a(0, 0, on.c, ru.canvas, Class_nd.p, -19464);

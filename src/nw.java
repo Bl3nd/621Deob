@@ -34,7 +34,7 @@ final class nw
 		i_1_ = ((Animable) var_lo).locY >> Class_fb.a;
 	    }
 	    nda.k.YA(vr.b[0].a(((Animable) var_lo).locY, ((Animable) var_lo).locX, true),
-		     Class_e.a(i, i_1_), Class_lc.b(i, i_1_), oi.a(i, i_1_));
+		     IncomingPackets.a(i, i_1_), Class_lc.b(i, i_1_), oi.a(i, i_1_));
 	}
 	og var_og = var_lo.a(false, nda.k);
 	if (var_og != null) {

@@ -3,7 +3,7 @@
  */
 import jaclib.memory.heap.NativeHeap;
 
-final class ns extends Class_e
+final class ns extends IncomingPackets
 {
     static int n;
     NativeHeap o;

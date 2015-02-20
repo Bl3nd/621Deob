@@ -9,7 +9,7 @@ final class faa
     static int a;
     static int b;
     static int c;
-    static GameInPacket d = new GameInPacket(62, -1);
+    static GameInPacket incomingPacket62 = new GameInPacket(62, -1);
     static int e = 0;
     static LoginStream loginStream = new LoginStream(7500);
     static int g;
@@ -113,7 +113,7 @@ final class faa
 	int i_12_ = 0x3fff & -i_4_ + 16384;
 	int i_13_ = 0x3fff & -i_6_ + 16384;
 	if (i_7_ < 30)
-	    d = null;
+	    incomingPacket62 = null;
 	int i_14_ = 0;
 	int i_15_ = 0;
 	int i_16_ = i;
@@ -146,7 +146,7 @@ final class faa
     }
     
     public static void a(byte i) {
-	d = null;
+	incomingPacket62 = null;
 	if (i < 35)
 	    a((int) 15);
 	loginStream = null;

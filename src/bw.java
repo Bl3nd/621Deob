@@ -6,7 +6,7 @@ final class bw extends iea
 {
     static int handlePlayerUpdates;
     int o;
-    static GameInPacket p = new GameInPacket(115, 12);
+    static GameInPacket incomingPacket115 = new GameInPacket(115, 12);
     static int q;
     int r;
     static long s = -1L;
@@ -129,7 +129,7 @@ final class bw extends iea
 	if (bool != false)
 	    u = null;
 	t = null;
-	p = null;
+	incomingPacket115 = null;
 	u = null;
     }
 }

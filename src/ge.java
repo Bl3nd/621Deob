@@ -9,7 +9,7 @@ final class ge extends mca
     static int L;
     private int M = 3072;
     static int N;
-    static GameInPacket O;
+    static GameInPacket incomingPacket41;
     static int[] P = new int[2];
     static int Q;
     static int R;
@@ -50,7 +50,7 @@ final class ge extends mca
     
     static final void a(int i, int i_10_, String string) {
 	if (i != -8)
-	    O = null;
+	    incomingPacket41 = null;
 	Q++;
 	int i_11_ = oca.inScreenPlayers;
 	int[] is = vd.inScreenPlayerIDs;
@@ -149,13 +149,13 @@ final class ge extends mca
     
     public static void i(int i) {
 	if (i != 0)
-	    O = null;
-	O = null;
+	    incomingPacket41 = null;
+	incomingPacket41 = null;
 	P = null;
     }
     
     static {
-	O = new GameInPacket(41, 3);
+	incomingPacket41 = new GameInPacket(41, 3);
 	U = 1339;
     }
 }

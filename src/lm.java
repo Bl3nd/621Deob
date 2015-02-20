@@ -74,7 +74,7 @@ final class lm extends en
     static int Ah;
     static int Bh;
     static int Ch;
-    static GameInPacket Dh = new GameInPacket(88, 12);
+    static GameInPacket incomingPacket88 = new GameInPacket(88, 12);
     static int Eh;
     static int Fh;
     static int Gh;
@@ -453,7 +453,7 @@ final class lm extends en
 	    Kh = null;
 	    vh = null;
 	    Nh = null;
-	    Dh = null;
+	    incomingPacket88 = null;
 	}
     }
     
@@ -881,7 +881,7 @@ final class lm extends en
     
     final void k(boolean bool) {
 	Ug++;
-	if (Class_e.m != ((en) this).Ve) {
+	if (IncomingPackets.m != ((en) this).Ve) {
 	    if (((en) this).Ve == Class_ug.H)
 		OpenGL.glBlendFunc(1, 1);
 	    else if (Class_ag.h == ((en) this).Ve)

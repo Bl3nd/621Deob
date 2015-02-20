@@ -19,7 +19,7 @@ final class hi
     int m;
     int n;
     int o;
-    static GameInPacket p = new GameInPacket(58, 3);
+    static GameInPacket incomingPacket58 = new GameInPacket(58, 3);
     byte q;
     static int r;
     static int s;
@@ -64,7 +64,7 @@ final class hi
     
     public static void a(byte i) {
 	u = null;
-	p = null;
+	incomingPacket58 = null;
 	if (i <= -44)
 	    incomingPacket2 = null;
     }

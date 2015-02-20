@@ -293,7 +293,7 @@ public final class client extends bga {
 		la.a(3);
 		uo.a((byte) 50);
 		ua.a(i ^ 0x54);
-		Class_e.a(false);
+		IncomingPackets.a(false);
 		sa.a((byte) 109);
 		ir.a(95);
 		gga.c(i ^ 0x7b);
@@ -450,7 +450,7 @@ public final class client extends bga {
 		Class_jc.b(true);
 		ifa.a(true);
 		kga.i((byte) 111);
-		GameInPacketHandler.a(false);
+		GameInPacketHandler.nullLoader(false);
 		aa.a(i - 31);
 		he.d(15223);
 		sw.a(-1);

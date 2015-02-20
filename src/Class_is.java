@@ -18,7 +18,7 @@ final class Class_is implements Runnable
     static int h;
     static boolean i = false;
     static float[] j;
-    static GameInPacket k;
+    static GameInPacket updateNPCInPacket;
     private vfa l;
     static int m;
     static int n;
@@ -37,7 +37,7 @@ final class Class_is implements Runnable
 	float[] fs_2_ = new float[i_1_];
 	co.a(fs, 0, fs_2_, 0, i_1_);
 	if (i > -49)
-	    k = null;
+	    updateNPCInPacket = null;
 	return fs_2_;
     }
     
@@ -65,7 +65,7 @@ final class Class_is implements Runnable
     
     final boolean a(byte i) {
 	if (i != 116)
-	    k = null;
+	    updateNPCInPacket = null;
 	a++;
 	if (f)
 	    return true;
@@ -98,13 +98,13 @@ final class Class_is implements Runnable
 	j = null;
 	if (i > -77)
 	    b((byte) -12);
-	k = null;
+	updateNPCInPacket = null;
     }
     
     static {
 	h = 0;
 	j = new float[] { 0.0F, -1.0F, 0.0F, 0.0F };
-	k = new GameInPacket(76, -2);
+	updateNPCInPacket = new GameInPacket(76, -2);
 	n = 0;
     }
 }

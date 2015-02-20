@@ -7,7 +7,7 @@ final class jq extends qga
     static int j;
     static int k;
     static qm l = new qm();
-    static GameInPacket m = new GameInPacket(55, 2);
+    static GameInPacket incomingPacket55 = new GameInPacket(55, 2);
     static String[] n = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
     int o;
     
@@ -17,7 +17,7 @@ final class jq extends qga
     }
     
     public static void a(byte i) {
-	m = null;
+	incomingPacket55 = null;
 	if (i != -115)
 	    a((byte) 100);
 	n = null;

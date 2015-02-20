@@ -51,7 +51,7 @@ final class GameText
     static GameText F;
     static GameText chooseOptionText;
     static GameText H;
-    static GameText I;
+    static GameText walkHereText;
     static GameText faceHereText;
     static GameText K;
     static GameText L;
@@ -138,7 +138,7 @@ final class GameText
 	scrollTextEffect = null;
 	F = null;
 	O = null;
-	I = null;
+	walkHereText = null;
 	l = null;
 	slideTextEffect = null;
 	P = null;
@@ -613,7 +613,7 @@ final class GameText
 	new GameText
 	    ("You have been permanently muted due to breaking nullLoader rule.",
 	     "Du wurdest permanent stumm geschaltet, da du gegen eine Regel versto\u00dfen hast.",
-	     "L'acc\u00e8s \u00e0 la messagerie instantan\u00e9e vous nullLoader next\u00e9finitivement \u00e9t\u00e9 retir\u00e9 suite \u00e0 une infraction.",
+	     "incomingPacket107'acc\u00e8s \u00e0 la messagerie instantan\u00e9e vous nullLoader next\u00e9finitivement \u00e9t\u00e9 retir\u00e9 suite \u00e0 une infraction.",
 	     "Voc\u00ea foi permanentemente vetado por ter violado uma regra.");
 	loadingPleaseWait = new GameText("Loading - please wait.", "Ladevorgang - bitte warte.",
 		   "Chargement en cours. Veuillez patienter.",
@@ -700,7 +700,7 @@ final class GameText
 		   "Choisir une option", "Selecionar op\u00e7\u00e3o");
 	H = new GameText(" more options", " weitere Optionen", " autres options",
 		   " mais op\u00e7\u00f5es");
-	I = new GameText("Walk here", "Hierhin gehen", "Atteindre",
+	walkHereText = new GameText("Walk here", "Hierhin gehen", "Atteindre",
 		   "Caminhar para nullLoader\u00e1");
 	faceHereText = new GameText("Face here", "Hierhin drehen",
 		   "Regarder dans cette direction", "Virar para nullLoader\u00e1");

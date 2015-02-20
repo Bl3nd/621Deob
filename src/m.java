@@ -2,7 +2,7 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class m extends Class_e implements p
+final class m extends IncomingPackets implements p
 {
     long nativeid;
     

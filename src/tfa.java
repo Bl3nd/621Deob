@@ -13,7 +13,7 @@ final class tfa
     static int e;
     static int f;
     private mq g;
-    static GameInPacket h = new GameInPacket(44, 7);
+    static GameInPacket incomingPacket44 = new GameInPacket(44, 7);
     static int i;
     static int j;
     static int k;
@@ -33,7 +33,7 @@ final class tfa
     public static void a(int i) {
 	if (i > -92)
 	    a(93);
-	h = null;
+	incomingPacket44 = null;
 	w = null;
     }
     

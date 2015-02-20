@@ -52,7 +52,7 @@ final class l extends Class_r implements p
 	    throw new RuntimeException();
     }
     
-    private final native void EA(Class_e class_e);
+    private final native void EA(IncomingPackets incomingPackets);
     
     final void c(int i, int i_0_, int i_1_, int i_2_, int i_3_, int i_4_) {
 	XA(i, i_0_, i_1_, i_3_, i_4_);
@@ -256,7 +256,7 @@ final class l extends Class_r implements p
 	/* empty */
     }
     
-    final Class_e c(int i) {
+    final IncomingPackets c(int i) {
 	m var_m = new m(this, i);
 	p.b(var_m, (byte) 93);
 	return var_m;
@@ -671,9 +671,9 @@ final class l extends Class_r implements p
     final native void J(int i, int i_183_, int i_184_, int i_185_, int i_186_,
 			int i_187_);
     
-    final void a(Class_e class_e) {
-	q = (m) class_e;
-	EA(class_e);
+    final void a(IncomingPackets incomingPackets) {
+	q = (m) incomingPackets;
+	EA(incomingPackets);
     }
     
     static {

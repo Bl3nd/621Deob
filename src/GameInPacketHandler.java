@@ -36,7 +36,7 @@ public final class GameInPacketHandler extends Node {
 				ga.J++;
 			}
 			qba.y = true;
-			GameInPacket[] gameInPackets = Class_e.getGameInPackets((byte) -117);
+			GameInPacket[] gameInPackets = IncomingPackets.getGameInPackets((byte) -117);
 			int currentPacketID = faa.loginStream.f(false);
 			if (currentPacketID < 0 || currentPacketID >= gameInPackets.length) {
                 throw new IOException("invo:" + currentPacketID + " ip:" + faa.loginStream.pos);
@@ -1478,28 +1478,35 @@ public final class GameInPacketHandler extends Node {
             System.out.println("[GameInPacketHandler] Incoming Packet 99.");
 			int j = faa.loginStream.readUnsignedByteMinus128(-113);
 			int k = j >> 2;
-			int i_172_ = j & 0x3;
-			int i_173_ = nr.d[k];
-			int i_174_ = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
-			if (i_174_ == 65535)
-				i_174_ = -1;
-			int i_175_ = faa.loginStream.readIntShiftsInOrder_16_24_0_8(-87);
-			int i_176_ = i_175_ >> 28 & 0x3;
-			int i_177_ = (0xfffdfb4 & i_175_) >> 14;
-			i_177_ -= bfa.thisPlayersRegionX;
-			int i_178_ = 0x3fff & i_175_;
-			i_178_ -= BytesParser.thisPlayersRegionY;
-			wj.a(-1, k, i_174_, i_173_, i_176_, i_178_, i_172_, i_177_);
+			int i1 = j & 0x3;
+			int j1 = nr.d[k];
+			int id = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
+			if (id == 65535) {
+                id = -1;
+            }
+			int k1 = faa.loginStream.readIntShiftsInOrder_16_24_0_8(-87);
+			int i2 = k1 >> 28 & 0x3;
+			int j2 = (0xfffdfb4 & k1) >> 14;
+			j2 -= bfa.thisPlayersRegionX;
+			int k2 = 0x3fff & k1;
+			k2 -= BytesParser.thisPlayersRegionY;
+			wj.a(-1, k, id, j1, i2, k2, i1, j2);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == bl.G) {
-			int i_179_ = faa.loginStream.readShort(13111);
-			int i_180_ = faa.loginStream.readInt(67);
-			if (Class_cb.interfacePacketCounterCheck(i_179_, 65535)) {
-				tt var_tt = (tt) ida.l.a(i ^ 0x7feb, (long) i_180_);
-				if (var_tt != null)
-					vm.a(false, true, false, var_tt);
+
+        /**
+         * Incoming Packet 106.
+         */
+		if (sw.currentGameInPacket == bl.incomingPacket106) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 106.");
+            int interfacePacketCounter = faa.loginStream.readShort(13111);
+			int id = faa.loginStream.readInt(67);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+				tt tt = (tt) ida.l.a(i ^ 0x7feb, (long) id);
+				if (tt != null) {
+                    vm.a(false, true, false, tt);
+                }
 				if (rd.D != null) {
 					tn.a(rd.D, 1023);
 					rd.D = null;
@@ -1508,578 +1515,751 @@ public final class GameInPacketHandler extends Node {
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Send Lobby String incoming packet.
+         */
 		if (sw.currentGameInPacket == il.sendLobbyStringGameInPacket) {
-			int i_181_ = faa.loginStream.readSmart2(-13829);
-			int i_182_ = faa.loginStream.readInt(89);
-			int i_183_ = faa.loginStream.readUnsignedByte(i ^ 0x2433);
+            System.out.println("[GameInPacketHandler] Send Lobby String incoming packet.");
+            int j = faa.loginStream.readSmart2(-13829);
+			int k = faa.loginStream.readInt(89);
+			int i1 = faa.loginStream.readUnsignedByte(i ^ 0x2433);
 			String string = "";
-			String string_184_ = string;
-			if ((i_183_ & 0x1) != 0) {
+			String string1 = string;
+			if ((i1 & 0x1) != 0) {
 				string = faa.loginStream.readString((byte) 123);
-				if ((0x2 & i_183_) != 0)
-					string_184_ = faa.loginStream.readString((byte) 117);
-				else
-					string_184_ = string;
+				if ((0x2 & i1) != 0) {
+                    string1 = faa.loginStream.readString((byte) 117);
+                } else {
+                    string1 = string;
+                }
 			}
-			String string_185_ = faa.loginStream.readString((byte) 123);
-			if (i_181_ == 99)
-				ia.a(4, string_185_);
-			else {
-				if (!string_184_.equals("") && qf.a(string_184_, -117)) {
+			String string2 = faa.loginStream.readString((byte) 123);
+			if (j == 99) {
+                ia.a(4, string2);
+            } else {
+				if (!string1.equals("") && qf.a(string1, -117)) {
 					sw.currentGameInPacket = null;
 					return true;
 				}
-				oba.a(string, string_185_, i_181_, -1, string_184_, i_182_,
-						string);
+				oba.a(string, string2, j, -1, string1, k, string);
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Access Mask incoming packet.
+         */
 		if (sw.currentGameInPacket == ns.accessMaskGameInPacket) {
+            System.out.println("[GameInPacketHandler] Access Mask incoming packet.");
 			int endOffset = faa.loginStream.readShort(13111);
-			if (endOffset == 65535)
-				endOffset = -1;
+			if (endOffset == 65535) {
+                endOffset = -1;
+            }
 			int interfaceHash = faa.loginStream.readInt(61);
 			int beginOffset = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			if (beginOffset == 65535)
-				beginOffset = -1;
+			if (beginOffset == 65535) {
+                beginOffset = -1;
+            }
 			int interfacePacketCounter = faa.loginStream.readShort(13111);
 			int settingsHash = faa.loginStream.readIntReversed2(-106);
-			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter,
-					65535)) {
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
 				for (int loopID = beginOffset; loopID <= endOffset; loopID++) {
 					long l = ((long) interfaceHash << 32) + (long) loopID;
-					nm var_nm = (nm) aea.E.a(i - 32747, l);
-					nm var_nm_192_;
-					if (var_nm == null) {
-						if ((loopID ^ 0xffffffff) != 0)
-							var_nm_192_ = new nm(settingsHash, -1);
-						else
-							var_nm_192_ = new nm(settingsHash,
-									((Interface) efa.a(-1018745488,
-											interfaceHash)).qd.q);
+					nm nm = (nm) aea.E.a(i - 32747, l);
+					nm nm1;
+					if (nm == null) {
+						if ((~loopID) != 0) {
+                            nm1 = new nm(settingsHash, -1);
+                        } else {
+                            nm1 = new nm(settingsHash, efa.a(-1018745488, interfaceHash).qd.q);
+                        }
 					} else {
-						var_nm_192_ = new nm(settingsHash, var_nm.q);
-						var_nm.unlink(-123);
+						nm1 = new nm(settingsHash, nm.q);
+						nm.unlink(-123);
 					}
-					aea.E.a(var_nm_192_, (byte) -56, l);
+					aea.E.a(nm1, (byte) -56, l);
 				}
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Small Config incoming packet.
+         */
 		if (sw.currentGameInPacket == rba.smallConfigPacket) {
+            System.out.println("[GameInPacketHandler] Small Config incoming packet.");
 			byte value = faa.loginStream.readByte(-20933);
 			int configID = faa.loginStream.readShort(13111);
 			cp.e.setConfig(configID, 0, value);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == mh.j) {
+
+        /**
+         * Incoming Packet 13.
+         */
+		if (sw.currentGameInPacket == mh.incomingPacket13) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 13.");
 			boolean bool = faa.loginStream.readUnsignedByte(-9268) == 1;
 			String string = faa.loginStream.readString((byte) 124);
-			String string_195_ = string;
-			if (bool)
-				string_195_ = faa.loginStream.readString((byte) 119);
+			String string1 = string;
+			if (bool) {
+                string1 = faa.loginStream.readString((byte) 119);
+            }
 			long l = (long) faa.loginStream.readShort(13111);
-			long l_196_ = (long) faa.loginStream.readTribyte(i);
-			int i_197_ = faa.loginStream.readUnsignedByte(i - 9267);
-			long l_198_ = (l << 32) + l_196_;
-			boolean bool_199_ = false;
+			long l1 = (long) faa.loginStream.readTribyte(i);
+			int playerRights = faa.loginStream.readUnsignedByte(i - 9267);
+			long l2 = (l << 32) + l1;
+			boolean bool1 = false;
 			while_49_: do {
-				for (int i_200_ = 0; i_200_ < 100; i_200_++) {
-					if (gga.l[i_200_] == l_198_) {
-						bool_199_ = true;
+				for (int index = 0; index < 100; index++) {
+					if (gga.l[index] == l2) {
+						bool1 = true;
 						break while_49_;
 					}
 				}
-				if (i_197_ <= 1) {
-					if (id.b && !tb.a || uda.d)
-						bool_199_ = true;
-					else if (qf.a(string_195_, -124))
-						bool_199_ = true;
+				if (playerRights <= 1) {
+					if (id.b && !tb.a || uda.d) {
+                        bool1 = true;
+                    } else if (qf.a(string1, -124)) {
+                        bool1 = true;
+                    }
 				}
 			} while (false);
-			if (!bool_199_ && sba.q == 0) {
-				gga.l[bg.g] = l_198_;
+			if (!bool1 && sba.q == 0) {
+				gga.l[bg.g] = l2;
 				bg.g = (bg.g + 1) % 100;
-				String string_201_ = dea.a(19317, Class_ob.a(faa.loginStream, (byte) 77));
-				if (i_197_ == 2)
-					at.a(string, string_201_, 7, 0, -1,
-							"<img=1>" + string_195_, null, (byte) 120,
-							"<img=1>" + string);
-				else if (i_197_ != 1)
-					at.a(string, string_201_, 3, 0, -1, string_195_, null,
-							(byte) 106, string);
-				else
-					at.a(string, string_201_, 7, 0, -1,
-							"<img=0>" + string_195_, null, (byte) 106,
-							"<img=0>" + string);
+				String string2 = dea.a(19317, Class_ob.a(faa.loginStream, (byte) 77));
+				if (playerRights == 2) {
+                    at.a(string, string2, 7, 0, -1, "<img=1>" + string1, null, (byte) 120, "<img=1>" + string);
+                } else if (playerRights != 1) {
+                    at.a(string, string2, 3, 0, -1, string1, null, (byte) 106, string);
+                } else {
+                    at.a(string, string2, 7, 0, -1, "<img=0>" + string1, null, (byte) 106, "<img=0>" + string);
+                }
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (lda.L == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 107.
+         */
+		if (lda.incomingPacket107 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 107.");
 			fi.a(os.j, (byte) 34);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == sa.p) {
-			int i_202_ = faa.loginStream.readShort(i ^ ~0x3337);
-			int i_203_ = faa.loginStream.readUnsignedByte(-9268);
-			int i_204_ = faa.loginStream.readUnsignedByte(-9268);
-			int i_205_ = faa.loginStream.readShort(i ^ ~0x3337) << 2;
-			int i_206_ = faa.loginStream.readUnsignedByte(-9268);
-			int i_207_ = faa.loginStream.readUnsignedByte(i - 9267);
-			if (Class_cb.interfacePacketCounterCheck(i_202_, 65535))
-				Class_ub.a(false, i_203_, i_206_, i_207_, true, i_204_, i_205_);
+
+        /**
+         * Incoming Packet 98.
+         */
+		if (sw.currentGameInPacket == sa.incomingPacket98) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 98.");
+			int interfacePacketCounter = faa.loginStream.readShort(i ^ ~0x3337);
+			int k = faa.loginStream.readUnsignedByte(-9268);
+			int i1 = faa.loginStream.readUnsignedByte(-9268);
+			int j1 = faa.loginStream.readShort(i ^ ~0x3337) << 2;
+			int k1 = faa.loginStream.readUnsignedByte(-9268);
+			int i2 = faa.loginStream.readUnsignedByte(i - 9267);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+                Class_ub.a(false, k, k1, i2, true, i1, j1);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Send World List incoming packet.
+         */
 		if (pg.sendWorldListGameInPacket == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Send World List incoming packet.");
 			boolean bool = faa.loginStream.readUnsignedByte(-9268) == 1;
-			byte[] is = new byte[ck.currentGameInPacketSize - 1];
-			faa.loginStream.readBytes(is, true, ck.currentGameInPacketSize - 1, 0);
-			tea.a(13736, is, bool);
+			byte[] worlds = new byte[ck.currentGameInPacketSize - 1];
+			faa.loginStream.readBytes(worlds, true, ck.currentGameInPacketSize - 1, 0);
+			tea.a(13736, worlds, bool);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (iu.e == sw.currentGameInPacket) {
-			int i_208_ = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			int i_209_ = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			int i_210_ = faa.loginStream.readUnsignedNegativeBytePlus128(i + 256);
-			if (Class_cb.interfacePacketCounterCheck(i_208_, 65535)) {
-				if (i_210_ == 2)
-					Class_ue.a(-122);
-				Class_vb.u = i_209_;
-				NPCNode.a(-93, i_209_);
+
+        /**
+         * Incoming Packet 37.
+         */
+		if (iu.incomingPacket37 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 37.");
+			int interfacePacketCounter = faa.loginStream.readShortSecondByteMinus128((byte) -80);
+			int j = faa.loginStream.readShortSecondByteMinus128((byte) -80);
+			int k = faa.loginStream.readUnsignedNegativeBytePlus128(i + 256);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+				if (k == 2) {
+                    Class_ue.a(-122);
+                }
+				Class_vb.u = j;
+				NPCNode.a(-93, j);
 				cv.a(false, (byte) -120);
 				ClientScriptHandler.a(Class_vb.u);
-				for (int i_211_ = 0; i_211_ < 100; i_211_++)
-					la.q[i_211_] = true;
+				for (int index = 0; index < 100; index++) {
+                    la.q[index] = true;
+                }
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == cba.j) {
-			int i_212_ = faa.loginStream.readShortReversed((byte) 119);
-			int i_213_ = faa.loginStream.readIntShiftsInOrder_16_24_0_8(-91);
-			int i_214_ = faa.loginStream.readShortReversed((byte) 120);
-			if (Class_cb.interfacePacketCounterCheck(i_214_, i + 65536))
-				to.a(12, i_212_, i_213_);
+
+        /**
+         * Incoming Packet 57.
+         */
+		if (sw.currentGameInPacket == cba.incomingPacket57) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 57.");
+			int j = faa.loginStream.readShortReversed((byte) 119);
+			int k = faa.loginStream.readIntShiftsInOrder_16_24_0_8(-91);
+			int interfacePacketCounter = faa.loginStream.readShortReversed((byte) 120);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, i + 65536)) {
+                to.a(12, j, k);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == nj.o) {
+
+        /**
+         * Incoming Packet 108.
+         */
+		if (sw.currentGameInPacket == nj.incomingPacket108) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 108.");
 			fi.a(pk.c, (byte) 26);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == Player.Nd) {
-			lw.e = ck.currentGameInPacketSize <= 2 ? GameText.I.getString(
-					(byte) -58, cba.languageID) : faa.loginStream.readString((byte) 127);
-			it.K = ck.currentGameInPacketSize <= 0 ? -1 : faa.loginStream
-					.readShort(13111);
+
+        /**
+         * Incoming Packet 78.
+         */
+		if (sw.currentGameInPacket == Player.incomingPacket78) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 78.");
+			lw.e = ck.currentGameInPacketSize <= 2 ? GameText.walkHereText.getString((byte) -58,
+                    cba.languageID) : faa.loginStream.readString((byte) 127);
+			it.K = ck.currentGameInPacketSize <= 0 ? -1 : faa.loginStream.readShort(13111);
 			sw.currentGameInPacket = null;
-			if (it.K == 65535)
-				it.K = -1;
+			if (it.K == 65535) {
+                it.K = -1;
+            }
 			return true;
 		}
-		if (aa.l == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 113.
+         */
+		if (aa.incomingPacket113 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 113.");
 			qaa.T = faa.loginStream.readUnsignedByte(-9268);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == ro.e) {
+
+        /**
+         * Incoming Packet 109.
+         */
+		if (sw.currentGameInPacket == ro.incomingPacket109) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 109.");
 			boolean bool = faa.loginStream.readUnsignedByte(-9268) == 1;
 			String string = faa.loginStream.readString((byte) 118);
-			String string_215_ = string;
-			if (bool)
-				string_215_ = faa.loginStream.readString((byte) 120);
-			int i_216_ = faa.loginStream.readUnsignedByte(-9268);
-			boolean bool_217_ = false;
-			if (i_216_ <= 1) {
-				if (id.b && !tb.a || uda.d)
-					bool_217_ = true;
-				else if (i_216_ <= 1 && qf.a(string_215_, -127))
-					bool_217_ = true;
+			String string1 = string;
+			if (bool) {
+                string1 = faa.loginStream.readString((byte) 120);
+            }
+			int playerRights = faa.loginStream.readUnsignedByte(-9268);
+			boolean bool1 = false;
+			if (playerRights <= 1) {
+				if (id.b && !tb.a || uda.d) {
+                    bool1 = true;
+                } else if (playerRights <= 1 && qf.a(string1, -127)) {
+                    bool1 = true;
+                }
 			}
-			if (!bool_217_ && sba.q == 0) {
-				String string_218_ = dea.a(19317, Class_ob.a(faa.loginStream, (byte) -6));
-				if (i_216_ != 2) {
-					if (i_216_ != 1)
-						at.a(string, string_218_, 24, 0, -1, string_215_, null,
-								(byte) 101, string);
-					else
-						at.a(string, string_218_, 24, 0, -1, "<img=0>"
-								+ string_215_, null, (byte) 102, "<img=0>"
-								+ string);
-				} else
-					at.a(string, string_218_, 24, 0, -1, "<img=1>"
-							+ string_215_, null, (byte) 101, "<img=1>" + string);
+			if (!bool1 && sba.q == 0) {
+				String string2 = dea.a(19317, Class_ob.a(faa.loginStream, (byte) -6));
+				if (playerRights != 2) {
+					if (playerRights != 1) {
+                        at.a(string, string2, 24, 0, -1, string1, null, (byte) 101, string);
+                    } else {
+                        at.a(string, string2, 24, 0, -1, "<img=0>" + string1, null, (byte) 102, "<img=0>" + string);
+                    }
+				} else {
+                    at.a(string, string2, 24, 0, -1, "<img=1>" + string1, null, (byte) 101, "<img=1>" + string);
+                }
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (Class_is.k == sw.currentGameInPacket) {
+
+        /**
+         * Update NPC incoming packet.
+         */
+		if (Class_is.updateNPCInPacket == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Update NPC incoming packet 76.");
 			bm.updateNPC(true, (byte) -125);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (faa.d == sw.currentGameInPacket) {
-			int i_219_ = faa.loginStream.readShort(13111);
-			Player var_qi;
-			if (i_219_ == ih.n)
-				var_qi = up.thisPlayer;
-			else
-				var_qi = Class_fc.playersInScreen[i_219_];
-			if (var_qi == null) {
+
+        /**
+         * Incoming Packet 62.
+         */
+		if (faa.incomingPacket62 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 62.");
+			int playerInScreen = faa.loginStream.readShort(13111);
+			Player player;
+			if (playerInScreen == ih.n) {
+                player = up.thisPlayer;
+            } else {
+                player = Class_fc.playersInScreen[playerInScreen];
+            }
+			if (player == null) {
 				sw.currentGameInPacket = null;
 				return true;
 			}
-			int i_220_ = faa.loginStream.readShort(i + 13112);
-			int i_221_ = faa.loginStream.readUnsignedByte(-9268);
-			boolean bool = (i_220_ & 0x8000) != 0;
-			if (var_qi.displayName != null
-					&& var_qi.playerDef != null) {
-				boolean bool_222_ = false;
-				if (i_221_ <= 1) {
-					if (!bool && (id.b && !tb.a || uda.d))
-						bool_222_ = true;
-					else if (qf.a(var_qi.displayName, i - 116))
-						bool_222_ = true;
+			int j = faa.loginStream.readShort(i + 13112);
+			int k = faa.loginStream.readUnsignedByte(-9268);
+			boolean bool = (j & 0x8000) != 0;
+			if (player.displayName != null && player.playerDef != null) {
+				boolean bool1 = false;
+				if (k <= 1) {
+					if (!bool && (id.b && !tb.a || uda.d)) {
+                        bool1 = true;
+                    } else if (qf.a(player.displayName, i - 116)) {
+                        bool1 = true;
+                    }
 				}
-				if (!bool_222_ && sba.q == 0) {
-					int i_223_ = -1;
+				if (!bool1 && sba.q == 0) {
+					int i1 = -1;
 					String string;
-					if (!bool)
-						string = dea.a(19317, Class_ob.a(faa.loginStream, (byte) -124));
-					else {
-						i_220_ &= 0x7fff;
-						oe var_oe = wa.a(faa.loginStream, (byte) -47);
-						i_223_ = var_oe.a;
-						string = var_oe.d.a(1772, faa.loginStream);
+					if (!bool) {
+                        string = dea.a(19317, Class_ob.a(faa.loginStream, (byte) -124));
+                    } else {
+						j &= 0x7fff;
+						oe oe = wa.a(faa.loginStream, (byte) -47);
+						i1 = oe.a;
+						string = oe.d.a(1772, faa.loginStream);
 					}
-					var_qi.cb = string.trim();
-					var_qi.jb = i_220_ >> 8;
-					var_qi.vc = 0xff & i_220_;
-					var_qi.Q = 150;
-					int i_224_;
-					if (i_221_ != 1 && i_221_ != 2)
-						i_224_ = bool ? 17 : 2;
-					else
-						i_224_ = bool ? 17 : 1;
-					if (i_221_ != 2) {
-						if (i_221_ != 1)
-							at.a(var_qi.hd, string, i_224_, 0,
-									i_223_, var_qi.a(false, (byte) -7), null,
-									(byte) 109, var_qi.getUserDisplayName(
-											(byte) -128, true));
-						else
-							at.a(var_qi.hd,
-									string,
-									i_224_,
-									0,
-									i_223_,
-									"<img=0>" + var_qi.a(false, (byte) -7),
-									null,
-									(byte) 110,
-									"<img=0>"
-											+ var_qi.getUserDisplayName(
-													(byte) -124, true));
+					player.cb = string.trim();
+					player.jb = j >> 8;
+					player.vc = 0xff & j;
+					player.Q = 150;
+					int j1;
+					if (k != 1 && k != 2) {
+                        j1 = bool ? 17 : 2;
+                    } else {
+                        j1 = bool ? 17 : 1;
+                    }
+					if (k != 2) {
+						if (k != 1) {
+                            at.a(player.hd, string, j1, 0, i1, player.a(false, (byte) -7), null, (byte) 109,
+                                    player.getUserDisplayName((byte) -128, true));
+                        } else {
+                            at.a(player.hd, string, j1, 0, i1, "<img=0>" + player.a(false, (byte) -7), null, (byte) 110, "<img=0>"
+                                    + player.getUserDisplayName((byte) -124, true));
+                        }
 					} else
-						at.a(var_qi.hd,
-								string,
-								i_224_,
-								0,
-								i_223_,
-								"<img=1>" + var_qi.a(false, (byte) -7),
-								null,
-								(byte) 107,
-								"<img=1>"
-										+ var_qi.getUserDisplayName(
-												(byte) -127, true));
+						at.a(player.hd, string, j1, 0, i1, "<img=1>" + player.a(false, (byte) -7), null, (byte) 107, "<img=1>"
+                                + player.getUserDisplayName((byte) -127, true));
 				}
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (jn.D == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 54.
+         */
+		if (jn.incomingPacket54 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 54.");
 			String string = faa.loginStream.readString((byte) 121);
-			int i_225_ = faa.loginStream.readShort(13111);
-			int i_226_ = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
-			if (Class_cb.interfacePacketCounterCheck(i_225_, 65535))
-				jn.a(i ^ ~0x2c44, string, i_226_);
+			int interfacePacketCounter = faa.loginStream.readShort(13111);
+			int j = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+                jn.a(i ^ ~0x2c44, string, j);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (di.e == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 72.
+         */
+		if (di.incomingPacket72 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 72.");
 			fi.a(dv.a, (byte) 64);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == Class_ef.F) {
-			int i_227_ = faa.loginStream.readInt(127);
-			int i_228_ = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
-			if (Class_cb.interfacePacketCounterCheck(i_228_, 65535)) {
-				if (i_227_ == -1) {
+
+        /**
+         * Incoming Packet 87.
+         */
+		if (sw.currentGameInPacket == Class_ef.incomingPacket87) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 87.");
+			int j = faa.loginStream.readInt(127);
+			int interfacePacketCounter = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+				if (j == -1) {
 					dj.o = -1;
 					ja.Cc = -1;
 				} else {
-					int i_229_ = 0x3fff & i_227_ >> 14;
-					i_229_ -= bfa.thisPlayersRegionX;
-					int i_230_ = 0x3fff & i_227_;
-					if (i_229_ >= 0) {
-						if (i_229_ >= Class_hc.e)
-							i_229_ = Class_hc.e;
-					} else
-						i_229_ = 0;
-					i_230_ -= BytesParser.thisPlayersRegionY;
-					if (i_230_ < 0)
-						i_230_ = 0;
-					else if (i_230_ >= bw.v)
-						i_230_ = bw.v;
-					ja.Cc = (i_229_ << 9) + 256;
-					dj.o = (i_230_ << 9) + 256;
+					int k = 0x3fff & j >> 14;
+					k -= bfa.thisPlayersRegionX;
+					int i1 = 0x3fff & j;
+					if (k >= 0) {
+						if (k >= Class_hc.e) {
+                            k = Class_hc.e;
+                        }
+					} else {
+                        k = 0;
+                    }
+					i1 -= BytesParser.thisPlayersRegionY;
+					if (i1 < 0) {
+                        i1 = 0;
+                    } else if (i1 >= bw.v) {
+                        i1 = bw.v;
+                    }
+					ja.Cc = (k << 9) + 256;
+					dj.o = (i1 << 9) + 256;
 				}
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (lh.g == sw.currentGameInPacket) {
-			int i_231_ = faa.loginStream.readShortReversed((byte) 107);
-			int i_232_ = faa.loginStream.readIntShiftsInOrder_16_24_0_8(-111);
-			int i_233_ = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
-			int i_234_ = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			int i_235_ = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
-			if (Class_cb.interfacePacketCounterCheck(i_234_, 65535))
-				qw.a(7, i_231_ | i_233_ << 16, i_232_, 0, i_235_);
+
+        /**
+         * Incoming Packet 39.
+         */
+		if (lh.incomingPacket39 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 39.");
+			int j = faa.loginStream.readShortReversed((byte) 107);
+			int k = faa.loginStream.readIntShiftsInOrder_16_24_0_8(-111);
+			int i1 = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
+			int interfacePacketCounter = faa.loginStream.readShortSecondByteMinus128((byte) -80);
+			int j1 = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+                qw.a(7, j | i1 << 16, k, 0, j1);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (ao.l == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 12.
+         */
+		if (ao.incomingPacket12 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 12.");
 			boolean bool = faa.loginStream.readUnsignedByte(-9268) == 1;
 			String string = faa.loginStream.readString((byte) 126);
-			String string_236_ = string;
-			if (bool)
-				string_236_ = faa.loginStream.readString((byte) 123);
+			String string1 = string;
+			if (bool) {
+                string1 = faa.loginStream.readString((byte) 123);
+            }
 			long l = faa.loginStream.readLong(false);
-			long l_237_ = (long) faa.loginStream.readShort(13111);
-			long l_238_ = (long) faa.loginStream.readTribyte(-1);
-			int i_239_ = faa.loginStream.readUnsignedByte(-9268);
-			int i_240_ = faa.loginStream.readShort(13111);
-			long l_241_ = l_238_ + (l_237_ << 32);
-			boolean bool_242_ = false;
+			long l1 = (long) faa.loginStream.readShort(13111);
+			long l2 = (long) faa.loginStream.readTribyte(-1);
+			int playerRights = faa.loginStream.readUnsignedByte(-9268);
+			int k = faa.loginStream.readShort(13111);
+			long l3 = l2 + (l1 << 32);
+			boolean bool1 = false;
 			while_50_: do {
-				for (int i_243_ = 0; i_243_ < 100; i_243_++) {
-					if (gga.l[i_243_] == l_241_) {
-						bool_242_ = true;
+				for (int index = 0; index < 100; index++) {
+					if (gga.l[index] == l3) {
+						bool1 = true;
 						break while_50_;
 					}
 				}
-				if (i_239_ <= 1 && qf.a(string_236_, -121))
-					bool_242_ = true;
+				if (playerRights <= 1 && qf.a(string1, -121)) {
+                    bool1 = true;
+                }
 			} while (false);
-			if (!bool_242_ && sba.q == 0) {
-				gga.l[bg.g] = l_241_;
+			if (!bool1 && sba.q == 0) {
+				gga.l[bg.g] = l3;
 				bg.g = (bg.g + 1) % 100;
-				String string_244_ = ul.s.a(i_240_, (byte) 118).a(1772, faa.loginStream);
-				if (i_239_ != 2) {
-					if (i_239_ == 1)
-						at.a(string, string_244_, 20, 0, i_240_, "<img=0>"
-								+ string_236_, ns.a(l, 88), (byte) 127,
-								"<img=0>" + string);
-					else
-						at.a(string, string_244_, 20, 0, i_240_, string_236_,
-								ns.a(l, 79), (byte) 102, string);
-				} else
-					at.a(string, string_244_, 20, 0, i_240_, "<img=1>"
-							+ string_236_, ns.a(l, 72), (byte) 115, "<img=1>"
-							+ string);
+				String string2 = ul.s.a(k, (byte) 118).a(1772, faa.loginStream);
+				if (playerRights != 2) {
+					if (playerRights == 1) {
+                        at.a(string, string2, 20, 0, k, "<img=0>" + string1, ns.a(l, 88), (byte) 127, "<img=0>" + string);
+                    } else {
+                        at.a(string, string2, 20, 0, k, string1, ns.a(l, 79), (byte) 102, string);
+                    }
+				} else {
+                    at.a(string, string2, 20, 0, k, "<img=1>" + string1, ns.a(l, 72), (byte) 115, "<img=1>" + string);
+                }
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == pw.c) {
+
+        /**
+         * Incoming Packet 79.
+         */
+		if (sw.currentGameInPacket == pw.incomingPacket79) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 79.");
 			boolean bool = faa.loginStream.readUnsignedByte(i ^ 0x2433) == 1;
 			String string = faa.loginStream.readString((byte) 117);
-			String string_245_ = string;
-			if (bool)
-				string_245_ = faa.loginStream.readString((byte) 115);
+			String string1 = string;
+			if (bool) {
+                string1 = faa.loginStream.readString((byte) 115);
+            }
 			long l = faa.loginStream.readLong(false);
-			long l_246_ = (long) faa.loginStream.readShort(13111);
-			long l_247_ = (long) faa.loginStream.readTribyte(-1);
-			int i_248_ = faa.loginStream.readUnsignedByte(-9268);
-			long l_249_ = (l_246_ << 32) + l_247_;
-			boolean bool_250_ = false;
+			long l1 = (long) faa.loginStream.readShort(13111);
+			long l2 = (long) faa.loginStream.readTribyte(-1);
+			int j = faa.loginStream.readUnsignedByte(-9268);
+			long l3 = (l1 << 32) + l2;
+			boolean bool1 = false;
 			while_51_: do {
-				for (int i_251_ = 0; i_251_ < 100; i_251_++) {
-					if (gga.l[i_251_] == l_249_) {
-						bool_250_ = true;
+				for (int index = 0; index < 100; index++) {
+					if (gga.l[index] == l3) {
+						bool1 = true;
 						break while_51_;
 					}
 				}
-				if (i_248_ <= 1) {
-					if (id.b && !tb.a || uda.d)
-						bool_250_ = true;
-					else if (qf.a(string_245_, -97))
-						bool_250_ = true;
+				if (j <= 1) {
+					if (id.b && !tb.a || uda.d) {
+                        bool1 = true;
+                    } else if (qf.a(string1, -97)) {
+                        bool1 = true;
+                    }
 				}
 			} while (false);
-			if (!bool_250_ && sba.q == 0) {
-				gga.l[bg.g] = l_249_;
+			if (!bool1 && sba.q == 0) {
+				gga.l[bg.g] = l3;
 				bg.g = (bg.g + 1) % 100;
-				String string_252_ = dea.a(i + 19318,
-						Class_ob.a(faa.loginStream, (byte) -123));
-				if (i_248_ == 2 || i_248_ == 3)
-					at.a(string, string_252_, 9, 0, -1,
-							"<img=1>" + string_245_, ns.a(l, 63), (byte) 117,
-							"<img=1>" + string);
-				else if (i_248_ != 1)
-					at.a(string, string_252_, 9, 0, -1, string_245_,
-							ns.a(l, 43), (byte) 107, string);
-				else
-					at.a(string, string_252_, 9, 0, -1,
-							"<img=0>" + string_245_, ns.a(l, 59), (byte) 114,
-							"<img=0>" + string);
+				String string2 = dea.a(i + 19318, Class_ob.a(faa.loginStream, (byte) -123));
+				if (j == 2 || j == 3) {
+                    at.a(string, string2, 9, 0, -1, "<img=1>" + string1, ns.a(l, 63), (byte) 117, "<img=1>" + string);
+                } else if (j != 1) {
+                    at.a(string, string2, 9, 0, -1, string1, ns.a(l, 43), (byte) 107, string);
+                } else {
+                    at.a(string, string2, 9, 0, -1, "<img=0>" + string1, ns.a(l, 59), (byte) 114, "<img=0>" + string);
+                }
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == hp.v) {
-			if ((Class_vb.u ^ 0xffffffff) != 0)
-				cea.b(i - 1630137274, Class_vb.u, 0);
+
+        /**
+         * Incoming Packet 23.
+         */
+		if (sw.currentGameInPacket == hp.incomingPacket23) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 23.");
+			if ((~Class_vb.u) != 0) {
+                cea.b(i - 1630137274, Class_vb.u, 0);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (dfa.F == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 5.
+         */
+		if (dfa.incomingPacket5 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 5.");
 			fi.a(Class_nd.k, (byte) 48);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == qaa.V) {
+
+        /**
+         * Incoming Packet 52.
+         */
+		if (sw.currentGameInPacket == qaa.incomingPacket52) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 52.");
 			jm.j = faa.loginStream.readUnsignedByte(-9268);
 			tda.i = tb.u;
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (tfa.h == sw.currentGameInPacket) {
-			int i_253_ = faa.loginStream.readUnsignedByteMinus128(-122);
-			int i_254_ = faa.loginStream.readIntShiftsInOrder_8_0_24_16(4087);
-			int i_255_ = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			if (Class_cb.interfacePacketCounterCheck(i_255_, 65535))
-				ge.b(i_254_, (byte) 15, i_253_);
+
+        /**
+         * Incoming Packet 44.
+         */
+		if (tfa.incomingPacket44 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 44.");
+			int j = faa.loginStream.readUnsignedByteMinus128(-122);
+			int k = faa.loginStream.readIntShiftsInOrder_8_0_24_16(4087);
+			int interfacePacketCounter = faa.loginStream.readShortSecondByteMinus128((byte) -80);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+                ge.b(k, (byte) 15, j);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Incoming Packet 17.
+         */
 		if (Login.incomingPacket17 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 17.");
 			fi.a(sr.K, (byte) 100);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (ifa.b == sw.currentGameInPacket) {
-			for (int i_256_ = 0; Class_fc.playersInScreen.length > i_256_; i_256_++) {
-				if (Class_fc.playersInScreen[i_256_] != null) {
-					Class_fc.playersInScreen[i_256_].Ab = null;
-					Class_fc.playersInScreen[i_256_].yb = -1;
+
+        /**
+         * Incoming Packet 64.
+         */
+		if (ifa.incomingPacket64 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 64.");
+			for (int index = 0; Class_fc.playersInScreen.length > index; index++) {
+				if (Class_fc.playersInScreen[index] != null) {
+					Class_fc.playersInScreen[index].Ab = null;
+					Class_fc.playersInScreen[index].yb = -1;
 				}
 			}
-			for (int i_257_ = 0; i_257_ < ObjectDef.Ib; i_257_++) {
-				ii.npcNodes[i_257_].l.Ab = null;
-				((NPCNode) ii.npcNodes[i_257_]).l.yb = -1;
+			for (int index = 0; index < ObjectDef.Ib; index++) {
+				ii.npcNodes[index].l.Ab = null;
+				ii.npcNodes[index].l.yb = -1;
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Incoming Packet 102.
+         */
 		if (GameOutPacket.incomingPacket102 == sw.currentGameInPacket) {
-			int i_258_ = faa.loginStream.readInt(86);
-			int i_259_ = faa.loginStream.readShort(13111);
-			int i_260_ = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			if (i_260_ == 65535)
-				i_260_ = -1;
-			int i_261_ = faa.loginStream.readIntShiftsInOrder_16_24_0_8(i - 71);
-			if (Class_cb.interfacePacketCounterCheck(i_259_, 65535)) {
-				lw.a(i_261_, i ^ ~0x9, i_260_, i_258_);
-				ItemDef var_uv = laa.itemDefLoader.d(i ^ ~0x3064, i_260_);
-				rr.a(var_uv.pb, var_uv.Bb, -26287,
-						var_uv.z, i_258_);
-				kl.a((byte) -119, var_uv.nb, var_uv.Ab,
-						i_258_, var_uv.S);
+            System.out.println("[GameInPacketHandler] Incoming Packet 102.");
+			int j = faa.loginStream.readInt(86);
+			int interfacePacketCounter = faa.loginStream.readShort(13111);
+			int id = faa.loginStream.readShortSecondByteMinus128((byte) -80);
+			if (id == 65535) {
+                id = -1;
+            }
+			int k = faa.loginStream.readIntShiftsInOrder_16_24_0_8(i - 71);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+				lw.a(k, i ^ ~0x9, id, j);
+				ItemDef itemDef = laa.itemDefLoader.d(i ^ ~0x3064, id);
+				rr.a(itemDef.pb, itemDef.Bb, -26287, itemDef.z, j);
+				kl.a((byte) -119, itemDef.nb, itemDef.Ab, j, itemDef.S);
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == od.ab) {
-			int[] is = new int[4];
-			for (int i_262_ = 0; i_262_ < 4; i_262_++)
-				is[i_262_] = faa.loginStream.readShortReversed((byte) 116);
-			int i_263_ = faa.loginStream.readShort(13111);
-			int i_264_ = faa.loginStream.readUnsignedNegativeBytePlus128(255);
-			NPCNode var_mi = (NPCNode) uo.a.a(i ^ 0x7feb, (long) i_263_);
-			if (var_mi != null)
-				bg.applyNPCAnim(is, (byte) -124, var_mi.l, i_264_);
+
+        /**
+         * Incoming Packet 84. Apply NPC animation??
+         */
+		if (sw.currentGameInPacket == od.incomingPacket84) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 84.");
+			int[] buf = new int[4];
+			for (int index = 0; index < 4; index++) {
+                buf[index] = faa.loginStream.readShortReversed((byte) 116);
+            }
+			int j = faa.loginStream.readShort(13111);
+			int delay = faa.loginStream.readUnsignedNegativeBytePlus128(255);
+			NPCNode npcNode = (NPCNode) uo.a.a(i ^ 0x7feb, (long) j);
+			if (npcNode != null) {
+                bg.applyNPCAnim(buf, (byte) -124, npcNode.l, delay);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (jq.m == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 55.
+         */
+		if (jq.incomingPacket55 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 55.");
 			fi.a(cd.m, (byte) 29);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (lm.Dh == sw.currentGameInPacket) {
-			int i_265_ = faa.loginStream.readIntReversed2(41);
-			int i_266_ = faa.loginStream.readIntReversed2(i ^ ~0x71);
-			int i_267_ = faa.loginStream.readShortReversed((byte) 115);
-			int i_268_ = faa.loginStream.readShortReversed((byte) 102);
-			if (Class_cb.interfacePacketCounterCheck(i_268_, 65535))
-				qw.a(5, i_267_, i_266_, 0, i_265_);
+
+        /**
+         * Incoming Packet 88.
+         */
+		if (lm.incomingPacket88 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 88.");
+			int j = faa.loginStream.readIntReversed2(41);
+			int k = faa.loginStream.readIntReversed2(i ^ ~0x71);
+			int i1 = faa.loginStream.readShortReversed((byte) 115);
+			int interfacPacketCounter = faa.loginStream.readShortReversed((byte) 102);
+			if (Class_cb.interfacePacketCounterCheck(interfacPacketCounter, 65535)) {
+                qw.a(5, i1, k, 0, j);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == Interface.fb) {
-			int i_269_ = faa.loginStream.readInt(117);
-			int i_270_ = faa.loginStream.readShort(13111);
-			if (i_270_ == 65535)
-				i_270_ = -1;
-			int i_271_ = faa.loginStream.readShort(13111);
-			if (Class_cb.interfacePacketCounterCheck(i_271_, 65535))
-				qw.a(1, i_270_, i_269_, 0, -1);
+
+        /**
+         * Incoming Packet 22.
+         */
+		if (sw.currentGameInPacket == Interface.incomingPacket22) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 22.");
+			int j = faa.loginStream.readInt(117);
+			int id = faa.loginStream.readShort(13111);
+			if (id == 65535) {
+                id = -1;
+            }
+			int interfacePacketCounter = faa.loginStream.readShort(13111);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+                qw.a(1, id, j, 0, -1);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Big Interface Config incoming packet.
+         */
 		if (Class_r.bigInterfaceConfigGameInPacket == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Big Interface Config incoming packet.");
 			int value = faa.loginStream.readIntShiftsInOrder_16_24_0_8(i ^ 0x45);
 			int interfacePacketCounter = faa.loginStream.readShort(13111);
 			int configID = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, i
-					^ ~0xffff))
-				vaa.setInterfaceConfig(configID, value, 1);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, i ^ ~0xffff)) {
+                vaa.setInterfaceConfig(configID, value, 1);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == sca.i) {
-			if (em.a != null)
-				kea.a(false, (byte) 126, -1, -1, cs.g.w);
-			byte[] is = new byte[ck.currentGameInPacketSize];
-			faa.loginStream.a(0, ck.currentGameInPacketSize, is, -122);
-			String string = cea.bytesToString(26144,
-					ck.currentGameInPacketSize, is, 0);
+
+        /**
+         * Incoming Packet 97.
+         */
+		if (sw.currentGameInPacket == sca.incomingPacket97) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 97.");
+			if (em.a != null) {
+                kea.a(false, (byte) 126, -1, -1, cs.g.w);
+            }
+			byte[] buf = new byte[ck.currentGameInPacketSize];
+			faa.loginStream.a(0, ck.currentGameInPacketSize, buf, -122);
+			String string = cea.bytesToString(26144, ck.currentGameInPacketSize, buf, 0);
 			wj.a(125, string, nda.signlink, on.performance == 1, true);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (lr.f == sw.currentGameInPacket) {
-			int i_275_ = faa.loginStream.readShort(13111);
-			if (i_275_ == 65535)
-				i_275_ = -1;
-			int i_276_ = faa.loginStream.readUnsignedByte(i - 9267);
-			int i_277_ = faa.loginStream.readShort(13111);
-			int i_278_ = faa.loginStream.readUnsignedByte(i - 9267);
-			oh.a(i_275_, i_276_, i_277_, false, i_278_, false);
+
+        /**
+         * Incoming Packet 111.
+         */
+		if (lr.incomingPacket111 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 111.");
+			int id = faa.loginStream.readShort(13111);
+			if (id == 65535) {
+                id = -1;
+            }
+			int j = faa.loginStream.readUnsignedByte(i - 9267);
+			int k = faa.loginStream.readShort(13111);
+			int i1 = faa.loginStream.readUnsignedByte(i - 9267);
+			oh.a(id, j, k, false, i1, false);
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Clan Chat incoming packet.
+         */
 		if (Class_ae.clanChatGameInPacket == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Clan Chat incoming packet.");
 			qt.I = tb.u;
 			if (ck.currentGameInPacketSize == 0) {
 				Class_ob.r = null;
@@ -2091,34 +2271,35 @@ public final class GameInPacketHandler extends Node {
 			}
 			Class_ob.r = faa.loginStream.readString((byte) 124);
 			boolean bool = faa.loginStream.readUnsignedByte(-9268) == 1;
-			if (bool)
-				faa.loginStream.readString((byte) 119);
+			if (bool) {
+                faa.loginStream.readString((byte) 119);
+            }
 			long l = faa.loginStream.readLong(false);
 			rc.d = kba.a((byte) -84, l);
 			ISAAC.a = faa.loginStream.readByte(i - 20932);
-			int i_279_ = faa.loginStream.readUnsignedByte(-9268);
-			if (i_279_ == 255) {
+			int j = faa.loginStream.readUnsignedByte(-9268);
+			if (j == 255) {
 				sw.currentGameInPacket = null;
 				return true;
 			}
-			wj.clanChatPlayerCount = i_279_;
-			iaa[] var_iaas = new iaa[100];
-			for (int i_280_ = 0; wj.clanChatPlayerCount > i_280_; i_280_++) {
-				var_iaas[i_280_] = new iaa();
-				var_iaas[i_280_].a = faa.loginStream.readString((byte) 121);
+			wj.clanChatPlayerCount = j;
+			iaa[] iaas = new iaa[100];
+			for (int index = 0; wj.clanChatPlayerCount > index; index++) {
+				iaas[index] = new iaa();
+				iaas[index].a = faa.loginStream.readString((byte) 121);
 				bool = faa.loginStream.readUnsignedByte(i ^ 0x2433) == 1;
-				if (!bool)
-					var_iaas[i_280_].h = var_iaas[i_280_].a;
-				else
-					var_iaas[i_280_].h = faa.loginStream.readString((byte) 117);
-				var_iaas[i_280_].b = kk.a(var_iaas[i_280_].h,
-						true);
-				var_iaas[i_280_].n = faa.loginStream.readShort(13111);
-				var_iaas[i_280_].g = faa.loginStream.readByte(-20933);
-				var_iaas[i_280_].d = faa.loginStream.readString((byte) 115);
-				if (var_iaas[i_280_].h
-						.equals(up.thisPlayer.displayName))
-					cfa.b = var_iaas[i_280_].g;
+				if (!bool) {
+                    iaas[index].h = iaas[index].a;
+                } else {
+                    iaas[index].h = faa.loginStream.readString((byte) 117);
+                }
+				iaas[index].b = kk.a(iaas[index].h, true);
+				iaas[index].n = faa.loginStream.readShort(13111);
+				iaas[index].g = faa.loginStream.readByte(-20933);
+				iaas[index].d = faa.loginStream.readString((byte) 115);
+				if (iaas[index].h.equals(up.thisPlayer.displayName)) {
+                    cfa.b = iaas[index].g;
+                }
 			}
 			boolean bool_281_ = false;
 			int i_282_ = wj.clanChatPlayerCount;
@@ -2126,33 +2307,44 @@ public final class GameInPacketHandler extends Node {
 				bool_281_ = true;
 				i_282_--;
 				for (int i_283_ = 0; i_283_ < i_282_; i_283_++) {
-					if (var_iaas[i_283_].b
-							.compareTo(var_iaas[i_283_ + 1].b) > 0) {
-						iaa var_iaa = var_iaas[i_283_];
-						var_iaas[i_283_] = var_iaas[i_283_ + 1];
+					if (iaas[i_283_].b
+							.compareTo(iaas[i_283_ + 1].b) > 0) {
+						iaa var_iaa = iaas[i_283_];
+						iaas[i_283_] = iaas[i_283_ + 1];
 						bool_281_ = false;
-						var_iaas[i_283_ + 1] = var_iaa;
+						iaas[i_283_ + 1] = var_iaa;
 					}
 				}
 				if (bool_281_)
 					break;
 			}
 			sw.currentGameInPacket = null;
-			n.j = var_iaas;
+			n.j = iaas;
 			return true;
 		}
-		if (bh.w == sw.currentGameInPacket) {
-			int i_284_ = faa.loginStream.readShort(i ^ ~0x3337);
-			if (i_284_ == 65535)
-				i_284_ = -1;
-			int i_285_ = faa.loginStream.readUnsignedByte(-9268);
-			int i_286_ = faa.loginStream.readShort(i ^ ~0x3337);
-			int i_287_ = faa.loginStream.readUnsignedByte(-9268);
-			io.a(i_287_, i_284_, i_285_, i_286_, 29830);
+
+        /**
+         * Incoming Packet 16.
+         */
+		if (bh.incomingPacket16 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 16.");
+			int id = faa.loginStream.readShort(i ^ ~0x3337);
+			if (id == 65535) {
+                id = -1;
+            }
+			int j = faa.loginStream.readUnsignedByte(-9268);
+			int k = faa.loginStream.readShort(i ^ ~0x3337);
+			int i1 = faa.loginStream.readUnsignedByte(-9268);
+			io.a(i1, id, j, k, 29830);
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Set Items By Index incoming packet.
+         */
 		if (nh.setItemsByIndexGameInPacket == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Set Items by Index incoming packet.");
 			int itemContainerIndex = faa.loginStream.readShort(13111);
 			int splitByte = faa.loginStream.readUnsignedByte(-9268);
 			boolean split = (0x1 & splitByte) == 1;
@@ -2162,29 +2354,34 @@ public final class GameInPacketHandler extends Node {
 				int amount = 0;
 				if (itemID != 0) {
 					amount = faa.loginStream.readUnsignedByte(-9268);
-					if (amount == 255)
-						amount = faa.loginStream.readInt(113);
+					if (amount == 255) {
+                        amount = faa.loginStream.readInt(113);
+                    }
 				}
-				dm.setItemOnInterface(-84, split, itemID - 1, itemIndex,
-						amount, itemContainerIndex);
+				dm.setItemOnInterface(-84, split, itemID - 1, itemIndex, amount, itemContainerIndex);
 			}
 			ida.n[uca.a(ou.e++, 31)] = itemContainerIndex;
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Client Script incoming packet.
+         */
 		if (ek.clientScriptGameInPacket == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Client Script incoming packet.");
 			int interfacePacketCounter = faa.loginStream.readShort(i + 13112);
 			String valString = faa.loginStream.readString((byte) 118);
 			Object[] objects = new Object[valString.length() + 1];
 			for (int loopID = valString.length() - 1; loopID >= 0; loopID--) {
-				if (valString.charAt(loopID) == 's')
-					objects[loopID + 1] = faa.loginStream.readString((byte) 119);
-				else
-					objects[loopID + 1] = new Integer(faa.loginStream.readInt(97));
+				if (valString.charAt(loopID) == 's') {
+                    objects[loopID + 1] = faa.loginStream.readString((byte) 119);
+                } else {
+                    objects[loopID + 1] = new Integer(faa.loginStream.readInt(97));
+                }
 			}
 			objects[0] = new Integer(faa.loginStream.readInt(91));
-			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, i
-					^ ~0xffff)) {
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, i ^ ~0xffff)) {
 				ClientScript script = new ClientScript();
 				script.objects = objects;
 				ClientScriptHandler.activateClientScript(script);
@@ -2192,82 +2389,119 @@ public final class GameInPacketHandler extends Node {
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == an.i) {
+
+        /**
+         * Incoming Packet 81.
+         */
+		if (sw.currentGameInPacket == an.incomingPacket81) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 81.");
 			hga.b = saa.b(34067, faa.loginStream.readUnsignedByte(-9268));
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (hi.p == sw.currentGameInPacket) {
-			int i_295_ = faa.loginStream.readUnsignedNegativeByte((byte) -18);
-			int i_296_ = faa.loginStream.readShort(i + 13112);
-			if (Class_cb.interfacePacketCounterCheck(i_296_, 65535))
-				vs.r = i_295_;
+
+        /**
+         * Incoming Packet 58.
+         */
+		if (hi.incomingPacket58 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 58.");
+			int j = faa.loginStream.readUnsignedNegativeByte((byte) -18);
+			int interfacePacketCounter = faa.loginStream.readShort(i + 13112);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+                vs.r = j;
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == pr.y) {
-			int i_297_ = faa.loginStream.readIntShiftsInOrder_8_0_24_16(i ^ ~0xff7);
-			int i_298_ = faa.loginStream.readShortSecondByteMinus128((byte) -80);
-			int i_299_ = faa.loginStream.readShortReversed((byte) 123);
-			if (i_299_ == 65535)
-				i_299_ = -1;
-			if (Class_cb.interfacePacketCounterCheck(i_298_, 65535))
-				qw.a(2, i_299_, i_297_, 0, -1);
+
+        /**
+         * Incoming Packet 112.
+         */
+		if (sw.currentGameInPacket == pr.incomingPacket112) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 112.");
+			int j = faa.loginStream.readIntShiftsInOrder_8_0_24_16(i ^ ~0xff7);
+			int interfacePacketCounter = faa.loginStream.readShortSecondByteMinus128((byte) -80);
+			int id = faa.loginStream.readShortReversed((byte) 123);
+			if (id == 65535) {
+                id = -1;
+            }
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
+                qw.a(2, id, j, 0, -1);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sca.l == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 30.
+         */
+		if (sca.incomingPacket30 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 30.");
 			String string = faa.loginStream.readString((byte) 126);
-			int i_300_ = faa.loginStream.readShort(13111);
-			String string_301_ = ul.s.a(i_300_, (byte) 78).a(i + 1773, faa.loginStream);
-			at.a(string, string_301_, 19, 0, i_300_, string, null, (byte) 103,
-					string);
+			int j = faa.loginStream.readShort(13111);
+			String string1 = ul.s.a(j, (byte) 78).a(i + 1773, faa.loginStream);
+			at.a(string, string1, 19, 0, j, string, null, (byte) 103, string);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (lu.k == sw.currentGameInPacket) {
+
+        /**
+         * Incoming Packet 24.
+         */
+		if (lu.incomingPacket24 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 24.");
 			wd.z = faa.loginStream.readUnsignedByte(-9268);
 			sl.k = faa.loginStream.readByteMinus128((byte) -51) << 3;
 			it.v = faa.loginStream.readByteMinus128((byte) -51) << 3;
-			for (sba var_sba = (sba) jt.a.b((byte) 124); var_sba != null; var_sba = (sba) jt.a
-					.b(i + 12562)) {
-				int i_302_ = (int) (var_sba.nodeID >> 28 & 0x3L);
-				int i_303_ = (int) (var_sba.nodeID & 0x3fffL);
-				int i_304_ = i_303_ - bfa.thisPlayersRegionX;
-				int i_305_ = (int) (0x3fffL & var_sba.nodeID >> 14);
-				int i_306_ = i_305_ - BytesParser.thisPlayersRegionY;
-				if (i_302_ == wd.z && i_304_ >= sl.k && i_304_ < sl.k + 8
-						&& i_306_ >= it.v && it.v + 8 > i_306_) {
-					var_sba.unlink(-65);
-					if (i_304_ >= 0 && i_306_ >= 0 && Class_hc.e > i_304_
-							&& i_306_ < bw.v)
-						br.a(1736, i_306_, wd.z, i_304_);
+			for (sba sba = (sba) jt.a.b((byte) 124); sba != null; sba = (sba) jt.a.b(i + 12562)) {
+				int j = (int) (sba.nodeID >> 28 & 0x3L);
+				int k = (int) (sba.nodeID & 0x3fffL);
+				int i1 = k - bfa.thisPlayersRegionX;
+				int j1 = (int) (0x3fffL & sba.nodeID >> 14);
+				int k1 = j1 - BytesParser.thisPlayersRegionY;
+				if (j == wd.z && i1 >= sl.k && i1 < sl.k + 8 && k1 >= it.v && it.v + 8 > k1) {
+					sba.unlink(-65);
+					if (i1 >= 0 && k1 >= 0 && Class_hc.e > i1 && k1 < bw.v) {
+                        br.a(1736, k1, wd.z, i1);
+                    }
 				}
 			}
-			for (nv var_nv = (nv) Class_u.L.a(102); var_nv != null; var_nv = (nv) Class_u.L
-					.b((byte) 116)) {
-				if (var_nv.u >= sl.k && var_nv.u < sl.k + 8
-						&& var_nv.k >= it.v
-						&& var_nv.k < it.v + 8
-						&& wd.z == var_nv.t)
-					var_nv.n = 0;
+			for (nv nv = (nv) Class_u.L.a(102); nv != null; nv = (nv) Class_u.L.b((byte) 116)) {
+				if (nv.u >= sl.k && nv.u < sl.k + 8 && nv.k >= it.v && nv.k < it.v + 8 && wd.z == nv.t) {
+                    nv.n = 0;
+                }
 			}
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Logout to Lobby incoming packet.
+         */
 		if (ut.logoutToLobbyGameInPacket == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Logout to Lobby incoming packet.");
 			la.logout((byte) -93, Class_ub.U);
 			sw.currentGameInPacket = null;
 			return false;
 		}
+
+        /**
+         * Big Config incoming packet.
+         */
 		if (sw.currentGameInPacket == Node.bigConfigPacket) {
+            System.out.println("[GameInPacketHandler] Big Config incoming packet.");
 			int value = faa.loginStream.readIntReversed2(i ^ 0x78);
 			int configID = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
 			cp.e.setConfig(configID, 0, value);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == Player.Rd) {
+
+        /**
+         * Incoming Packet 70.
+         */
+		if (sw.currentGameInPacket == Player.incomingPacket70) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 70.");
 			int itemContainerIndex = faa.loginStream.readShort(13111);
 			int splitByte = faa.loginStream.readUnsignedByte(-9268);
 			boolean split = (splitByte & 0x1) == 1;
@@ -2275,56 +2509,72 @@ public final class GameInPacketHandler extends Node {
 			int amountOfItems = faa.loginStream.readShort(13111);
 			for (int itemIndex = 0; amountOfItems > itemIndex; itemIndex++) {
 				int amount = faa.loginStream.readUnsignedByte(-9268);
-				if (amount == 255)
-					amount = faa.loginStream.readIntShiftsInOrder_8_0_24_16(4087);
+				if (amount == 255) {
+                    amount = faa.loginStream.readIntShiftsInOrder_8_0_24_16(4087);
+                }
 				int itemID = faa.loginStream.readShort(i + 13112);
-				dm.setItemOnInterface(-103, split, itemID - 1, itemIndex,
-						amount, itemContainerIndex);
+				dm.setItemOnInterface(-103, split, itemID - 1, itemIndex, amount, itemContainerIndex);
 			}
 			ida.n[uca.a(31, ou.e++)] = itemContainerIndex;
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == ge.O) {
+
+        /**
+         * Incoming Packet 41.
+         */
+		if (sw.currentGameInPacket == ge.incomingPacket41) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 41.");
 			wd.z = faa.loginStream.readUnsignedNegativeByte((byte) -18);
 			sl.k = faa.loginStream.readBytePlus128(i ^ ~0x4034) << 3;
 			it.v = faa.loginStream.readBytePlus128(16436) << 3;
 			sw.currentGameInPacket = null;
 			return true;
 		}
+
+        /**
+         * Send String incoming packet.
+         */
 		if (bh.sendStringGameInPacket == sw.currentGameInPacket) {
-			int i_315_ = faa.loginStream.readIntReversed2(112);
-			int i_316_ = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
+            System.out.println("[GameInPacketHandler] Send String incoming packet.");
+			int j = faa.loginStream.readIntReversed2(112);
+			int interfacePacketCounter = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
 			String string = faa.loginStream.readString((byte) 115);
-			if (Class_cb.interfacePacketCounterCheck(i_316_, i ^ ~0xffff))
-				uk.a(3, string, i_315_);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, i ^ ~0xffff)) {
+                uk.a(3, string, j);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (bw.p == sw.currentGameInPacket) {
-			int i_317_ = faa.loginStream.readShortReversed((byte) 125);
-			int i_318_ = faa.loginStream.readShortReversed((byte) 125);
-			int i_319_ = faa.loginStream.readShortReversed((byte) 124);
-			int i_320_ = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
-			int i_321_ = faa.loginStream.readIntShiftsInOrder_8_0_24_16(4087);
-			if (Class_cb.interfacePacketCounterCheck(i_317_, i + 65536))
-				rr.a(i_318_, i_320_, -26287, i_319_, i_321_);
+
+        /**
+         * Incoming Packet 115.
+         */
+		if (bw.incomingPacket115 == sw.currentGameInPacket) {
+            System.out.println("[GameInPacketHandler] Incoming Packet 115.");
+			int interfacePacketCounter = faa.loginStream.readShortReversed((byte) 125);
+			int j = faa.loginStream.readShortReversed((byte) 125);
+			int k = faa.loginStream.readShortReversed((byte) 124);
+			int i1 = faa.loginStream.readShortReversedFirstByteMinus128_2(true);
+			int j1 = faa.loginStream.readIntShiftsInOrder_8_0_24_16(4087);
+			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, i + 65536)) {
+                rr.a(j, i1, -26287, k, j1);
+            }
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		if (sw.currentGameInPacket == daa.I) {
+
+        /**
+         * Incoming Packet 25.
+         */
+		if (sw.currentGameInPacket == daa.incomingPacket25) {
 			fi.a(ln.e, (byte) 13);
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		cea.a(("T1 - "
-				+ (sw.currentGameInPacket == null ? -1 : sw.currentGameInPacket
-						.getPacketID(25569))
-				+ ","
-				+ (ClientScript.gameInPacket != null ? ClientScript.gameInPacket
-						.getPacketID(25569) : -1) + ","
-				+ (jt.c != null ? jt.c.getPacketID(25569) : -1) + " - " + ck.currentGameInPacketSize),
-				-2, null);
+		cea.a(("T1 - " + (sw.currentGameInPacket == null ? -1 : sw.currentGameInPacket.getPacketID(25569)) + ","
+                        + (ClientScript.gameInPacket != null ? ClientScript.gameInPacket.getPacketID(25569) : -1) + ","
+                        + (jt.c != null ? jt.c.getPacketID(25569) : -1) + " - " + ck.currentGameInPacketSize), -2, null);
 		la.logout((byte) -125, false);
 		return true;
 	}
@@ -2333,25 +2583,29 @@ public final class GameInPacketHandler extends Node {
 		/* empty */
 	}
 
-	public static void a(boolean bool) {
-		if (bool != false)
-			a(true);
+	public static void nullLoader(boolean bool) {
+		if (bool) {
+            nullLoader(true);
+        }
 		m = null;
 		var_n = null;
 	}
 
-	static final boolean a(byte i, char c) {
+	public static boolean a(byte b, char c) {
 		o++;
-		if (i != 24)
-			var_n = null;
-		if (c > 0 && c < '\u0080' || c >= '\u00a0' && c <= '\u00ff')
-			return true;
+		if (b != 24) {
+            var_n = null;
+        }
+		if (c > 0 && c < '\u0080' || c >= '\u00a0' && c <= '\u00ff') {
+            return true;
+        }
 		if (c != '\0') {
 			char[] cs = th.g;
-			for (int i_322_ = 0; cs.length > i_322_; i_322_++) {
-				char c_323_ = cs[i_322_];
-				if (c_323_ == c)
-					return true;
+			for (int index = 0; cs.length > index; index++) {
+				char c1 = cs[index];
+				if (c1 == c) {
+                    return true;
+                }
 			}
 		}
 		return false;

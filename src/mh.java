@@ -13,7 +13,7 @@ final class mh
     short g;
     int h;
     static int i;
-    static GameInPacket j = new GameInPacket(13, -1);
+    static GameInPacket incomingPacket13 = new GameInPacket(13, -1);
     static int k;
     short l;
     static int m;
@@ -355,7 +355,7 @@ final class mh
     public static void a(int i) {
 	if (i != 0)
 	    a(false, -43);
-	j = null;
+	incomingPacket13 = null;
     }
     
     static final void a(boolean bool, boolean bool_68_) {

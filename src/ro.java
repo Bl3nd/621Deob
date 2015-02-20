@@ -11,13 +11,13 @@ final class ro
     int b;
     static int c;
     int d;
-    static GameInPacket e = new GameInPacket(109, -1);
+    static GameInPacket incomingPacket109 = new GameInPacket(109, -1);
     int f;
     
     public static void a(int i) {
-	e = null;
+	incomingPacket109 = null;
 	if (i != 0)
-	    e = null;
+	    incomingPacket109 = null;
     }
     
     static final void b(int i) {
@@ -27,7 +27,7 @@ final class ro
 	    int i_1_ = vh.yLoc;
 	    int i_2_ = rda.width - i_0_ - ff.width;
 	    if (i != 0)
-		e = null;
+		incomingPacket109 = null;
 	    int i_3_ = Class_jg.height - i_1_ - eh.height;
 	    do {
 		if (i_0_ > 0 || i_2_ > 0 || i_1_ > 0 || i_3_ > 0) {

@@ -26,7 +26,7 @@ final class sa
     static int m;
     int n;
     static int o;
-    static GameInPacket p = new GameInPacket(98, 8);
+    static GameInPacket incomingPacket98 = new GameInPacket(98, 8);
     static int q;
     static int[] r = new int[8];
     static boolean s = false;
@@ -369,7 +369,7 @@ final class sa
     
     public static void a(byte i) {
 	r = null;
-	p = null;
+	incomingPacket98 = null;
 	t = null;
 	if (i != 109)
 	    a((byte) 94);

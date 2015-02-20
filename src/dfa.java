@@ -12,7 +12,7 @@ abstract class dfa extends Animable
     static int B;
     static int D;
     static int E;
-    static GameInPacket F = new GameInPacket(5, 4);
+    static GameInPacket incomingPacket5 = new GameInPacket(5, 4);
     static int G;
     static int I;
     
@@ -64,7 +64,7 @@ abstract class dfa extends Animable
     }
     
     public static void j(byte i) {
-	F = null;
+	incomingPacket5 = null;
 	if (i != -72)
 	    h((int) 115);
     }

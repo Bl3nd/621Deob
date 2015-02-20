@@ -10,7 +10,7 @@ final class pr extends cl
     static int v;
     static int w;
     static int x;
-    static GameInPacket y = new GameInPacket(112, 8);
+    static GameInPacket incomingPacket112 = new GameInPacket(112, 8);
     static int z;
     private boolean A;
     static int B;
@@ -79,7 +79,7 @@ final class pr extends cl
     }
     
     public static void b(boolean bool) {
-	y = null;
+	incomingPacket112 = null;
 	if (bool != false)
 	    a(-32, 106);
     }

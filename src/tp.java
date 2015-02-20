@@ -2933,7 +2933,7 @@ final class tp
         th.b = 0;
         or.i = 0;
         de.b = 0;
-        Class_e.l = 0;
+        IncomingPackets.l = 0;
         ItemDefLoader.p = 0;
         ji.b = 0;
         rk.o = 0;
@@ -3805,7 +3805,7 @@ final class tp
         Class_ad.b(i ^ 0x7c);
         mo.F = true;
         lf.n = Class_pd.s = qn.l = ua.d = new short[256];
-        lw.e = GameText.I.getString((byte)79, cba.languageID);
+        lw.e = GameText.walkHereText.getString((byte)79, cba.languageID);
         qs.a = 0;
         cs.g.Hb = false;
         cs.g.qb = false;

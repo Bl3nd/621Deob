@@ -20,7 +20,7 @@ final class od extends qda
     static int X;
     static int Y;
     private int Z = 0;
-    static GameInPacket ab = new GameInPacket(84, 11);
+    static GameInPacket incomingPacket84 = new GameInPacket(84, 11);
     private int bb;
     private int cb = 0;
     private boolean db;
@@ -96,7 +96,7 @@ final class od extends qda
     
     final void a(boolean bool) {
 	if (bool != true)
-	    ab = null;
+	    incomingPacket84 = null;
 	if (gb != null)
 	    gb.f();
 	M++;
@@ -130,7 +130,7 @@ final class od extends qda
 	ob = null;
 	S = null;
 	if (i == 0) {
-	    ab = null;
+	    incomingPacket84 = null;
 	    sb = null;
 	}
     }

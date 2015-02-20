@@ -10,7 +10,7 @@ final class lh
     private je d = new je();
     private int e;
     private int f;
-    static GameInPacket g = new GameInPacket(39, 12);
+    static GameInPacket incomingPacket39 = new GameInPacket(39, 12);
     private il h;
     static int i;
     static int j;
@@ -22,7 +22,7 @@ final class lh
 	k = null;
 	if (i == -67) {
 	    l = null;
-	    g = null;
+	    incomingPacket39 = null;
 	}
     }
     

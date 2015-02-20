@@ -13,7 +13,7 @@ final class cba implements Runnable
     volatile ah[] g = new ah[2];
     static int h;
     volatile boolean i;
-    static GameInPacket j = new GameInPacket(57, 8);
+    static GameInPacket incomingPacket57 = new GameInPacket(57, 8);
     static int k;
     
     static final void a(int i) {
@@ -40,7 +40,7 @@ final class cba implements Runnable
     
     public static void a(byte i) {
 	f = null;
-	j = null;
+	incomingPacket57 = null;
 	if (i != -17)
 	    a((byte) 59);
     }

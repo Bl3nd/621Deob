@@ -772,7 +772,7 @@ class cd
 			int i_180_ = 0;
 			int i_181_ = 0;
 			if (((cd) this).b) {
-			    i_179_ = Class_e.a(i_136_, i_137_);
+			    i_179_ = IncomingPackets.a(i_136_, i_137_);
 			    i_180_ = Class_lc.b(i_136_, i_137_);
 			    i_181_ = oi.a(i_136_, i_137_);
 			}
@@ -1458,7 +1458,7 @@ class cd
 			    int i_280_ = 0;
 			    int i_281_ = 0;
 			    if (((cd) this).b) {
-				i_279_ = Class_e.a(i_189_, i_191_);
+				i_279_ = IncomingPackets.a(i_189_, i_191_);
 				i_280_ = Class_lc.b(i_189_, i_191_);
 				i_281_ = oi.a(i_189_, i_191_);
 			    }
