@@ -1,0 +1,10 @@
+[actual method] : first reference : second reference : etc... 
+
+[dn:a(int, String)] : client:main(String[]).a(-2747, "ArgumentCount"), a(-2747, "modewhat"), a(-2747, "language"), 
+a(-2747, "game") : dn:a(-71, (String) null)
+
+[lda:a(int, String)] : client:main(String[]).a(2, strings[4]) : lda:c(byte).a(-72, (String) null)
+
+[bga:a(boolean, int, int, boolean, int, int, int, String)] : client:main(String[]).a(true, 768, 621, false, 1024, gv.modeWhat.a((byte) -114) + 32, 35, ((Class_rf) me.q).g)
+
+[cea:a(String, int, Throwable)] : client:d(int).a((throwable.getMessage() + " (Recovered) " + d((byte) - 30)), -2, throwable) : client:e(int).a(throwable.getMessage() + " (Recovered) " + d((byte) -30), -2, throwable) : client:l(int).a((var_uo.getMessage() + " (Recovered) " + d((byte) -30)), -2, var_uo)

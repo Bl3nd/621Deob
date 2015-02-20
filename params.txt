@@ -1,0 +1,86 @@
+
+
+
+
+
+
+
+
+
+
+var activex_supported=false;
+var havems=false;
+
+try {
+ activex_supported=typeof ActiveXObject != 'undefined';
+ 
+ if (activex_supported) {
+  
+  if (typeof oClientCaps != 'undefined') {
+    var v = oClientCaps.getComponentVersion("{08B0E5C0-4FCB-11CF-AAA5-00401C608500}","ComponentID");
+    if (v!='' && v!='5,0,5000,0') havems=true;
+  }
+ }
+}
+catch (err) {}
+
+
+
+
+ document.write('<app'); document.write('let ');
+ document.write('name=RuneScape ');
+ document.write('id=game ');
+ document.write('width="100%" ');
+ document.write('height="100%" ');
+ document.write('alt="Please visit http://www.runescape.com/kbase/guid/the_game_won_t_load for assistance" ');
+
+ document.write('archive=loader-11504395.jar code=loader.class ');
+ 
+ document.write('mayscript>');
+ document.write('<param name=cabbase value=loader-1360320155.cab>');
+ document.write('<param name="java_arguments" value="-Xmx102m -Dsun.java2d.noddraw=true">');
+ document.write('<param name=colourid value=0>');
+ document.write('<param name=worldid value=84>');
+ document.write('<param name=lobbyid value=1112>');
+ document.write('<param name=lobbyaddress value=lobby13.runescape.com>');
+ document.write('<param name=demoid value=901>');
+ document.write('<param name=demoaddress value=demoworld1.runescape.com>');
+ document.write('<param name=modewhere value=0>');
+ document.write('<param name=modewhat value=0>');
+ document.write('<param name=lang value=0>');
+ document.write('<param name=objecttag value=0>');
+ document.write('<param name=js value=1>');
+ document.write('<param name=game value=0>');
+ document.write('<param name=affid value=0>');
+ 
+ 
+  document.write('<param name=advert value=1>');
+ 
+ 
+ document.write('<param name=settings value=wwGlrZHF5gKN6D3mDdihco3oPeYN2KFybL9hUUFqOvk>');
+ document.write('<param name=country value=0>');
+ if (haveie6) document.write('<param name=haveie6 value=1>');
+ else document.write('<param name=haveie6 value=0>');
+ document.write('<param name=havefirefox value=0>');
+ document.write('<param name=cookieprefix value=>');
+ document.write('<param name=cookiehost value=.runescape.com>');
+ document.write('<param name=cachesubdirid value="0">');
+ 
+  document.write('<param name=crashurl value="http://www.runescape.com/slu.ws?j=1&crash=1">');
+  document.write('<param name=unsignedurl value="http://www.runescape.com/slu.ws?j=1">');
+ 
+ document.write('<param name=sitesettings_member value=0>');
+ document.write('<param name=frombilling value=false>');
+ document.write('<param name=sskey value=>');
+ document.write('<param name=force64mb value=false>');
+ document.write('<param name=worldflags value=9>');
+ document.write('<param name=userFlow value=0>');
+ 
+ document.write('<param name=separate_jvm value="true">');
+ document.write('<div class="nojava">');
+ document.write('<div>It appears that you do not have Java installed,<br/>to download RuneScape for free please <a href="http://www.runescape.com/downloads/runescape.msi?20100526">click here</a>.</div>');
+ if (activex_supported) {
+  document.write('<br><br>If you have checked Java is enabled but you still get this message you may try<br/><a href="http://www.runescape.com/options.ws" target="_parent">clicking here</a> and changing your Java option to "Force Sun Java", which may resolve the problem.');
+ }
+ document.write('</div>');
+ document.write('</applet>');
