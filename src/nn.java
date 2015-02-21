@@ -40,7 +40,7 @@ final class nn implements oc
 	    long l = (long) gfa.npcIndices[i_2_];
 	    NPCNode var_mi = (NPCNode) uo.a.a(-32748, l);
 	    if (var_mi != null) {
-		NPC class_ac = ((NPCNode) var_mi).l;
+		NPC class_ac = ((NPCNode) var_mi).npc;
 		if (((Entity) class_ac).Q > 0) {
 		    ((Entity) class_ac).Q--;
 		    if (((Entity) class_ac).Q == 0)

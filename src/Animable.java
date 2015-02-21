@@ -82,7 +82,7 @@ public abstract class Animable extends Interactable {
 		return i;
 	}
 
-	abstract void d(int i);
+	abstract void sendIllegalStateException(int i);
 
 	abstract void b(boolean bool, Class_r class_r);
 

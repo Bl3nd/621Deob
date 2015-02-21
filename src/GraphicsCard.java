@@ -11,7 +11,7 @@ public final class GraphicsCard {
 	static int e;
 	long driverVersion;
 
-	public static final boolean a(int i, int j, int k) {
+	public static boolean a(int i, int j, int k) {
 		if (j != 25728) {
 			return false;
 		}
@@ -23,10 +23,10 @@ public final class GraphicsCard {
 	}
 
 	public GraphicsCard(int vendor, String name, int version, String device, long driverVersion) {
-		((GraphicsCard) this).device = device;
-		((GraphicsCard) this).vendor = vendor;
-		((GraphicsCard) this).version = version;
-		((GraphicsCard) this).driverVersion = driverVersion;
-		((GraphicsCard) this).name = name;
+		this.device = device;
+		this.vendor = vendor;
+		this.version = version;
+		this.driverVersion = driverVersion;
+		this.name = name;
 	}
 }

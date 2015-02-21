@@ -154,7 +154,7 @@ final class fi
 			int i_53_ = i_43_ - 1;
 			NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) i_53_);
 			if (var_mi != null)
-			    var_ni = ((NPCNode) var_mi).l;
+			    var_ni = ((NPCNode) var_mi).npc;
 		    }
 		    if (var_ni != null) {
 			cg var_cg = var_ni.k(32195);

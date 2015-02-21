@@ -881,7 +881,7 @@ final class lm extends en
     
     final void k(boolean bool) {
 	Ug++;
-	if (IncomingPackets.m != ((en) this).Ve) {
+	if (IncomingPackets.lea != ((en) this).Ve) {
 	    if (((en) this).Ve == Class_ug.H)
 		OpenGL.glBlendFunc(1, 1);
 	    else if (Class_ag.h == ((en) this).Ve)

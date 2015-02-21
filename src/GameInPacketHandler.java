@@ -211,7 +211,7 @@ public final class GameInPacketHandler extends Node {
 						if (id == 65535) {
                             id = -1;
                         }
-						NPC npc = npcNode.l;
+						NPC npc = npcNode.npc;
 						boolean bool1 = true;
 						int graphicsId = bool ? npc.graphicsId : npc.graphicsId_;
 						if ((~id) != 0 && graphicsId != -1) {
@@ -1361,9 +1361,9 @@ public final class GameInPacketHandler extends Node {
 									if (rk.playerName.equals(playerName)) {
 										if (j != 0 && rk.n == 0) {
 											bool3 = false;
-											rk.b(i + 3);
+											rk.unlink(i + 3);
 										} else if (j == 0 && rk.n != 0) {
-											rk.b(2);
+											rk.unlink(2);
 											bool3 = false;
 										}
 									}
@@ -2115,8 +2115,8 @@ public final class GameInPacketHandler extends Node {
 				}
 			}
 			for (int index = 0; index < ObjectDef.Ib; index++) {
-				ii.npcNodes[index].l.Ab = null;
-				ii.npcNodes[index].l.yb = -1;
+				ii.npcNodes[index].npc.Ab = null;
+				ii.npcNodes[index].npc.yb = -1;
 			}
 			sw.currentGameInPacket = null;
 			return true;
@@ -2157,7 +2157,7 @@ public final class GameInPacketHandler extends Node {
 			int delay = faa.loginStream.readUnsignedNegativeBytePlus128(255);
 			NPCNode npcNode = (NPCNode) uo.a.a(i ^ 0x7feb, (long) j);
 			if (npcNode != null) {
-                bg.applyNPCAnim(buf, (byte) -124, npcNode.l, delay);
+                bg.applyNPCAnim(buf, (byte) -124, npcNode.npc, delay);
             }
 			sw.currentGameInPacket = null;
 			return true;

@@ -112,7 +112,7 @@ final class nda {
             handleNPCUpdateMasks((byte) 6);
         for (int i_21_ = 0; i_21_ < pfa.e; i_21_++) {
             int i_22_ = sk.v[i_21_];
-            NPC n = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) i_22_)).l;
+            NPC n = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) i_22_)).npc;
             int maskData = faa.loginStream.readUnsignedByte(-9268);
             if ((0x80 & maskData) != 0)
                 maskData += faa.loginStream.readUnsignedByte(-9268) << 8;

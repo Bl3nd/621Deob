@@ -161,7 +161,7 @@ final class uj extends pp
 	if ((mu.j >= 2 || ba.c) && kr.a == null) {
 	    String string;
 	    if (ba.c && mu.j < 2)
-		string = Class_kd.b + GameText.O.getString((byte) 106, cba.languageID) + Class_ag.k + " ->";
+		string = Class_kd.b + GameText.space.getString((byte) 106, cba.languageID) + Class_ag.k + " ->";
 	    else if (!vh.a || !uc.c.a((byte) -68, (int) 81) || mu.j <= 2) {
 		bfa var_bfa = (bfa) ((Node) ((Class_ae) oba.I).o).next;
 		string = Class_ob.a(var_bfa, 118);
@@ -173,7 +173,7 @@ final class uj extends pp
 				= (NPCNode) uo.a.a(-32748,
 					      (long) (int) ((bfa) var_bfa).n);
 			    if (var_mi != null) {
-				NPC class_ac = ((NPCNode) var_mi).l;
+				NPC class_ac = ((NPCNode) var_mi).npc;
 				NPCDef var_du = ((NPC) class_ac).npcDef;
 				if (((NPCDef) var_du).L != null)
 				    var_du = var_du.a(-4261, cp.e);
@@ -210,7 +210,7 @@ final class uj extends pp
 	    if (i != 16777215)
 		a((int) -120, (Class_r) null);
 	    if (mu.j > 2)
-		string += "<col=ffffff> / " + (mu.j - 2) + GameText.H.getString((byte) -67,
+		string += "<col=ffffff> / " + (mu.j - 2) + GameText._moreOptionsText.getString((byte) -67,
 								  cba.languageID);
 	    if (qg.d != null) {
 		la var_la = qg.d.b(class_r, i ^ ~0xffe3c2);

@@ -136,7 +136,7 @@ final class lfa
 	ps.npcCount = 0;
 	for (int i_11_ = 0; i_11_ < i_9_; i_11_++) {
 	    int i_12_ = gfa.npcIndices[i_11_];
-	    NPC class_ac = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) i_12_)).l;
+	    NPC class_ac = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) i_12_)).npc;
 	    int i_13_ = faa.loginStream.readBits(false, 1);
 	    if (i_13_ == 0) {
 		gfa.npcIndices[ps.npcCount++] = i_12_;

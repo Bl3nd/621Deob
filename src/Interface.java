@@ -660,7 +660,7 @@ label0:
             Node.b[j1] = "";
 
         int k1 = 5 / ((-8 - i1) / 57);
-        ia.a(4, GameText.j.getString((byte)-105, cba.languageID));
+        ia.a(4, GameText.developerConsoleInfoText.getString((byte)-105, cba.languageID));
     }
 
     private final Object[] a(boolean flag, BytesParser es1)

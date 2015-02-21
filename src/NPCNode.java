@@ -2,30 +2,31 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class NPCNode extends Node
-{
+public final class NPCNode extends Node {
+
     static boolean k = true;
-    NPC l;
+    NPC npc;
     static int m;
-    
-    static final void a(int i, int i_0_) {
-	m++;
-	if (gf.a((byte) 111, i_0_)) {
-	    Interface[] var_kps = aa.o[i_0_];
-	    if (i >= -87)
-		a(-9, 6);
-	    for (int i_1_ = 0; var_kps.length > i_1_; i_1_++) {
-		Interface var_kp = var_kps[i_1_];
-		if (var_kp != null) {
-		    ((Interface) var_kp).R = 0;
-		    ((Interface) var_kp).rc = 1;
-		    ((Interface) var_kp).s = 0;
-		}
-	    }
-	}
+
+    public static void a(int i, int j) {
+        m++;
+        if (gf.a((byte) 111, j)) {
+            Interface[] interfaces = aa.o[j];
+            if (i >= -87) {
+                a(-9, 6);
+            }
+            for (int index = 0; interfaces.length > index; index++) {
+                Interface interface_ = interfaces[index];
+                if (interface_ != null) {
+                    interface_.R = 0;
+                    interface_.rc = 1;
+                    interface_.s = 0;
+                }
+            }
+        }
     }
-    
-    NPCNode(NPC class_ac) {
-	((NPCNode) this).l = class_ac;
+
+    public NPCNode(NPC npc_) {
+        this.npc = npc_;
     }
 }

@@ -15,7 +15,7 @@ public final class GPIPlayer {
 	public static void nullLoader(boolean bool) {
 		a = null;
 		pdas = null;
-		if (bool != true) {
+		if (!bool) {
 			nullLoader(false);
 		}
 	}

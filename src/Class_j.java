@@ -27,9 +27,9 @@ abstract class Class_j extends jt
 				wo.a(var_ev_2_, i, i_0_, i_1_, 1, 1);
 				var_ev_2_.a(false, 0, (byte) 106, nda.k,
 					    var_ev, 0, 0);
-				var_ev_2_.d((int) -1);
+				var_ev_2_.sendIllegalStateException((int) -1);
 			    }
-			    var_ev.d((int) -1);
+			    var_ev.sendIllegalStateException((int) -1);
 			}
 			for (ida var_ida = ((vf) var_vf).f; var_ida != null;
 			     var_ida = ((ida) var_ida).d) {
@@ -39,13 +39,13 @@ abstract class Class_j extends jt
 				     ((qda) var_qda).I - ((qda) var_qda).B + 1,
 				     (((qda) var_qda).y - ((qda) var_qda).x
 				      + 1));
-				var_qda.d((int) -1);
+				var_qda.sendIllegalStateException((int) -1);
 			    }
 			}
 			dfa var_dfa = ((vf) var_vf).m;
 			if (var_dfa != null && var_dfa.h((byte) -72)) {
 			    Class_pf.a(var_dfa, i, i_0_, i_1_);
-			    var_dfa.d((int) -1);
+			    var_dfa.sendIllegalStateException((int) -1);
 			}
 		    }
 		}

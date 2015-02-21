@@ -50,7 +50,7 @@ final class ao extends ua
 		    NPCNode var_mi
 			= (NPCNode) uo.a.a(-32748, (long) (((bi) var_bi).ub - 1));
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			if (((Animable) class_ac).locX >= 0
 			    && 512 * Class_hc.e > ((Animable) class_ac).locX
 			    && ((Animable) class_ac).locY >= 0

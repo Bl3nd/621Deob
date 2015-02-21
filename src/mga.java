@@ -322,10 +322,10 @@ final class mga extends Class_q
 		= string.substring(0, i_27_) + "," + string.substring(i_27_);
 	if (string.length() > 9)
 	    return (" <col=00ff80>" + string.substring(0, string.length() - 8)
-		    + GameText.P.getString((byte) -59, cba.languageID) + " (" + string + ")</col>");
+		    + GameText.millionMoneyLetter_.getString((byte) -59, cba.languageID) + " (" + string + ")</col>");
 	if (string.length() > 6)
 	    return (" <col=ffffff>" + string.substring(0, string.length() - 4)
-		    + GameText.R.getString((byte) 78, cba.languageID) + " (" + string + ")</col>");
+		    + GameText.thousandMoneyLetter_.getString((byte) 78, cba.languageID) + " (" + string + ")</col>");
 	return " <col=ffff00>" + string + "</col>";
     }
     

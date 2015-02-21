@@ -171,7 +171,7 @@ final class od extends qda
 	return null;
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	if (i != -1)
 	    a((Class_q) null, null, (byte) -18, null);
 	W++;

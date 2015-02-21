@@ -101,7 +101,7 @@ final class tq extends Interactable
 	q = 0;
 	((tq) this).p = new Class_ae();
 	u = 0;
-	this.b(2);
+	this.unlink(2);
 	da.d[vq.n] = this;
 	vq.n = vq.n + 1 & gr.a[ISAAC.k];
     }
@@ -206,7 +206,7 @@ final class tq extends Interactable
 	    }
 	    if (!bool) {
 		if (((fp) var_fp).s == 0) {
-		    var_fp.b(2);
+		    var_fp.unlink(2);
 		    q--;
 		} else
 		    ((fp) var_fp).r = true;

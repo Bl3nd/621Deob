@@ -223,7 +223,7 @@ final class Class_mb extends qda implements vda
 	return U;
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	N++;
 	bb = false;
 	if (i != -1)

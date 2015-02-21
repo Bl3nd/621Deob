@@ -1037,7 +1037,7 @@ final class pda extends ur
 					  ((rk) var_rk).playerName + GameText._hasLoggedOut.getString((byte) 117,
 								   cba.languageID),
 					  5, -1, "", 0, "");
-				var_rk.b(2);
+				var_rk.unlink(2);
 			    }
 			}
 			BytesParser.u++;

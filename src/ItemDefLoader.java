@@ -213,10 +213,10 @@ final class ItemDefLoader
 	((ItemDef) var_uv).G = i_19_;
 	((ItemDef) var_uv).loader = this;
 	((ItemDef) var_uv).groundActions
-	    = new String[] { null, null, GameText.p.getString((byte) 100, ((ItemDefLoader) this).i),
+	    = new String[] { null, null, GameText.takeText.getString((byte) 100, ((ItemDefLoader) this).i),
 			     null, null };
 	((ItemDef) var_uv).actions = new String[] { null, null, null, null,
-					 GameText.q.getString((byte) -80, ((ItemDefLoader) this).i) };
+					 GameText.dropText.getString((byte) -80, ((ItemDefLoader) this).i) };
 	if (is != null)
 	    var_uv.a(30035, new BytesParser(is));
 	var_uv.a((int) 114);
@@ -226,7 +226,7 @@ final class ItemDefLoader
 	if ((((ItemDef) var_uv).n ^ 0xffffffff) != 0)
 	    var_uv.a(-22824, d(12388, ((ItemDef) var_uv).K), d(i, ((ItemDef) var_uv).n));
 	if (!q && ((ItemDef) var_uv).isMembersItem) {
-	    ((ItemDef) var_uv).itemName = GameText.n.getString((byte) 81, ((ItemDefLoader) this).i);
+	    ((ItemDef) var_uv).itemName = GameText.membersObjectText.getString((byte) 81, ((ItemDefLoader) this).i);
 	    ((ItemDef) var_uv).groundActions = A;
 	    ((ItemDef) var_uv).actions = y;
 	    ((ItemDef) var_uv).wb = 0;
@@ -264,9 +264,9 @@ final class ItemDefLoader
 	    ((ItemDefLoader) this).g = s.a(i_21_, true) + i_21_ * 256;
 	} else
 	    ((ItemDefLoader) this).g = 0;
-	A = new String[] { null, null, GameText.p.getString((byte) -78, ((ItemDefLoader) this).i), null,
+	A = new String[] { null, null, GameText.takeText.getString((byte) -78, ((ItemDefLoader) this).i), null,
 			   null };
 	y = new String[] { null, null, null, null,
-			   GameText.q.getString((byte) -43, ((ItemDefLoader) this).i) };
+			   GameText.dropText.getString((byte) -43, ((ItemDefLoader) this).i) };
     }
 }

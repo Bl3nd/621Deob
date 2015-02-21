@@ -424,7 +424,7 @@ final class fe extends mm
 	((tq) ((fp) ((fe) this).K).t).n[F] = null;
 	pp.m[sw.e] = this;
 	sw.e = sw.e + 1 & 0x3ff;
-	this.b(2);
+	this.unlink(2);
 	this.a(10511);
     }
     

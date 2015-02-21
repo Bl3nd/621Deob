@@ -47,7 +47,7 @@ abstract class lca extends Animable
 		[FileOnDisk.k + ((((Animable) this).locY >> Class_fb.a) - fm.i)]);
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	y++;
 	if (i != -1)
 	    ((lca) this).x = (short) -1;

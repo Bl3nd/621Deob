@@ -21,7 +21,7 @@ abstract class wr extends Animable
 		      ((Animable) this).locY >> Class_fb.a);
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	if (i != -1)
 	    a(-91, 22, 123, -58, 66, false);
 	w++;

@@ -60,7 +60,7 @@ final class tp
         Login.b = 0;
         eg.X = 0;
         BytesParser.v = 0;
-        Player.Jd = 0;
+        Player.isPlayerDefinitionCounter = 0;
         gs.s = 0;
         eg.P = 0;
         mj.t = 0;
@@ -772,7 +772,7 @@ final class tp
         bga.b = 0;
         fba.f = 0;
         wea.c = 0;
-        NPC.Wc = 0;
+        NPC.sendIllegalStateException = 0;
         ega.l = 0;
         lca.F = 0;
         sj.f = 0;
@@ -982,7 +982,7 @@ final class tp
         qk.f = 0;
         vaa.Yb = 0;
         qaa.db = 0;
-        ObjectDef.X = 0;
+        ObjectDef.parseValueCount = 0;
         gl.I = 0;
         ItemDefLoader.a = 0;
         LoginStream.Nb = 0;
@@ -1301,7 +1301,7 @@ final class tp
         of.a = 0;
         bc.a = 0;
         qj.Xb = 0;
-        Player.nd = 0;
+        Player.sendIllegalStateExceptionCounter = 0;
         qj.Y = 0;
         qj.J = 0;
         lt.e = 0;
@@ -1756,7 +1756,7 @@ final class tp
         lm.Sg = 0;
         tv.d = 0;
         ip.N = 0;
-        GameText.h = 0;
+        GameText.toStringCount = 0;
         ItemDef.T = 0;
         lp.m = 0;
         en.eb = 0;
@@ -2683,7 +2683,7 @@ final class tp
         jba.a = 0;
         Class_kf.H = 0;
         eg.J = 0;
-        Player.Tc = 0;
+        Player.updateLocationCounter = 0;
         en.Fb = 0;
         ffa.P = 0;
         cm.M = 0;
@@ -2933,7 +2933,7 @@ final class tp
         th.b = 0;
         or.i = 0;
         de.b = 0;
-        IncomingPackets.l = 0;
+        IncomingPackets.getIncomingPacketsCounter = 0;
         ItemDefLoader.p = 0;
         ji.b = 0;
         rk.o = 0;
@@ -3233,7 +3233,7 @@ final class tp
         qj.qc = 0;
         al.n = 0;
         dt.u = 0;
-        Interactable.b = 0;
+        Interactable.unlinkCount = 0;
         Class_jc.X = 0;
         Connection.v = 0;
         dda.f = 0;
@@ -3655,7 +3655,7 @@ final class tp
         wd.v = 0;
         sa.d = 0;
         Class_mb.ob = 0;
-        Player.bd = 0;
+        Player.getUserDisplayNameCounter = 0;
         mg.s = 0;
         mo.C = 0;
         on.l = 0;

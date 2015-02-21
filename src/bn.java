@@ -44,7 +44,7 @@ final class bn
 		var_ni = Class_fc.playersInScreen[is[i_7_]];
 	    else {
 		var_ni
-		    = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i_7_ - i_6_])).l;
+		    = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i_7_ - i_6_])).npc;
 		var_du = ((NPC) (NPC) var_ni).npcDef;
 		if (((NPCDef) var_du).L != null) {
 		    var_du = var_du.a(-4261, cp.e);
@@ -266,14 +266,14 @@ final class bn
 	    if (i_32_ < 2048)
 		var_ni = Class_fc.playersInScreen[i_32_];
 	    else
-		var_ni = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) (i_32_ - 2048))).l;
+		var_ni = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) (i_32_ - 2048))).npc;
 	    int i_33_ = mm.B[i_31_];
 	    Entity var_ni_34_;
 	    if (i_33_ < 2048)
 		var_ni_34_ = Class_fc.playersInScreen[i_33_];
 	    else
 		var_ni_34_
-		    = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) (i_33_ - 2048))).l;
+		    = ((NPCNode) (NPCNode) uo.a.a(-32748, (long) (i_33_ - 2048))).npc;
 	    fi.a(var_ni, 1071156814, i_4_, --((Entity) var_ni).jc, var_ni_34_,
 		 i_0_, i_1_, i_5_, i, i_2_);
 	}
@@ -688,7 +688,7 @@ final class bn
 							   ((Interface) var_kp).itemStackSize));
 				    }
 				    if (rd.D == var_kp) {
-					string = GameText.N.getString((byte) -127, cba.languageID);
+					string = GameText.pleaseWaitText.getString((byte) -127, cba.languageID);
 					i_84_ = ((Interface) var_kp).textColor;
 				    }
 				    if (ji.g)

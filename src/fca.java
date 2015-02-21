@@ -23,7 +23,7 @@ final class fca
 	if (i != 17494)
 	    return false;
 	j++;
-	if (((Interactable) d).interactable != d)
+	if (((Interactable) d).previousInteractable != d)
 	    return false;
 	return true;
     }
@@ -68,10 +68,10 @@ final class fca
 	if (i != 128)
 	    d = null;
 	for (;;) {
-	    Interactable var_fga = ((Interactable) d).interactable;
+	    Interactable var_fga = ((Interactable) d).previousInteractable;
 	    if (var_fga == d)
 		break;
-	    var_fga.b(2);
+	    var_fga.unlink(2);
 	}
 	m = null;
     }
@@ -85,32 +85,32 @@ final class fca
 	    m = null;
 	    return null;
 	}
-	m = ((Interactable) var_fga).interactable;
+	m = ((Interactable) var_fga).previousInteractable;
 	return var_fga;
     }
     
     final void a(Interactable var_fga, int i) {
 	k++;
-	if (((Interactable) var_fga).interactable_ != null)
-	    var_fga.b(2);
-	((Interactable) var_fga).interactable = d;
-	((Interactable) var_fga).interactable_ = ((Interactable) d).interactable_;
+	if (((Interactable) var_fga).nextInteractable != null)
+	    var_fga.unlink(2);
+	((Interactable) var_fga).previousInteractable = d;
+	((Interactable) var_fga).nextInteractable = ((Interactable) d).nextInteractable;
 	if (i <= 39)
 	    b((byte) 22);
-	((Interactable) ((Interactable) var_fga).interactable_).interactable = var_fga;
-	((Interactable) ((Interactable) var_fga).interactable).interactable_ = var_fga;
+	((Interactable) ((Interactable) var_fga).nextInteractable).previousInteractable = var_fga;
+	((Interactable) ((Interactable) var_fga).previousInteractable).nextInteractable = var_fga;
     }
     
     final Interactable b(byte i) {
 	l++;
 	if (i <= 69)
 	    f = null;
-	Interactable var_fga = ((Interactable) d).interactable;
+	Interactable var_fga = ((Interactable) d).previousInteractable;
 	if (d == var_fga) {
 	    m = null;
 	    return null;
 	}
-	m = ((Interactable) var_fga).interactable;
+	m = ((Interactable) var_fga).previousInteractable;
 	return var_fga;
     }
     
@@ -118,21 +118,21 @@ final class fca
 	if (i < 120)
 	    return null;
 	h++;
-	Interactable var_fga = ((Interactable) d).interactable_;
+	Interactable var_fga = ((Interactable) d).nextInteractable;
 	if (var_fga == d) {
 	    m = null;
 	    return null;
 	}
-	m = ((Interactable) var_fga).interactable_;
+	m = ((Interactable) var_fga).nextInteractable;
 	return var_fga;
     }
     
     final int d(int i) {
 	c++;
 	int i_2_ = i;
-	Interactable var_fga = ((Interactable) d).interactable;
+	Interactable var_fga = ((Interactable) d).previousInteractable;
 	while (var_fga != d) {
-	    var_fga = ((Interactable) var_fga).interactable;
+	    var_fga = ((Interactable) var_fga).previousInteractable;
 	    i_2_++;
 	}
 	return i_2_;
@@ -159,18 +159,18 @@ final class fca
     }
     
     public fca() {
-	((Interactable) d).interactable = d;
-	((Interactable) d).interactable_ = d;
+	((Interactable) d).previousInteractable = d;
+	((Interactable) d).nextInteractable = d;
     }
     
     final Interactable a(boolean bool) {
 	if (bool != true)
 	    d = null;
 	g++;
-	Interactable var_fga = ((Interactable) d).interactable;
+	Interactable var_fga = ((Interactable) d).previousInteractable;
 	if (var_fga == d)
 	    return null;
-	var_fga.b(2);
+	var_fga.unlink(2);
 	return var_fga;
     }
 }

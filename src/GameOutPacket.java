@@ -21,30 +21,27 @@ public final class GameOutPacket {
 	static GameInPacket incomingPacket59;
 	static int p;
 
-	public static final WorldSub a(int i) {
+	public static WorldSub a(int i) {
 		c++;
 		if (ff.s < il.o.length) {
 			return il.o[ff.s++];
 		}
-		@SuppressWarnings("unused")
-		int i_0_ = 15 / ((i + 35) / 36);
-		
 		return null;
 	}
 
-	public static final sa a(pl pl, int i, byte b) {
+	public static sa a(pl pl, int i, byte b) {
 		if (b != 32) {
 			return null;
 		}
 		h++;
-		byte[] buf = pl.a((int) 103, i);
+		byte[] buf = pl.a(103, i);
 		if (buf == null) {
 			return null;
 		}
 		return new sa(buf);
 	}
 
-	public static final String a(String[] strings, int i, int j, int k) {
+	public static String a(String[] strings, int i, int j, int k) {
 		p++;
 		if (i == 0) {
 			return "";
@@ -109,7 +106,7 @@ public final class GameOutPacket {
 	}
 
 	public GameOutPacket(int packetID, int packetSize) {
-		((GameOutPacket) this).packetSize = packetSize;
+		this.packetSize = packetSize;
 		this.packetID = packetID;
 	}
 

@@ -61,7 +61,7 @@ final class dda
 	Interactable var_fga;
 	synchronized (h) {
 	    var_fga = h.b((byte) 94);
-	    var_fga.b(2);
+	    var_fga.unlink(2);
 	    k--;
 	}
 	return var_fga;

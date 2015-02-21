@@ -162,7 +162,7 @@ final class mw extends cl
 		ii.npcNodes[ObjectDef.Ib++] = var_mi;
 		bool_9_ = true;
 	    }
-	    NPC class_ac = ((NPCNode) var_mi).l;
+	    NPC class_ac = ((NPCNode) var_mi).npc;
 	    gfa.npcIndices[ps.npcCount++] = i_8_;
 	    ((Entity) class_ac).U = pm.currentTimedTicks;
 	    if (((NPC) class_ac).npcDef != null
@@ -228,7 +228,7 @@ final class mw extends cl
 	    } else {
 		NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) ((Entity) var_ni).faceEntityID);
 		if (var_mi != null)
-		    var_ni_20_ = ((NPCNode) var_mi).l;
+		    var_ni_20_ = ((NPCNode) var_mi).npc;
 	    }
 	    if (var_ni_20_ != null) {
 		int i_21_ = ((Animable) var_ni).locX - ((Animable) var_ni_20_).locX;

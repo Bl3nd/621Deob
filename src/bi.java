@@ -232,7 +232,7 @@ final class bi extends qda
     final boolean g(byte i) {
 	T++;
 	if (i <= 114)
-	    d((int) -21);
+	    sendIllegalStateException((int) -21);
 	return false;
     }
     
@@ -271,7 +271,7 @@ final class bi extends qda
 	return Z;
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	if (i == -1) {
 	    hb++;
 	    throw new IllegalStateException();

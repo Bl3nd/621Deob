@@ -963,8 +963,8 @@ final class daa extends Class_i
 		for (int i_218_ = 0; ps.npcCount > i_218_; i_218_++) {
 		    NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i_218_]);
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
-			if (class_ac.m(109)
+			NPC class_ac = ((NPCNode) var_mi).npc;
+			if (class_ac.isNpcDef(109)
 			    && ((Animable) class_ac).height == ((Animable) up.thisPlayer).height) {
 			    NPCDef var_du = ((NPC) class_ac).npcDef;
 			    if (var_du != null && ((NPCDef) var_du).L != null)
@@ -991,7 +991,7 @@ final class daa extends Class_i
 		int[] is = vd.inScreenPlayerIDs;
 		for (int i_222_ = 0; i_221_ > i_222_; i_222_++) {
 		    Player var_qi = Class_fc.playersInScreen[is[i_222_]];
-		    if (var_qi != null && var_qi.l(97) && var_qi != up.thisPlayer
+		    if (var_qi != null && var_qi.isPlayerDefinition(97) && var_qi != up.thisPlayer
 			&& ((Animable) up.thisPlayer).height == ((Animable) var_qi).height) {
 			int i_223_ = ((Animable) var_qi).locX / 128 - i_201_ / 128;
 			int i_224_ = ((Animable) var_qi).locY / 128 - i_202_ / 128;
@@ -1046,7 +1046,7 @@ final class daa extends Class_i
 			    NPCNode var_mi
 				= (NPCNode) uo.a.a(-32748, (long) ((on) var_on).e);
 			    if (var_mi != null) {
-				NPC class_ac = ((NPCNode) var_mi).l;
+				NPC class_ac = ((NPCNode) var_mi).npc;
 				int i_230_
 				    = ((Animable) class_ac).locX / 128 - i_201_ / 128;
 				int i_231_

@@ -218,7 +218,7 @@ final class Class_jc extends ev implements vda
 	}
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	gb = false;
 	if (i != -1)
 	    gb = false;

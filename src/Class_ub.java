@@ -159,7 +159,7 @@ final class Class_ub extends dfa implements vda
 	return P;
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	ib++;
 	if (i == -1) {
 	    ob = false;
@@ -173,7 +173,7 @@ final class Class_ub extends dfa implements vda
 	if (bb == null)
 	    return null;
 	if (bool != false)
-	    d((int) 25);
+	    sendIllegalStateException((int) 25);
 	Class_q class_q = class_r.p();
 	class_q.NA(((Animable) this).locX, ((Animable) this).j, ((Animable) this).locY);
 	og var_og = null;

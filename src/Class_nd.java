@@ -24,7 +24,7 @@ final class Class_nd extends Node
 	l++;
 	if (string != null) {
 	    if (dba.l >= 100)
-		cba.a(4, false, GameText.V.getString((byte) 116, cba.languageID));
+		cba.a(4, false, GameText.ignoreListIsFull.getString((byte) 116, cba.languageID));
 	    else {
 		int i_0_ = 49 / ((-55 - i) / 37);
 		String string_1_ = kk.a(string, true);
@@ -33,7 +33,7 @@ final class Class_nd extends Node
 			String string_3_ = kk.a(nh.l[i_2_], true);
 			if (string_3_ != null && string_3_.equals(string_1_)) {
 			    cba.a(4, false,
-				  string + GameText.W.getString((byte) 113, cba.languageID));
+				  string + GameText._alreadyOnIgnoreList.getString((byte) 113, cba.languageID));
 			    return;
 			}
 			if (mba.a[i_2_] != null) {
@@ -41,7 +41,7 @@ final class Class_nd extends Node
 			    if (string_4_ != null
 				&& string_4_.equals(string_1_)) {
 				cba.a(4, false,
-				      string + GameText.W.getString((byte) 73, cba.languageID));
+				      string + GameText._alreadyOnIgnoreList.getString((byte) 73, cba.languageID));
 				return;
 			    }
 			}
@@ -49,8 +49,8 @@ final class Class_nd extends Node
 		    for (int i_5_ = 0; i_5_ < rba.l; i_5_++) {
 			String string_6_ = kk.a(lfa.f[i_5_], true);
 			if (string_6_ != null && string_6_.equals(string_1_)) {
-			    cba.a(4, false, (GameText.bb.getString((byte) 94, cba.languageID) + string
-					     + GameText.cb.getString((byte) 74, cba.languageID)));
+			    cba.a(4, false, (GameText.pleaseRemove_1.getString((byte) 94, cba.languageID) + string
+					     + GameText.fromYourFriendsListFirst.getString((byte) 74, cba.languageID)));
 			    return;
 			}
 			if (nj.l[i_5_] != null) {
@@ -58,14 +58,14 @@ final class Class_nd extends Node
 			    if (string_7_ != null
 				&& string_7_.equals(string_1_)) {
 				cba.a(4, false,
-				      (GameText.bb.getString((byte) 87, cba.languageID) + string
-				       + GameText.cb.getString((byte) 77, cba.languageID)));
+				      (GameText.pleaseRemove_1.getString((byte) 87, cba.languageID) + string
+				       + GameText.fromYourFriendsListFirst.getString((byte) 77, cba.languageID)));
 				return;
 			    }
 			}
 		    }
 		    if (kk.a(((Player) up.thisPlayer).displayName, true).equals(string_1_))
-			cba.a(4, false, GameText.Y.getString((byte) -87, cba.languageID));
+			cba.a(4, false, GameText.cannotAddYourselfToIngoreList.getString((byte) -87, cba.languageID));
 		    else {
 			uc.f++;
 			tba var_tba = jga.sendGameOutPacket(mg.r, pca.isaac, (byte) 112);

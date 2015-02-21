@@ -4,18 +4,15 @@
 
 public class Interactable {
 	
-	Interactable interactable;
-	static int b;
+	Interactable previousInteractable;
+	static int unlinkCount;
 	static int[] c = new int[2];
 	static Object d;
 	static byte[][][] e;
-	Interactable interactable_;
+	Interactable nextInteractable;
 
 	public static void nullLoader(byte b) {
 		e = null;
-		@SuppressWarnings("unused")
-		int i_0_ = 40 / ((b - 44) / 51);
-		
 		c = null;
 		d = null;
 	}
@@ -24,14 +21,14 @@ public class Interactable {
 		/* empty */
 	}
 
-	public final void b(int i) {
-		b++;
-		if (((Interactable) this).interactable_ != null) {
-			((Interactable) ((Interactable) this).interactable_).interactable = ((Interactable) this).interactable;
-			((Interactable) ((Interactable) this).interactable).interactable_ = ((Interactable) this).interactable_;
+	public final void unlink(int i) {
+		unlinkCount++;
+		if (this.nextInteractable != null) {
+			this.nextInteractable.previousInteractable = this.previousInteractable;
+			this.previousInteractable.nextInteractable = this.nextInteractable;
 			if (i == 2) {
-				((Interactable) this).interactable_ = null;
-				((Interactable) this).interactable = null;
+				this.nextInteractable = null;
+				this.previousInteractable = null;
 			}
 		}
 	}

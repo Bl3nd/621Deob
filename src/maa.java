@@ -187,7 +187,7 @@ final class maa implements Runnable
 				NPCNode var_mi
 				    = (NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i_25_]);
 				if (var_mi != null) {
-				    NPC class_ac = ((NPCNode) var_mi).l;
+				    NPC class_ac = ((NPCNode) var_mi).npc;
 				    if (((Entity) class_ac).sb != pm.currentTimedTicks
 					&& ((Entity) class_ac).gb) {
 					int i_26_
@@ -279,7 +279,7 @@ final class maa implements Runnable
 						      (long) gfa.npcIndices[i_35_]);
 				    if (var_mi != null) {
 					NPC class_ac_36_
-					    = ((NPCNode) var_mi).l;
+					    = ((NPCNode) var_mi).npc;
 					if (pm.currentTimedTicks != ((Entity) class_ac_36_).sb
 					    && class_ac_36_ != class_ac
 					    && ((Entity) class_ac_36_).gb) {
@@ -431,7 +431,7 @@ final class maa implements Runnable
 				      i_21_, -1, true, ml.h, 127,
 				      (long) ((fn) var_fn).o,
 				      "<col=ff9040>" + ((ItemDef) var_uv).itemName, 1004,
-				      GameText.E.getString((byte) -93, cba.languageID));
+				      GameText.examineText.getString((byte) -93, cba.languageID));
 				rba.e++;
 			    }
 			}
@@ -498,7 +498,7 @@ final class maa implements Runnable
 				  i_21_, -1, true, ml.h, 126,
 				  (long) ((ObjectDef) var_bda).objectID,
 				  "<col=00ffff>" + ((ObjectDef) var_bda).objectName, 1008,
-				  GameText.E.getString((byte) -41, cba.languageID));
+				  GameText.examineText.getString((byte) -41, cba.languageID));
 			}
 		    }
 		}

@@ -107,13 +107,13 @@ final class baa
     
     static final void a(Interactable var_fga, Interactable var_fga_17_, int i) {
 	b++;
-	if (((Interactable) var_fga).interactable_ != null)
-	    var_fga.b(2);
+	if (((Interactable) var_fga).nextInteractable != null)
+	    var_fga.unlink(2);
 	int i_18_ = 57 % ((i - 33) / 43);
-	((Interactable) var_fga).interactable = var_fga_17_;
-	((Interactable) var_fga).interactable_ = ((Interactable) var_fga_17_).interactable_;
-	((Interactable) ((Interactable) var_fga).interactable_).interactable = var_fga;
-	((Interactable) ((Interactable) var_fga).interactable).interactable_ = var_fga;
+	((Interactable) var_fga).previousInteractable = var_fga_17_;
+	((Interactable) var_fga).nextInteractable = ((Interactable) var_fga_17_).nextInteractable;
+	((Interactable) ((Interactable) var_fga).nextInteractable).previousInteractable = var_fga;
+	((Interactable) ((Interactable) var_fga).previousInteractable).nextInteractable = var_fga;
     }
     
     static final String a(byte i, boolean bool, int i_19_) {

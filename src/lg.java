@@ -78,7 +78,7 @@ final class lg extends Node {
                     }
                 }
                 for (int i_2_ = 0; ObjectDef.Ib > i_2_; i_2_++) {
-                    NPC class_ac = ((NPCNode) ii.npcNodes[i_2_]).l;
+                    NPC class_ac = ((NPCNode) ii.npcNodes[i_2_]).npc;
                     if (class_ac != null) {
                         for (int i_3_ = 0; ((Entity) class_ac).das.length > i_3_;
                              i_3_++)

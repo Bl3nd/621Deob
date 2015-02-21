@@ -1265,7 +1265,7 @@ abstract class en extends Class_r
 		}
 	    } else {
 		bool = true;
-		var_lea = IncomingPackets.m;
+		var_lea = IncomingPackets.lea;
 		bool_135_ = true;
 	    }
 	    if (!bool_135_ != !((en) this).Ef) {
@@ -2519,7 +2519,7 @@ abstract class en extends Class_r
 	((en) this).Oe = true;
 	((en) this).cf = 1.0F;
 	ee = -1;
-	((en) this).Ve = IncomingPackets.m;
+	((en) this).Ve = IncomingPackets.lea;
 	((en) this).tf = 8;
 	Ze = new float[16];
 	Qe = false;

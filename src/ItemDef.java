@@ -549,7 +549,7 @@ final class ItemDef
 	    for (int i_44_ = 0; i_44_ < 4; i_44_++)
 		((ItemDef) this).actions[i_44_] = ((ItemDef) var_uv_42_).actions[i_44_];
 	}
-	((ItemDef) this).actions[4] = GameText.o.getString((byte) -127, ((ItemDefLoader) ((ItemDef) this).loader).i);
+	((ItemDef) this).actions[4] = GameText.discardText.getString((byte) -127, ((ItemDefLoader) ((ItemDef) this).loader).i);
     }
     
     final ItemDef a(int i, int i_45_) {
@@ -874,14 +874,14 @@ final class ItemDef
 	if ((ao.h ^ 0xffffffff) == 0)
 	    return 1;
 	if (on.performance != i) {
-	    Class_pf.a(i, (byte) -126, GameText.v.getString((byte) -78, cba.languageID));
+	    Class_pf.a(i, (byte) -126, GameText.profiling.getString((byte) -78, cba.languageID));
 	    if (on.performance != i)
 		return -1;
 	}
 	try {
 	    Dimension dimension = ru.canvas.getSize();
 	    Class_rf.a(true, lg.r, true, Class_nd.o, pm.v,
-		       GameText.v.getString((byte) -37, cba.languageID));
+		       GameText.profiling.getString((byte) -37, cba.languageID));
 	    eg var_eg = efa.a(ao.h, av.l, 0, false);
 	    long l = us.a(125);
 	    if (i_91_ > -97)

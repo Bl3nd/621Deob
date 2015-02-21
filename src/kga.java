@@ -197,7 +197,7 @@ final class kga extends lca implements vda
 		for (int i_17_ = 0; ObjectDef.Ib > i_17_; i_17_++) {
 		    NPCNode var_mi = ii.npcNodes[i_17_];
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			((Animable) class_ac).locY -= i_13_ * 512;
 			((Animable) class_ac).locX -= 512 * i_12_;
 			if (((Animable) class_ac).locX < 0 || i_15_ < ((Animable) class_ac).locX
@@ -234,7 +234,7 @@ final class kga extends lca implements vda
 		for (int i_20_ = 0; ObjectDef.Ib > i_20_; i_20_++) {
 		    NPCNode var_mi = ii.npcNodes[i_20_];
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			for (int i_21_ = 0; i_21_ < 10; i_21_++) {
 			    ((Entity) class_ac).regionLocalX[i_21_] -= i_12_;
 			    ((Entity) class_ac).regionLocalY[i_21_] -= i_13_;

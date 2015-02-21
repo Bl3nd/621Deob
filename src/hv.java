@@ -61,7 +61,7 @@ final class hv
 		NPCNode var_mi
 		    = (NPCNode) uo.a.a(-32748, (long) (int) ((bfa) var_bfa).n);
 		if (var_mi != null) {
-		    NPC class_ac = ((NPCNode) var_mi).l;
+		    NPC class_ac = ((NPCNode) var_mi).npc;
 		    NPCDef var_du = ((NPC) class_ac).npcDef;
 		    if (((NPCDef) var_du).L != null)
 			var_du = var_du.a(-4261, cp.e);

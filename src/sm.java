@@ -60,7 +60,7 @@ final class sm
 		if (((Interface) var_kp).bd == null)
 		    lea.setClickMenuOption(((Interface) var_kp).itemIndex, false, ((Interface) var_kp).interfaceID,
 			  ((Interface) var_kp).itemID, true, -1, i + 16325, 0L, "", 50,
-			  GameText.r.getString((byte) -37, cba.languageID));
+			  GameText.continueText.getString((byte) -37, cba.languageID));
 		else
 		    lea.setClickMenuOption(((Interface) var_kp).itemIndex, false, ((Interface) var_kp).interfaceID,
 			  ((Interface) var_kp).itemID, true, -1, 126, 0L, "", 50,
@@ -227,7 +227,7 @@ final class sm
 	    class_r.J(i_22_ - 150, i_23_ + 2, 3 * taa.b, 30,
 		      os.i[jr.colourId].getRGB(), 0);
 	    pv.j.a(uca.a[jr.colourId].getRGB(), -142, i_22_, -1, i_23_ + i_21_,
-		   GameText.A.getString((byte) -76, cba.languageID));
+		   GameText.loadingText.getString((byte) -76, cba.languageID));
 	} else {
 	    int i_24_ = ut.I - (int) ((float) i_20_ / kca.m);
 	    int i_25_ = (int) ((float) i_19_ / kca.m) + cv.d;

@@ -20,7 +20,7 @@ abstract class bm extends jt
 	for (int i_1_ = 0; i_1_ < iq.i; i_1_++) {
 	    int i_2_ = ba.b[i_1_];
 	    NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) i_2_);
-	    NPC class_ac = ((NPCNode) var_mi).l;
+	    NPC class_ac = ((NPCNode) var_mi).npc;
 	    if (gea.n && oh.a(i_2_, (byte) -99))
 		eq.b(-8234);
 	    if (pm.currentTimedTicks != ((Entity) class_ac).U) {

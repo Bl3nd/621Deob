@@ -220,7 +220,7 @@ final class lf
 		    ((og) var_og).g[i_33_] = new pba();
 	    } else {
 		var_og = (og) tw.l[i].c(127);
-		var_og.b(2);
+		var_og.unlink(2);
 		World.k[i]--;
 	    }
 	    return var_og;

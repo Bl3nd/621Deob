@@ -173,7 +173,7 @@ final class bj
 		return;
 	    }
 	} catch (Exception exception) {
-	    ia.a(4, GameText.k.getString((byte) 100, cba.languageID));
+	    ia.a(4, GameText.errorExecutingCommand.getString((byte) 100, cba.languageID));
 	    return;
 	}
 	if (hs.modeWhere != oba.K || hv.thisPlayersRights >= 2) {
@@ -801,12 +801,12 @@ final class bj
 		    return;
 		}
 	    } catch (Exception exception) {
-		ia.a(4, GameText.k.getString((byte) 124, cba.languageID));
+		ia.a(4, GameText.errorExecutingCommand.getString((byte) 124, cba.languageID));
 		return;
 	    }
 	}
 	if (hm.h != 10)
-	    ia.a(i + 4, GameText.l.getString((byte) -27, cba.languageID) + string);
+	    ia.a(i + 4, GameText.unknownCommand.getString((byte) -27, cba.languageID) + string);
     }
     
     static final boolean a(boolean bool, int i, int i_55_) {

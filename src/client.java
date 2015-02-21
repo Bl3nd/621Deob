@@ -187,7 +187,7 @@ public final class client extends bga {
 		qe.a(-26);
 		sf.a(true);
 		qba.a(false);
-		GameText.b(i + 19);
+		GameText.nullLoader(i + 19);
 		ou.b((byte) -123);
 		of.b(true);
 		mr.a((byte) 127);
@@ -250,16 +250,16 @@ public final class client extends bga {
 		fca.e(i - 13228);
 		Interface.b(-1);
 		ro.a(0);
-		Player.c(false);
+		Player.nullLoader(false);
 		tda.a(false);
 		iaa.a(-26323);
-		GrandExchangeItem.b(7);
+		GrandExchangeItem.nulLLoader(7);
 		BytesParser.resetMaxLevels((byte) -114);
 		tba.a(105);
 		vf.a(i ^ ~0x46);
 		fh.a((byte) 108);
 		fn.a(-117);
-		NPC.l(i + 18955);
+		NPC.nullLoader(i + 18955);
 		sp.b((byte) 77);
 		ps.a(i + 32644);
 		ee.a(19714);
@@ -285,7 +285,7 @@ public final class client extends bga {
 		Class_mc.a(i ^ ~0x64);
 		jt.a((byte) 71);
 		sg.a(i ^ 0x11f);
-		ObjectDef.a(62);
+		ObjectDef.nullLoader();
 		eg.a((byte) 80);
 		kj.a((byte) -74);
 		Class_i.a((byte) 113);
@@ -293,7 +293,7 @@ public final class client extends bga {
 		la.a(3);
 		uo.a((byte) 50);
 		ua.a(i ^ 0x54);
-		IncomingPackets.a(false);
+		IncomingPackets.nullLoader(false);
 		sa.a((byte) 109);
 		ir.a(95);
 		gga.c(i ^ 0x7b);
@@ -760,7 +760,7 @@ public final class client extends bga {
 		boolean bool = cs.g.q == 1 && inScreenPlayers > 200 || cs.g.q == 0 && inScreenPlayers > 50;
 		for (int i = 0; i < inScreenPlayers; i++) {
 			Player player = Class_fc.playersInScreen[inScreenPlayerIDs[i]];
-			if (!player.l(-28)) {
+			if (!player.isPlayerDefinition(-28)) {
                 player.Kb = -1;
             } else {
 				player.h(0);
@@ -795,8 +795,8 @@ public final class client extends bga {
 			}
 		}
 		for (int i = 0; i < ps.npcCount; i++) {
-			NPC npc = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i])).l;
-			if (!npc.m(-117) || !npc.npcDef.a((byte) -33, cp.e)) {
+			NPC npc = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i])).npc;
+			if (!npc.isNpcDef(-117) || !npc.npcDef.a((byte) -33, cp.e)) {
                 npc.Kb = -1;
             } else {
 				npc.h(0);
@@ -839,7 +839,7 @@ public final class client extends bga {
 				if (on.a == 1) {
 					NPCNode npcNode = (NPCNode) uo.a.a(-32748, (long) on.e);
 					if (npcNode != null) {
-						NPC npc = npcNode.l;
+						NPC npc = npcNode.npc;
 						if (npc.Kb >= 0) {
                             npc.Kb += 2048;
                         }
@@ -863,7 +863,7 @@ public final class client extends bga {
 			if (index < inScreenPlayers) {
                 entity = Class_fc.playersInScreen[inScreenPlayerIDs[index]];
             } else {
-                entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).l;
+                entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).npc;
             }
 			if (entity.height == height) {
 				entity.jc = 0;
@@ -1645,7 +1645,7 @@ public final class client extends bga {
 			if (index < inScreenPlayers) {
                 entity = Class_fc.playersInScreen[inScreenPlayerIDs[index]];
             } else {
-                entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).l;
+                entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).npc;
             }
 			if (entity.Kb >= 0) {
 				int mask = entity.i(-1);
@@ -1970,7 +1970,7 @@ public final class client extends bga {
 		dc.a((byte) 98);
 		tb.u++;
 		for (int j = 0; j < ObjectDef.Ib; j++) {
-			NPC npc = ii.npcNodes[j].l;
+			NPC npc = ii.npcNodes[j].npc;
 			if (npc != null) {
 				byte b1 = npc.npcDef.y;
 				if ((0x1 & b1) != 0) {
@@ -2092,7 +2092,7 @@ public final class client extends bga {
 				if (rk.n == 0) {
                     oba.a("", rk.playerName + GameText._hasLoggedOut.getString((byte) 124, cba.languageID), 5, -1, "", 0, "");
                 }
-				rk.b(2);
+				rk.unlink(2);
 			}
 		}
 		do {
@@ -2279,7 +2279,7 @@ public final class client extends bga {
 	public static void d() {
 		Player.Sd = 0;
 		for (int i = 0; i < ps.npcCount; i++) {
-			NPC npc = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i])).l;
+			NPC npc = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i])).npc;
 			if (npc.gb && npc.a((byte) -7) != -1) {
 				int j = (npc.i(-1) - 1) * 256 + 252;
 				int x = npc.locX - j >> 9;
@@ -2424,7 +2424,7 @@ public final class client extends bga {
 			if (index < inScreenPlayers) {
                 entity = Class_fc.playersInScreen[inScreenPlayerIDs[index]];
             } else {
-                entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).l;
+                entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).npc;
             }
 			if (entity.height == height && entity.Kb >= 0) {
 				int i = entity.i(-1);

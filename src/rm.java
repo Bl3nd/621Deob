@@ -44,7 +44,7 @@ final class rm extends Interactable
 	    if (bool != true)
 		o = 43;
 	    if (!bool_0_)
-		cba.a(4, false, GameText.D.getString((byte) 126, cba.languageID) + string);
+		cba.a(4, false, GameText.unableToFind_.getString((byte) 126, cba.languageID) + string);
 	    if (ba.c)
 		vo.c((byte) 31);
 	}
@@ -192,7 +192,7 @@ final class rm extends Interactable
 	qs.a(nda.k, 5);
 	for (og var_og = (og) oea.fb.b((byte) 72); var_og != null;
 	     var_og = (og) oea.fb.a((byte) -106)) {
-	    var_og.b(2);
+	    var_og.unlink(2);
 	    ej.a(var_og, 0);
 	}
 	if (ih.m) {

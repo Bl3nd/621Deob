@@ -113,7 +113,7 @@ final class cc implements fa
 	    if (up.thisPlayer == mouseOverPlayer) {
 		if (ba.c && (0x10 & Class_jc.db) != 0) {
 		    lea.setClickMenuOption(0, false, 0, -1, true, uk.d, i - 6466, 0L,
-			  Class_ag.k + " -> <col=ffffff>" + GameText.T.getString((byte) 96, cba.languageID),
+			  Class_ag.k + " -> <col=ffffff>" + GameText.selfText.getString((byte) 96, cba.languageID),
 			  2, Class_kd.b);
 		    nu.l++;
 		}
@@ -122,7 +122,7 @@ final class cc implements fa
 		if (((Player) mouseOverPlayer).ud != 0) {
 		    if ((((Player) mouseOverPlayer).ud ^ 0xffffffff) != 0)
 			string = (mouseOverPlayer.getUserDisplayName((byte) -124, true) + " ("
-				  + GameText.L.getString((byte) -55, cba.languageID)
+				  + GameText.skillText.getString((byte) -55, cba.languageID)
 				  + ((Player) mouseOverPlayer).ud + ")");
 		    else
 			string = mouseOverPlayer.getUserDisplayName((byte) -127, true);
@@ -142,8 +142,8 @@ final class cc implements fa
 			    bool_8_ = false;
 		    }
 		    String string_13_
-			= (Class_pf.O != me.q ? GameText.K.getString((byte) -96, cba.languageID)
-			   : GameText.M.getString((byte) 115, cba.languageID));
+			= (Class_pf.O != me.q ? GameText.levelText.getString((byte) -96, cba.languageID)
+			   : GameText.ratingText.getString((byte) 115, cba.languageID));
 		    if (((Player) mouseOverPlayer).Md > ((Player) mouseOverPlayer).combatLevel)
 			string
 			    = (mouseOverPlayer.getUserDisplayName((byte) -126, true)
@@ -172,7 +172,7 @@ final class cc implements fa
 			    short i_15_ = 0;
 			    if (me.q == wa.t
 				&& (GameOutPacket.m[i_14_].equalsIgnoreCase
-				    (GameText.F.getString((byte) 113, cba.languageID)))) {
+				    (GameText.attackText.getString((byte) 113, cba.languageID)))) {
 				if (((Player) mouseOverPlayer).combatLevel > ((Player) up.thisPlayer).combatLevel)
 				    i_15_ = (short) 2000;
 				if (((Player) up.thisPlayer).Gd != 0

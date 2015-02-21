@@ -229,7 +229,7 @@ final class un extends uc
 			cc.h++;
 			nm.s = 2;
 			to.h = 0;
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			hv.q = i_3_;
 			tba var_tba = jga.sendGameOutPacket(eq.G, pca.isaac, (byte) -98);
 			((tba) var_tba).loginStream.writeShort(i_7_, i ^ 0x349d);
@@ -316,7 +316,7 @@ final class un extends uc
 		if (i_6_ == 58) {
 		    NPCNode var_mi = (NPCNode) uo.a.a(i - 32748, (long) i_7_);
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			fm.a = i_2_;
 			pg.g++;
 			nm.s = 2;
@@ -341,7 +341,7 @@ final class un extends uc
 		    to.h = 0;
 		    NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) i_7_);
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			NPCDef var_du = ((NPC) class_ac).npcDef;
 			if (((NPCDef) var_du).L != null)
 			    var_du = var_du.a(-4261, cp.e);
@@ -378,7 +378,7 @@ final class un extends uc
 		    if (var_mi != null) {
 			hv.q = i_3_;
 			av.d++;
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			nm.s = 2;
 			to.h = 0;
 			fm.a = i_2_;
@@ -448,7 +448,7 @@ final class un extends uc
 		if (i_6_ == 23) {
 		    NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) i_7_);
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			hv.q = i_3_;
 			to.h = 0;
 			fm.a = i_2_;
@@ -487,7 +487,7 @@ final class un extends uc
 		if (i_6_ == 13) {
 		    NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) i_7_);
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			hv.q = i_3_;
 			to.h = 0;
 			fm.a = i_2_;
@@ -555,7 +555,7 @@ final class un extends uc
 		if (i_6_ == 20) {
 		    NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) i_7_);
 		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).l;
+			NPC class_ac = ((NPCNode) var_mi).npc;
 			to.h = 0;
 			Class_kf.D++;
 			hv.q = i_3_;
@@ -671,7 +671,7 @@ final class un extends uc
 		    nm.s = 2;
 		    hv.q = i_3_;
 		    fm.a = i_2_;
-		    tba var_tba = jga.sendGameOutPacket(Player.Xc, pca.isaac, (byte) 98);
+		    tba var_tba = jga.sendGameOutPacket(Player.outgoingPacekt69, pca.isaac, (byte) 98);
 		    ((tba) var_tba).loginStream.writeShort(bfa.thisPlayersRegionX + i_4_, 13469);
 		    ((tba) var_tba).loginStream.writeShortReversedPlus128(i ^ 0x15, i_5_ + BytesParser.thisPlayersRegionY);
 		    ((tba) var_tba).loginStream.writeNegativeByte((byte) 125,

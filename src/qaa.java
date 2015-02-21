@@ -119,7 +119,7 @@ final class qaa extends dfa implements vda
 	return ((rea) ((qaa) this).H).y;
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	W++;
 	if (i == -1)
 	    throw new IllegalStateException();

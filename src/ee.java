@@ -74,8 +74,8 @@ final class ee
 	    	String string = ((NPCDef) hoverOverNPC).npcName;
 		if (((NPCDef) hoverOverNPC).combatLevel != 0) {
 		    String string_5_
-			= (Class_pf.O != me.q ? GameText.K.getString((byte) -42, cba.languageID)
-			   : GameText.M.getString((byte) -97, cba.languageID));
+			= (Class_pf.O != me.q ? GameText.levelText.getString((byte) -42, cba.languageID)
+			   : GameText.ratingText.getString((byte) -97, cba.languageID));
 		    string
 			+= (cq.getColorForPlayerName(((NPCDef) hoverOverNPC).combatLevel, true, ((Player) up.thisPlayer).combatLevel) + " ("
 			    + (String) string_5_ + ((NPCDef) hoverOverNPC).combatLevel + ")");
@@ -102,7 +102,7 @@ final class ee
 			    if (strings[i_6_] != null
 				&& (((NPCDef) hoverOverNPC).D == 0
 				    || !(strings[i_6_].equalsIgnoreCase
-					 (GameText.F.getString((byte) -69, cba.languageID))))) {
+					 (GameText.attackText.getString((byte) -69, cba.languageID))))) {
 				int i_7_ = 0;
 				int i_8_ = jt.b;
 				if (i_6_ == 0)
@@ -121,7 +121,7 @@ final class ee
 				    i_8_ = ((NPCDef) hoverOverNPC).T;
 				lea.setClickMenuOption(0, false, 0, -1, true,
 				      (!(strings[i_6_].equalsIgnoreCase
-					 (GameText.F.getString((byte) 105, cba.languageID)))
+					 (GameText.attackText.getString((byte) 105, cba.languageID)))
 				       ? i_8_ : ((NPCDef) hoverOverNPC).mb),
 				      -51, (long) ((Entity) class_ac).lb,
 				      "<col=ffff00>" + string, i_7_,
@@ -134,7 +134,7 @@ final class ee
 			for (int i_9_ = 4; i_9_ >= 0; i_9_--) {
 			    if (strings[i_9_] != null
 				&& (strings[i_9_].equalsIgnoreCase
-				    (GameText.F.getString((byte) -116, cba.languageID)))) {
+				    (GameText.attackText.getString((byte) -116, cba.languageID)))) {
 				short i_10_ = 0;
 				if (((Player) up.thisPlayer).combatLevel < ((NPCDef) hoverOverNPC).combatLevel)
 				    i_10_ = (short) 2000;
@@ -162,7 +162,7 @@ final class ee
 		}
 		lea.setClickMenuOption(0, bool, 0, -1, true, ml.h, 126,
 		      (long) ((Entity) class_ac).lb, "<col=ffff00>" + string, 1001,
-		      GameText.E.getString((byte) -81, cba.languageID));
+		      GameText.examineText.getString((byte) -81, cba.languageID));
 		daa.var_n++;
 	    }
 	}

@@ -45,7 +45,7 @@ final class lq extends qda implements vda
 	return ((rea) ((lq) this).X).y;
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	if (i == -1) {
 	    fb++;
 	    throw new IllegalStateException();

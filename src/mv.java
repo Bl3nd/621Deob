@@ -18,7 +18,7 @@ final class mv
 	    int i_1_ = gfa.npcIndices[i_0_];
 	    NPCNode var_mi = (NPCNode) uo.a.a(-32748, (long) i_1_);
 	    if (var_mi != null) {
-		NPC class_ac = ((NPCNode) var_mi).l;
+		NPC class_ac = ((NPCNode) var_mi).npc;
 		vj.a(class_ac, ((NPCDef) ((NPC) class_ac).npcDef).Q, 0);
 	    }
 	}

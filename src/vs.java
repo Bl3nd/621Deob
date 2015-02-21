@@ -65,7 +65,7 @@ class vs extends lp
 	    for (rm var_rm = (rm) gs.v.b((byte) 113); var_rm != null;
 		 var_rm = (rm) gs.v.a((byte) -106)) {
 		if (((rm) var_rm).h <= pm.currentTimedTicks)
-		    var_rm.b(2);
+		    var_rm.unlink(2);
 		else {
 		    iaa.a((((rm) var_rm).var_n << 9) + 256, i_14_ >> 1, i_15_,
 			  (((rm) var_rm).i << 9) + 256, i_17_, (byte) 46,

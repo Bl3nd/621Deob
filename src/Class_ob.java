@@ -28,7 +28,7 @@ final class Class_ob extends IncomingPackets
 	n++;
 	if (((bfa) var_bfa).p == null || ((bfa) var_bfa).p.length() <= 0)
 	    return ((bfa) var_bfa).k;
-	return (((bfa) var_bfa).k + GameText.O.getString((byte) -64, cba.languageID)
+	return (((bfa) var_bfa).k + GameText.space.getString((byte) -64, cba.languageID)
 		+ ((bfa) var_bfa).p);
     }
     

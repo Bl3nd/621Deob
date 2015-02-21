@@ -90,7 +90,7 @@ final class Class_mc
 	    Class_fc.playersInScreen[i_6_] = null;
 	up.thisPlayer = null;
 	for (int i_7_ = 0; ObjectDef.Ib > i_7_; i_7_++) {
-	    NPC class_ac = ((NPCNode) ii.npcNodes[i_7_]).l;
+	    NPC class_ac = ((NPCNode) ii.npcNodes[i_7_]).npc;
 	    if (class_ac != null)
 		((Entity) class_ac).faceEntityID = -1;
 	}

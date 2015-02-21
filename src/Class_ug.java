@@ -178,7 +178,7 @@ final class Class_ug extends ev implements vda
 	return ((Class_ug) this).N.a((int) 0);
     }
     
-    final void d(int i) {
+    final void sendIllegalStateException(int i) {
 	if (i != -1)
 	    W = null;
 	T++;
