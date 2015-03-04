@@ -19,7 +19,7 @@ final class o extends ah
     private byte[] J;
     static Class K;
     
-    final void d(int i) throws LineUnavailableException {
+    public final void d(int i) throws LineUnavailableException {
 	try {
 	    DataLine.Info info
 		= (new DataLine.Info
@@ -40,7 +40,7 @@ final class o extends ah
 	}
     }
     
-    final void a(Component component) {
+    public final void getComponent(Component component) {
 	Mixer.Info[] infos = AudioSystem.getMixerInfo();
 	if (infos != null) {
 	    Mixer.Info[] infos_0_ = infos;
@@ -54,7 +54,7 @@ final class o extends ah
 		}
 	    }
 	}
-	F = new AudioFormat((float) gba.G, 16, !wq.p ? 1 : 2, true, false);
+	F = new AudioFormat((float) gba.samplesPerSec, 16, !wq.p ? 1 : 2, true, false);
 	J = new byte[256 << (!wq.p ? 1 : 2)];
     }
     
@@ -88,7 +88,7 @@ final class o extends ah
 	I.write(J, 0, i << 1);
     }
     
-    final void a() {
+    public final void a() {
 	if (null != I) {
 	    I.close();
 	    I = null;

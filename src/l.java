@@ -217,7 +217,7 @@ final class l extends Class_r implements p
 	/* empty */
     }
     
-    final boolean z() {
+    final boolean bloom() {
 	return false;
     }
     
@@ -366,7 +366,7 @@ final class l extends Class_r implements p
     
     final native int[] h(int i, int i_97_, int i_98_, int i_99_);
     
-    final void a(boolean bool) {
+    final void renderProfile(boolean profile) {
 	/* empty */
     }
     
@@ -376,7 +376,7 @@ final class l extends Class_r implements p
 	K[i].a();
     }
     
-    final void b(int i) {
+    final void getTexSize(int size) {
 	throw new IllegalStateException();
     }
     

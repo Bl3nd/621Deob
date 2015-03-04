@@ -24,13 +24,13 @@ final class faa
 			ce.y = null;
 		    }
 		    if (tfa.u < 2) {
-			cf.world.a((int) 0);
+			cf.world.rotateConnectionMethods((int) 0);
 			Class_eb.q = 1;
 			tfa.u++;
 			lr.j = 0;
 		    } else {
 			Class_eb.q = 0;
-			jp.s = -5;
+			RSKeyListener.s = -5;
 			return;
 		    }
 		}
@@ -45,7 +45,7 @@ final class faa
 			return;
 		    ce.y = bd.a(-125, (Socket) maa.vfa.hostName, 7500);
 		    maa.vfa = null;
-		    uu.a((byte) 117);
+		    InputStreamSub.a((byte) 117);
 		    Class_eb.q = 4;
 		}
 		if (Class_eb.q == 4) {
@@ -55,7 +55,7 @@ final class faa
 		    int i_0_ = ((BytesParser) loginStream).bytes[0] & 0xff;
 		    if (i_0_ != 21) {
 			Class_eb.q = 0;
-			jp.s = i_0_;
+			RSKeyListener.s = i_0_;
 			ce.y.d(0);
 			ce.y = null;
 			return;
@@ -76,7 +76,7 @@ final class faa
 			ce.y.a((byte) 81, 0, ((BytesParser) loginStream).bytes, 8 * bg.f.length);
 			for (int i_2_ = 0; bg.f.length > i_2_; i_2_++)
 			    bg.f[i_2_] = kba.a((byte) -114, loginStream.readLong(false));
-			jp.s = 21;
+			RSKeyListener.s = 21;
 			Class_eb.q = 0;
 			ce.y.d(0);
 			ce.y = null;
@@ -89,9 +89,9 @@ final class faa
 		}
 		if (tfa.u >= 2) {
 		    Class_eb.q = 0;
-		    jp.s = -4;
+		    RSKeyListener.s = -4;
 		} else {
-		    cf.world.a((int) 0);
+		    cf.world.rotateConnectionMethods((int) 0);
 		    tfa.u++;
 		    Class_eb.q = 1;
 		    lr.j = 0;
@@ -118,12 +118,12 @@ final class faa
 	int i_15_ = 0;
 	int i_16_ = i;
 	if (i_12_ != 0) {
-	    i_15_ = GameInPacket.h[i_12_] * -i_16_ >> 14;
-	    i_16_ = i_16_ * GameInPacket.i[i_12_] >> 14;
+	    i_15_ = GameInPacket.ints1[i_12_] * -i_16_ >> 14;
+	    i_16_ = i_16_ * GameInPacket.ints2[i_12_] >> 14;
 	}
 	if (i_13_ != 0) {
-	    i_14_ = i_16_ * GameInPacket.h[i_13_] >> 14;
-	    i_16_ = i_16_ * GameInPacket.i[i_13_] >> 14;
+	    i_14_ = i_16_ * GameInPacket.ints1[i_13_] >> 14;
+	    i_16_ = i_16_ * GameInPacket.ints2[i_13_] >> 14;
 	}
 	gn.G = i_6_;
 	us.e = i_9_ - i_15_;

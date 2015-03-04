@@ -11,7 +11,7 @@ public final class NPCNode extends Node {
     public static void a(int i, int j) {
         m++;
         if (gf.a((byte) 111, j)) {
-            Interface[] interfaces = aa.o[j];
+            Interface[] interfaces = Node_Sub.o[j];
             if (i >= -87) {
                 a(-9, 6);
             }
@@ -26,7 +26,7 @@ public final class NPCNode extends Node {
         }
     }
 
-    public NPCNode(NPC npc_) {
-        this.npc = npc_;
+    public NPCNode(NPC npc) {
+        this.npc = npc;
     }
 }

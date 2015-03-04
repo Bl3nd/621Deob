@@ -17,31 +17,31 @@ public final class client extends bga {
 	
 	private static final long serialVersionUID = -5816648416709288733L;
 	
-	static int B;
+	static int mainMethod;
 	static int X;
 	static int Y;
 	static int Z;
 	static int ab;
 	static int bb;
-	static int cb;
+	static int nullContainer;
 	static int db;
 	static int eb;
 	static int fb;
-	static baa gb = new baa(1, 2, 2, 0);
+	static baa baa = new baa(1, 2, 2, 0);
 	static int hb;
 	static int ib;
-	static float jb;
+	static float aFloat;
 	static int kb;
 	static int lb;
 	static int mb;
 	static int nb;
-	static String[] ob;
+	static String[] strings;
 	static int pb;
 	static int qb;
 	/* synthetic */static Class client;
 	public static boolean sb;
 
-	public static final void a() {
+	public static void a() {
 		for (int i = 0; i < Class_hc.e; i++) {
 			int[] buf = gi.k[i];
 			for (int index = 0; index < bw.v; index++) {
@@ -50,11 +50,8 @@ public final class client extends bga {
 		}
 	}
 
-	private void h(/*int i*/) {
+	private void h() {
 		hb++;
-		/*if (height > -32) {
-			gb = null;
-		}*/
 		if (hm.h != 14) {
 			pm.currentTimedTicks++;
 			if (pm.currentTimedTicks % 1000 == 1) {
@@ -76,7 +73,7 @@ public final class client extends bga {
 			uc.c.a((byte) 32);
 			Class_md.e.c(false);
 			if (lg.r != null) {
-				lg.r.a((int) us.a(91));
+				lg.r.a((int) us.getCurrentTime(91));
 			}
 			rv.b(false);
 			ar.Q = 0;
@@ -109,7 +106,7 @@ public final class client extends bga {
 					if (j != 6) {
 						if (tl.a(j, 540800)) {
 							qt.F.b(ew, (byte) 93);
-							if (qt.F.b(-101) > 10) {
+							if (qt.F.soundStreamCount(-101) > 10) {
                                 qt.F.a(true);
                             }
 						}
@@ -133,16 +130,16 @@ public final class client extends bga {
 				k(94);
 				faa.a(124);
                 System.out.println("First login call");
-				Login.processLogin(108);
+				Login.processLogin();
 			} else if (pga.a(-66, hm.h) && !ml.a((byte) 22, hm.h)) {
 				k(109);
                 System.out.println("Second login call");
-				Login.processLogin(26);
+				Login.processLogin();
 			} else if (hm.h != 12) {
 				if (!bc.a(hm.h, (byte) -62) || ml.a((byte) 22, hm.h)) {
 					if (hm.h == 13) {
                         System.out.println("Third login call");
-						Login.processLogin(-100);
+						Login.processLogin();
 						if (br.l != -3 && br.l != 2 && br.l != 15) {
                             System.out.println("Logout");
                             la.logout((byte) 45, false);
@@ -153,14 +150,14 @@ public final class client extends bga {
                 }
 			} else {
                 System.out.println("fourth login call");
-                Login.processLogin(73);
+                Login.processLogin();
             }
 			eca.a((byte) -4, lg.r);
 			qt.F.a(true);
 		}
 	}
 
-	public final synchronized void c(byte b) {
+	public final synchronized void setCanvas(byte b) {
 		X++;
 		if (vj.applet != null && ru.canvas == null && !nda.signlink.e) {
 			try {
@@ -175,14 +172,14 @@ public final class client extends bga {
 				/* empty */
 			}
 		}
-		super.c((byte) 44);
+		super.setCanvas((byte) 44);
 		if (b <= 20) {
             nullContainer(-10);
         }
 	}
 
 	public final void nullContainer(int i) {
-		cb++;
+		nullContainer++;
 		nullLoader();
 		qe.a(-26);
 		sf.a(true);
@@ -195,7 +192,7 @@ public final class client extends bga {
 		uda.a(87);
 		cd.a(i + 9933);
 		pp.b(-126);
-		Node.d(i ^ ~0x1bfb);
+		Node.nullLoader(i ^ ~0x1bfb);
 		je.a((byte) 69);
 		il.a(120);
 		bc.a(0);
@@ -207,7 +204,7 @@ public final class client extends bga {
 		dg.b((byte) 5);
 		on.a((byte) -107);
 		Class_ae.a((byte) 122);
-		Connection.nullLoader(0);
+		Connection.nullLoader();
 		th.b((byte) 96);
 		jm.c(242);
 		pda.e(i ^ ~0xfc6);
@@ -225,7 +222,7 @@ public final class client extends bga {
 		aw.a(75);
 		sj.c(29);
 		Class_lb.b((byte) -45);
-		ItemDefLoader.f(-11);
+		ItemDefLoader.nullLoader();
 		dp.a((byte) -68);
 		ih.a((byte) -120);
 		hu.a((byte) 12);
@@ -239,8 +236,8 @@ public final class client extends bga {
 		or.a((byte) -106);
 		sh.a(4664);
 		fm.b(14828);
-		ISAAC.c(-128);
-		LoginStream.y(28554);
+		ISAAC.nullLoader();
+		LoginStream.nullLoader();
 		GameInPacket.nullLoader();
 		maa.a(125);
 		wd.a((byte) 20);
@@ -248,7 +245,7 @@ public final class client extends bga {
 		rn.a(0);
 		tw.a(0);
 		fca.e(i - 13228);
-		Interface.b(-1);
+		Interface.nullLoader(-1);
 		ro.a(0);
 		Player.nullLoader(false);
 		tda.a(false);
@@ -264,22 +261,22 @@ public final class client extends bga {
 		ps.a(i + 32644);
 		ee.a(19714);
 		Class_b.a((byte) 66);
-		Interactable.nullLoader((byte) 112);
+		Interactable.nullLoader();
 		um.b(-116);
 		Class_wb.a(false);
 		us.b(-28376);
-		WorldSub.e(6750);
+		WorldSub.nullLoader();
 		gf.a(112);
-		World.a((byte) -79);
+		World.nullLoader();
 		sea.a(0);
 		mba.a(false);
 		dh.a((byte) 94);
 		nf.a(11216);
 		fk.a(true);
-		PlayerDef.a(0);
+		PlayerDef.nullLoader();
 		wa.a(0);
 		dr.a((byte) -89);
-		an.a((byte) 19);
+		an.nullLoader();
 		da.a(-1);
 		vr.a((byte) -119);
 		Class_mc.a(i ^ ~0x64);
@@ -289,7 +286,7 @@ public final class client extends bga {
 		eg.a((byte) 80);
 		kj.a((byte) -74);
 		Class_i.a((byte) 113);
-		NPCDef.b(-104);
+		NPCDef.nullLoader(-104);
 		la.a(3);
 		uo.a((byte) 50);
 		ua.a(i ^ 0x54);
@@ -299,7 +296,7 @@ public final class client extends bga {
 		gga.c(i ^ 0x7b);
 		pg.a((byte) 57);
 		dt.b((byte) 63);
-		ah.a((byte) -91);
+		ah.nullLoader((byte) -91);
 		ui.a(124);
 		vt.a(false);
 		fg.a(-24012);
@@ -342,7 +339,7 @@ public final class client extends bga {
 		ufa.b(0);
 		Class_vb.a(17391);
 		oj.c();
-		SpecialOutPacket.a(0);
+		SpecialOutPacket.nullLoader();
 		tj.a(-1743);
 		oe.a(95);
 		ClientScript.nullLoader();
@@ -363,9 +360,9 @@ public final class client extends bga {
 		lw.a((byte) -32);
 		jj.a(18354);
 		gw.a();
-		GameOutPacket.nullLoader(27598);
+		GameOutPacket.nullLoader();
 		Class_ag.a(0);
-		aaa.a(-91);
+		aaa.nullLoader(-91);
 		iv.a(-124);
 		dea.a(i ^ 0x401f);
 		hg.a(i ^ ~0x4b);
@@ -387,7 +384,7 @@ public final class client extends bga {
 		bh.b((byte) 127);
 		ce.a(false);
 		vj.a(0);
-		aj.a(i ^ ~0x6c0b);
+		aj.nullLoader(i ^ ~0x6c0b);
 		lh.a((byte) -67);
 		hq.a(125);
 		sc.a(-16044);
@@ -414,7 +411,7 @@ public final class client extends bga {
 		ia.c((byte) 118);
 		nh.a(65536);
 		ol.b(8);
-		aea.e(i ^ ~0xf4);
+		aea.nullLoader(i ^ ~0xf4);
 		tl.a((byte) 116);
 		mk.a(false);
 		tm.b(67);
@@ -442,7 +439,7 @@ public final class client extends bga {
 		li.c((byte) 124);
 		Class_ue.b(0);
 		fi.a((byte) 109);
-		as.c((byte) -126);
+		as.nullLoader();
 		fr.a((byte) -110);
 		vd.j(265391564);
 		Class_ub.k((byte) 123);
@@ -450,11 +447,11 @@ public final class client extends bga {
 		Class_jc.b(true);
 		ifa.a(true);
 		kga.i((byte) 111);
-		GameInPacketHandler.nullLoader(false);
-		aa.a(i - 31);
+		GameInPacketHandler.nullLoader();
+		Node_Sub.nullLoader(i - 31);
 		he.d(15223);
 		sw.a(-1);
-		Login.nullLoader(-5);
+		Login.nullLoader();
 		nr.b(-1);
 		si.d();
 		ul.a(-1335466206);
@@ -472,7 +469,7 @@ public final class client extends bga {
 		cs.a(true);
 		qs.b(-126);
 		rba.b(14793);
-		al.c(2);
+		al.nullLoader();
 		ll.c((byte) -83);
 		lp.c(100);
 		te.e(-99);
@@ -493,7 +490,7 @@ public final class client extends bga {
 		mp.c((byte) -100);
 		td.b(i + 2147483616);
 		oca.a(-5518);
-		at.i(27843);
+		at.nullLoader(27843);
 		kg.b((byte) -128);
 		qu.a(false);
 		vc.a(80);
@@ -510,7 +507,7 @@ public final class client extends bga {
 		Class_db.c(3790);
 		pm.c((byte) -96);
 		bm.a(-23124);
-		ar.e(i - 31);
+		ar.nullLoader(i - 31);
 		vaa.d(15426);
 		gv.a(-12191);
 		fw.A(i ^ 0x3d80);
@@ -525,7 +522,7 @@ public final class client extends bga {
 		cl.a((byte) 61);
 		Class_j.a(i ^ 0x1f);
 		tfa.a(-98);
-		mq.a(i ^ 0x1f);
+		mq.nullLoader();
 		ja.c((byte) 117);
 		baa.a((byte) 119);
 		rca.b(0);
@@ -553,7 +550,7 @@ public final class client extends bga {
 		gu.a(false);
 		cm.a(false);
 		hk.nullLoader(-82);
-		ada.i(0);
+		ada.nullLoader(0);
 		Class_rb.c((byte) 16);
 		ffa.c((byte) -42);
 		Class_lc.c((byte) 107);
@@ -613,7 +610,7 @@ public final class client extends bga {
 		ji.a((byte) 126);
 		vq.b(115);
 		fo.a(1);
-		ao.a((byte) -114);
+		ao.nullLoader();
 		daa.b(i - 30);
 		bl.a(-108);
 		tea.a(false);
@@ -652,18 +649,18 @@ public final class client extends bga {
 		ud.b((byte) 68);
 		ew.b(54);
 		bq.a(i - 12451);
-		uu.a(i ^ 0x65);
-		na.a(-252896726);
+		InputStreamSub.a(i ^ 0x65);
+		OutputStreamSub.a(-252896726);
 		pi.b(i ^ 0xe0);
 		bfa.b((byte) 29);
 		wq.a((byte) -104);
 		cf.a(-102);
 		me.i(4);
 		mo.a((byte) 114);
-		ak.b((byte) -127);
+		ak.nullLoader();
 		gea.d(0);
 		tn.a(i - 142);
-		cca.a(i - 12933);
+		InputStreamSub_1.a(i - 12933);
 		hs.a(false);
 		jk.a(i - 15);
 		pu.a(true);
@@ -683,12 +680,13 @@ public final class client extends bga {
 		Class_pd.b((byte) -78);
 		gn.e((byte) 40);
 		up.d((byte) 104);
-		if (bga.I)
-			sb = true;
+		if (bga.I) {
+            sb = true;
+        }
 	}
 
-	public static final void main(String[] strings) {
-		B++;
+	public static void main(String[] strings) {
+		mainMethod++;
 		try {
 			if (strings.length != 6) {
 				dn.a(-2747, "Argument count");
@@ -702,17 +700,17 @@ public final class client extends bga {
 			hs.modeWhere = vea.a;
 			if (!strings[3].equals("live")) {
 				if (strings[3].equals("rc")) {
-					gv.modeWhat = GameOutPacket.wl;
+					gv.modeWhat = GameOutPacket.RC;
 				} else if (!strings[3].equals("wip")) {
 					dn.a(-2747, "modewhat");
 				} else {
-					gv.modeWhat = wd.b;
+					gv.modeWhat = wd.WIP;
 				}
 			} else {
-				gv.modeWhat = ft.s;
+				gv.modeWhat = ft.LIVE;
 			}
 			cba.languageID = lda.a(2, strings[4]);
-			if ((cba.languageID ^ 0xffffffff) == 0) {
+			if ((~cba.languageID) == 0) {
 				if (!strings[4].equals("english")) {
 					if (!strings[4].equals("german")) {
 						dn.a(-2747, "language");
@@ -735,12 +733,12 @@ public final class client extends bga {
 				me.q = wa.t;
 			}
 			ea.thisCountry = 0;
-			Class_rf.f = false;
+			Class_rf.fromBilling = false;
 			Class_gb.h = ll.t = true;
 			ak.userFlow = 0L;
 			cd.worldFlags = 0;
 			br.additionalInfo = null;
-			ce.bb = false;
+			ce.forced64mb = false;
 			ow.settings = "";
 			jr.colourId = me.q.h;
 			hl.affId = 0;
@@ -758,8 +756,8 @@ public final class client extends bga {
 		int inScreenPlayers = oca.inScreenPlayers;
 		int[] inScreenPlayerIDs = vd.inScreenPlayerIDs;
 		boolean bool = cs.g.q == 1 && inScreenPlayers > 200 || cs.g.q == 0 && inScreenPlayers > 50;
-		for (int i = 0; i < inScreenPlayers; i++) {
-			Player player = Class_fc.playersInScreen[inScreenPlayerIDs[i]];
+		for (int playerIndex = 0; playerIndex < inScreenPlayers; playerIndex++) {
+			Player player = Class_fc.playersInScreen[inScreenPlayerIDs[playerIndex]];
 			if (!player.isPlayerDefinition(-28)) {
                 player.Kb = -1;
             } else {
@@ -778,7 +776,7 @@ public final class client extends bga {
 						if (player.hitRemovalTime > pm.currentTimedTicks) {
                             j += 2;
                         }
-						j += 5 - player.i(-1) << 2;
+						j += 5 - player.getNPCDefinition(-1) << 2;
 						if (player.cd) {
                             j += 512;
                         } else {
@@ -794,8 +792,8 @@ public final class client extends bga {
 				}
 			}
 		}
-		for (int i = 0; i < ps.npcCount; i++) {
-			NPC npc = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i])).npc;
+		for (int npcIndex = 0; npcIndex < ps.npcCount; npcIndex++) {
+			NPC npc = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[npcIndex])).npc;
 			if (!npc.isNpcDef(-117) || !npc.npcDef.a((byte) -33, cp.e)) {
                 npc.Kb = -1;
             } else {
@@ -810,7 +808,7 @@ public final class client extends bga {
 					if (npc.hitRemovalTime > pm.currentTimedTicks) {
                         j += 2;
                     }
-					j += 5 - npc.i(-1) << 2;
+					j += 5 - npc.getNPCDefinition(-1) << 2;
 					if (vs.r == 0) {
 						if (npc.npcDef.ub) {
                             j += 64;
@@ -833,8 +831,8 @@ public final class client extends bga {
 				}
 			}
 		}
-		for (int i = 0; i < Class_fb.j.length; i++) {
-			on on = Class_fb.j[i];
+		for (int index = 0; index < Class_fb.j.length; index++) {
+			on on = Class_fb.j[index];
 			if (on != null) {
 				if (on.a == 1) {
 					NPCNode npcNode = (NPCNode) uo.a.a(-32748, (long) on.e);
@@ -854,10 +852,10 @@ public final class client extends bga {
 		}
 	}
 
-	public static void i(int height) {
+	public static void setLocation(int height) {
 		int inScreenPlayers = oca.inScreenPlayers;
 		int[] inScreenPlayerIDs = vd.inScreenPlayerIDs;
-		int count = qm.f ? inScreenPlayers : inScreenPlayers + ps.npcCount;
+		int count = qm.isNonpcs ? inScreenPlayers : inScreenPlayers + ps.npcCount;
 		for (int index = 0; index < count; index++) {
 			Entity entity;
 			if (index < inScreenPlayers) {
@@ -870,7 +868,7 @@ public final class client extends bga {
 				if (entity.Kb < 0) {
                     entity.gb = false;
                 } else {
-					int i = entity.i(-1);
+					int i = entity.getNPCDefinition(-1);
 					if ((i & 0x1) == 0) {
 						if ((entity.locX & 0x1ff) != 0 || (entity.locY & 0x1ff) != 0) {
 							entity.gb = false;
@@ -887,8 +885,8 @@ public final class client extends bga {
 							entity.gb = true;
 							continue;
 						}
-						if (GameInPacket.c[regionX][regionY] > 1) {
-							GameInPacket.c[regionX][regionY]--;
+						if (GameInPacket.ints[regionX][regionY] > 1) {
+							GameInPacket.ints[regionX][regionY]--;
 							entity.gb = true;
 							continue;
 						}
@@ -902,7 +900,7 @@ public final class client extends bga {
 							for (int x = x_; x <= x_1; x++) {
 								for (int y = y_; y <= y_1; y++) {
 									if (entity.Kb == gi.k[x][y]) {
-                                        GameInPacket.c[x][y]--;
+                                        GameInPacket.ints[x][y]--;
                                     }
 								}
 							}
@@ -932,7 +930,6 @@ public final class client extends bga {
 		return interface_;
 	}
 
-	@SuppressWarnings("RedundantIfStatement")
     public static void a(Interface[] interfaces, int i, int j, int k, int i1, int j1, int k1, int i2, int j2, int k2) {
         for (Interface interface_ : interfaces) {
             if (interface_ != null && interface_.parentID == i) {
@@ -1032,9 +1029,9 @@ public final class client extends bga {
                                             vo.c((byte) 31);
                                             nm nm = c(interface_);
                                             ega.a(0, interface_, nm.a(-1035661311), nm.q);
-                                            Class_kd.b = tg.a(interface_, (byte) -111);
-                                            if (Class_kd.b == null) {
-                                                Class_kd.b = "Null";
+                                            Class_kd.itemName = tg.a(interface_, (byte) -111);
+                                            if (Class_kd.itemName == null) {
+                                                Class_kd.itemName = "Null";
                                             }
                                             Class_ag.k = (interface_.itemName + "<col=ffffff>");
                                         }
@@ -1067,7 +1064,7 @@ public final class client extends bga {
                                 ClientScript clientScript = new ClientScript();
                                 clientScript.s = true;
                                 clientScript.interface_ = interface_;
-                                clientScript.p = fm.b;
+                                clientScript._y = fm.b;
                                 clientScript.objects = interface_.T;
                                 to.b.b(clientScript, (byte) 93);
                             }
@@ -1111,8 +1108,8 @@ public final class client extends bga {
                                             } else {
                                                 j5 = ((int) qw.n + pt.b & 0x3fff);
                                             }
-                                            int k5 = GameInPacket.h[j5];
-                                            int i7 = GameInPacket.i[j5];
+                                            int k5 = GameInPacket.ints1[j5];
+                                            int i7 = GameInPacket.ints2[j5];
                                             if (ll.x != 4) {
                                                 k5 = (k5 * (vd.N + 256) >> 8);
                                                 i7 = (i7 * (vd.N + 256) >> 8);
@@ -1125,21 +1122,21 @@ public final class client extends bga {
                                                 i8 = (fu.a >> 9) + (j7 >> 2);
                                                 j8 = (qg.j >> 9) - (k7 >> 2);
                                             } else {
-                                                int k8 = (up.thisPlayer.i(-1) - 1) * 256;
+                                                int k8 = (up.thisPlayer.getNPCDefinition(-1) - 1) * 256;
                                                 i8 = (up.thisPlayer.locX - k8 >> 9) + (j7 >> 2);
                                                 j8 = (up.thisPlayer.locY - k8 >> 9) - (k7 >> 2);
                                             }
                                             if (ba.c && (Class_jc.db & 0x40) != 0) {
                                                 Interface interface_1 = ida.a(tm.t, qda.G, (byte) 110);
                                                 if (interface_1 != null) {
-                                                    lea.setClickMenuOption(i8, false, j8, interface_.itemID, true, uk.d, 30, 1L, " ->", 30, Class_kd.b);
+                                                    lea.setClickMenuOption(i8, false, j8, interface_.itemID, true, uk.d, 30, 1L, " ->", 30, Class_kd.itemName);
                                                 } else {
                                                     vo.c((byte) 31);
                                                 }
                                             } else {
                                                 if (me.q == Class_pf.O) {
                                                     lea.setClickMenuOption(i8, false, j8, -1, true, -1, -56, 1L, "", 21,
-                                                            GameText.faceHereText.getString((byte) -64, cba.languageID));
+                                                            GameText.faceHereText.getString(cba.languageID));
                                                 }
                                                 lea.setClickMenuOption(i8, false, j8, -1, true, it.K, 126, 1L, "", 10, lw.e);
                                             }
@@ -1216,8 +1213,8 @@ public final class client extends bga {
                                     ClientScript clientScript = new ClientScript();
                                     clientScript.s = true;
                                     clientScript.interface_ = interface_;
-                                    clientScript.q = ew.a(9) - x;
-                                    clientScript.p = ew.a(true) - y;
+                                    clientScript._x = ew.a(9) - x;
+                                    clientScript._y = ew.a(true) - y;
                                     clientScript.objects = interface_.Pb;
                                     to.b.b(clientScript, (byte) 93);
                                 }
@@ -1226,8 +1223,8 @@ public final class client extends bga {
                                 ClientScript clientScript = new ClientScript();
                                 clientScript.s = true;
                                 clientScript.interface_ = interface_;
-                                clientScript.q = Class_md.e.d(2000) - x;
-                                clientScript.p = Class_md.e.b(117) - y;
+                                clientScript._x = Class_md.e.d(2000) - x;
+                                clientScript._y = Class_md.e.b(117) - y;
                                 clientScript.objects = interface_.Pc;
                                 to.b.b(clientScript, (byte) 93);
                             }
@@ -1237,8 +1234,8 @@ public final class client extends bga {
                                     ClientScript clientScript = new ClientScript();
                                     clientScript.s = true;
                                     clientScript.interface_ = interface_;
-                                    clientScript.q = Class_md.e.d(2000) - x;
-                                    clientScript.p = Class_md.e.b(116) - y;
+                                    clientScript._x = Class_md.e.d(2000) - x;
+                                    clientScript._y = Class_md.e.b(116) - y;
                                     clientScript.objects = interface_.cb;
                                     caa.C.b(clientScript, (byte) 93);
                                 }
@@ -1247,8 +1244,8 @@ public final class client extends bga {
                                 ClientScript clientScript = new ClientScript();
                                 clientScript.s = true;
                                 clientScript.interface_ = interface_;
-                                clientScript.q = Class_md.e.d(2000) - x;
-                                clientScript.p = Class_md.e.b(114) - y;
+                                clientScript._x = Class_md.e.d(2000) - x;
+                                clientScript._y = Class_md.e.b(114) - y;
                                 clientScript.objects = interface_.Sb;
                                 to.b.b(clientScript, (byte) 93);
                             }
@@ -1258,8 +1255,8 @@ public final class client extends bga {
                                     ClientScript clientScript = new ClientScript();
                                     clientScript.s = true;
                                     clientScript.interface_ = interface_;
-                                    clientScript.q = Class_md.e.d(2000) - x;
-                                    clientScript.p = Class_md.e.b(112) - y;
+                                    clientScript._x = Class_md.e.d(2000) - x;
+                                    clientScript._y = Class_md.e.b(112) - y;
                                     clientScript.objects = interface_.e;
                                     to.b.b(clientScript, (byte) 93);
                                 }
@@ -1268,8 +1265,8 @@ public final class client extends bga {
                                 ClientScript clientScript = new ClientScript();
                                 clientScript.s = true;
                                 clientScript.interface_ = interface_;
-                                clientScript.q = Class_md.e.d(2000) - x;
-                                clientScript.p = Class_md.e.b(125) - y;
+                                clientScript._x = Class_md.e.d(2000) - x;
+                                clientScript._y = Class_md.e.b(125) - y;
                                 clientScript.objects = interface_.wb;
                                 to.b.b(clientScript, (byte) 93);
                             }
@@ -1279,8 +1276,8 @@ public final class client extends bga {
                                     ClientScript clientScript = new ClientScript();
                                     clientScript.s = true;
                                     clientScript.interface_ = interface_;
-                                    clientScript.q = Class_md.e.d(2000) - x;
-                                    clientScript.p = Class_md.e.b(102) - y;
+                                    clientScript._x = Class_md.e.d(2000) - x;
+                                    clientScript._y = Class_md.e.b(102) - y;
                                     clientScript.objects = interface_.Bb;
                                     caa.C.b(clientScript, (byte) 93);
                                 }
@@ -1465,7 +1462,7 @@ public final class client extends bga {
                             }
                             tt tt = (tt) ida.l.a(-32748, (long) interface_.interfaceID);
                             if (tt != null) {
-                                if (me.q == wa.t && tt.k == 0 && !gea.n && bool && !lba.Q) {
+                                if (me.q == wa.t && tt.k == 0 && !gea.n && bool && !lba.qa_op_test) {
                                     uk.a((byte) 91);
                                 }
                                 Player.a((byte) -102, x, j2, i3, k3, j3, tt.l, y, k2, i4);
@@ -1480,49 +1477,52 @@ public final class client extends bga {
     /**
      * Connection before login process begins.
      */
-	private void connectionProtocol(/*int i*/) {
+	private void connectionProtocol() {
 		eb++;
-		if (Class_b.d < bl.I.E) {
-			gm.world.a(0);
-			Login.g = (50 * bl.I.E - 50) * 5;
+		if (Class_b.d < bl.uaa.E) {
+			gm.world.rotateConnectionMethods(0);
+			Login.g = (50 * bl.uaa.E - 50) * 5;
 			if (Login.g > 3000) {
                 Login.g = 3000;
             }
-			if (bl.I.E >= 2 && bl.I.D == 6) {
-				this.a("js5connect_outofdate", -1);
+			if (bl.uaa.E >= 2 && bl.uaa.D == 6) {
+				this.sendErrorGame("js5connect_outofdate", -1);
 				hm.h = 14;
 				return;
 			}
-			if (bl.I.E >= 4 && (~bl.I.D) == 0) {
-				this.a("js5crc", -1);
+			if (bl.uaa.E >= 4 && (~bl.uaa.D) == 0) {
+				this.sendErrorGame("js5crc", -1);
 				hm.h = 14;
 				return;
 			}
-			if (bl.I.E >= 4 && dn.a(i + 104, hm.h)) {
-				if (bl.I.D == 7 || bl.I.D == 9) {
-                    this.a("js5connect_full", -1);
-                } else if (bl.I.D <= 0) {
-                    this.a("js5io", -1);
+			if (bl.uaa.E >= 4 && dn.a(i + 104, hm.h)) {
+				if (bl.uaa.D == 7 || bl.uaa.D == 9) {
+                    this.sendErrorGame("js5connect_full", -1);
+                } else if (bl.uaa.D <= 0) {
+                    this.sendErrorGame("js5io", -1);
                 } else if (Class_jg.Q == null) {
-                    this.a("js5connect", -1);
+                    this.sendErrorGame("js5connect", -1);
                 } else {
-                    this.a("js5proxy_" + Class_jg.Q.trim(), -1);
+                    this.sendErrorGame("js5proxy_" + Class_jg.Q.trim(), -1);
                 }
 				hm.h = 14;
 				return;
 			}
 		}
-		Class_b.d = bl.I.E;
+		Class_b.d = bl.uaa.E;
 		if (Login.g > 0) {
             Login.g--;
         } else {
 			try {
-				if (dba.c == 0) {
+				if (dba.connectionStage == 0) {
                     System.out.println("[Client] 0");
 					Connection.vfa_ = gm.world.a(nda.signlink);
-					dba.c++;
+					dba.connectionStage++;
 				}
-				if (dba.c == 1) {
+				if (dba.connectionStage == 1) {
+                    /**
+                     * Sets up the connection. No data being sent/received.
+                     */
 					if (Connection.vfa_.f == 2) {
 						if (Connection.vfa_.hostName != null) {
                             Class_jg.Q = (String) Connection.vfa_.hostName;
@@ -1531,69 +1531,75 @@ public final class client extends bga {
 						return;
 					}
 					if (Connection.vfa_.f == 1) {
-                        dba.c++;
+                        dba.connectionStage++;
                     }
 				}
-				if (dba.c == 2) {
+				if (dba.connectionStage == 2) {
                     /**
                      * This is the first things sent between the client and server.
                      *
                      * Opcode 15
                      * Revision
                      */
-					pt.f = new Connection((Socket) Connection.vfa_.hostName, nda.signlink);
+					pt.connection = new Connection((Socket) Connection.vfa_.hostName, nda.signlink);
 					BytesParser bytesParser = new BytesParser(5);
                     System.out.println("[Client]");
 					bytesParser.writeByte(hea.specialOutPacket15.packetID, (byte) -115);
 					bytesParser.writeInt(621, -97);
-					pt.f.a(5, 0, (byte) -93, bytesParser.bytes);
-					dba.c++;
-					ClientScript.z = us.a(127);
+					pt.connection.write(5, 0, bytesParser.bytes);
+					dba.connectionStage++;
+					ClientScript.currentTime = us.getCurrentTime(127);
 				}
-				if (dba.c == 3) {
+				if (dba.connectionStage == 3) {
+                    /**
+                     * Set up the inputstream to read the js5 info.
+                     */
                     System.out.println("[Client] 3");
-					if (!dn.a(125, hm.h) && pt.f.availableSkips(-22874) <= 0) {
+					if (!dn.a(125, hm.h) && pt.connection.availableSkips() <= 0) {
                         System.out.println("inside if");
-						if (us.a(103) - ClientScript.z > 30000L) {
+						if (us.getCurrentTime(103) - ClientScript.currentTime > 30000L) {
                             System.out.println("1i23p");
 							a((byte) 125, 1001);
 							return;
 						}
 					} else {
                         System.out.println("inside else");
-						int read = pt.f.read(12410);
+						int read = pt.connection.read();
                         System.out.println("..." + read);
 						if (read != 0) {
 							a((byte) 125, read);
 							return;
 						}
-						dba.c++;
+						dba.connectionStage++;
 					}
 				}
-				if (dba.c == 4) {
+				if (dba.connectionStage == 4) {
+                    /**
+                     * The JS5 Information stage.
+                     */
                     System.out.println("[Client] 4");
 					boolean bool = dn.a(96, hm.h) || gs.b(hm.h, 0) || pga.a(-66, hm.h);
-					fba[] fbas = fba.b(-119);
+                    System.out.println("bool: " + bool);
+					fba[] fbas = fba.getFBAs();
+                    System.out.println("fbas: " + fbas.length);
 					BytesParser bytesParser = new BytesParser(4 * fbas.length);
-					pt.f.a(0, bytesParser.bytes, bytesParser.bytes.length, i + 14227);
+					pt.connection.read(0, bytesParser.bytes, bytesParser.bytes.length/*, i + 14227*/);
 					for (int index = 0; index < fbas.length; index++) {
                         fbas[index].a(bytesParser.readInt(107), i ^ 0x7c);
+                        System.out.println("Indexes" + index);
                     }
-					bl.I.a(i ^ ~0x67, !bool, pt.f);
-					dba.c = 0;
-					pt.f = null;
+					bl.uaa.a(i ^ ~0x67, !bool, pt.connection);
+					dba.connectionStage = 0;
+					pt.connection = null;
 					Connection.vfa_ = null;
 				}
 			} catch (java.io.IOException ioexception) {
 				a((byte) 123, 1002);
 			}
-			/*if (i != -11) {
-                jb = -0.5348778F;
-            }*/
 		}
 	}
 
-	public static int[][] a(int dummy, int i, int j, int k, int i1, /*byte isHidden,*/ boolean bool, int j1, float f) {
+	public static int[][] a(int dummy, int i, int j, int k, int i1, boolean bool, int j1, float f) {
 		db++;
 		int[][] ints = new int[i][j1];
 		vd vd = new vd();
@@ -1603,9 +1609,6 @@ public final class client extends bga {
 		vd.Q = i1;
 		vd.M = k;
 		vd.b(124);
-		/*if (isHidden != 70) {
-            ob = null;
-        }*/
 		im.a(i, (byte) -30, j1);
 		for (int index = 0; index < i; index++) {
             vd.a(index, (byte) 31, ints[index]);
@@ -1614,7 +1617,7 @@ public final class client extends bga {
 	}
 
 	public static boolean isHidden(Interface interface_) {
-		if (lba.Q) {
+		if (lba.qa_op_test) {
 			if (c(interface_).l != 0) {
                 return false;
             }
@@ -1628,9 +1631,9 @@ public final class client extends bga {
 	private void b(boolean bool) {
 		pb++;
 		if (!bool) {
-            ob = null;
+            strings = null;
         }
-		boolean bool1 = bl.I.a(-98);
+		boolean bool1 = bl.uaa.a(-98);
 		if (!bool1) {
             connectionProtocol();
         }
@@ -1639,7 +1642,7 @@ public final class client extends bga {
 	public static void c() {
 		int inScreenPlayers = oca.inScreenPlayers;
 		int[] inScreenPlayerIDs = vd.inScreenPlayerIDs;
-		int count = qm.f ? inScreenPlayers : inScreenPlayers + ps.npcCount;
+		int count = qm.isNonpcs ? inScreenPlayers : inScreenPlayers + ps.npcCount;
 		for (int index = 0; index < count; index++) {
 			Entity entity;
 			if (index < inScreenPlayers) {
@@ -1648,7 +1651,7 @@ public final class client extends bga {
                 entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).npc;
             }
 			if (entity.Kb >= 0) {
-				int mask = entity.i(-1);
+				int mask = entity.getNPCDefinition(-1);
 				if ((mask & 0x1) == 0) {
 					if ((entity.locX & 0x1ff) == 0 && (entity.locY & 0x1ff) == 0) {
                         continue;
@@ -1662,8 +1665,8 @@ public final class client extends bga {
 		}
 	}
 
-	public final void g(int i) {
-		if (ce.bb) {
+	public final void startUp(int i) {
+		if (ce.forced64mb) {
             qm.heapSize = 64;
         }
 		ab++;
@@ -1672,32 +1675,32 @@ public final class client extends bga {
 		frame.dispose();
 		ig.a((byte) -112);
 		kl.j = new th(nda.signlink);
-		bl.I = new uaa();
+		bl.uaa = new uaa();
 		mm.a(new int[] { 1000, 100 }, true, new int[] { 20, 260 });
-		if (hs.modeWhere != oba.K) {
+		if (hs.modeWhere != oba.pk) {
             hk.R = new byte[50][];
         }
 		cs.g = new dg(nda.signlink);
-		if (hs.modeWhere == oba.K) {
+		if (hs.modeWhere == oba.pk) {
             kfa.world.lobbyAddress = this.getCodeBase().getHost();
         } else if (sm.a(1, hs.modeWhere)) {
 			kfa.world.lobbyAddress = this.getCodeBase().getHost();
-			kfa.world.firstPort = kfa.world.worldID + 40000;
-			cf.world.firstPort = cf.world.worldID + 40000;
-			kfa.world.secondPort = 50000 + kfa.world.worldID;
-			Class_eb.world.firstPort = Class_eb.world.worldID + 40000;
-			cf.world.secondPort = 50000 + cf.world.worldID;
-			Class_eb.world.secondPort = 50000 + Class_eb.world.worldID;
+			kfa.world.mainPort = kfa.world.worldID + 40000;
+			cf.world.mainPort = cf.world.worldID + 40000;
+			kfa.world.worldPort = 50000 + kfa.world.worldID;
+			Class_eb.world.mainPort = Class_eb.world.worldID + 40000;
+			cf.world.worldPort = 50000 + cf.world.worldID;
+			Class_eb.world.worldPort = 50000 + Class_eb.world.worldID;
 		} else if (vea.a == hs.modeWhere) {
 			kfa.world.lobbyAddress = "127.0.0.1";
 			cf.world.lobbyAddress = "127.0.0.1";
 			Class_eb.world.lobbyAddress = "127.0.0.1";
-			kfa.world.firstPort = kfa.world.worldID + 40000;
-			cf.world.firstPort = 40000 + cf.world.worldID;
-			Class_eb.world.firstPort = Class_eb.world.worldID + 40000;
-			kfa.world.secondPort = 50000 + kfa.world.worldID;
-			cf.world.secondPort = cf.world.worldID + 50000;
-			Class_eb.world.secondPort = Class_eb.world.worldID + 50000;
+			kfa.world.mainPort = kfa.world.worldID + 40000;
+			cf.world.mainPort = 40000 + cf.world.worldID;
+			Class_eb.world.mainPort = Class_eb.world.worldID + 40000;
+			kfa.world.worldPort = 50000 + kfa.world.worldID;
+			cf.world.worldPort = cf.world.worldID + 50000;
+			Class_eb.world.worldPort = Class_eb.world.worldID + 50000;
 		}
 		lf.n = Class_pd.s = qn.l = ua.d = new short[256];
 		if (wa.t == me.q) {
@@ -1708,7 +1711,7 @@ public final class client extends bga {
 			lp.p = uda.h;
 		} else {
 			lp.p = Class_gb.f;
-			vh.a = true;
+			vh.shiftClickEnabled = true;
 			iea.h = 16777215;
 			ck.K = nfa.d;
 			sea.b = 0;
@@ -1725,18 +1728,18 @@ public final class client extends bga {
 			if (i != 511) {
                 return;
             }
-			if (nda.signlink.fileOnDisk1 != null) {
-				or.f = new cv(nda.signlink.fileOnDisk1, 5200, 0);
+			if (nda.signlink.main_File_Cache_Dat2 != null) {
+				or.f = new cv(nda.signlink.main_File_Cache_Dat2, 5200, 0);
 				for (int index = 0; index < 35; index++) {
-                    Connection.cvs[index] = new cv(nda.signlink.filesOnDisk[index], 6000, 0);
+                    Connection.cvs[index] = new cv(nda.signlink.main_File_Cache_idx[index], 6000, 0);
                 }
-				fr.x = new cv(nda.signlink.fileOnDisk, 6000, 0);
+				fr.x = new cv(nda.signlink.main_File_Cache_idx_225, 6000, 0);
 				Class_jg.N = new lf(255, or.f, fr.x, 500000);
-				dca.V = new cv(nda.signlink.fileOnDisk_, 24, 0);
-				nda.signlink.fileOnDisk1 = null;
-				nda.signlink.filesOnDisk = null;
-				nda.signlink.fileOnDisk = null;
-				nda.signlink.fileOnDisk_ = null;
+				dca.V = new cv(nda.signlink.random_Dat, 24, 0);
+				nda.signlink.main_File_Cache_Dat2 = null;
+				nda.signlink.main_File_Cache_idx = null;
+				nda.signlink.main_File_Cache_idx_225 = null;
+				nda.signlink.random_Dat = null;
 			}
 		} catch (java.io.IOException ioexception) {
 			fr.x = null;
@@ -1744,13 +1747,13 @@ public final class client extends bga {
 			dca.V = null;
 			or.f = null;
 		}
-		if (oba.K != hs.modeWhere) {
-            sl.l = true;
+		if (oba.pk != hs.modeWhere) {
+            sl.fpsOn = true;
         }
 		if (wa.t == me.q) {
-            uh.b = GameText.rsIsLoading_PleaseWait.getString((byte) 101, cba.languageID);
+            uh.b = GameText.rsIsLoading_PleaseWait.getString(cba.languageID);
         } else if (Class_pf.O == me.q) {
-            uh.b = GameText.sdIsLoading_PleaseWait.getString((byte) 114, cba.languageID);
+            uh.b = GameText.sdIsLoading_PleaseWait.getString(cba.languageID);
         }
 	}
 
@@ -1767,15 +1770,15 @@ public final class client extends bga {
 			Class_eb.world.lobbyAddress = this.getParameter("demoaddress");
 			hs.modeWhere = sf.a((byte) -54, Integer.parseInt(this.getParameter("modewhere")));
 			if (hs.modeWhere != vea.a) {
-				if (!sm.a(1, hs.modeWhere) && oba.K != hs.modeWhere) {
-					hs.modeWhere = oba.K;
+				if (!sm.a(1, hs.modeWhere) && oba.pk != hs.modeWhere) {
+					hs.modeWhere = oba.pk;
 				}
 			} else {
 				hs.modeWhere = Class_g.modeWhere;
 			}
 			gv.modeWhat = li.a(Integer.parseInt(this.getParameter("modewhat")), (byte) -98);
-			if (wd.b != gv.modeWhat && gv.modeWhat != GameOutPacket.wl && ft.s != gv.modeWhat) {
-				gv.modeWhat = ft.s;
+			if (wd.WIP != gv.modeWhat && gv.modeWhat != GameOutPacket.RC && ft.LIVE != gv.modeWhat) {
+				gv.modeWhat = ft.LIVE;
 			}
 			try {
 				cba.languageID = Integer.parseInt(this.getParameter("lang"));
@@ -1835,7 +1838,7 @@ public final class client extends bga {
 			}
 			String fromBilling = this.getParameter("frombilling");
 			if (fromBilling != null && fromBilling.equals("true")) {
-				Class_rf.f = true;
+				Class_rf.fromBilling = true;
 			}
 			uo.ssKey = this.getParameter("sskey");
 			if (uo.ssKey != null && uo.ssKey.length() < 2) {
@@ -1843,7 +1846,7 @@ public final class client extends bga {
 			}
 			String force = this.getParameter("force64mb");
 			if (force != null && force.equals("true")) {
-				ce.bb = true;
+				ce.forced64mb = true;
 			}
 			String worldFlags = this.getParameter("worldflags");
 			if (worldFlags != null) {
@@ -1879,9 +1882,9 @@ public final class client extends bga {
 		}
 	}
 
-	public final void f(/*int i*/) {
+	public final void f() {
 		if (dv.d) {
-            cc.a(false);
+            cc.saveVarcs(false);
         }
 		qb++;
 		wo.b(21074);
@@ -1897,7 +1900,7 @@ public final class client extends bga {
 			ce.y = null;
 		}
 		Class_rf.a(114);
-		bl.I.a((byte) 76);
+		bl.uaa.dropClientJS5((byte) 76);
 		kl.j.a((byte) -112);
 		if (Class_ag.i != null) {
 			Class_ag.i.a(false);
@@ -1910,7 +1913,7 @@ public final class client extends bga {
             }
 			fr.x.b((byte) 101);
 			if (i != -36) {
-                ob = null;
+                strings = null;
             }
 			dca.V.b((byte) 101);
 		} catch (Exception exception) {
@@ -1925,8 +1928,8 @@ public final class client extends bga {
 				try {
 					l(-101);
 				} catch (Throwable throwable) {
-					cea.a((throwable.getMessage() + " (Recovered) " + d((byte) -30)), -2, throwable);
-					ur.a(0, true);
+					cea.a((throwable.getMessage() + " (Recovered) " + errorMessage((byte) -30)), -2, throwable);
+					ur.setTKVersion(0, true);
 				}
 			} else {
                 l(-101);
@@ -1935,11 +1938,11 @@ public final class client extends bga {
 	}
 
 	private void a(byte b, int read) {
-		pt.f = null;
-		bl.I.E++;
+		pt.connection = null;
+		bl.uaa.E++;
 		if (b > 121) {
-			bl.I.D = read;
-			dba.c = 0;
+			bl.uaa.D = read;
+			dba.connectionStage = 0;
 			Connection.vfa_ = null;
 			nb++;
 		}
@@ -1961,7 +1964,7 @@ public final class client extends bga {
 			}
 		}
 		if (i <= 21) {
-            jb = -1.7173753F;
+            aFloat = -1.7173753F;
         }
 		mb++;
 		nq.x++;
@@ -1974,7 +1977,7 @@ public final class client extends bga {
 			if (npc != null) {
 				byte b1 = npc.npcDef.y;
 				if ((0x1 & b1) != 0) {
-					int k = npc.i(-1);
+					int k = npc.getNPCDefinition(-1);
 					if ((b1 & 0x2) != 0 && npc.Nc == 0 && 1000.0 * Math.random() < 10.0) {
 						int x = (int) Math.round(10.0 * Math.random() - 5.0);
 						int y = (int) Math.round(10.0 * Math.random() - 5.0);
@@ -2081,16 +2084,16 @@ public final class client extends bga {
             NPCDef.a(true);
         }
 		cba.a(96);
-		if (dv.d && us.a(116) - 60000L > hs.n) {
-            cc.a(false);
+		if (dv.d && us.getCurrentTime(116) - 60000L > hs.currentTime) {
+            cc.saveVarcs(false);
         }
 		for (rk rk = (rk) mw.v.b((byte) 126); rk != null; rk = (rk) mw.v.a((byte) -106)) {
-			if (us.a(100) / 1000L - 5L > (long) rk.p) {
+			if (us.getCurrentTime(100) / 1000L - 5L > (long) rk.p) {
 				if (rk.n > 0) {
-                    oba.a("", rk.playerName + GameText._hasLoggedIn.getString((byte) 77, cba.languageID), 5, -1, "", 0, "");
+                    oba.a("", rk.playerName + GameText._hasLoggedIn.getString(cba.languageID), 5, -1, "", 0, "");
                 }
 				if (rk.n == 0) {
-                    oba.a("", rk.playerName + GameText._hasLoggedOut.getString((byte) 124, cba.languageID), 5, -1, "", 0, "");
+                    oba.a("", rk.playerName + GameText._hasLoggedOut.getString(cba.languageID), 5, -1, "", 0, "");
                 }
 				rk.unlink(2);
 			}
@@ -2107,7 +2110,7 @@ public final class client extends bga {
 						ud.a(tba, (byte) -36);
 					}
 					try {
-						uu.a((byte) 79);
+						InputStreamSub.a((byte) 79);
 					} catch (java.io.IOException ioexception) {
 						la.logout((byte) 17, false);
 						break;
@@ -2129,8 +2132,8 @@ public final class client extends bga {
                 daa.ab.c(2000);
             }
 			if (lba.b(-18705, hm.h)) {
-				if (cga.v != 0L && us.a(i + 206) > cga.v) {
-                    kea.a(false, (byte) 126, cs.g.W, cs.g.F, ia.g(15));
+				if (cga.v != 0L && us.getCurrentTime(i + 206) > cga.v) {
+                    kea.setWM(false, (byte) 126, cs.g.W, cs.g.F, ia.getWMVersion(15));
                 } else if (!lg.r.f() && vv.o) {
                     wu.c(4);
                 }
@@ -2158,7 +2161,7 @@ public final class client extends bga {
 					} else {
                         ig.a((byte) -63);
                     }
-					cga.v = us.a(99) + 500L;
+					cga.v = us.getCurrentTime(99) + 500L;
 					up.I = false;
 				}
 			}
@@ -2166,7 +2169,7 @@ public final class client extends bga {
                 d(-54);
             }
 			if (em.a != null && !tw.r && lba.b(-18705, hm.h)) {
-                kea.a(false, (byte) 126, -1, -1, cs.g.w);
+                kea.setWM(false, (byte) 126, -1, -1, cs.g.w);
             }
 			boolean bool1 = false;
 			if (sea.d) {
@@ -2176,7 +2179,7 @@ public final class client extends bga {
 			if (bool1) {
                 ro.b(i ^ ~0x64);
             }
-			if (lg.r != null && lg.r.f() || ia.g(103) != 1) {
+			if (lg.r != null && lg.r.f() || ia.getWMVersion(103) != 1) {
                 fda.a(i ^ ~0x64);
             }
 			if (dn.a(42, hm.h)) {
@@ -2186,13 +2189,13 @@ public final class client extends bga {
 					if (ml.a((byte) 22, hm.h)) {
 						if (em.e != 1) {
 							if (em.e != 2) {
-                                Class_rf.a(true, lg.r, true, Class_nd.o, pm.v, GameText.loadingPleaseWait.getString((byte) 88, cba.languageID));
+                                Class_rf.a(true, lg.r, true, Class_nd.o, pm.v, GameText.loadingPleaseWait.getString(cba.languageID));
                             } else {
 								if (it.L < pp.q) {
                                     it.L = pp.q;
                                 }
 								int j = (it.L - pp.q) * 50 / it.L + 50;
-								Class_rf.a(true, lg.r, true, Class_nd.o, pm.v, (GameText.loadingPleaseWait.getString((byte) -42, cba.languageID)
+								Class_rf.a(true, lg.r, true, Class_nd.o, pm.v, (GameText.loadingPleaseWait.getString(cba.languageID)
 												+ "<br>(" + j + "%)"));
 							}
 						} else {
@@ -2200,13 +2203,13 @@ public final class client extends bga {
                                 tw.q = dga.w;
                             }
 							int j = 50 * (tw.q - dga.w) / tw.q;
-							Class_rf.a(true, lg.r, true, Class_nd.o, pm.v, (GameText.loadingPleaseWait.getString((byte) 87, cba.languageID)
+							Class_rf.a(true, lg.r, true, Class_nd.o, pm.v, (GameText.loadingPleaseWait.getString(cba.languageID)
 											+ "<br>(" + j + "%)"));
 						}
 					} else if (hm.h != 10) {
 						if (hm.h == 13)
-							Class_rf.a(true, lg.r, false, Class_nd.o, pm.v, (GameText.connectionLostText.getString((byte) 125, cba.languageID) + "<br>"
-                                    + GameText.pleaseWait_attemptingToReestablish.getString((byte) 75, cba.languageID)));
+							Class_rf.a(true, lg.r, false, Class_nd.o, pm.v, (GameText.connectionLostText.getString(cba.languageID) + "<br>"
+                                    + GameText.pleaseWait_attemptingToReestablish.getString(cba.languageID)));
 					} else {
                         lda.a(11493, l);
                     }
@@ -2216,7 +2219,7 @@ public final class client extends bga {
 			} else {
                 sda.b(117);
             }
-			if (lt.g == 3) {
+			if (lt.rectValue == 3) {
 				for (int index = 0; index < rba.m; index++) {
 					Rectangle rectangle = ng.s[index];
 					if (sr.T[index]) {
@@ -2229,7 +2232,7 @@ public final class client extends bga {
 			if (rh.c(-8908)) {
                 cl.a(i ^ 0x1b, lg.r);
             }
-			if (!nda.signlink.e || !lba.b(-18705, hm.h) || lt.g != 0 || ia.g(-118) != 1 || bool1) {
+			if (!nda.signlink.e || !lba.b(-18705, hm.h) || lt.rectValue != 0 || ia.getWMVersion(-118) != 1 || bool1) {
 				if (!dn.a(i + 176, hm.h)) {
 					for (int index = 0; rba.m > index; index++) {
                         cj.c[index] = false;
@@ -2237,8 +2240,8 @@ public final class client extends bga {
 					try {
 						lg.r.u();
 					} catch (uo uo) {
-						cea.a((uo.getMessage() + " (Recovered) " + d((byte) -30)), -2, uo);
-						ur.a(0, true);
+						cea.a((uo.getMessage() + " (Recovered) " + errorMessage((byte) -30)), -2, uo);
+						ur.setTKVersion(0, true);
 					}
 				}
 			} else {
@@ -2281,7 +2284,7 @@ public final class client extends bga {
 		for (int i = 0; i < ps.npcCount; i++) {
 			NPC npc = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i])).npc;
 			if (npc.gb && npc.a((byte) -7) != -1) {
-				int j = (npc.i(-1) - 1) * 256 + 252;
+				int j = (npc.getNPCDefinition(-1) - 1) * 256 + 252;
 				int x = npc.locX - j >> 9;
 				int y = npc.locY - j >> 9;
 				Entity entity = oi.a(x, npc.height, y, (byte) 23);
@@ -2314,7 +2317,6 @@ public final class client extends bga {
      */
 	public static int a(int i, byte dummy) {
 		lb++;
-		int i_128_ = -69 / ((39 - dummy) / 63);
 		return i >>> 7;
 	}
 
@@ -2323,7 +2325,7 @@ public final class client extends bga {
      * @param dummy Had to keep when deleted weird errors started popping up.
      * @return
      */
-	public final String d(byte dummy) {
+	public final String errorMessage(byte dummy) {
 		Z++;
 		String string = null;
 		try {
@@ -2332,14 +2334,11 @@ public final class client extends bga {
                 string += ("2)" + vo.clientHeight + "," + (bfa.thisPlayersRegionX + up.thisPlayer.regionLocalX[0]) + ","
                         + (BytesParser.thisPlayersRegionY + up.thisPlayer.regionLocalY[0]) + "|");
             }
-			string += ("3)" + on.performance + "|4)" + cs.g.Z + "|5)" + ia.g(36) + "|6)" + ff.width + "," + eh.height + "|");
-			if (dummy != -30) {
-                gb = null;
-            }
-			string += "7)" + cs.g.a(-65, on.performance) + "|";
+			string += ("3)" + on.performance + "|4)" + cs.g.Z + "|5)" + ia.getWMVersion(36) + "|6)" + ff.width + "," + eh.height + "|");
+			string += "7)" + cs.g.isLighting(-65, on.performance) + "|";
 			string += "8)" + cs.g.b(on.performance, -110) + "|";
 			string += "9)" + cs.g.L + "|";
-			string += "10)" + cs.g.k + "|";
+			string += "10)" + cs.g.isTextures + "|";
 			string += "11)" + cs.g.cb + "|";
 			string += "12)" + cs.g.e(on.performance, 92) + "|";
 			string += "13)" + qm.heapSize + "|";
@@ -2364,7 +2363,7 @@ public final class client extends bga {
 							setAccessible.invoke(name, Boolean.TRUE);
 							try {
 								String dll_File = (String) name.get(object);
-								if (dll_File != null && (dll_File.indexOf("sw3d.dll") ^ 0xffffffff) != 0) {
+								if (dll_File != null && (~dll_File.indexOf("sw3d.dll")) != 0) {
 									Field handle = object.getClass().getDeclaredField("handle");
 									setAccessible.invoke(handle, (new Object[]{Boolean.TRUE}));
 									string += ("|16)" + (Long.toHexString(handle.getLong(object))));
@@ -2389,14 +2388,14 @@ public final class client extends bga {
 		return string;
 	}
 
-	public final void e(/*int i*/) {
+	public final void e() {
 		ib++;
 		if (on.performance == 2) {
 			try {
 				h();
 			} catch (Throwable throwable) {
-				cea.a(throwable.getMessage() + " (Recovered) " + d((byte) -30), -2, throwable);
-				ur.a(0, true);
+				cea.a(throwable.getMessage() + " (Recovered) " + errorMessage((byte) -30), -2, throwable);
+				ur.setTKVersion(0, true);
 			}
 		} else {
             h();
@@ -2409,9 +2408,7 @@ public final class client extends bga {
      * @param unused1 "                                                    "
      * @return
      */
-	public static boolean a(/*byte i,*/ int unused, int unused1) {
-		/*if (i < 51)
-			return false;*/
+	public static boolean a(int unused, int unused1) {
 		bb++;
 		return false;
 	}
@@ -2427,7 +2424,7 @@ public final class client extends bga {
                 entity = ((NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[index - inScreenPlayers])).npc;
             }
 			if (entity.height == height && entity.Kb >= 0) {
-				int i = entity.i(-1);
+				int i = entity.getNPCDefinition(-1);
 				if ((i & 0x1) == 0) {
 					if ((entity.locX & 0x1ff) != 0 || (entity.locY & 0x1ff) != 0) {
                         continue;
@@ -2440,9 +2437,9 @@ public final class client extends bga {
 					int regionY = entity.locY >> 9;
 					if (entity.Kb > gi.k[regionX][regionY]) {
 						gi.k[regionX][regionY] = entity.Kb;
-						GameInPacket.c[regionX][regionY] = 1;
+						GameInPacket.ints[regionX][regionY] = 1;
 					} else if (entity.Kb == gi.k[regionX][regionY]) {
-                        GameInPacket.c[regionX][regionY]++;
+                        GameInPacket.ints[regionX][regionY]++;
                     }
 				} else {
 					int j = (i - 1) * 256 + 60;
@@ -2454,9 +2451,9 @@ public final class client extends bga {
 						for (int y = y_; y <= y_1; y++) {
 							if (entity.Kb > gi.k[x][y]) {
 								gi.k[x][y] = entity.Kb;
-								GameInPacket.c[x][y] = 1;
+								GameInPacket.ints[x][y] = 1;
 							} else if (entity.Kb == gi.k[x][y])
-								GameInPacket.c[x][y]++;
+								GameInPacket.ints[x][y]++;
 						}
 					}
 				}
@@ -2465,18 +2462,16 @@ public final class client extends bga {
 	}
 
 	public static nm c(Interface interface_) {
-		nm nm = (nm) aea.E.a(-32748, (((long) interface_.interfaceID << 32) + (long) interface_.itemIndex));
+		nm nm = (nm) aea.il.a(-32748, (((long) interface_.interfaceID << 32) + (long) interface_.itemIndex));
 		if (nm != null) {
             return nm;
         }
 		return interface_.qd;
 	}
 
-	public static void nullLoader(/*byte i*/) {
-		gb = null;
-		ob = null;
-		/*if (i != -9)
-			gb = null;*/
+	public static void nullLoader() {
+		baa = null;
+		strings = null;
 	}
 
 	private /* synthetic */static Class getClassByName(String string) {

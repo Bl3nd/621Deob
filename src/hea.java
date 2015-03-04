@@ -51,7 +51,7 @@ final class hea
 	    return null;
 	ff.s = 0;
 	a++;
-	return GameOutPacket.a(i - 6800);
+	return GameOutPacket.a();
     }
     
     static {

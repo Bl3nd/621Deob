@@ -2,41 +2,39 @@
  * Visit http://jode.sourceforge.net/
  */
 package jaclib.peer;
+
 import java.lang.ref.WeakReference;
 
-abstract class PeerReference extends WeakReference
-{
-    PeerReference a;
+abstract class PeerReference extends WeakReference {
+
+    PeerReference peerReference;
     private long peer;
-    PeerReference b;
-    
-    final boolean a(byte i) {
-	if (i != -77)
-	    b((byte) 18);
-	return peer != 0L;
+    PeerReference peerReference1;
+
+    public final boolean isPeer() {
+        return peer != 0L;
     }
-    
-    protected abstract long releasePeer(long l);
-    
-    PeerReference(Peer peer, am var_am) {
-	super(peer, var_am.c);
-	var_am.a(this, (byte) 126);
+
+    protected abstract long releasePeer(long peer);
+
+    public PeerReference(Peer peer, am am) {
+        super(peer, am.instance);
+        am.a(this);
     }
-    
-    final void setPeer(long l) {
-	b((byte) 82);
-	peer = l;
+
+    public final void setPeer(long peer_) {
+        b();
+        peer = peer_;
     }
-    
-    final long b(byte i) {
-	if (i < 73)
-	    b((byte) 72);
-	long l;
-	if (peer != 0L) {
-	    l = releasePeer(peer);
-	    peer = 0L;
-	} else
-	    l = 0L;
-	return l;
+
+    public final long b() {
+        long peer_;
+        if (peer != 0L) {
+            peer_ = releasePeer(peer);
+            peer = 0L;
+        } else {
+            peer_ = 0L;
+        }
+        return peer_;
     }
 }

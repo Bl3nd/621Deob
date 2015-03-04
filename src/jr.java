@@ -167,7 +167,7 @@ final class jr extends uc
 	}
 	if (LoginStream.sa == null) {
 	    if (cs.i.g(1912, ci.m))
-		LoginStream.sa = GameOutPacket.a(cs.i, ci.m, (byte) 32);
+		LoginStream.sa = GameOutPacket.a(cs.i, ci.m);
 	    else
 		bool = false;
 	}

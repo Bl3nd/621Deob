@@ -53,9 +53,9 @@ abstract class qc
 		    if (((Interface) kr.a).L != null && fj.z) {
 			ClientScript var_mea = new ClientScript();
 			((ClientScript) var_mea).objects = ((Interface) kr.a).L;
-			((ClientScript) var_mea).q = i_2_;
+			((ClientScript) var_mea)._x = i_2_;
 			((ClientScript) var_mea).interface_ = kr.a;
-			((ClientScript) var_mea).p = i_3_;
+			((ClientScript) var_mea)._y = i_3_;
 			ClientScriptHandler.activateClientScript(var_mea);
 		    }
 		} else {
@@ -65,8 +65,8 @@ abstract class qc
 			    ClientScript var_mea = new ClientScript();
 			    ((ClientScript) var_mea).objects = ((Interface) kr.a).gd;
 			    ((ClientScript) var_mea).interface_1 = bw.u;
-			    ((ClientScript) var_mea).p = i_3_;
-			    ((ClientScript) var_mea).q = i_2_;
+			    ((ClientScript) var_mea)._y = i_3_;
+			    ((ClientScript) var_mea)._x = i_2_;
 			    ((ClientScript) var_mea).interface_ = kr.a;
 			    ClientScriptHandler.activateClientScript(var_mea);
 			}

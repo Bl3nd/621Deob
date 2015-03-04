@@ -27,10 +27,10 @@ abstract class sp extends pp
 	Class_u.Q = 0;
 	dca.S++;
 	for (int i_3_ = 0; i_3_ < baa.l[i_2_]; i_3_++) {
-	    if (!cj.a(aaa.k[i_2_][i_3_], bool, is, i, i_1_)) {
-		qg.a(aaa.k[i_2_][i_3_]);
-		if (((Animable) aaa.k[i_2_][i_3_]).g != -1)
-		    ht.F[ii.d++] = aaa.k[i_2_][i_3_];
+	    if (!cj.a(aaa.animables[i_2_][i_3_], bool, is, i, i_1_)) {
+		qg.a(aaa.animables[i_2_][i_3_]);
+		if (((Animable) aaa.animables[i_2_][i_3_]).g != -1)
+		    ht.F[ii.d++] = aaa.animables[i_2_][i_3_];
 	    }
 	}
 	for (int i_4_ = 0; i_4_ < fg.a[i_2_]; i_4_++) {
@@ -41,20 +41,20 @@ abstract class sp extends pp
 	    }
 	}
 	for (int i_5_ = 0; i_5_ < cc.f[i_2_]; i_5_++) {
-	    if (!cj.a(cca.d[i_2_][i_5_], bool, is, i, i_1_)) {
-		if (cca.d[i_2_][i_5_].e((byte) 23)) {
-		    qg.a(cca.d[i_2_][i_5_]);
-		    if (((Animable) cca.d[i_2_][i_5_]).g != -1)
-			uq.H[Class_u.Q++] = cca.d[i_2_][i_5_];
+	    if (!cj.a(InputStreamSub_1.d[i_2_][i_5_], bool, is, i, i_1_)) {
+		if (InputStreamSub_1.d[i_2_][i_5_].e((byte) 23)) {
+		    qg.a(InputStreamSub_1.d[i_2_][i_5_]);
+		    if (((Animable) InputStreamSub_1.d[i_2_][i_5_]).g != -1)
+			uq.H[Class_u.Q++] = InputStreamSub_1.d[i_2_][i_5_];
 		} else {
-		    qg.a(cca.d[i_2_][i_5_]);
-		    if (((Animable) cca.d[i_2_][i_5_]).g != -1)
-			ht.F[ii.d++] = cca.d[i_2_][i_5_];
+		    qg.a(InputStreamSub_1.d[i_2_][i_5_]);
+		    if (((Animable) InputStreamSub_1.d[i_2_][i_5_]).g != -1)
+			ht.F[ii.d++] = InputStreamSub_1.d[i_2_][i_5_];
 		}
 	    }
 	}
 	if (!bool) {
-	    for (int i_6_ = 0; i_6_ < aa.n; i_6_++) {
+	    for (int i_6_ = 0; i_6_ < Node_Sub.n; i_6_++) {
 		if (!cj.a(sw.a[i_6_], bool, is, i, i_1_)) {
 		    qg.a(sw.a[i_6_]);
 		    if (((Animable) sw.a[i_6_]).g != -1) {

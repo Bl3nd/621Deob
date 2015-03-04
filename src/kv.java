@@ -57,7 +57,7 @@ final class kv implements sn
 	d++;
 	if (i != -58)
 	    e = null;
-	return tj.a;
+	return tj.tj3;
     }
     
     public final int a(int i) {

@@ -5,8 +5,8 @@ package jagdx;
 import jaclib.peer.IUnknown;
 import jaclib.peer.am;
 
-public class IDirect3DIndexBuffer extends IUnknown
-{
+public class IDirect3DIndexBuffer extends IUnknown {
+
     protected final long a() {
 	return super.a();
     }
@@ -15,10 +15,9 @@ public class IDirect3DIndexBuffer extends IUnknown
     
     private final native boolean _Update(long l, int i, int i_0_);
     
-    public final native int Lock(int i, int i_1_, int i_2_,
-				 GeometryBuffer geometrybuffer);
+    public final native int Lock(int i, int i_1_, int i_2_, GeometryBuffer geometrybuffer);
     
-    IDirect3DIndexBuffer(am var_am) {
-	super(var_am);
+    public IDirect3DIndexBuffer(am am) {
+	super(am);
     }
 }

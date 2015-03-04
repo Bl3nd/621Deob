@@ -51,7 +51,7 @@ final class eba extends pn
     private final void a(int i, byte i_3_, Class_hb class_hb) {
 	if ((((dt) y).O[((Class_hb) class_hb).m] & 0x4) != 0
 	    && ((Class_hb) class_hb).E < 0) {
-	    int i_4_ = ((dt) y).K[((Class_hb) class_hb).m] / gba.G;
+	    int i_4_ = ((dt) y).K[((Class_hb) class_hb).m] / gba.samplesPerSec;
 	    int i_5_ = (i_4_ - ((Class_hb) class_hb).u + 1048575) / i_4_;
 	    ((Class_hb) class_hb).u
 		= 0xfffff & i_4_ * i + ((Class_hb) class_hb).u;
@@ -205,7 +205,7 @@ final class eba extends pn
 			 int i_19_, int i_20_) {
 	if ((0x4 & ((dt) y).O[((Class_hb) class_hb).m]) != 0
 	    && ((Class_hb) class_hb).E < 0) {
-	    int i_21_ = ((dt) y).K[((Class_hb) class_hb).m] / gba.G;
+	    int i_21_ = ((dt) y).K[((Class_hb) class_hb).m] / gba.samplesPerSec;
 	    for (;;) {
 		int i_22_
 		    = (i_21_ + (1048575 - ((Class_hb) class_hb).u)) / i_21_;
@@ -215,7 +215,7 @@ final class eba extends pn
 		((Class_hb) class_hb).u += i_21_ * i_22_ - 1048576;
 		i_19_ += i_22_;
 		i_18_ -= i_22_;
-		int i_23_ = gba.G / 100;
+		int i_23_ = gba.samplesPerSec / 100;
 		int i_24_ = 262144 / i_21_;
 		if (i_23_ > i_24_)
 		    i_23_ = i_24_;

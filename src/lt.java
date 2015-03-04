@@ -10,7 +10,7 @@ final class lt
     static int d;
     static int e;
     static int f;
-    static int g = 0;
+    static int rectValue = 0;
     static int[] h = new int[3];
     
     public final String toString() {
@@ -48,8 +48,8 @@ final class lt
     
     static final void a(byte i, int i_3_) {
 	f++;
-	for (Node class_d = aea.E.b((byte) 124); class_d != null;
-	     class_d = aea.E.b(12561)) {
+	for (Node class_d = aea.il.b((byte) 124); class_d != null;
+	     class_d = aea.il.b(12561)) {
 	    if ((0xffffL & ((Node) class_d).nodeID >> 48) == (long) i_3_)
 		class_d.unlink(-69);
 	}

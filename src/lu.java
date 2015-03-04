@@ -14,7 +14,7 @@ final class lu extends uc
     static int o;
     static int p;
     static int q;
-    private bj r;
+    private Commands r;
     private float s;
     static int t;
     private int u;
@@ -36,7 +36,7 @@ final class lu extends uc
 	((uc) this).h.a(i, i - 465309396, 7681);
 	((uc) this).h.a(34166, 770, 0, true);
 	((uc) this).h.b((int) 0, true);
-	OpenGL.glBindProgramARB(34336, ((bj) r).c);
+	OpenGL.glBindProgramARB(34336, ((Commands) r).c);
 	OpenGL.glEnable(34336);
 	m.a((byte) 76);
 	m.a(1, 0);
@@ -208,7 +208,7 @@ final class lu extends uc
     
     static final void a(int i, int i_10_, Class_r class_r) {
 	B++;
-	if (!il.k)
+	if (!il.occlude)
 	    bfa.D = 0;
 	else {
 	    if (pu.q)

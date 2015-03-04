@@ -44,7 +44,7 @@ public abstract class IncomingPackets extends Node {
                         pw.incomingPacket79, kea.incomingPacket80, an.incomingPacket81, nh.setItemsByIndexGameInPacket, os.incomingPacket83, od.incomingPacket84, sj.incomingPacket85, Class_pd.incomingPacket86,
                         Class_ef.incomingPacket87, lm.incomingPacket88, td.incomingPacket89, sv.completeLogoutGameInPacket, ws.incomingPacket91, hs.incomingPacket92, Node.bigConfigPacket, efa.incomingPacket94,
                         dk.sendIgnoreListGameInPacket, kba.incomingPacket96, sca.incomingPacket97, sa.incomingPacket98, aea.incomingPacket99, ku.incomingPacket100, nn.incomingPacket101, GameOutPacket.incomingPacket102, ql.incomingPacket103,
-                        uba.incomingPacket104, ns.accessMaskGameInPacket, bl.incomingPacket106, lda.incomingPacket107, nj.incomingPacket108, ro.incomingPacket109, dk.incomingPacket110, lr.incomingPacket111, pr.incomingPacket112, aa.incomingPacket113,
+                        uba.incomingPacket104, ns.accessMaskGameInPacket, bl.incomingPacket106, lda.incomingPacket107, nj.incomingPacket108, ro.incomingPacket109, dk.incomingPacket110, lr.incomingPacket111, pr.incomingPacket112, Node_Sub.incomingPacket113,
                         hu.incomingPacket114, bw.incomingPacket115, sv.lobbyConnectionAliveGameInPacket});
     }
 }

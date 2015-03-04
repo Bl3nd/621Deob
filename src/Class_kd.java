@@ -5,7 +5,7 @@
 final class Class_kd
 {
     static int a;
-    static String b = null;
+    static String itemName = null;
     static int c;
     static int[] d = new int[128];
     static int e;
@@ -22,7 +22,7 @@ final class Class_kd
     public static void a(int i) {
 	l = null;
 	d = null;
-	b = null;
+	itemName = null;
 	if (i != -11808)
 	    a((byte) 77, (String) null);
 	j = null;
@@ -44,7 +44,7 @@ final class Class_kd
     
     final void a(boolean bool) {
 	if (bool != true)
-	    b = null;
+	    itemName = null;
 	e++;
 	((Class_kd) this).i &= 0x3fff;
     }
@@ -99,7 +99,7 @@ final class Class_kd
 					     + 4) << 11,
 				   1003, true);
 			class_ac.a(true, i_12_, (byte) -107,
-				   class_ac.i((int) -1), i_8_, i_11_);
+				   class_ac.getNPCDefinition((int) -1), i_8_, i_11_);
 		    }
 		}
 	    }

@@ -70,7 +70,7 @@ final class lq extends qda implements vda
     final boolean g(byte i) {
 	W++;
 	if (i <= 114)
-	    a(true, 18, (byte) 120, null, null, 124, 76);
+	    throwIllegalStateException(true, 18, (byte) 120, null, null, 124, 76);
 	return false;
     }
     
@@ -211,8 +211,8 @@ final class lq extends qda implements vda
 	R++;
     }
     
-    final void a(boolean bool, int i, byte i_21_, Class_r class_r, Animable var_lo,
-		 int i_22_, int i_23_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_21_, Class_r class_r, Animable var_lo,
+                                          int i_22_, int i_23_) {
 	eb++;
 	int i_24_ = -47 % ((-50 - i_21_) / 55);
 	throw new IllegalStateException();

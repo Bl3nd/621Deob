@@ -66,7 +66,7 @@ abstract class ms implements et
 	    OpenGL.glBindBufferARB(n, e);
 	    if (bool) {
 		OpenGL.glBufferDataARBub(n, r, null, 0, !d ? 35044 : 35040);
-		if (this.i <= ((en) ((ms) this).j).Jd.b) {
+		if (this.i <= ((en) ((ms) this).j).Jd.size) {
 		    a = 1;
 		    return ((en) ((ms) this).j).Jd;
 		}

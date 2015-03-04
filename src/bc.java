@@ -25,7 +25,7 @@ abstract class bc
 	return a(l, (byte) 121);
     }
     
-    abstract long b(int i);
+    abstract long b();
     
     abstract int a(long l, byte i);
     
@@ -44,5 +44,5 @@ abstract class bc
 	return true;
     }
     
-    abstract void d(int i);
+    abstract void d(int time);
 }

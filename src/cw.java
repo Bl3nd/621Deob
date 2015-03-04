@@ -61,7 +61,7 @@ final class cw
 	int i_4_ = var_es.readUnsignedByte(-9268);
 	if (i_4_ <= 3) {
 	    int i_5_ = var_es.readUnsignedByte(-9268);
-	    wea[] var_weas = cca.a(true);
+	    wea[] var_weas = InputStreamSub_1.a(true);
 	    boolean bool = true;
 	    if (var_weas.length != i_5_)
 		bool = false;

@@ -34,7 +34,7 @@ final class po implements sn
 	if (i != -58)
 	    return null;
 	g++;
-	return tj.g;
+	return tj.tj2;
     }
     
     public static void b(int i) {

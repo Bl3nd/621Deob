@@ -265,7 +265,7 @@ final class mga extends Class_q
 		((Interface) var_kp).locY = ((Interface) var_kp).Wc + (i - ((Interface) var_kp).minVScroll) / 2;
 	} else
 	    ((Interface) var_kp).locY = ((Interface) var_kp).Wc;
-	if (lba.Q
+	if (lba.qa_op_test
 	    && (((nm) client.c(var_kp)).l != 0 || ((Interface) var_kp).type == 0)) {
 	    if (((Interface) var_kp).locX >= 0) {
 		if (((Interface) var_kp).minHScroll + ((Interface) var_kp).locX > i_19_)
@@ -322,10 +322,10 @@ final class mga extends Class_q
 		= string.substring(0, i_27_) + "," + string.substring(i_27_);
 	if (string.length() > 9)
 	    return (" <col=00ff80>" + string.substring(0, string.length() - 8)
-		    + GameText.millionMoneyLetter_.getString((byte) -59, cba.languageID) + " (" + string + ")</col>");
+		    + GameText.millionMoneyLetter_.getString(cba.languageID) + " (" + string + ")</col>");
 	if (string.length() > 6)
 	    return (" <col=ffffff>" + string.substring(0, string.length() - 4)
-		    + GameText.thousandMoneyLetter_.getString((byte) 78, cba.languageID) + " (" + string + ")</col>");
+		    + GameText.thousandMoneyLetter_.getString(cba.languageID) + " (" + string + ")</col>");
 	return " <col=ffff00>" + string + "</col>";
     }
     

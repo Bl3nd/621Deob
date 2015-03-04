@@ -17,7 +17,7 @@ class tc extends mca
     int R;
     
     static final void i(int i) {
-	qba.a(60, ((jb) cs.g).m);
+	qba.a(60, ((jb) cs.g).buildAreaSize);
 	K++;
 	int i_0_ = (bfa.thisPlayersRegionX >> 3) + (dg.gb >> 12);
 	int i_1_ = (BytesParser.thisPlayersRegionY >> 3) + (ada.N >> 12);
@@ -79,9 +79,9 @@ class tc extends mca
     
     static final void a(boolean bool, Class_r class_r) {
 	P++;
-	int i = mr.a;
-	int i_8_ = hn.b;
-	int i_9_ = aw.l;
+	int i = mr.x_;
+	int i_8_ = hn.y_;
+	int i_9_ = aw.option;
 	int i_10_ = lfa.r - 3;
 	int i_11_ = 20;
 	if (lk.k == null || oca.h == null) {
@@ -102,7 +102,7 @@ class tc extends mca
 	    oca.h.a(i, i_8_);
 	    ea.N.a(i + (i_9_ - ea.N.E()), i_8_);
 	}
-	pv.j.a(~0xffffff | vea.d, true, i + 3, GameText.chooseOptionText.getString((byte) -62, cba.languageID), -1,
+	pv.j.a(~0xffffff | vea.d, true, i + 3, GameText.chooseOptionText.getString(cba.languageID), -1,
 	       i_8_ + 14);
 	class_r.J(i, i_8_ + i_11_, i_9_, i_10_ - i_11_,
 		  dk.q | 255 - rm.o << 24, 1);
@@ -198,7 +198,7 @@ class tc extends mca
 	}
 	if (bool != false)
 	    i(-18);
-	vv.a(hn.b, mr.a, aw.l, (byte) 97, lfa.r);
+	vv.a(hn.y_, mr.x_, aw.option, (byte) 97, lfa.r);
     }
     
     final int a(byte b) {

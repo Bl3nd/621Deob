@@ -14,7 +14,7 @@ final class il
     static int h;
     int i;
     static int j;
-    static boolean k = true;
+    static boolean occlude = true;
     Node[] l;
     static int[] m;
     static int n;

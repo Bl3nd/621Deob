@@ -9,7 +9,7 @@ public class dxVertexLayout extends mq {
 	public IDirect3DVertexDeclaration iDirect3dVertexDeclaration;
 
 	public dxVertexLayout(gaa gaa, eda[] edas) {
-		VertexElementCollection vertexelementcollection = new VertexElementCollection(((gaa) gaa).Mg);
+		VertexElementCollection vertexelementcollection = new VertexElementCollection(gaa.Mg);
 		int i = 0;
 		for (int j = 0; j < edas.length; j++) {
 			int k = 0;
@@ -61,6 +61,6 @@ public class dxVertexLayout extends mq {
 			}
 		}
 		vertexelementcollection.finish();
-		((dxVertexLayout) this).iDirect3dVertexDeclaration = ((gaa) gaa).Hg.a(vertexelementcollection, null);
+		this.iDirect3dVertexDeclaration = gaa.Hg.a(vertexelementcollection, null);
 	}
 }

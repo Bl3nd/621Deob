@@ -67,8 +67,8 @@ final class od extends qda
 	}
     }
     
-    final void a(boolean bool, int i, byte i_2_, Class_r class_r, Animable var_lo,
-		 int i_3_, int i_4_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_2_, Class_r class_r, Animable var_lo,
+                                          int i_3_, int i_4_) {
 	R++;
 	int i_5_ = -55 % ((i_2_ + 50) / 55);
 	throw new IllegalStateException();
@@ -107,7 +107,7 @@ final class od extends qda
 	iv var_iv = Class_ic.H.a((byte) 12, i);
 	Class_i class_i = vr.b[((Animable) this).height];
 	Class_i class_i_8_
-	    = ((Animable) this).h >= 3 ? null : vr.b[((Animable) this).h + 1];
+	    = ((Animable) this).height_ >= 3 ? null : vr.b[((Animable) this).height_ + 1];
 	if (i_7_ != 22209)
 	    e((byte) -63);
 	if (((od) this).rb)
@@ -181,7 +181,7 @@ final class od extends qda
     final boolean a(int i, int i_9_, Class_r class_r, int i_10_) {
 	Y++;
 	if (i_10_ != 9678)
-	    a(true, -110, (byte) -2, null, null, 27, 34);
+	    throwIllegalStateException(true, -110, (byte) -2, null, null, 27, 34);
 	return false;
     }
     

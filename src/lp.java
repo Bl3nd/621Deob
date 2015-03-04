@@ -70,7 +70,7 @@ abstract class lp implements ica
     public void a(int i) {
 	if (i <= -41) {
 	    c++;
-	    sa var_sa = GameOutPacket.a(l, ((iea) ((lp) this).d).b, (byte) 32);
+	    sa var_sa = GameOutPacket.a(l, ((iea) ((lp) this).d).b);
 	    h = lg.r.a(var_sa, aga.a(((lp) this).e, ((iea) ((lp) this).d).b),
 		       true);
 	}
@@ -108,7 +108,7 @@ abstract class lp implements ica
 	    p = null;
 	b(2, i_7_, bool, i_6_);
 	String string = Class_ub.W.d((byte) 86);
-	if (us.a(i - 6518) - j > 10000L)
+	if (us.getCurrentTime(i - 6518) - j > 10000L)
 	    string += " (" + Class_ub.W.c((byte) 127).c((byte) -109) + ")";
 	h.a(((iea) ((lp) this).d).f, -142, i_6_ + ((iea) ((lp) this).d).i / 2,
 	    -1,
@@ -129,7 +129,7 @@ abstract class lp implements ica
 		if (l > 0L) {
 		    long l_11_
 			= 10000L * l / (long) i_8_ * (long) (i_10_ - i_8_);
-		    long l_12_ = 10000L * (us.a(i + 111) - j);
+		    long l_12_ = 10000L * (us.getCurrentTime(i + 111) - j);
 		    if (l_11_ <= l_12_)
 			i_9_ = i_10_ * 100;
 		    else
@@ -140,7 +140,7 @@ abstract class lp implements ica
 	    }
 	} else {
 	    o = i_8_;
-	    j = us.a(100);
+	    j = us.getCurrentTime(100);
 	}
 	return i_9_;
     }

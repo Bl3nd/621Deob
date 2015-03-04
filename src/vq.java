@@ -204,11 +204,11 @@ final class vq extends Class_ab {
             return false;
         int i_53_ = i >> 16;
         int i_54_ = 0xffff & i;
-        if (aa.o[i_53_] == null || aa.o[i_53_][i_54_] == null)
+        if (Node_Sub.o[i_53_] == null || Node_Sub.o[i_53_][i_54_] == null)
             return false;
         if (bool != false)
             return false;
-        Interface var_kp = aa.o[i_53_][i_54_];
+        Interface var_kp = Node_Sub.o[i_53_][i_54_];
         if ((i_52_ ^ 0xffffffff) == 0 && ((Interface) var_kp).type == 0) {
             for (bfa var_bfa = (bfa) oba.I.a((int) 96); var_bfa != null;
                  var_bfa = (bfa) oba.I.b((byte) 23)) {

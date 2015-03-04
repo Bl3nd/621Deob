@@ -4,7 +4,7 @@
 
 class qga implements oc
 {
-    static GameOutPacket a = new GameOutPacket(15, -1);
+    static GameOutPacket outgoingPacket15 = new GameOutPacket(15, -1);
     ct b;
     int c;
     static int d;
@@ -22,7 +22,7 @@ class qga implements oc
 			  && ((dr) var_dr).j[i_3_] != null)) {
 	    int i_4_ = ((dr) var_dr).j[i_3_][0];
 	    if (i_2_ <= 58)
-		a = null;
+		outgoingPacket15 = null;
 	    int i_5_ = i_4_ >> 8;
 	    int i_6_ = (i_4_ & 0xea) >> 5;
 	    if (((dr) var_dr).j[i_3_].length > 1) {
@@ -51,7 +51,7 @@ class qga implements oc
     }
     
     public static void b(int i) {
-	a = null;
+	outgoingPacket15 = null;
 	if (i < 110)
 	    qga.i = null;
 	qga.i = null;

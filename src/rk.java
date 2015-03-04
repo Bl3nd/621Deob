@@ -6,7 +6,7 @@ final class rk extends Class_wb
 {
     short n;
     static int o;
-    int p = (int) (us.a(99) / 1000L);
+    int p = (int) (us.getCurrentTime(99) / 1000L);
     String playerName;
     static int r;
     static int s;

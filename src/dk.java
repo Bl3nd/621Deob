@@ -113,9 +113,9 @@ final class dk
 	    ((Entity) p).cb = stream.readString((byte) 120);
 	    if (((Entity) p).cb.charAt(0) == '~') {
 	    	((Entity) p).cb = ((Entity) p).cb.substring(1);
-			oba.a(((Player) p).hd, ((Entity) p).cb, 2, -1, p.a(false, (byte) -7), 0, p.getUserDisplayName((byte) -126, true));
+			oba.a(((Player) p).playerName, ((Entity) p).cb, 2, -1, p.getDisplayName(false, (byte) -7), 0, p.getUserDisplayName((byte) -126, true));
 	    } else if (p == up.thisPlayer) 
-	    	oba.a(((Player) p).hd, ((Entity) p).cb, 2, dummy ^ 0xffffffff, p.a(false, (byte) -7), 0, p.getUserDisplayName((byte) -126, true));
+	    	oba.a(((Player) p).playerName, ((Entity) p).cb, 2, dummy ^ 0xffffffff, p.getDisplayName(false, (byte) -7), 0, p.getUserDisplayName((byte) -126, true));
 	    ((Entity) p).jb = 0;
 	    ((Entity) p).vc = 0;
 	    ((Entity) p).Q = 150;
@@ -177,10 +177,10 @@ final class dk
 			((Entity) p).M += ((Entity) p).regionLocalX[0];
 	    } else {
 			((Entity) p).Nc = 0;
-			((Entity) p).M += ((Player) p).kd;
-			((Entity) p).fc += ((Player) p).rd;
-			((Entity) p).Yb += ((Player) p).kd;
-			((Entity) p).Db += ((Player) p).rd;
+			((Entity) p).M += ((Player) p).playerX;
+			((Entity) p).fc += ((Player) p).playerY;
+			((Entity) p).Yb += ((Player) p).playerX;
+			((Entity) p).Db += ((Player) p).playerY;
 	    }
 	}
 	if ((maskData & 0x4) != 0) {//orientation update
@@ -230,15 +230,15 @@ final class dk
 	    i_2_ = stream.readNegativeByte(false);
 	if (((Player) p).Vc) {
 	    if (i_2_ == 127)
-	    	p.updateLocation(-3377, ((Player) p).kd, ((Player) p).rd);
+	    	p.updateLocation(-3377, ((Player) p).playerX, ((Player) p).playerY);
 	    else {
 			byte i_24_;
 			if ((i_2_ ^ 0xffffffff) == 0)
 			    i_24_ = hg.moveTypePerPlayer[playerID];
 			else
 			    i_24_ = i_2_;
-			p.updateLocation(i_24_, ((Player) p).rd, dummy - 1157357879,
-				 ((Player) p).kd);
+			p.updateLocation(i_24_, ((Player) p).playerY, dummy - 1157357879,
+				 ((Player) p).playerX);
 	    }
 	}
     }

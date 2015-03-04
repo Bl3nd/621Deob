@@ -72,7 +72,7 @@ final class bh extends pp
 		if (!bool)
 		    class_d = new GameInPacketHandler(var_es.readInt(62));
 		else
-		    class_d = new aa(var_es.readString((byte) 118));
+		    class_d = new Node_Sub(var_es.readString((byte) 118));
 		t.a(class_d, (byte) -54, (long) i_19_);
 	    }
 	}
@@ -88,10 +88,10 @@ final class bh extends pp
 	    return string;
 	if (bool != false)
 	    return null;
-	aa var_aa = (aa) t.a(-32748, (long) i);
+	Node_Sub var_aa = (Node_Sub) t.a(-32748, (long) i);
 	if (var_aa == null)
 	    return string;
-	return ((aa) var_aa).m;
+	return ((Node_Sub) var_aa).m;
     }
     
     final void a(BytesParser var_es, int i) {

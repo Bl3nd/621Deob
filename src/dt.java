@@ -96,7 +96,7 @@ final class dt extends pn
     
     final synchronized void b(int[] is, int i, int i_3_) {
 	if (C.c()) {
-	    int i_4_ = qb * ((si) C).c / gba.G;
+	    int i_4_ = qb * ((si) C).c / gba.samplesPerSec;
 	    do {
 		long l = (long) i_4_ * (long) i_3_ + Fb;
 		if (Ib - l >= 0L) {
@@ -155,7 +155,7 @@ final class dt extends pn
     final synchronized void a(int i) {
 	Y++;
 	if (C.c()) {
-	    int i_10_ = ((si) C).c * qb / gba.G;
+	    int i_10_ = ((si) C).c * qb / gba.samplesPerSec;
 	    do {
 		long l = Fb + (long) i * (long) i_10_;
 		if (Ib - l >= 0L) {
@@ -242,7 +242,7 @@ final class dt extends pn
 	int i_17_
 	    = (int) (((double) (((oaa) ((Class_hb) class_hb).q).n * 256)
 		      * Math.pow(2.0, (double) i_14_ * 3.255208333333333E-4)
-		      / (double) gba.G)
+		      / (double) gba.samplesPerSec)
 		     + 0.5);
 	if (i_17_ >= 1)
 	    return i_17_;
@@ -280,7 +280,7 @@ final class dt extends pn
     
     final boolean a(int[] is, Class_hb class_hb, int i, int i_23_, int i_24_) {
 	D++;
-	((Class_hb) class_hb).p = gba.G / 100;
+	((Class_hb) class_hb).p = gba.samplesPerSec / 100;
 	if (((Class_hb) class_hb).E >= 0 && (((Class_hb) class_hb).H == null
 					     || ((Class_hb) class_hb).H.f())) {
 	    class_hb.a((byte) -104);
@@ -971,7 +971,7 @@ final class dt extends pn
 	     class_hb = (Class_hb) ((eba) Eb).w.b((byte) 52)) {
 	    if (i < 0 || i == ((Class_hb) class_hb).m) {
 		if (((Class_hb) class_hb).H != null) {
-		    ((Class_hb) class_hb).H.k(gba.G / 100);
+		    ((Class_hb) class_hb).H.k(gba.samplesPerSec / 100);
 		    if (((Class_hb) class_hb).H.l())
 			((eba) Eb).B.b(((Class_hb) class_hb).H);
 		    class_hb.a((byte) -104);

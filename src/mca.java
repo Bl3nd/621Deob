@@ -93,7 +93,7 @@ public abstract class mca extends Node {
             C++;
             String string = ("tele " + height + "," + (x >> 6) + "," + (y >> 6) + "," + (0x3f & x) + "," + (y & 0x3f));
             System.out.println(string);
-            bj.applyClientCommand(i - 1024908230, false, string, true);
+            Commands.applyClientCommand(i - 1024908230, false, string, true);
         }
     }
 

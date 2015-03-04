@@ -180,7 +180,7 @@ final class iaa
 	if (!string.equals("")) {
 	    up.B++;
 	    if (i < -28) {
-		tba var_tba = jga.sendGameOutPacket(qga.a, pca.isaac, (byte) 96);
+		tba var_tba = jga.sendGameOutPacket(qga.outgoingPacket15, pca.isaac, (byte) 96);
 		((tba) var_tba).loginStream.writeByte(cq.a(string, (byte) 2), (byte) -120);
 		((tba) var_tba).loginStream.writeString(string, -119);
 		ud.a(var_tba, (byte) -36);

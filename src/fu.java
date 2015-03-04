@@ -26,7 +26,7 @@ abstract class fu implements hfa
     static int s;
     static int t;
     int u;
-    static int v = 0;
+    static int fps = 0;
     static int w;
     bt x;
     static int y;
@@ -179,7 +179,7 @@ abstract class fu implements hfa
     static final boolean a(int i, int i_42_, int i_43_, ev var_ev,
 			   boolean bool) {
 	m++;
-	if (!il.k)
+	if (!il.occlude)
 	    return false;
 	if (io.X < 100)
 	    return false;
@@ -238,7 +238,7 @@ abstract class fu implements hfa
 	    return true;
 	}
 	if (bool != true)
-	    v = -70;
+	    fps = -70;
 	if (((ev) var_ev).A == 32) {
 	    if (!dd.a(false, dba.k, i_47_, i_45_ + dba.k, i_46_, i_44_ + dba.k,
 		      dba.k))

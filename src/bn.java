@@ -422,7 +422,7 @@ final class bn
 		    int i_60_ = ((Interface) var_kp).locX + i_52_;
 		    int i_61_ = ((Interface) var_kp).locY + i_56_;
 		    int i_62_ = ((Interface) var_kp).mb;
-		    if (lba.Q && (((nm) client.c(var_kp)).l != 0
+		    if (lba.qa_op_test && (((nm) client.c(var_kp)).l != 0
 				  || ((Interface) var_kp).type == 0) && i_62_ > 127)
 			i_62_ = 127;
 		    if (var_kp == kr.a) {
@@ -430,7 +430,7 @@ final class bn
 			    && (((Interface) var_kp).od == nk.a
 				|| ((Interface) var_kp).od == ao.k)) {
 			    jga.s = i_52_;
-			    WorldSub.p = var_kps;
+			    WorldSub.interfaces = var_kps;
 			    qf.h = i_56_;
 			    continue;
 			}
@@ -521,14 +521,14 @@ final class bn
 				continue;
 			    }
 			    if (((Interface) var_kp).v == cfa.a) {
-				if (sl.l || ht.z) {
+				if (sl.fpsOn || ht.showProfiling) {
 				    int i_71_ = ((Interface) var_kp).minHScroll + i_60_;
 				    int i_72_ = i_61_ + 15;
-				    if (sl.l) {
+				    if (sl.fpsOn) {
 					int i_73_ = -256;
-					if (fu.v < 20)
+					if (fu.fps < 20)
 					    i_73_ = -65536;
-					pm.v.a(i_71_, i_72_, "Fps:" + fu.v,
+					pm.v.a(i_71_, i_72_, "Fps:" + fu.fps,
 					       i_73_, -1, -87);
 					i_72_ += 15;
 					Runtime runtime = Runtime.getRuntime();
@@ -539,8 +539,8 @@ final class bn
 					int i_75_ = -256;
 					if (i_74_ > 98304) {
 					    i_75_ = -65536;
-					    if (ce.bb) {
-						ffa.i(4096);
+					    if (ce.forced64mb) {
+						ffa.gcContainer(4096);
 						for (int i_76_ = 0; i_76_ < 10;
 						     i_76_++)
 						    System.gc();
@@ -601,7 +601,7 @@ final class bn
 						+ daa.cb),
 					       -256, -1, -126);
 				    i_72_ += 12;
-				    if (ht.z) {
+				    if (ht.showProfiling) {
 					bq.e.a(i_71_, i_72_,
 					       ("Polys: " + lg.r.DA()
 						+ " Models: " + lg.r.T()),
@@ -612,7 +612,7 @@ final class bn
 						+ " NPC: " + gd.f + " Pl: "
 						+ ml.j),
 					       -256, -1, i_53_ - 73);
-					dd.i(0);
+					dd.renderProfile(0);
 					i_72_ += 12;
 				    }
 				    la.q[i_59_] = true;
@@ -621,7 +621,7 @@ final class bn
 			    }
 			}
 			if (((Interface) var_kp).type == 0) {
-			    if (en.Sc == ((Interface) var_kp).v && lg.r.z())
+			    if (en.Sc == ((Interface) var_kp).v && lg.r.bloom())
 				lg.r.a(i_60_, i_61_, ((Interface) var_kp).minHScroll,
 				       ((Interface) var_kp).minVScroll);
 			    a(i_65_, i_66_, i_68_, i_60_ - ((Interface) var_kp).hScroll,
@@ -637,11 +637,11 @@ final class bn
 			    if (var_tt != null)
 				or.a(i_61_, (byte) -23, i_66_, i_59_, i_67_,
 				     ((tt) var_tt).l, i_68_, i_65_, i_60_);
-			    if (en.Sc == ((Interface) var_kp).v && lg.r.z())
+			    if (en.Sc == ((Interface) var_kp).v && lg.r.bloom())
 				lg.r.j();
 			    lg.r.da(i_51_, i, i_54_, i_50_);
 			}
-			if (sr.T[i_59_] || lt.g > 1) {
+			if (sr.T[i_59_] || lt.rectValue > 1) {
 			    if (((Interface) var_kp).type == 3) {
 				if (i_62_ == 0) {
 				    if (!((Interface) var_kp).c)
@@ -688,10 +688,10 @@ final class bn
 							   ((Interface) var_kp).itemStackSize));
 				    }
 				    if (rd.D == var_kp) {
-					string = GameText.pleaseWaitText.getString((byte) -127, cba.languageID);
+					string = GameText.pleaseWaitText.getString(cba.languageID);
 					i_84_ = ((Interface) var_kp).textColor;
 				    }
-				    if (ji.g)
+				    if (ji.clipComponents)
 					lg.r.V(i_60_, i_61_,
 					       i_60_ + ((Interface) var_kp).minHScroll,
 					       ((Interface) var_kp).minVScroll + i_61_);
@@ -706,7 +706,7 @@ final class bn
 					     ((Interface) var_kp).r, ((Interface) var_kp).Z,
 					     ((Interface) var_kp).minVScroll,
 					     ((Interface) var_kp).Fb);
-				    if (ji.g)
+				    if (ji.clipComponents)
 					lg.r.da(i_51_, i, i_54_, i_50_);
 				}
 			    } else if (((Interface) var_kp).type == 5) {
@@ -992,10 +992,10 @@ final class bn
 				    } else {
 					int i_98_
 					    = (((((Interface) var_kp).modelZoom << 2)
-						* GameInPacket.h[((Interface) var_kp).modelRotationX << 3])
+						* GameInPacket.ints1[((Interface) var_kp).modelRotationX << 3])
 					       >> 14);
 					int i_99_
-					    = ((GameInPacket.i[((Interface) var_kp).modelRotationX << 3]
+					    = ((GameInPacket.ints2[((Interface) var_kp).modelRotationX << 3]
 						* (((Interface) var_kp).modelZoom << 2))
 					       >> 14);
 					br.n.J(-((Interface) var_kp).modelRotationZ << 3);
@@ -1010,7 +1010,7 @@ final class bn
 				    }
 				    var_kp.a((byte) 55, var_da, br.n, lg.r,
 					     pm.currentTimedTicks);
-				    if (ji.g)
+				    if (ji.clipComponents)
 					lg.r.V(i_60_, i_61_,
 					       ((Interface) var_kp).minHScroll + i_60_,
 					       i_61_ + ((Interface) var_kp).minVScroll);
@@ -1030,7 +1030,7 @@ final class bn
 					if (((Interface) var_kp).Qc != null)
 					    lg.r.a(((Interface) var_kp).Qc.a());
 				    }
-				    if (ji.g)
+				    if (ji.clipComponents)
 					lg.r.da(i_51_, i, i_54_, i_50_);
 				    if (((Interface) var_kp).ad)
 					lg.r.ZA(true);

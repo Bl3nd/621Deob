@@ -6,7 +6,7 @@ final class dba
 {
     static int a;
     static int b;
-    static int c;
+    static int connectionStage;
     static f d;
     int e = 16777215;
     int f;
@@ -60,7 +60,7 @@ final class dba
 	}
 	if (!((jb) cs.g).n) {
 	    pm.F += 8.0F * ((float) l * pda.J / 40.0F);
-	    qw.n += afa.a * (float) l / 40.0F * 8.0F;
+	    qw.n += afa.aFloat * (float) l / 40.0F * 8.0F;
 	}
 	Class_kf.a(5126);
     }
@@ -116,6 +116,6 @@ final class dba
     }
     
     static {
-	c = 0;
+	connectionStage = 0;
     }
 }

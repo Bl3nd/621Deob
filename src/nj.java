@@ -128,7 +128,7 @@ class nj extends nfa
 	if (i < -50) {
 	    nj.i++;
 	    if (gf.a((byte) 123, i_18_))
-		on.a(71, aa.o[i_18_], -1);
+		on.a(71, Node_Sub.o[i_18_], -1);
 	}
     }
     

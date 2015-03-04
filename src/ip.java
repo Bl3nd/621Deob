@@ -235,7 +235,7 @@ final class ip extends wr
 	    boolean bool_14_ = false;
 	    boolean bool_15_ = false;
 	    boolean bool_16_ = false;
-	    Class_i class_i = Class_q.b[((Animable) this).h];
+	    Class_i class_i = Class_q.b[((Animable) this).height_];
 	    int i = U << 1;
 	    int i_17_ = i;
 	    int i_18_ = -i / 2;
@@ -403,7 +403,7 @@ final class ip extends wr
 	if (nw.a != null) {
 	    Class_ub.W = new jl();
 	    Class_ub.W.a(nw.a, (byte) -123, sr.V, ((lda) nw.a).o,
-			 ((lda) nw.a).k.getString((byte) 76, cba.languageID));
+			 ((lda) nw.a).k.getString(cba.languageID));
 	    rh.o = new Thread(Class_ub.W, "");
 	    if (i >= -118)
 		a((BytesParser) null, (byte) 33);

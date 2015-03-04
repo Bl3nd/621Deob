@@ -128,8 +128,8 @@ final class maa implements Runnable
 			    i_18_++;
 			if ((float) vr.b[i_18_].a(i_16_, i_14_, true)
 			    < f * (float) i_12_ + (float) is[1]) {
-			    i_2_ = i_14_ + (up.thisPlayer.i(-1) - 1 << 8) >> 9;
-			    i_3_ = (up.thisPlayer.i(-1) - 1 << 8) + i_16_ >> 9;
+			    i_2_ = i_14_ + (up.thisPlayer.getNPCDefinition(-1) - 1 << 8) >> 9;
+			    i_3_ = (up.thisPlayer.getNPCDefinition(-1) - 1 << 8) + i_16_ >> 9;
 			    break;
 			}
 		    }
@@ -138,7 +138,7 @@ final class maa implements Runnable
 		    if (!ba.c || (Class_jc.db & 0x40) == 0) {
 			if (me.q == Class_pf.O)
 			    lea.setClickMenuOption(i_2_, false, i_3_, -1, true, -1, i_0_ + 165,
-				  0L, "", 21, GameText.faceHereText.getString((byte) -63, cba.languageID));
+				  0L, "", 21, GameText.faceHereText.getString(cba.languageID));
 			lea.setClickMenuOption(i_2_, false, i_3_, -1, true, it.K, -67, 0L, "",
 			      10, lw.e);
 			qca.I++;
@@ -146,7 +146,7 @@ final class maa implements Runnable
 			Interface var_kp = ida.a(tm.t, qda.G, (byte) 102);
 			if (var_kp != null)
 			    lea.setClickMenuOption(i_2_, false, i_3_, -1, true, uk.d, 8, 0L,
-				  " ->", 30, Class_kd.b);
+				  " ->", 30, Class_kd.itemName);
 			else
 			    vo.c((byte) 31);
 		    }
@@ -172,7 +172,7 @@ final class maa implements Runnable
 		    }
 		    if (((og) var_og).j instanceof Player) {
 			Player var_qi = (Player) ((og) var_og).j;
-			int i_22_ = var_qi.i(-1);
+			int i_22_ = var_qi.getNPCDefinition(-1);
 			if (((i_22_ & 0x1) == 0
 			     && (0x1ff & ((Animable) var_qi).locX) == 0
 			     && (((Animable) var_qi).locY & 0x1ff) == 0)
@@ -180,9 +180,9 @@ final class maa implements Runnable
 				&& (((Animable) var_qi).locX & 0x1ff) == 256
 				&& (0x1ff & ((Animable) var_qi).locY) == 256)) {
 			    int i_23_
-				= ((Animable) var_qi).locX - (var_qi.i(-1) - 1 << 8);
+				= ((Animable) var_qi).locX - (var_qi.getNPCDefinition(-1) - 1 << 8);
 			    int i_24_
-				= ((Animable) var_qi).locY - (var_qi.i(-1) - 1 << 8);
+				= ((Animable) var_qi).locY - (var_qi.getNPCDefinition(-1) - 1 << 8);
 			    for (int i_25_ = 0; ps.npcCount > i_25_; i_25_++) {
 				NPCNode var_mi
 				    = (NPCNode) uo.a.a(-32748, (long) gfa.npcIndices[i_25_]);
@@ -203,12 +203,12 @@ final class maa implements Runnable
 					if (i_26_ >= i_23_
 					    && (((NPCDef)
 						 ((NPC) class_ac).npcDef).Q
-						<= (var_qi.i(-1)
+						<= (var_qi.getNPCDefinition(-1)
 						    - (i_26_ - i_23_ >> 9)))
 					    && i_27_ >= i_24_
 					    && (((NPCDef)
 						 ((NPC) class_ac).npcDef).Q
-						<= (var_qi.i(-1)
+						<= (var_qi.getNPCDefinition(-1)
 						    - (i_27_ - i_24_ >> 9)))) {
 					    ee.a(class_ac,
 						 (((Animable) up.thisPlayer).height
@@ -229,17 +229,17 @@ final class maa implements Runnable
 				    && ((Entity) var_qi_30_).gb) {
 				    int i_31_
 					= (((Animable) var_qi_30_).locX
-					   - (var_qi_30_.i(-1) - 1 << 8));
+					   - (var_qi_30_.getNPCDefinition(-1) - 1 << 8));
 				    int i_32_
 					= (((Animable) var_qi_30_).locY
-					   - (var_qi_30_.i(-1) - 1 << 8));
+					   - (var_qi_30_.getNPCDefinition(-1) - 1 << 8));
 				    if (i_31_ >= i_23_
-					&& (var_qi_30_.i(-1)
-					    <= (var_qi.i(i_0_ + 38)
+					&& (var_qi_30_.getNPCDefinition(-1)
+					    <= (var_qi.getNPCDefinition(i_0_ + 38)
 						- (i_31_ - i_23_ >> 9)))
 					&& i_32_ >= i_24_
-					&& (var_qi_30_.i(-1)
-					    <= (var_qi.i(i_0_ ^ 0x26)
+					&& (var_qi_30_.getNPCDefinition(-1)
+					    <= (var_qi.getNPCDefinition(i_0_ ^ 0x26)
 						- (i_32_ - i_24_ >> 9)))) {
 					cc.a((((Animable) ((og) var_og).j).height
 					      != ((Animable) up.thisPlayer).height),
@@ -327,18 +327,18 @@ final class maa implements Runnable
 					&& ((Entity) var_qi).gb) {
 					int i_41_
 					    = (((Animable) var_qi).locX
-					       - (var_qi.i(i_0_ ^ 0x26) - 1
+					       - (var_qi.getNPCDefinition(i_0_ ^ 0x26) - 1
 						  << 8));
 					int i_42_
 					    = (((Animable) var_qi).locY
-					       - (var_qi.i(-1) - 1 << 8));
+					       - (var_qi.getNPCDefinition(-1) - 1 << 8));
 					if (i_33_ <= i_41_
-					    && (var_qi.i(-1)
+					    && (var_qi.getNPCDefinition(-1)
 						<= (((NPCDef)
 						     ((NPC) class_ac).npcDef)
 						    .Q) - (i_41_ - i_33_ >> 9))
 					    && i_42_ >= i_34_
-					    && (var_qi.i(i_0_ ^ 0x26)
+					    && (var_qi.getNPCDefinition(i_0_ ^ 0x26)
 						<= ((((NPCDef)
 						      ((NPC) class_ac).npcDef)
 						     .Q)
@@ -389,7 +389,7 @@ final class maa implements Runnable
 					      (long) ((fn) var_fn).o,
 					      (Class_ag.k + " -> <col=ff9040>"
 					       + ((ItemDef) var_uv).itemName),
-					      48, Class_kd.b);
+					      48, Class_kd.itemName);
 					ul.z++;
 				    }
 				}
@@ -431,7 +431,7 @@ final class maa implements Runnable
 				      i_21_, -1, true, ml.h, 127,
 				      (long) ((fn) var_fn).o,
 				      "<col=ff9040>" + ((ItemDef) var_uv).itemName, 1004,
-				      GameText.examineText.getString((byte) -93, cba.languageID));
+				      GameText.examineText.getString(cba.languageID));
 				rba.e++;
 			    }
 			}
@@ -455,7 +455,7 @@ final class maa implements Runnable
 					  127, lu.a(i_21_, i_20_, -1, var_vda),
 					  (Class_ag.k + " -> <col=00ffff>"
 					   + ((ObjectDef) var_bda).objectName),
-					  19, Class_kd.b);
+					  19, Class_kd.itemName);
 				    faa.b++;
 				}
 			    }
@@ -498,7 +498,7 @@ final class maa implements Runnable
 				  i_21_, -1, true, ml.h, 126,
 				  (long) ((ObjectDef) var_bda).objectID,
 				  "<col=00ffff>" + ((ObjectDef) var_bda).objectName, 1008,
-				  GameText.examineText.getString((byte) -41, cba.languageID));
+				  GameText.examineText.getString(cba.languageID));
 			}
 		    }
 		}

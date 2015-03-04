@@ -35,8 +35,8 @@ class rba implements ica
 	if (var_lo != null) {
 	    for (int i = 0; i < 2; i++) {
 		for (int i_0_ = 0; i_0_ < baa.l[i]; i_0_++) {
-		    if (aaa.k[i][i_0_] == var_lo) {
-			co.a(aaa.k[i], i_0_ + 1, aaa.k[i], i_0_,
+		    if (aaa.animables[i][i_0_] == var_lo) {
+			co.a(aaa.animables[i], i_0_ + 1, aaa.animables[i], i_0_,
 			     baa.l[i] - i_0_ - 1);
 			baa.l[i]--;
 			return;
@@ -51,8 +51,8 @@ class rba implements ica
 		    }
 		}
 		for (int i_2_ = 0; i_2_ < cc.f[i]; i_2_++) {
-		    if (cca.d[i][i_2_] == var_lo) {
-			co.a(cca.d[i], i_2_ + 1, cca.d[i], i_2_,
+		    if (InputStreamSub_1.d[i][i_2_] == var_lo) {
+			co.a(InputStreamSub_1.d[i], i_2_ + 1, InputStreamSub_1.d[i], i_2_,
 			     cc.f[i] - i_2_ - 1);
 			cc.f[i]--;
 			return;

@@ -3,8 +3,8 @@
  */
 package jagdx;
 
-public class D3DADAPTER_IDENTIFIER
-{
+public class D3DADAPTER_IDENTIFIER {
+
     public String Description;
     public int WHQLLevel;
     public long DriverVersion;

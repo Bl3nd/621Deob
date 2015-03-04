@@ -5,14 +5,13 @@ package jagdx;
 import jaclib.peer.IUnknown;
 import jaclib.peer.am;
 
-public class IDirect3DSurface extends IUnknown
-{
+public class IDirect3DSurface extends IUnknown {
+
     public final native boolean UnlockRect();
     
-    public final native int LockRect(int i, int i_0_, int i_1_, int i_2_,
-				     int i_3_, PixelBuffer pixelbuffer);
+    public final native int LockRect(int i, int i_0_, int i_1_, int i_2_, int i_3_, PixelBuffer pixelbuffer);
     
-    IDirect3DSurface(am var_am) {
-	super(var_am);
+    public IDirect3DSurface(am am) {
+	super(am);
     }
 }

@@ -49,11 +49,11 @@ final class hm
 	Class_rf.a((int) -46);
 	pi.a(2, ((jb) cs.g).s, 22050, 36);
 	daa.ab = Class_nb.a(12869, nda.signlink, 22050, ru.canvas, 0);
-	daa.ab.a(Connection.dt, (byte) 88);
+	daa.ab.setPn(Connection.dt, (byte) 88);
 	pt.g = Class_nb.a(12869, nda.signlink, 2048, ru.canvas, 1);
 	if (bool != true)
 	    i = null;
-	pt.g.a(ej.r, (byte) 88);
+	pt.g.setPn(ej.r, (byte) 88);
     }
     
     hm(pl var_pl, pl var_pl_1_) {

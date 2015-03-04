@@ -34,7 +34,7 @@ final class jl implements Runnable
 	b++;
 	c = var_aca;
 	int i_0_ = -48 % ((i + 44) / 63);
-	r = us.a(111);
+	r = us.getCurrentTime(111);
     }
     
     final int a(byte i) {
@@ -113,14 +113,14 @@ final class jl implements Runnable
     
     public final void run() {
 	while (!d) {
-	    long l = us.a(112);
+	    long l = us.getCurrentTime(112);
 	    synchronized (this) {
 		try {
 		    if (c instanceof gfa)
 			c.a(true, n);
 		    else {
 			q++;
-			long l_5_ = us.a(117);
+			long l_5_ = us.getCurrentTime(117);
 			if (lg.r != null && v != null && v.c((byte) -105) != 0
 			    && r >= l_5_ - (long) v.c((byte) -108)) {
 			    int i = (int) (255L * (l_5_ - r)
@@ -158,9 +158,9 @@ final class jl implements Runnable
 				lg.r.u();
 			} catch (uo var_uo) {
 			    cea.a((var_uo.getMessage() + " (Recovered) "
-				   + po.c.d((byte) -30)),
+				   + po.c.errorMessage((byte) -30)),
 				  -2, var_uo);
-			    ur.a(0, true);
+			    ur.setTKVersion(0, true);
 			}
 		    }
 		    n = false;
@@ -168,7 +168,7 @@ final class jl implements Runnable
 		    continue;
 		}
 	    }
-	    long l_7_ = us.a(92);
+	    long l_7_ = us.getCurrentTime(92);
 	    int i = (int) (20L - (l_7_ - l));
 	    if (i > 0)
 		Connection.a(-28448, (long) i);

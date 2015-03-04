@@ -36,15 +36,15 @@ final class rm extends Interactable
 		    ((tba) var_tba).loginStream.writeShortSecondBytePlusArg1(128, is[i_1_]);
 		    ud.a(var_tba, (byte) -36);
 		    bool_0_ = true;
-		    la.a(1, 0, -2, var_qi.i(-1), 0, true, ((Entity) var_qi).regionLocalX[0],
-			 ((Entity) var_qi).regionLocalY[0], var_qi.i(-1));
+		    la.a(1, 0, -2, var_qi.getNPCDefinition(-1), 0, true, ((Entity) var_qi).regionLocalX[0],
+			 ((Entity) var_qi).regionLocalY[0], var_qi.getNPCDefinition(-1));
 		    break;
 		}
 	    }
 	    if (bool != true)
 		o = 43;
 	    if (!bool_0_)
-		cba.a(4, false, GameText.unableToFind_.getString((byte) 126, cba.languageID) + string);
+		cba.a(4, false, GameText.unableToFind_.getString(cba.languageID) + string);
 	    if (ba.c)
 		vo.c((byte) 31);
 	}
@@ -103,7 +103,7 @@ final class rm extends Interactable
 	    f_17_ = f_16_;
 	    f_16_ = -f_19_;
 	}
-	na.f = f_16_;
+	OutputStreamSub.f = f_16_;
 	dda.j = f_17_;
     }
     

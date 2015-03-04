@@ -24,20 +24,30 @@ public class RunClient extends Applet {
 	public String frameName = "[621] Deob by 03data";
 	public JPanel totalPanel;
 
+    /**
+     *
+     * @param strings
+     */
 	public static void main(String[] strings) {
-		for (int i = 0; i < strings.length; i++) {
-			if (strings[i].equalsIgnoreCase("servaddr"))
-				mainurl = strings[++i];
+		for (int address = 0; address < strings.length; address++) {
+			if (strings[address].equalsIgnoreCase("servaddr"))
+				mainurl = strings[++address];
 		}
 		RunClient runclient = new RunClient();
 		runclient.doFrame();
 	}
 
+    /**
+     * Initialize.
+     */
 	public void init() {
 		doApplet();
 	}
 
-	void doApplet() {
+    /**
+     * Start the applet.
+     */
+	private void doApplet() {
 		try {
 			readVars();
 			startClient();
@@ -46,7 +56,10 @@ public class RunClient extends Applet {
 		}
 	}
 
-	public void doFrame() {
+    /**
+     * Start the frame.
+     */
+	private void doFrame() {
 		try {
 			readVars();
 			openFrame();
@@ -56,22 +69,25 @@ public class RunClient extends Applet {
 		}
 	}
 
-	public void readVars() {
+    /**
+     * Read the param vars.
+     */
+	private void readVars() {
 		try {
 			RandomAccessFile randomaccessfile = new RandomAccessFile("params.txt", "r");
 			String string;
 			while ((string = randomaccessfile.readLine()) != null) {
 				int i = string.indexOf("document.write('<param name=");
 				if (i != -1) {
-					String string_0_ = string.substring(i + 28, string.lastIndexOf(">');"));
-					String string_1_ = string_0_.split(" ")[0];
-					string_1_ = string_1_.replaceAll("\"", "");
-					String string_2_ = string_0_.split(" ")[1];
-					string_2_ = string_2_.substring(6, string_2_.length());
-					string_2_ = string_2_.replaceAll("\"", "");
+					String string1 = string.substring(i + 28, string.lastIndexOf(">');"));
+					String string2 = string1.split(" ")[0];
+					string2 = string2.replaceAll("\"", "");
+					String string3 = string1.split(" ")[1];
+					string3 = string3.substring(6, string3.length());
+					string3 = string3.replaceAll("\"", "");
 					// System.out.println(new
 					// StringBuilder().append(string_1_).append(", ").append(string_2_).toString());
-					params.put(string_1_, string_2_);
+					params.put(string2, string3);
 				}
 			}
 			randomaccessfile.close();
@@ -80,7 +96,10 @@ public class RunClient extends Applet {
 		}
 	}
 
-	public void openFrame() {
+    /**
+     * Open the frame.
+     */
+	private void openFrame() {
 		mainPane.setLayout(new BorderLayout());
 		mainPane.add(this);
 		mainPane.setPreferredSize(new Dimension(765, 503));
@@ -96,7 +115,10 @@ public class RunClient extends Applet {
 		mainFrame.setVisible(true);
 	}
 
-	public void startClient() {
+    /**
+     * Starts the client.
+     */
+	private void startClient() {
 		try {
 			client.provideLoaderApplet(this);
 			client client = new client();
@@ -107,14 +129,27 @@ public class RunClient extends Applet {
 		}
 	}
 
+    /**
+     * Gets a parameter.
+     * @param string The parameter to get.
+     * @return The parameter that was specified.
+     */
 	public String getParameter(String string) {
 		return (String) params.get(string);
 	}
 
+    /**
+     * Gets the document base.
+     * @return The document base that was specified.
+     */
 	public URL getDocumentBase() {
 		return getCodeBase();
 	}
 
+    /**
+     * Gets the code base.
+     * @return The code base that was specified.
+     */
 	public URL getCodeBase() {
 		URL url;
 		try {

@@ -35,7 +35,7 @@ final class dv
 	if (i != 27063)
 	    a = null;
 	daa.cb = 0;
-	long l_0_ = us.a(i ^ 0x69d5);
+	long l_0_ = us.getCurrentTime(i ^ 0x69d5);
 	for (tq var_tq = (tq) tfa.w.b((byte) 109); var_tq != null;
 	     var_tq = (tq) tfa.w.a((byte) -106)) {
 	    if (var_tq.a(class_r, l))
@@ -45,7 +45,7 @@ final class dv
 	    System.out.println("Particle system count: " + tfa.w.d(0)
 			       + ", running: " + lt.a);
 	    System.out.println("Emitters: " + vm.k + " Particles: " + daa.cb
-			       + ". Time taken: " + (us.a(100) - l_0_) + "ms");
+			       + ". Time taken: " + (us.getCurrentTime(100) - l_0_) + "ms");
 	}
     }
 }

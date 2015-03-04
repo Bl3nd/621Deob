@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.lang.reflect.Method;
 
-final class jp extends ou implements KeyListener, FocusListener
+final class RSKeyListener extends ou implements KeyListener, FocusListener
 {
     static int h;
     static int i;
@@ -53,7 +53,7 @@ final class jp extends ou implements KeyListener, FocusListener
     }
     
     private final void a(int i, KeyEvent keyevent, int i_2_) {
-	jp.i++;
+	RSKeyListener.i++;
 	int i_3_ = keyevent.getKeyCode();
 	if (i_2_ != (i_3_ ^ 0xffffffff)) {
 	    if (i_3_ >= 0 && mca.E.length > i_3_) {
@@ -124,7 +124,7 @@ final class jp extends ou implements KeyListener, FocusListener
 	((me) var_me).o = i;
 	((me) var_me).t = c;
 	((me) var_me).s = i_6_;
-	((me) var_me).u = us.a(107);
+	((me) var_me).u = us.getCurrentTime(107);
 	y.b(var_me, (byte) 93);
     }
     
@@ -132,7 +132,7 @@ final class jp extends ou implements KeyListener, FocusListener
 	ih.f++;
 	k++;
 	tba var_tba = jga.sendGameOutPacket(Class_hc.c, pca.isaac, (byte) -113);
-	((tba) var_tba).loginStream.writeByte(ia.g(101), (byte) -116);
+	((tba) var_tba).loginStream.writeByte(ia.getWMVersion(101), (byte) -116);
 	if (bool != true)
 	    s = -99;
 	((tba) var_tba).loginStream.writeShort(ff.width, 13469);
@@ -206,7 +206,7 @@ final class jp extends ou implements KeyListener, FocusListener
     public final synchronized void keyTyped(KeyEvent keyevent) {
 	t++;
 	char c = keyevent.getKeyChar();
-	if (c != 0 && GameInPacketHandler.a((byte) 24, c)) {
+	if (c != 0 && GameInPacketHandler.isKeyTyped(c)) {
 	    a(-1, 3, -127, c);
 	    keyevent.consume();
 	}
@@ -219,7 +219,7 @@ final class jp extends ou implements KeyListener, FocusListener
 	return (au) x.a(true);
     }
     
-    jp(Component component) {
+    RSKeyListener(Component component) {
 	io.j(-15630);
 	a(component, (byte) 18);
     }

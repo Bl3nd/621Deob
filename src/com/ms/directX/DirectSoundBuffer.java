@@ -4,8 +4,8 @@
 package com.ms.directX;
 import com.ms.com.ComFailException;
 
-public class DirectSoundBuffer
-{
+public class DirectSoundBuffer {
+
     public void stop() throws ComFailException {
 	/* empty */
     }

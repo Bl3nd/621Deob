@@ -90,8 +90,8 @@ final class rh extends bm
 	m++;
 	if (string != null) {
 	    if (rba.l >= 200 && !Class_gb.h || rba.l >= 200) {
-		cba.a(4, false, GameText.friendsListFullText.getString((byte) -109, cba.languageID));
-		String string_6_ = GameText.friendsListFullTextGerman.getString((byte) -113, cba.languageID);
+		cba.a(4, false, GameText.friendsListFullText.getString(cba.languageID));
+		String string_6_ = GameText.friendsListFullTextGerman.getString(cba.languageID);
 		if (string_6_ != null)
 		    cba.a(4, false, string_6_);
 	    } else if (i < -100) {
@@ -101,7 +101,7 @@ final class rh extends bm
 			String string_9_ = kk.a(lfa.f[i_8_], true);
 			if (string_9_ != null && string_9_.equals(string_7_)) {
 			    cba.a(4, false,
-				  string + GameText._alreadyOnFriendsList.getString((byte) 114, cba.languageID));
+				  string + GameText._alreadyOnFriendsList.getString(cba.languageID));
 			    return;
 			}
 			if (nj.l[i_8_] != null) {
@@ -109,7 +109,7 @@ final class rh extends bm
 			    if (string_10_ != null
 				&& string_10_.equals(string_7_)) {
 				cba.a(4, false,
-				      string + GameText._alreadyOnFriendsList.getString((byte) -51, cba.languageID));
+				      string + GameText._alreadyOnFriendsList.getString(cba.languageID));
 				return;
 			    }
 			}
@@ -118,8 +118,8 @@ final class rh extends bm
 			String string_12_ = kk.a(nh.l[i_11_], true);
 			if (string_12_ != null
 			    && string_12_.equals(string_7_)) {
-			    cba.a(4, false, (GameText.pleaseRemove_.getString((byte) -52, cba.languageID) + string
-					     + GameText._fromYourIngoreListFirst.getString((byte) 90, cba.languageID)));
+			    cba.a(4, false, (GameText.pleaseRemove_.getString(cba.languageID) + string
+					     + GameText._fromYourIngoreListFirst.getString(cba.languageID)));
 			    return;
 			}
 			if (mba.a[i_11_] != null) {
@@ -127,14 +127,14 @@ final class rh extends bm
 			    if (string_13_ != null
 				&& string_13_.equals(string_7_)) {
 				cba.a(4, false,
-				      (GameText.pleaseRemove_.getString((byte) -35, cba.languageID) + string
-				       + GameText._fromYourIngoreListFirst.getString((byte) 127, cba.languageID)));
+				      (GameText.pleaseRemove_.getString(cba.languageID) + string
+				       + GameText._fromYourIngoreListFirst.getString(cba.languageID)));
 				return;
 			    }
 			}
 		    }
 		    if (kk.a(((Player) up.thisPlayer).displayName, true).equals(string_7_))
-			cba.a(4, false, GameText.cannotAddYourselfToFriendsList.getString((byte) -127, cba.languageID));
+			cba.a(4, false, GameText.cannotAddYourselfToFriendsList.getString(cba.languageID));
 		    else {
 			ki.c++;
 			tba var_tba = jga.sendGameOutPacket(in.e, pca.isaac, (byte) 102);

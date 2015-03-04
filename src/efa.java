@@ -42,12 +42,12 @@ final class efa
 	g++;
 	int i_5_ = i_4_ >> 16;
 	int i_6_ = i_4_ & 0xffff;
-	if (aa.o[i_5_] == null || aa.o[i_5_][i_6_] == null) {
+	if (Node_Sub.o[i_5_] == null || Node_Sub.o[i_5_][i_6_] == null) {
 	    boolean bool = gf.a((byte) 125, i_5_);
 	    if (!bool)
 		return null;
 	}
-	return aa.o[i_5_][i_6_];
+	return Node_Sub.o[i_5_][i_6_];
     }
     
     final int a(int i, int i_7_, byte[] is, byte[] is_8_, int i_9_,

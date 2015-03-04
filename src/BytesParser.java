@@ -563,6 +563,7 @@ public class BytesParser extends Node {
 	BytesParser(int size) {
 		((BytesParser) this).bytes = fk.a((byte) 90, size);
 		((BytesParser) this).pos = 0;
+        System.out.println("Size: " + size);
 	}
 
 	BytesParser(byte[] is) {

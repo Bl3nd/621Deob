@@ -17,7 +17,7 @@ abstract class wr extends Animable
     final int a(gga[] var_ggas, int i) {
 	z++;
 	int i_0_ = 74 / ((i + 87) / 32);
-	return this.a((byte) 113, var_ggas, ((Animable) this).locX >> Class_fb.a,
+	return this.a(var_ggas, ((Animable) this).locX >> Class_fb.a,
 		      ((Animable) this).locY >> Class_fb.a);
     }
     
@@ -64,7 +64,7 @@ abstract class wr extends Animable
 	((Animable) this).locY = i_6_;
 	((Animable) this).locX = i;
 	((Animable) this).j = i_5_;
-	((Animable) this).h = (byte) i_8_;
+	((Animable) this).height_ = (byte) i_8_;
     }
     
     final boolean f(int i) {
@@ -81,8 +81,8 @@ abstract class wr extends Animable
 	    a(71);
     }
     
-    final void a(boolean bool, int i, byte i_9_, Class_r class_r, Animable var_lo,
-		 int i_10_, int i_11_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_9_, Class_r class_r, Animable var_lo,
+                                          int i_10_, int i_11_) {
 	int i_12_ = -128 % ((-50 - i_9_) / 55);
 	y++;
 	throw new IllegalStateException();

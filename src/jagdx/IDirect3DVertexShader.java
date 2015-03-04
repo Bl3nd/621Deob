@@ -5,9 +5,9 @@ package jagdx;
 import jaclib.peer.IUnknown;
 import jaclib.peer.am;
 
-public class IDirect3DVertexShader extends IUnknown
-{
-    IDirect3DVertexShader(am var_am) {
-	super(var_am);
+public class IDirect3DVertexShader extends IUnknown {
+
+    public IDirect3DVertexShader(am am) {
+	super(am);
     }
 }

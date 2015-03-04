@@ -5,9 +5,9 @@ package jagdx;
 import jaclib.peer.IUnknown;
 import jaclib.peer.am;
 
-public class IDirect3DVertexDeclaration extends IUnknown
-{
-    IDirect3DVertexDeclaration(am var_am) {
-	super(var_am);
+public class IDirect3DVertexDeclaration extends IUnknown {
+
+    public IDirect3DVertexDeclaration(am am) {
+	super(am);
     }
 }

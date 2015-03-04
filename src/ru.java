@@ -182,7 +182,7 @@ final class ru
 								    Node class_d;
 								    if (bool)
 									class_d
-									    = new aa(var_es.readString((byte) 121));
+									    = new Node_Sub(var_es.readString((byte) 121));
 								    else
 									class_d
 									    = new GameInPacketHandler(var_es.readInt(i_8_ ^ ~0x7fb8));

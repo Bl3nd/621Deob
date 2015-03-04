@@ -18,7 +18,7 @@ final class Class_qb
 			 { 2, 4 }, { 1, 6, 7, 1 }, { 1, 6, 7, 1 } };
     static Class_mc[][] i;
     static int[] j = new int[32];
-    static boolean k = false;
+    static boolean showColMap = false;
     
     public static void a(byte i) {
 	Class_qb.i = null;

@@ -12,13 +12,13 @@ public final class Login {
 	static GameInPacket incomingPacket17 = new GameInPacket(17, 5);
 	static int processLoginCount;
 	static int e;
-	static nw f = new nw();
+	static nw nw = new nw();
 	static int g = 0;
 	static boolean h;
-	static pl i;
+	static pl pl;
 	static int j = -1;
 
-	public static final void a(int i, int j, int k, int i1, int j1, int k1, int i2) {
+	public static void a(int i, int j, int k, int i1, int j1, int k1, int i2) {
 		if (i != 3) {
             a = null;
         }
@@ -29,14 +29,14 @@ public final class Login {
                 vf = new vf(k1);
             }
 			if (j == 1) {
-				((vf) vf).k = (short) i2;
-				((vf) vf).o = (short) k;
+				vf.k = (short) i2;
+				vf.o = (short) k;
 			} else if (j == 2) {
-				((vf) vf).i = (short) i2;
-				((vf) vf).n = (short) k;
+				vf.i = (short) i2;
+				vf.n = (short) k;
 			}
 			if (js.o) {
-                Class_i.a((int) 2);
+                Class_i.a(2);
             }
 		} else if (j == 8) {
 			int j6 = j1 << Class_fb.a;
@@ -57,30 +57,26 @@ public final class Login {
 		}
 	}
 
-	public static void nullLoader(int i) {
-		f = null;
-		Login.i = null;
-		if (i != -5) {
-            processLogin(98);
-        }
+	public static void nullLoader() {
+		nw = null;
+		Login.pl = null;
 		incomingPacket17 = null;
 		a = null;
 	}
 
-	public static final int a(int i, int j, byte b, boolean bool) {
+	public static int a(int i, int j, byte b, boolean bool) {
 		Login.b++;
-		int unused = 122 % ((b - 64) / 55);
 		hg hg = el.a(bool, (byte) 94, i);
 		if (hg == null) {
             return 0;
         }
-		if (j < 0 || j >= ((hg) hg).amounts.length) {
+		if (j < 0 || j >= hg.amounts.length) {
             return 0;
         }
-		return ((hg) hg).amounts[j];
+		return hg.amounts[j];
 	}
 
-	public static final void processLogin(int i) {
+	public static void processLogin() {
 		System.out.println("ProcessLogin");
 		processLoginCount++;
 		if (hk.loginStage != 0 && hk.loginStage != 6) {
@@ -93,9 +89,9 @@ public final class Login {
 					}
 					if (km.q < 2) {
 						if (jl.s == 2 || jl.s == 3) {
-							gm.world.a((int) 0);
+							gm.world.rotateConnectionMethods(0);
 						} else {
-							cf.world.a((int) 0);
+							cf.world.rotateConnectionMethods(0);
 						}
 						hk.loginStage = 1;
 						km.q++;
@@ -128,12 +124,12 @@ public final class Login {
 					long username = qea.a = aaa.stringToLong(0, op.username);
 					int usernameHash = (int) (username >> 16 & 0x1fL);
 					System.out.println("Username: " + username + ", usernameHash: " + usernameHash);
-					or.a((int) -66);
+					or.a(-66);
 					tba tba = gr.b(-117);
-					((tba) tba).loginStream.writeByte(((SpecialOutPacket) hea.e).packetID, (byte) -125);
-					((tba) tba).loginStream.writeByte(usernameHash, (byte) -127);
+					tba.loginStream.writeByte(hea.e.packetID, (byte) -125);
+					tba.loginStream.writeByte(usernameHash, (byte) -127);
 					ud.a(tba, (byte) -36);
-					uu.a((byte) 123);
+					InputStreamSub.a((byte) 123);
 					hk.loginStage = 3;
 				}
 				if (hk.loginStage == 3) {
@@ -141,8 +137,8 @@ public final class Login {
 					if (!ce.y.a(1, (byte) -107)) {
 						return;
 					}
-					ce.y.a((byte) 112, 0, ((BytesParser) faa.loginStream).bytes, 1);
-					int j = ((BytesParser) faa.loginStream).bytes[0] & 0xff;
+					ce.y.a((byte) 112, 0, faa.loginStream.bytes, 1);
+					int j = faa.loginStream.bytes[0] & 0xff;
 					if (j != 0) {
 						hk.loginStage = 0;
 						fda.a((byte) 84, j);
@@ -158,8 +154,8 @@ public final class Login {
 					if (!ce.y.a(8, (byte) 126)) {
 						return;
 					}
-					ce.y.a((byte) 127, 0, ((BytesParser) faa.loginStream).bytes, 8);
-					((BytesParser) faa.loginStream).pos = 0;
+					ce.y.a((byte) 127, 0, faa.loginStream.bytes, 8);
+					faa.loginStream.pos = 0;
 					bfa.C = faa.loginStream.readLong(false);
 					BytesParser encryptedStream = new BytesParser(518);
 					int[] sessionISAACKeys = new int[4];
@@ -167,69 +163,69 @@ public final class Login {
 					sessionISAACKeys[2] = (int) (bfa.C >> 32);
 					sessionISAACKeys[3] = (int) bfa.C;
 					sessionISAACKeys[0] = (int) (Math.random() * 9.9999999E7);
-					encryptedStream.writeByte((int) 10, (byte) -117);
-					encryptedStream.writeInt(sessionISAACKeys[0], (int) -107);
-					encryptedStream.writeInt(sessionISAACKeys[1], (int) -125);
-					encryptedStream.writeInt(sessionISAACKeys[2], (int) -126);
-					encryptedStream.writeInt(sessionISAACKeys[3], (int) -105);
+					encryptedStream.writeByte(10, (byte) -117);
+					encryptedStream.writeInt(sessionISAACKeys[0], -107);
+					encryptedStream.writeInt(sessionISAACKeys[1], -125);
+					encryptedStream.writeInt(sessionISAACKeys[2], -126);
+					encryptedStream.writeInt(sessionISAACKeys[3], -105);
 					encryptedStream.writeLong(aaa.stringToLong(0, op.username), -16719);
 					encryptedStream.writeString(Interface.password, -20);
 					encryptedStream.writeLong(bba.S, -16719);
-					encryptedStream.writeLong(na.e, -16719);
+					encryptedStream.writeLong(OutputStreamSub.e, -16719);
 					encryptedStream.applyRSAEncryption(nf.publicRSAKey, 120, uf.rsaModulus);
-					or.a((int) 100);
+					or.a(100);
 					tba tba = gr.b(-108);
-					LoginStream loginStream = ((tba) tba).loginStream;
+					LoginStream loginStream = tba.loginStream;
 					if (jl.s != 2 && jl.s != 3) {
-						loginStream.writeByte(((SpecialOutPacket) hea.lobbyLoginOutPacket).packetID, (byte) -114);
+						loginStream.writeByte(hea.lobbyLoginOutPacket.packetID, (byte) -114);
 						loginStream.writeShort(0, 13469);
-						int pos = ((BytesParser) loginStream).pos;
-						loginStream.writeInt(621, (int) -102);
-						loginStream.writeByte(((Class_rf) me.q).h, (byte) -124);
+						int pos = loginStream.pos;
+						loginStream.writeInt(621, -102);
+						loginStream.writeByte(me.q.h, (byte) -124);
 						loginStream.writeByte(cba.languageID, (byte) -112);
 						vq.writeBytesWithSetOffset(loginStream, 0);
 						loginStream.writeString(ow.settings, -28);
-						loginStream.writeInt(hl.affId, (int) -104);
+						loginStream.writeInt(hl.affId, -104);
 						dc.a(2797, loginStream);
-						loginStream.writeBytes(65536, ((BytesParser) encryptedStream).pos, 0, ((BytesParser) encryptedStream).bytes);
-						loginStream.writeLengthShort(((BytesParser) loginStream).pos - pos, false);
+						loginStream.writeBytes(65536, encryptedStream.pos, 0, encryptedStream.bytes);
+						loginStream.writeLengthShort(loginStream.pos - pos, false);
 					} else {
 						if (hm.h != 13) {
-							loginStream.writeByte(((SpecialOutPacket) hea.mainLoginOutPacket).packetID, (byte) -113);
+							loginStream.writeByte(hea.mainLoginOutPacket.packetID, (byte) -113);
 						} else {
-							loginStream.writeByte(((SpecialOutPacket) hea.mainLoginOutPacket2).packetID, (byte) -124);
+							loginStream.writeByte(hea.mainLoginOutPacket2.packetID, (byte) -124);
 						}
 						loginStream.writeShort(0, 13469);
-						int pos = ((BytesParser) loginStream).pos;
-						loginStream.writeInt(621, (int) -98);
+						int pos = loginStream.pos;
+						loginStream.writeInt(621, -98);
 						loginStream.writeByte(pda.y, (byte) -115);
-						loginStream.writeByte(ia.g(-116), (byte) -122);
+						loginStream.writeByte(ia.getWMVersion(-116), (byte) -122);
 						loginStream.writeShort(ff.width, 13469);
 						loginStream.writeShort(eh.height, 13469);
-						loginStream.writeByte(((jb) cs.g).Z, (byte) -109);
+						loginStream.writeByte(cs.g.Z, (byte) -109);
 						vq.writeBytesWithSetOffset(loginStream, 0);
 						loginStream.writeString(ow.settings, -121);
-						loginStream.writeInt(hl.affId, (int) -112);
+						loginStream.writeInt(hl.affId, -112);
 						BytesParser bytesParser = new BytesParser(tm.d(4929));
 						cs.g.a(92, bytesParser);
-						loginStream.writeByte(((BytesParser) bytesParser).pos, (byte) -115);
-						loginStream.writeBytes(65536, ((BytesParser) bytesParser).pos, 0, ((BytesParser) bytesParser).bytes);
+						loginStream.writeByte(bytesParser.pos, (byte) -115);
+						loginStream.writeBytes(65536, bytesParser.pos, 0, bytesParser.bytes);
 						NPCNode.k = true;
-						BytesParser bytesParser_ = new BytesParser(kl.a((int) -1));
+						BytesParser bytesParser_ = new BytesParser(kl.a(-1));
 						new lg(true, nda.signlink).a(bytesParser_, -1);
-						loginStream.writeBytes(65536, ((BytesParser) bytesParser_).bytes.length, 0, ((BytesParser) bytesParser_).bytes);
+						loginStream.writeBytes(65536, bytesParser_.bytes.length, 0, bytesParser_.bytes);
 						loginStream.writeShort(qs.a, 13469);
 						loginStream.writeLong(ak.userFlow, -16719);
-						loginStream.writeByte((int) (br.additionalInfo == null ? 0 : 1), (byte) -110);
+						loginStream.writeByte(br.additionalInfo == null ? 0 : 1, (byte) -110);
 						if (br.additionalInfo != null) {
 							loginStream.writeString(br.additionalInfo, -61);
 						}
 						dc.a(2797, loginStream);
-						loginStream.writeBytes(65536, ((BytesParser) encryptedStream).pos, 0, ((BytesParser) encryptedStream).bytes);
-						loginStream.writeLengthShort(((BytesParser) loginStream).pos - pos, false);
+						loginStream.writeBytes(65536, encryptedStream.pos, 0, encryptedStream.bytes);
+						loginStream.writeLengthShort(loginStream.pos - pos, false);
 					}
 					ud.a(tba, (byte) -36);
-					uu.a((byte) 88);
+					InputStreamSub.a((byte) 88);
 					pca.isaac = new ISAAC(sessionISAACKeys);
 					for (int loopID = 0; loopID < 4; loopID++) {
 						sessionISAACKeys[loopID] += 50;
@@ -242,8 +238,8 @@ public final class Login {
 					if (!ce.y.a(1, (byte) -83)) {
 						return;
 					}
-					ce.y.a((byte) 48, 0, ((BytesParser) faa.loginStream).bytes, 1);
-					int j = ((BytesParser) faa.loginStream).bytes[0] & 0xff;
+					ce.y.a((byte) 48, 0, faa.loginStream.bytes, 1);
+					int j = faa.loginStream.bytes[0] & 0xff;
 					if (j != 21) {
 						if (j == 29) {
 							hk.loginStage = 14;
@@ -281,22 +277,21 @@ public final class Login {
 						hk.loginStage = 8;
 					}
 				}
-				int i_29_ = 90 / ((-34 - i) / 33);
 				if (hk.loginStage == 7) {
 					System.out.println("Entering stage 7.");
-					or.a((int) -110);
+					or.a(-110);
 					tba tba = gr.b(-122);
-					LoginStream loginStream = ((tba) tba).loginStream;
-					loginStream.a((byte) 99, pca.isaac);
-					loginStream.n(26951, ((SpecialOutPacket) hea.specialOutPacket26).packetID);
+					LoginStream loginStream = tba.loginStream;
+					loginStream.a(pca.isaac);
+					loginStream.n(26951, hea.specialOutPacket26.packetID);
 					ud.a(tba, (byte) -36);
-					uu.a((byte) 100);
+					InputStreamSub.a((byte) 100);
 					hk.loginStage = 5;
 				} else if (hk.loginStage == 8) {
 					System.out.println("Entering stage 8.");
 					if (ce.y.a(1, (byte) -74)) {
-						ce.y.a((byte) 50, 0, ((BytesParser) faa.loginStream).bytes, 1);
-						int j = 0xff & ((BytesParser) faa.loginStream).bytes[0];
+						ce.y.a((byte) 50, 0, faa.loginStream.bytes, 1);
+						int j = 0xff & faa.loginStream.bytes[0];
 						hk.loginStage = 0;
 						nc.m = 60 * (j + 3);
 						fda.a((byte) 46, 21);
@@ -307,8 +302,8 @@ public final class Login {
 				} else if (hk.loginStage == 14) {
 					System.out.println("Entering stage 14.");
 					if (ce.y.a(1, (byte) -8)) {
-						ce.y.a((byte) 104, 0, ((BytesParser) faa.loginStream).bytes, 1);
-						ip.T = ((BytesParser) faa.loginStream).bytes[0] & 0xff;
+						ce.y.a((byte) 104, 0, faa.loginStream.bytes, 1);
+						ip.T = faa.loginStream.bytes[0] & 0xff;
 						hk.loginStage = 0;
 						fda.a((byte) 52, 29);
 						ce.y.d(0);
@@ -318,8 +313,8 @@ public final class Login {
 				} else if (hk.loginStage == 9) {
 					System.out.println("Entering stage 9.");
 					if (ce.y.a(1, (byte) -31)) {
-						ce.y.a((byte) 81, 0, ((BytesParser) faa.loginStream).bytes, 1);
-						saa.F = ((BytesParser) faa.loginStream).bytes[0] & 0xff;
+						ce.y.a((byte) 81, 0, faa.loginStream.bytes, 1);
+						saa.F = faa.loginStream.bytes[0] & 0xff;
 						hk.loginStage = 10;
 					}
 				} else {
@@ -335,8 +330,8 @@ public final class Login {
 							if (!ce.y.a(saa.F, (byte) -52)) {
 								return;
 							}
-							ce.y.a((byte) 93, 0, ((BytesParser) loginStream).bytes, saa.F);
-							((BytesParser) loginStream).pos = 0;
+							ce.y.a((byte) 93, 0, loginStream.bytes, saa.F);
+							loginStream.pos = 0;
 							hv.thisPlayersRights = loginStream.readUnsignedByte(-9268);
 							qaa.gb = loginStream.readUnsignedByte(-9268);
 							id.b = loginStream.readUnsignedByte(-9268) == 1;
@@ -347,34 +342,34 @@ public final class Login {
 							cga.w = loginStream.readShort(13111);
 							tu.a = loginStream.readShort(13111);
 							sd.l = loginStream.readShort(13111);
-							fba.L = loginStream.readInt((int) 119);
+							fba.L = loginStream.readInt(119);
 							sa.t = nda.signlink.a(fba.L, (byte) 116);
 							ei.b = loginStream.readUnsignedByte(-9268);
 							pw.a = loginStream.readShort(13111);
 							bk.c = loginStream.readShort(13111);
 							ou.a = loginStream.readUnsignedByte(-9268) == 1;
-							((Player) up.thisPlayer).displayName = ((Player) up.thisPlayer).hd = loginStream.readString2(-1);
+							up.thisPlayer.displayName = up.thisPlayer.playerName = loginStream.readString2(-1);
 							re.h = loginStream.readUnsignedByte(-9268);
-							hea.b = loginStream.readInt((int) 65);
+							hea.b = loginStream.readInt(65);
 							Class_kb.o = new World();
-							((World) Class_kb.o).worldID = loginStream.readShort(13111);
-							if (((World) Class_kb.o).worldID == 65535) {
-								((World) Class_kb.o).worldID = -1;
+							Class_kb.o.worldID = loginStream.readShort(13111);
+							if (Class_kb.o.worldID == 65535) {
+								Class_kb.o.worldID = -1;
 							}
-							((World) Class_kb.o).lobbyAddress = loginStream.readString2(-1);
-							if (oba.K != hs.modeWhere) {
-								((World) Class_kb.o).firstPort = ((World) Class_kb.o).worldID + 40000;
-								((World) Class_kb.o).secondPort = ((World) Class_kb.o).worldID + 50000;
+							Class_kb.o.lobbyAddress = loginStream.readString2(-1);
+							if (oba.pk != hs.modeWhere) {
+								Class_kb.o.mainPort = Class_kb.o.worldID + 40000;
+								Class_kb.o.worldPort = Class_kb.o.worldID + 50000;
 							}
-							if (hs.modeWhere != vea.a && (gm.world.a(kfa.world, (byte) 28) || gm.world.a(Class_eb.world, (byte) 28))) {
-								vca.a((byte) -60);
+							if (hs.modeWhere != vea.a && (gm.world.isWorld(kfa.world) || gm.world.isWorld(Class_eb.world))) {
+								vca.selectAutoWorld((byte) -60);
 							}
 						} else {
 							if (!ce.y.a(saa.F, (byte) 112)) {
 								return;
 							}
-							ce.y.a((byte) 65, 0, ((BytesParser) loginStream).bytes, saa.F);
-							((BytesParser) loginStream).pos = 0;
+							ce.y.a((byte) 65, 0, loginStream.bytes, saa.F);
+							loginStream.pos = 0;
 							hv.thisPlayersRights = loginStream.readUnsignedByte(-9268);
 							qaa.gb = loginStream.readUnsignedByte(-9268);
 							id.b = loginStream.readUnsignedByte(-9268) == 1;
@@ -411,24 +406,24 @@ public final class Login {
 											}
 											BytesParser bytesParser = new BytesParser(k + 1);
 											bytesParser.writeByte(k, (byte) -126);
-											bytesParser.writeByte((int) 3, (byte) -114);
+											bytesParser.writeByte(3, (byte) -114);
 											bytesParser.writeString2(string, 77);
 											bytesParser.writeString2(string_, -122);
 											bytesParser.writeShort(hl.affId, 13469);
 											bytesParser.writeLong(ak.userFlow, -16719);
-											bytesParser.writeByte((int) (br.additionalInfo != null ? 1 : 0), (byte) -111);
+											bytesParser.writeByte(br.additionalInfo != null ? 1 : 0, (byte) -111);
 											if (br.additionalInfo != null) {
 												bytesParser.writeString2(br.additionalInfo, 91);
 											}
 											bytesParser.b((byte) -120);
-											fileOnDisk.write(0, (byte) 104, ((BytesParser) bytesParser).pos, ((BytesParser) bytesParser).bytes);
+											fileOnDisk.write(0, bytesParser.pos, bytesParser.bytes);
 										}
 									} catch (Exception exception) {
 										/* empty */
 									}
 									try {
 										if (fileOnDisk != null) {
-                                            fileOnDisk.close((byte) -128);
+                                            fileOnDisk.close();
                                         }
 									} catch (Exception exception) {
 										/* empty */
@@ -463,7 +458,7 @@ public final class Login {
 								/* empty */
 							}
 						}
-						if (hs.modeWhere == oba.K) {
+						if (hs.modeWhere == oba.pk) {
 							try {
 								rp.a(true, "loggedin", vj.applet);
 							} catch (Throwable throwable) {
@@ -485,18 +480,18 @@ public final class Login {
 						if (!ce.y.a(3, (byte) -53)) {
 							return;
 						}
-						ce.y.a((byte) 57, 0, ((BytesParser) faa.loginStream).bytes, 3);
+						ce.y.a((byte) 57, 0, faa.loginStream.bytes, 3);
 						hk.loginStage = 13;
 					}
 					if (hk.loginStage == 13) {
 						System.out.println("Entering stage 13.");
 						LoginStream loginStream = faa.loginStream;
-						((BytesParser) loginStream).pos = 0;
+						loginStream.pos = 0;
 						if (loginStream.m((byte) 17)) {
 							if (!ce.y.a(1, (byte) 121)) {
 								return;
 							}
-							ce.y.a((byte) 84, 3, ((BytesParser) loginStream).bytes, 1);
+							ce.y.a((byte) 84, 3, loginStream.bytes, 1);
 						}
 						sw.currentGameInPacket = IncomingPackets.getGameInPackets((byte) 103)[loginStream.f(false)];
 						ck.currentGameInPacketSize = loginStream.readShort(13111);
@@ -505,12 +500,12 @@ public final class Login {
 					if (hk.loginStage == 11) {
 						System.out.println("Entering stage 11.");
 						if (ce.y.a(ck.currentGameInPacketSize, (byte) -65)) {
-							ce.y.a((byte) 88, 0, ((BytesParser) faa.loginStream).bytes, ck.currentGameInPacketSize);
-							((BytesParser) faa.loginStream).pos = 0;
+							ce.y.a((byte) 88, 0, faa.loginStream.bytes, ck.currentGameInPacketSize);
+							faa.loginStream.pos = 0;
 							hk.loginStage = 0;
 							int size = ck.currentGameInPacketSize;
 							fda.a((byte) 84, 2);
-							tp.a((int) 0);
+							tp.a(0);
 							lk.a(faa.loginStream, 0);
 							wj.q = -1;
 							if (ku.incomingPacket100 == sw.currentGameInPacket) {
@@ -518,8 +513,8 @@ public final class Login {
 							} else {
 								nda.a(2072317608);
 							}
-							if (((BytesParser) faa.loginStream).pos != size) {
-								throw new RuntimeException("lswp pos:" + ((BytesParser) faa.loginStream).pos + " psize:" + size);
+							if (faa.loginStream.pos != size) {
+								throw new RuntimeException("lswp pos:" + faa.loginStream.pos + " psize:" + size);
 							}
 							sw.currentGameInPacket = null;
 						}
@@ -529,20 +524,20 @@ public final class Login {
 							if (!ce.y.a(2, (byte) 122)) {
 								return;
 							}
-							ce.y.a((byte) 64, 0, ((BytesParser) faa.loginStream).bytes, 2);
-							((BytesParser) faa.loginStream).pos = 0;
+							ce.y.a((byte) 64, 0, faa.loginStream.bytes, 2);
+							faa.loginStream.pos = 0;
 							ck.currentGameInPacketSize = faa.loginStream.readShort(13111);
 						}
 						if (ce.y.a(ck.currentGameInPacketSize, (byte) 117)) {
-							ce.y.a((byte) 100, 0, ((BytesParser) faa.loginStream).bytes, ck.currentGameInPacketSize);
-							((BytesParser) faa.loginStream).pos = 0;
+							ce.y.a((byte) 100, 0, faa.loginStream.bytes, ck.currentGameInPacketSize);
+							faa.loginStream.pos = 0;
 							hk.loginStage = 0;
 							int size = ck.currentGameInPacketSize;
 							fda.a((byte) 105, 15);
 							Class_mc.b(29723);
 							lk.a(faa.loginStream, 0);
-							if (size != ((BytesParser) faa.loginStream).pos) {
-								throw new RuntimeException("lswpr pos:" + ((BytesParser) faa.loginStream).pos + " psize:" + size);
+							if (size != faa.loginStream.pos) {
+								throw new RuntimeException("lswpr pos:" + faa.loginStream.pos + " psize:" + size);
 							}
 							sw.currentGameInPacket = null;
 						}
@@ -555,9 +550,9 @@ public final class Login {
 				}
 				if (km.q < 2) {
 					if (jl.s == 2 || jl.s == 3) {
-						gm.world.a((int) 0);
+						gm.world.rotateConnectionMethods(0);
 					} else {
-						cf.world.a((int) 0);
+						cf.world.rotateConnectionMethods(0);
 					}
 					rv.p = 0;
 					km.q++;

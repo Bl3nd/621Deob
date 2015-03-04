@@ -14,13 +14,13 @@ final class lba extends mca
     static int N;
     static int O;
     static int P;
-    static boolean Q = false;
+    static boolean qa_op_test = false;
     
     static final ao a(int i, int[] is, en var_en, int[] is_0_, int i_1_,
 		      byte i_2_) {
 	K++;
 	if (i_2_ != 37)
-	    Q = false;
+	    qa_op_test = false;
 	if (var_en.a(i_2_ ^ 0x3f, bt.g, NPCDef.hb)) {
 	    byte[] is_3_ = new byte[i * i_1_];
 	    for (int i_4_ = 0; i > i_4_; i_4_++) {
@@ -95,7 +95,7 @@ final class lba extends mca
 	int i_29_ = i_26_ - kca.F;
 	int i_30_ = i - kca.E;
 	if (i_24_ >= -24)
-	    Q = false;
+	    qa_op_test = false;
 	for (Class_vb class_vb = (Class_vb) kca.n.a((int) 118);
 	     class_vb != null; class_vb = (Class_vb) kca.n.b((byte) 94)) {
 	    if (((Class_vb) class_vb).o == i_25_) {
@@ -165,7 +165,7 @@ final class lba extends mca
 	Class_k.Q = -1;
 	sk.s = null;
 	hp.F = null;
-	al.o = null;
+	al.oj = null;
 	if (i > 50) {
 	    kca.r = null;
 	    Class_md.g = null;

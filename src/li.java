@@ -22,7 +22,7 @@ final class li extends sp
     
     static final wl a(int modeWhat, byte i_0_) {
 	A++;
-	wl[] var_wls = PlayerDef.b(20565);
+	wl[] var_wls = PlayerDef.getGameStatus(20565);
 	if (i_0_ != -98)
 	    a(-9, (int) -49);
 	for (int i_1_ = 0; var_wls.length > i_1_; i_1_++) {
@@ -70,7 +70,7 @@ final class li extends sp
 	x++;
 	if (i_9_ != (i ^ 0xffffffff) && pu.p[i]) {
 	    Class_fc.a.b(16, i);
-	    aa.o[i] = null;
+	    Node_Sub.o[i] = null;
 	    mv.b[i] = null;
 	    pu.p[i] = false;
 	}
@@ -111,15 +111,15 @@ final class li extends sp
 	kga.mb = null;
 	wca.d((byte) 71);
 	if (sw.a != null) {
-	    for (int i = 0; i < aa.n; i++)
+	    for (int i = 0; i < Node_Sub.n; i++)
 		sw.a[i] = null;
-	    aa.n = 0;
+	    Node_Sub.n = 0;
 	}
-	if (aaa.k != null) {
+	if (aaa.animables != null) {
 	    for (int i = 0; i < baa.l[0]; i++)
-		aaa.k[0][i] = null;
+		aaa.animables[0][i] = null;
 	    for (int i = 0; i < baa.l[1]; i++)
-		aaa.k[1][i] = null;
+		aaa.animables[1][i] = null;
 	    baa.l = new int[2];
 	}
 	if (lm.Nh != null) {
@@ -129,11 +129,11 @@ final class li extends sp
 		lm.Nh[1][i] = null;
 	    fg.a = new int[2];
 	}
-	if (cca.d != null) {
+	if (InputStreamSub_1.d != null) {
 	    for (int i = 0; i < cc.f[0]; i++)
-		cca.d[0][i] = null;
+		InputStreamSub_1.d[0][i] = null;
 	    for (int i = 0; i < cc.f[1]; i++)
-		cca.d[1][i] = null;
+		InputStreamSub_1.d[1][i] = null;
 	    cc.f = new int[2];
 	}
 	if (ht.F != null) {
@@ -158,7 +158,7 @@ final class li extends sp
 	    qn.k = 0;
 	}
 	bfa.a((byte) -103);
-	oea.fb.b(128);
+	oea.fb.clearTextCoords(128);
 	qh.q = null;
 	of.b = null;
 	uo.c = null;

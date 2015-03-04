@@ -26,7 +26,7 @@ final class cfa
 	    var_qba = (qba) kaa.n.d((byte) -108);
 	    if (var_qba == null)
 		return null;
-	    if (var_qba.b((byte) -108) > us.a(125))
+	    if (var_qba.b((byte) -108) > us.getCurrentTime(125))
 		return null;
 	    var_qba.unlink(-103);
 	    var_qba.a((byte) -57);

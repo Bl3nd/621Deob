@@ -26,7 +26,7 @@ abstract class lca extends Animable
     final int a(gga[] var_ggas, int i) {
 	int i_0_ = 97 % ((-87 - i) / 32);
 	A++;
-	return this.a((byte) 111, var_ggas, ((Animable) this).locX >> Class_fb.a,
+	return this.a(var_ggas, ((Animable) this).locX >> Class_fb.a,
 		      ((Animable) this).locY >> Class_fb.a);
     }
     
@@ -34,7 +34,7 @@ abstract class lca extends Animable
 	if (i < 111)
 	    D = null;
 	z++;
-	return ik.a(this.g((int) 116), ((Animable) this).h,
+	return ik.a(this.g((int) 116), ((Animable) this).height_,
 		    ((Animable) this).locY >> Class_fb.a, ((Animable) this).locX >> Class_fb.a,
 		    55);
     }
@@ -75,15 +75,15 @@ abstract class lca extends Animable
 	    D = null;
     }
     
-    final void a(boolean bool, int i, byte i_2_, Class_r class_r, Animable var_lo,
-		 int i_3_, int i_4_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_2_, Class_r class_r, Animable var_lo,
+                                          int i_3_, int i_4_) {
 	int i_5_ = 126 / ((-50 - i_2_) / 55);
 	C++;
 	throw new IllegalStateException();
     }
     
     lca(int i, int i_6_, int i_7_, int i_8_, int i_9_, int i_10_, int i_11_) {
-	((Animable) this).h = (byte) i_9_;
+	((Animable) this).height_ = (byte) i_9_;
 	((Animable) this).locY = i_7_;
 	((lca) this).x = (short) i_11_;
 	((Animable) this).j = i_6_;

@@ -2,8 +2,8 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class aaa
-{
+public final class aaa {
+
     static int a = 0;
     static int b;
     static int c;
@@ -14,199 +14,189 @@ final class aaa
     static GameInPacket incomingPacket73 = new GameInPacket(73, -1);
     private il i;
     static int j;
-    static Animable[][] k;
+    static Animable[][] animables;
     static int l;
-    private je m = new je();
+    private je je = new je();
     static int n;
     static int o;
     static GameInPacket incomingPacket32 = new GameInPacket(32, 2);
     private int q;
     static int r;
-    static rca s = new rca();
+    static rca rca = new rca();
     static int t;
     static int[] u = new int[14];
-    
-    static final long stringToLong(int i, String string) {
-	d++;
-	long l = 0L;
-	int i_0_ = string.length();
-	for (int i_1_ = i; i_0_ > i_1_; i_1_++) {
-	    l *= 37L;
-	    char c = string.charAt(i_1_);
-	    if (c >= 'A' && c <= 'Z')
-		l += (long) (c - '@');
-	    else if (c >= 'a' && c <= 'z')
-		l += (long) (c - 'a' + '\001');
-	    else if (c >= '0' && c <= '9')
-		l += (long) (c - '0' + '\033');
-	    if (l >= 177917621779460413L)
-		break;
-	}
-	for (/**/; l % 37L == 0L && l != 0L; l /= 37L) {
-	    /* empty */
-	}
-	return l;
+
+    public static long stringToLong(int index, String string) {
+        d++;
+        long l = 0L;
+        int length = string.length();
+        for (int count = index; length > count; count++) {
+            l *= 37L;
+            char c = string.charAt(count);
+            if (c >= 'A' && c <= 'Z') {
+                l += (long) (c - '@');
+            } else if (c >= 'a' && c <= 'z') {
+                l += (long) (c - 'a' + '\001');
+            } else if (c >= '0' && c <= '9') {
+                l += (long) (c - '0' + '\033');
+            }
+            if (l >= 177917621779460413L) {
+                break;
+            }
+        }
+        for (/**/; l % 37L == 0L && l != 0L; l /= 37L) {
+            /* empty */
+        }
+        return l;
     }
-    
-    public static void a(int i) {
-	s = null;
-	incomingPacket73 = null;
-	if (i != -91)
-	    stringToLong((int) 53, (String) null);
-	k = null;
-	u = null;
-	incomingPacket32 = null;
+
+    public static void nullLoader(int i) {
+        rca = null;
+        incomingPacket73 = null;
+        if (i != -91)
+            stringToLong(53, null);
+        animables = null;
+        u = null;
+        incomingPacket32 = null;
     }
-    
-    final Object a(byte i, gj var_gj) {
-	g++;
-	long l = var_gj.a(61);
-	int i_2_ = 58 % ((30 - i) / 34);
-	for (as var_as = (as) this.i.a(-32748, l); var_as != null;
-	     var_as = (as) this.i.c((byte) 115)) {
-	    if (((as) var_as).y.a(var_gj, 126)) {
-		Object object = var_as.a(-9023);
-		if (object == null) {
-		    var_as.unlink((int) -54);
-		    var_as.a((byte) -95);
-		    f += ((as) var_as).t;
-		} else {
-		    if (!var_as.d((byte) -13)) {
-			m.a((int) 75, var_as);
-			((pp) var_as).l = 0L;
-		    } else {
-			at var_at = new at(var_gj, object, ((as) var_as).t);
-			this.i.a(var_at, (byte) -40, ((Node) var_as).nodeID);
-			m.a((int) 75, var_at);
-			((pp) var_at).l = 0L;
-			var_as.unlink((int) -72);
-			var_as.a((byte) -55);
-		    }
-		    return object;
-		}
-	    }
-	}
-	return null;
+
+    public final Object a(gj gj) {
+        g++;
+        long l = gj.a(61);
+        for (as as = (as) this.i.a(-32748, l); as != null; as = (as) this.i.c((byte) 115)) {
+            if (as.gj.a(gj, 126)) {
+                Object object = as.getObject(-9023);
+                if (object == null) {
+                    as.unlink(-54);
+                    as.a((byte) -95);
+                    f += as.t;
+                } else {
+                    if (!as.d((byte) -13)) {
+                        je.a(75, as);
+                        as.l = 0L;
+                    } else {
+                        at at = new at(gj, object, as.t);
+                        this.i.a(at, (byte) -40, as.nodeID);
+                        je.a(75, at);
+                        at.l = 0L;
+                        as.unlink(-72);
+                        as.a((byte) -55);
+                    }
+                    return object;
+                }
+            }
+        }
+        return null;
     }
-    
-    final void a(byte i) {
-	if (i != 64)
-	    d((byte) 112);
-	for (as var_as = (as) m.d((byte) -127); var_as != null;
-	     var_as = (as) m.a(1252027233)) {
-	    if (var_as.d((byte) -125)) {
-		var_as.unlink(i - 149);
-		var_as.a((byte) -70);
-		f += ((as) var_as).t;
-	    }
-	}
-	r++;
+
+    public final void a(byte b) {
+        for (as var_as = (as) je.d((byte) -127); var_as != null;
+             var_as = (as) je.a(1252027233)) {
+            if (var_as.d((byte) -125)) {
+                var_as.unlink(b - 149);
+                var_as.a((byte) -70);
+                f += var_as.t;
+            }
+        }
+        r++;
     }
-    
-    private final void a(as var_as, int i) {
-	if (i >= 3) {
-	    t++;
-	    if (var_as != null) {
-		var_as.unlink((int) -43);
-		var_as.a((byte) -69);
-		f += ((as) var_as).t;
-	    }
-	}
+
+    private void a(as as, int i) {
+        if (i >= 3) {
+            t++;
+            if (as != null) {
+                as.unlink(-43);
+                as.a((byte) -69);
+                f += as.t;
+            }
+        }
     }
-    
-    final void a(Object object, gj var_gj, byte i) {
-	j++;
-	a(1, (byte) -58, var_gj, object);
-	if (i != 41)
-	    c((byte) -96);
+
+    public final void a(Object object, gj gj) {
+        j++;
+        a(1, (byte) -58, gj, object);
     }
-    
-    private final void a(int i, byte i_3_, gj var_gj, Object object) {
-	e++;
-	if (i > q)
-	    throw new IllegalStateException("s>cs");
-	a(true, var_gj);
-	f -= i;
-	while (f < 0) {
-	    as var_as = (as) m.b(-21957);
-	    a(var_as, 18);
-	}
-	at var_at = new at(var_gj, object, i);
-	this.i.a(var_at, (byte) -46, var_gj.a(72));
-	m.a((int) 75, var_at);
-	((pp) var_at).l = 0L;
-	if (i_3_ >= -7)
-	    a((int) -62);
+
+    private void a(int i, byte b, gj gj, Object object) {
+        e++;
+        if (i > q) {
+            throw new IllegalStateException("s>cs");
+        }
+        a(true, gj);
+        f -= i;
+        while (f < 0) {
+            as as = (as) je.b(-21957);
+            a(as, 18);
+        }
+        at at = new at(gj, object, i);
+        this.i.a(at, (byte) -46, gj.a(72));
+        je.a(75, at);
+        at.l = 0L;
+        if (b >= -7) {
+            nullLoader(-62);
+        }
     }
-    
-    final int b(byte i) {
-	c++;
-	if (i < 13)
-	    a = 91;
-	return q;
+
+    public final int b() {
+        c++;
+        return q;
     }
-    
-    private final void a(boolean bool, gj var_gj) {
-	b++;
-	long l = var_gj.a(116);
-	if (bool != true)
-	    q = -33;
-	for (as var_as = (as) i.a(-32748, l); var_as != null;
-	     var_as = (as) i.c((byte) 120)) {
-	    if (((as) var_as).y.a(var_gj, 86)) {
-		a(var_as, 100);
-		break;
-	    }
-	}
+
+    private void a(boolean bool, gj gj) {
+        b++;
+        long l = gj.a(116);
+        for (as as = (as) i.a(-32748, l); as != null;
+             as = (as) i.c((byte) 120)) {
+            if (as.gj.a(gj, 86)) {
+                a(as, 100);
+                break;
+            }
+        }
     }
-    
-    final void a(int i, int i_4_) {
-	if (dca.P != null) {
-	    for (as var_as = (as) m.d((byte) -125); var_as != null;
-		 var_as = (as) m.a(1252027233)) {
-		if (var_as.d((byte) -127)) {
-		    if (var_as.a(-9023) == null) {
-			var_as.unlink(i_4_ ^ ~0x2e);
-			var_as.a((byte) -63);
-			f += ((as) var_as).t;
-		    }
-		} else if ((long) i < ++((pp) var_as).l) {
-		    as var_as_5_ = dca.P.a(var_as, (byte) -120);
-		    this.i.a(var_as_5_, (byte) -64, ((Node) var_as).nodeID);
-		    te.a(var_as, 2, var_as_5_);
-		    var_as.unlink(i_4_ ^ ~0x1a);
-		    var_as.a((byte) -69);
-		}
-	    }
-	}
-	n++;
-	if (i_4_ != 0)
-	    m = null;
+
+    public final void a(int i, int j) {
+        if (dca.P != null) {
+            for (as as = (as) je.d((byte) -125); as != null; as = (as) je.a(1252027233)) {
+                if (as.d((byte) -127)) {
+                    if (as.getObject(-9023) == null) {
+                        as.unlink(j ^ ~0x2e);
+                        as.a((byte) -63);
+                        f += as.t;
+                    }
+                } else if ((long) i < ++as.l) {
+                    as as1 = dca.P.a(as, (byte) -120);
+                    this.i.a(as1, (byte) -64, as.nodeID);
+                    te.a(as, 2, as1);
+                    as.unlink(j ^ ~0x1a);
+                    as.a((byte) -69);
+                }
+            }
+        }
+        n++;
+        if (j != 0) {
+            je = null;
+        }
     }
-    
-    final int c(byte i) {
-	if (i < 62)
-	    return -81;
-	l++;
-	return f;
+
+    public final int c() {
+        l++;
+        return f;
     }
-    
-    final void d(byte i) {
-	o++;
-	m.c(1252027233);
-	this.i.a(true);
-	if (i != 77)
-	    incomingPacket73 = null;
-	f = q;
+
+    public final void d() {
+        o++;
+        je.c(1252027233);
+        this.i.a(true);
+        f = q;
     }
-    
-    aaa(int i) {
-	f = i;
-	q = i;
-	int i_6_;
-	for (i_6_ = 1; i > i_6_ + i_6_; i_6_ += i_6_) {
-	    /* empty */
-	}
-	this.i = new il(i_6_);
+
+    public aaa(int i) {
+        f = i;
+        q = i;
+        int j;
+        for (j = 1; i > j + j; j += j) {
+	        /* empty */
+        }
+        this.i = new il(j);
     }
 }

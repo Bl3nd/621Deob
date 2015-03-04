@@ -34,17 +34,17 @@ final class ep extends qo implements fl
 	    int i_4_ = this.i * i_3_;
 	    int i_5_ = pixelbuffer.getSlicePitch();
 	    if (i_5_ == i_4_)
-		pixelbuffer.a(is, 0, 0, h * (this.i * i_3_));
+		pixelbuffer.put(is, 0, 0, h * (this.i * i_3_));
 	    else {
 		int i_6_ = pixelbuffer.getRowPitch();
 		if (i_6_ == i_3_) {
 		    for (int i_7_ = 0; h > i_7_; i_7_++)
-			pixelbuffer.a(is, i_7_ * i_4_, i_7_ * i_5_, i_4_);
+			pixelbuffer.put(is, i_7_ * i_4_, i_7_ * i_5_, i_4_);
 		} else {
 		    for (int i_8_ = 0; i_8_ < h; i_8_++) {
 			for (int i_9_ = 0; i_9_ < this.i; i_9_++)
-			    pixelbuffer.a(is, i_8_ * i_4_ + i_3_ * i_9_,
-					  i_9_ * i_6_ + i_5_ * i_8_, i_3_);
+			    pixelbuffer.put(is, i_8_ * i_4_ + i_3_ * i_9_,
+                        i_9_ * i_6_ + i_5_ * i_8_, i_3_);
 		    }
 		}
 	    }

@@ -18,28 +18,28 @@ final class Class_pf extends mca
 	    vf var_vf = ol.p[i][i_0_ + 1][i_1_];
 	    if (var_vf != null && ((vf) var_vf).m != null
 		&& ((vf) var_vf).m.h((byte) -50))
-		var_lo.a(true, bea.o, (byte) 14, nda.k, ((vf) var_vf).m, 0, 0);
+		var_lo.throwIllegalStateException(true, bea.o, (byte) 14, nda.k, ((vf) var_vf).m, 0, 0);
 	}
 	if (i_1_ < sv.T) {
 	    vf var_vf = ol.p[i][i_0_][i_1_ + 1];
 	    if (var_vf != null && ((vf) var_vf).m != null
 		&& ((vf) var_vf).m.h((byte) -95))
-		var_lo.a(true, 0, (byte) -109, nda.k, ((vf) var_vf).m, 0,
-			 bea.o);
+		var_lo.throwIllegalStateException(true, 0, (byte) -109, nda.k, ((vf) var_vf).m, 0,
+                bea.o);
 	}
 	if (i_0_ < sv.T && i_1_ < nf.H) {
 	    vf var_vf = ol.p[i][i_0_ + 1][i_1_ + 1];
 	    if (var_vf != null && ((vf) var_vf).m != null
 		&& ((vf) var_vf).m.h((byte) -46))
-		var_lo.a(true, bea.o, (byte) 32, nda.k, ((vf) var_vf).m, 0,
-			 bea.o);
+		var_lo.throwIllegalStateException(true, bea.o, (byte) 32, nda.k, ((vf) var_vf).m, 0,
+                bea.o);
 	}
 	if (i_0_ < sv.T && i_1_ > 0) {
 	    vf var_vf = ol.p[i][i_0_ + 1][i_1_ - 1];
 	    if (var_vf != null && ((vf) var_vf).m != null
 		&& ((vf) var_vf).m.h((byte) -117))
-		var_lo.a(true, bea.o, (byte) 34, nda.k, ((vf) var_vf).m, 0,
-			 -bea.o);
+		var_lo.throwIllegalStateException(true, bea.o, (byte) 34, nda.k, ((vf) var_vf).m, 0,
+                -bea.o);
 	}
     }
     
@@ -89,7 +89,7 @@ final class Class_pf extends mca
 	ir.b(17381);
 	iea.a(true, sp.s);
 	fda.a(0);
-	bca.a((byte) 86);
+	bca.showTextures((byte) 86);
 	if (hm.h != 3) {
 	    if (hm.h == 7)
 		ei.a(8, 44);
@@ -141,7 +141,7 @@ final class Class_pf extends mca
 		return 34165;
 	    if (hn.f == var_nw)
 		return 260;
-	    if (Login.f == var_nw)
+	    if (Login.nw == var_nw)
 		return 34023;
 	} else
 	    return 8448;

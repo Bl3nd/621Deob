@@ -56,7 +56,7 @@ final class taa
 	vca var_vca = m.a(i, (byte) 86);
 	int i_2_ = !((vca) var_vca).p ? ((qj) j).Wd : 64;
 	pm var_pm;
-	if (((vca) var_vca).t && j.z()) {
+	if (((vca) var_vca).t && j.bloom()) {
 	    float[] fs = m.a(i_1_ ^ 0x17f, i_2_, false, 0.7F, i_2_, i);
 	    var_pm = new pm(j, 3553, 34842, i_2_, i_2_, ((vca) var_vca).g != 0,
 			    fs, 6408);

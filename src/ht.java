@@ -11,7 +11,7 @@ final class ht extends cl
     static int w;
     private ml x;
     static int y;
-    static boolean z = false;
+    static boolean showProfiling = false;
     static int B;
     static int C;
     static int D;

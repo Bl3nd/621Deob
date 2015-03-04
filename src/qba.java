@@ -24,7 +24,7 @@ final class qba extends pp
 	    if (ri.u != i_0_) {
 		Class_hc.e = bw.v = ida.h[i_0_];
 		SpecialOutPacket.a((byte) -110);
-		GameInPacket.c = new int[Class_hc.e][bw.v];
+		GameInPacket.ints = new int[Class_hc.e][bw.v];
 		cl.s = new int[4][Class_hc.e >> 3][bw.v >> 3];
 		gi.k = new int[Class_hc.e][bw.v];
 		for (int i_1_ = 0; i_1_ < 4; i_1_++)
@@ -47,7 +47,7 @@ final class qba extends pp
     final void i(int i) {
 	E++;
 	((pp) this).l
-	    = ((pp) this).l & ~0x7fffffffffffffffL | us.a(i ^ 0x6a) + 500L;
+	    = ((pp) this).l & ~0x7fffffffffffffffL | us.getCurrentTime(i ^ 0x6a) + 500L;
 	kaa.n.a((int) 75, this);
 	if (i != 0)
 	    j(-100);
@@ -91,7 +91,7 @@ final class qba extends pp
 	if (((Interface) var_kp).itemActions == null || i_2_ >= ((Interface) var_kp).itemActions.length
 	    || ((Interface) var_kp).itemActions[i_2_] == null
 	    || ((Interface) var_kp).itemActions[i_2_].trim().length() == 0) {
-	    if (lba.Q)
+	    if (lba.qa_op_test)
 		return "Hidden-" + i_2_;
 	    return null;
 	}

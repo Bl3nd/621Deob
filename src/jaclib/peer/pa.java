@@ -3,9 +3,9 @@
  */
 package jaclib.peer;
 
-public class pa extends Peer
-{
-    protected pa(am var_am) {
-	reference = new NativeHeapPeerReference(this, var_am);
+public class pa extends Peer {
+
+    protected pa(am am) {
+        reference = new NativeHeapPeerReference(this, am);
     }
 }

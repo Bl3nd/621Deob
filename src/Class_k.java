@@ -28,10 +28,10 @@ final class Class_k extends mca
 		Connection.a(-28448, 1L);
 	    if (var_vfa.f == 1) {
 		var_cu = (FileOnDisk) var_vfa.hostName;
-		byte[] is = new byte[(int) var_cu.getLength((int) 0)];
+		byte[] is = new byte[(int) var_cu.getLength()];
 		int i_0_;
 		for (int i_1_ = 0; i_1_ < is.length; i_1_ += i_0_) {
-		    i_0_ = var_cu.read(i_1_, is, is.length - i_1_, 3);
+		    i_0_ = var_cu.read(i_1_, is, is.length - i_1_);
 		    if ((i_0_ ^ 0xffffffff) == 0)
 			throw new IOException("EOF");
 		}
@@ -44,7 +44,7 @@ final class Class_k extends mca
 	    try {
 		if (var_cu == null)
 		    break;
-		var_cu.close((byte) -127);
+		var_cu.close();
 	    } catch (Exception exception) {
 		break;
 	    }

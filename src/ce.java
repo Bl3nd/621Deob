@@ -56,7 +56,7 @@ final class ce {
     int Y;
     boolean Z;
     short ab;
-    static boolean bb = false;
+    static boolean forced64mb = false;
     short cb;
     int db;
     int eb;
@@ -328,7 +328,7 @@ final class ce {
         nr.i = var_pl_14_;
         dga.G = var_pl_13_;
         sb++;
-        aa.o = new Interface[Class_fc.a.a((byte) -107)][];
+        Node_Sub.o = new Interface[Class_fc.a.a((byte) -107)][];
         pu.p = new boolean[Class_fc.a.a((byte) -107)];
     }
 

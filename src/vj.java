@@ -28,7 +28,7 @@ final class vj
     static GameOutPacket u = new GameOutPacket(71, 11);
     
     final void a(byte i) {
-	((vj) this).i = GameInPacket.i[m << 3];
+	((vj) this).i = GameInPacket.ints2[m << 3];
 	e++;
 	long l = (long) ((vj) this).n;
 	long l_0_ = (long) ((vj) this).o;
@@ -111,8 +111,8 @@ final class vj
 	    i_5_ = 0;
 	    ((Entity) var_ni).Ab = null;
 	    ((Entity) var_ni).yb = -1;
-	    ((Animable) var_ni).locX = ((Entity) var_ni).regionLocalX[0] * 512 + 256 * var_ni.i(-1);
-	    ((Animable) var_ni).locY = ((Entity) var_ni).regionLocalY[0] * 512 + 256 * var_ni.i(-1);
+	    ((Animable) var_ni).locX = ((Entity) var_ni).regionLocalX[0] * 512 + 256 * var_ni.getNPCDefinition(-1);
+	    ((Animable) var_ni).locY = ((Entity) var_ni).regionLocalY[0] * 512 + 256 * var_ni.getNPCDefinition(-1);
 	    var_ni.a(i_3_);
 	}
 	if (up.thisPlayer == var_ni && (((Animable) var_ni).locX < 6144 || ((Animable) var_ni).locY < 6144
@@ -126,8 +126,8 @@ final class vj
 	    ((Entity) var_ni).xc = 0;
 	    ((Entity) var_ni).graphicsId = -1;
 	    ((Entity) var_ni).graphicsId_ = -1;
-	    ((Animable) var_ni).locX = ((Entity) var_ni).regionLocalX[0] * 512 + var_ni.i(-1) * 256;
-	    ((Animable) var_ni).locY = ((Entity) var_ni).regionLocalY[0] * 512 + var_ni.i(-1) * 256;
+	    ((Animable) var_ni).locX = ((Entity) var_ni).regionLocalX[0] * 512 + var_ni.getNPCDefinition(-1) * 256;
+	    ((Animable) var_ni).locY = ((Entity) var_ni).regionLocalY[0] * 512 + var_ni.getNPCDefinition(-1) * 256;
 	    var_ni.a((int) 0);
 	}
 	int i_6_ = mw.a((byte) 117, var_ni);

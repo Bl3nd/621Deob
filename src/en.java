@@ -362,16 +362,16 @@ abstract class en extends Class_r
 	    && Class_md.h <= i_8_ - i_7_ && i_8_ + i_7_ <= Class_db.o)
 	    ss.a(i, true, i_10_, i_9_, i_8_, i_12_, i_7_);
 	else
-	    bj.a(-24142, i_8_, i_10_, i_7_, i_9_, i, i_12_);
+	    Commands.a(-24142, i_8_, i_10_, i_7_, i_9_, i, i_12_);
     }
     
-    final void b(int i) {
+    final void getTexSize(int size) {
 	Yb++;
-	if (i < 128 || i > 1024)
+	if (size < 128 || size > 1024)
 	    throw new IllegalArgumentException();
 	if (de != null)
 	    de.c(0);
-	((en) this).ve = i;
+	((en) this).ve = size;
     }
     
     abstract void a(boolean bool, int i, Class_gb var_gb, boolean bool_14_);
@@ -481,7 +481,7 @@ abstract class en extends Class_r
 			      ((float) (((vca) var_vca).n
 					* (((en) this).Me % i_29_))
 			       / (float) i_29_));
-		    a(106, at.I);
+		    a(106, at.ki);
 		}
 		i_24_ = ((vca) var_vca).a;
 		if (!((en) this).We) {
@@ -520,7 +520,7 @@ abstract class en extends Class_r
     final void FA(int i, ua var_ua, int i_30_, int i_31_) {
 	x++;
 	ao var_ao = (ao) var_ua;
-	ls var_ls = ((ao) var_ao).g;
+	ls var_ls = ((ao) var_ao).ls;
 	d((byte) 16);
 	a(var_ls, 0);
 	a((byte) 28, (int) 1);
@@ -535,7 +535,7 @@ abstract class en extends Class_r
 			    1.0F);
 	((en) this).xf[0].a(var_ls.a(false, (float) -i_30_), 0.0F,
 			    var_ls.a((float) -i_31_, (byte) -59), (byte) -125);
-	((en) this).Sf[0] = at.I;
+	((en) this).Sf[0] = at.ki;
 	t((int) 114);
 	y(9);
 	j((byte) -70);
@@ -2349,7 +2349,7 @@ abstract class en extends Class_r
 	    else if (i == 3)
 		a(hn.f, true, Class_rf.e);
 	    else if (i == 4)
-		a(Login.f, true, Login.f);
+		a(Login.nw, true, Login.nw);
 	} else
 	    a(ku.k, true, ku.k);
     }

@@ -293,9 +293,9 @@ final class lm extends en
 	    OpenGL.glDeleteLists((int) ((Node) var_hda).nodeID,
 				 ((GameInPacketHandler) var_hda).k);
 	}
-	if (this.b() > 100663296 && us.a(103) > ii + 60000L) {
+	if (this.b() > 100663296 && us.getCurrentTime(103) > ii + 60000L) {
 	    System.gc();
-	    ii = us.a(103);
+	    ii = us.getCurrentTime(103);
 	}
 	super.a(i);
     }
@@ -508,7 +508,7 @@ final class lm extends en
 	Jh++;
     }
     
-    final boolean z() {
+    final boolean bloom() {
 	xg++;
 	return false;
     }
@@ -705,7 +705,7 @@ final class lm extends en
 	}
     }
     
-    final void a(boolean bool) {
+    final void renderProfile(boolean profile) {
 	Gh++;
     }
     
@@ -787,7 +787,7 @@ final class lm extends en
     }
     
     final void a(rca var_rca, int i) {
-	if (aaa.s == var_rca) {
+	if (aaa.rca == var_rca) {
 	    OpenGL.glDisable(3168);
 	    OpenGL.glDisable(3169);
 	    OpenGL.glDisable(3170);

@@ -8,10 +8,10 @@ public final class Player extends Entity {
     int Rc;
     private byte Sc;
     static int updateLocationCounter;
-    static int Uc;
+    static int playerAppearanceUpdate;
     boolean Vc = false;
     static int Wc;
-    static GameOutPacket outgoingPacekt69 = new GameOutPacket(69, 7);
+    static GameOutPacket outgoingPacket69 = new GameOutPacket(69, 7);
     int combatLevel;
     static int Zc;
     static int ad;
@@ -21,28 +21,28 @@ public final class Player extends Entity {
     int ed;
     int fd;
     private byte gd;
-    String hd;
+    String playerName;
     static int id;
     int jd = -1;
-    int kd;
+    int playerX;
     static int ld;
     static int md;
     static int sendIllegalStateExceptionCounter;
     static f od;
     static int pd;
     static int qd;
-    int rd;
+    int playerY;
     boolean sd;
-    static int td;
+    static int throwIllegalStateException;
     int ud;
     int vd;
     static int wd;
     int xd;
     int yd;
     PlayerDef playerDef;
-    static int Ad;
+    static int updateLocation;
     static int Bd;
-    static int Cd;
+    static int getNPCDefinition;
     private int Dd;
     static int Ed;
     static int Fd;
@@ -52,7 +52,7 @@ public final class Player extends Entity {
     static int isPlayerDefinitionCounter;
     private byte Kd;
     boolean Ld;
-    int Md;
+    int playerCombatLevel;
     static GameInPacket incomingPacket78 = new GameInPacket(78, -1);
     int Od;
     static int Pd;
@@ -114,10 +114,10 @@ public final class Player extends Entity {
                 this.ans, cp.e, this.ic, this.hc, dr_, this.yc, this.W, this.Ib, hs.f, class_r, this.rc, true, (byte) 125));
         int j1 = rn.a((byte) 24);
         if (qm.heapSize < 96 && j1 > 50) {
-            he.c((byte) 61);
+            he.cleanup((byte) 61);
         }
-        if (hs.modeWhere == oba.K || j1 >= 50) {
-            if (oba.K != hs.modeWhere) {
+        if (hs.modeWhere == oba.pk || j1 >= 50) {
+            if (oba.pk != hs.modeWhere) {
                 Class_is.n = 0;
                 hk.R = new byte[50][];
             }
@@ -153,7 +153,7 @@ public final class Player extends Entity {
                 da.oa(0, this.pb, 0);
             }
         } else {
-            this.a(-2912, orientation, i(-1) << 9, 0, i(-1) << 9, 0);
+            this.a(-2912, orientation, getNPCDefinition(-1) << 9, 0, getNPCDefinition(-1) << 9, 0);
         }
         if (bool1) {
             da.a(this.vb, this.Mb, this.Tb, this.Xb & 0xff);
@@ -235,7 +235,7 @@ public final class Player extends Entity {
         return true;
     }
 
-    public final void updateLocation(byte b, int y, int i, int x) {
+    public final void updateLocation(byte moveType, int y, int i, int x) {
         if ((~this.yb) != 0 && Class_ef.J.c(64, this.yb).k == 1) {
             this.yb = -1;
             this.Ab = null;
@@ -259,10 +259,10 @@ public final class Player extends Entity {
         this.orientation = -1;
         if (x >= 0 && Class_hc.e > x && y >= 0 && bw.v > y) {
             if (this.regionLocalX[0] >= 0 && Class_hc.e > this.regionLocalX[0] && this.regionLocalY[0] >= 0 && bw.v > this.regionLocalY[0]) {
-                if (b == 2) {
+                if (moveType == 2) {
                     nu.a(y, -79, this, x, (byte) 2);
                 }
-                a(x, b, y, true);
+                a(x, moveType, y, true);
             } else {
                 updateLocation(-3377, x, y);
             }
@@ -298,10 +298,10 @@ public final class Player extends Entity {
         if (!bool) {
             string += this.displayName;
         } else {
-            string += this.hd;
+            string += this.playerName;
         }
-        if (na.g != null) {
-            string += na.g[Sc];
+        if (OutputStreamSub.g != null) {
+            string += OutputStreamSub.g[Sc];
         }
         return string;
     }
@@ -326,7 +326,7 @@ public final class Player extends Entity {
         Ed++;
         if (gf.a((byte) 92, i1) && b <= -94) {
             if (mv.b[i1] == null) {
-                client.a(aa.o[i1], -1, j, k, width, height, x, y, i, j1);
+                client.a(Node_Sub.o[i1], -1, j, k, width, height, x, y, i, j1);
             } else {
                 client.a(mv.b[i1], -1, j, k, width, height, x, y, i, j1);
             }
@@ -476,13 +476,13 @@ public final class Player extends Entity {
         }
     }
 
-    public final String a(boolean bool, byte b) {
+    public final String getDisplayName(boolean bool, byte b) {
         if (b != -7) {
             getUserDisplayName((byte) -21, true);
         }
         pd++;
         if (bool) {
-            return this.hd;
+            return this.playerName;
         }
         return this.displayName;
     }
@@ -513,18 +513,18 @@ public final class Player extends Entity {
     }
 
     public final void playerAppearanceUpdate(int dummy, BytesParser stream) {
-        Uc++;
+        playerAppearanceUpdate++;
         stream.pos = 0;
         int i = stream.readUnsignedByte(-9268);
         Kd = (byte) (0x1 & i);
         boolean bool = this.sd;
         this.sd = (0x2 & i) != 0;
         boolean bool1 = (i & 0x4) != 0;
-        int j = super.i(-1);
+        int j = super.getNPCDefinition(-1);
         this.a((0x7 & i >> 3) + 1, 0);
         Sc = (byte) (0x3 & i >> 6);
-        this.locX += i(-1) - j << 8;
-        this.locY += i(dummy) - j << 8;
+        this.locX += getNPCDefinition(-1) - j << 8;
+        this.locY += getNPCDefinition(dummy) - j << 8;
         gd = stream.readByte(dummy - 20932);
         this.Hd = stream.readByte(-20933);
         this.vd = stream.readByte(-20933);
@@ -564,8 +564,8 @@ public final class Player extends Entity {
             buf1[index] = i1;
         }
         Dd = stream.readShort(13111);
-        this.hd = stream.readString((byte) 124);
-        this.displayName = this.hd;
+        this.playerName = stream.readString((byte) 124);
+        this.displayName = this.playerName;
         this.combatLevel = stream.readUnsignedByte(-9268);
         if (bool1) {
             this.ud = stream.readShort(dummy ^ ~0x3337);
@@ -573,10 +573,10 @@ public final class Player extends Entity {
                 this.ud = -1;
             }
             this.ed = -1;
-            this.Md = this.combatLevel;
+            this.playerCombatLevel = this.combatLevel;
         } else {
             this.ud = 0;
-            this.Md = stream.readUnsignedByte(-9268);
+            this.playerCombatLevel = stream.readUnsignedByte(-9268);
             this.ed = stream.readUnsignedByte(-9268);
             if (this.ed == 255) {
                 this.ed = -1;
@@ -604,12 +604,12 @@ public final class Player extends Entity {
         if (this.playerDef == null) {
             this.playerDef = new PlayerDef();
         }
-        int j1 = ((Player) this).playerDef.d;
+        int j1 = this.playerDef.d;
         int[] buf2 = this.playerDef.k;
         this.playerDef.a(buf, Kd == 1, a(false), k, (byte) 23, buf1);
         if (k != j1) {
-            this.locX = (this.regionLocalX[0] << 9) + (i(-1) << 8);
-            this.locY = (this.regionLocalY[0] << 9) + (i(dummy) << 8);
+            this.locX = (this.regionLocalX[0] << 9) + (getNPCDefinition(-1) << 8);
+            this.locY = (this.regionLocalY[0] << 9) + (getNPCDefinition(dummy) << 8);
         }
         if (ih.n == this.lb && buf2 != null) {
             for (int index = 0; buf1.length > index; index++) {
@@ -631,8 +631,8 @@ public final class Player extends Entity {
         }
     }
 
-    public final void a(boolean bool, int i, byte b, Class_r class_r, Animable animable, int j, int k) {
-        td++;
+    public final void throwIllegalStateException(boolean bool, int i, byte b, Class_r class_r, Animable animable, int j, int k) {
+        throwIllegalStateException++;
         throw new IllegalStateException();
     }
 
@@ -640,12 +640,12 @@ public final class Player extends Entity {
         if (i != 16383) {
             od = null;
         }
-        WorldSub.p = null;
+        WorldSub.interfaces = null;
         id++;
         or.a(0, (byte) -23, eh.height, -1, ff.width, Class_vb.u, 0, 0, 0);
-        if (WorldSub.p != null) {
-            bn.a(0, eh.height, 0, jga.s, (byte) -4, ff.width, rca.e.Xb, WorldSub.p, qf.h, -1412584499);
-            WorldSub.p = null;
+        if (WorldSub.interfaces != null) {
+            bn.a(0, eh.height, 0, jga.s, (byte) -4, ff.width, rca.e.Xb, WorldSub.interfaces, qf.h, -1412584499);
+            WorldSub.interfaces = null;
         }
     }
 
@@ -672,29 +672,29 @@ public final class Player extends Entity {
         return bool;
     }
 
-    public final int i(int i) {
-        Cd++;
+    public final int getNPCDefinition(int i) {
+        getNPCDefinition++;
         if (this.playerDef != null && this.playerDef.d != -1) {
             return jm.p.getNPCDef(this.playerDef.d, (byte) -115).Q;
         }
         if (i != -1) {
             updateLocation(29, 21, 67);
         }
-        return super.i(-1);
+        return super.getNPCDefinition(-1);
     }
 
     public final void updateLocation(int i, int x, int y) {
         ((Entity) this).regionLocalX[0] = x;
         this.Fc = 0;
         this.Kc = 0;
-        Ad++;
+        updateLocation++;
         this.Nc = 0;
         ((Entity) this).regionLocalY[0] = y;
-        int j = i(i + 3376);
+        int j = getNPCDefinition(i + 3376);
         this.locX = this.regionLocalX[0] * 512 + j * 256;
         this.locY = 512 * this.regionLocalY[0] + j * 256;
         if (this == up.thisPlayer) {
-            Class_ad.b(120);
+            Class_ad.lighting(120);
         }
         if (this.tq_ != null) {
             this.tq_.b();
@@ -708,7 +708,7 @@ public final class Player extends Entity {
         Qd = null;
         incomingPacket70 = null;
         incomingPacket78 = null;
-        outgoingPacekt69 = null;
+        outgoingPacket69 = null;
         od = null;
         if (bool) {
             m(93);
@@ -739,7 +739,7 @@ public final class Player extends Entity {
         Kd = (byte) 0;
         this.yd = -1;
         this.ud = 0;
-        this.Md = 0;
+        this.playerCombatLevel = 0;
         this.Ld = false;
         this.Gd = 0;
         this.Od = 255;

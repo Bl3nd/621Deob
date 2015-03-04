@@ -18,8 +18,8 @@ final class ql extends Node
     ObjectDef v;
     hw w;
     boolean x;
-    int y;
-    int z;
+    int _y;
+    int _x;
     int A = 0;
     static GameInPacket incomingPacket103 = new GameInPacket(103, 10);
     int xLoc;

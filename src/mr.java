@@ -4,7 +4,7 @@
 
 final class mr
 {
-    static int a;
+    static int x_;
     static int b;
     static tb c;
     static int d = 0;

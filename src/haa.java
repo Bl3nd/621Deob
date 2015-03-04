@@ -4,7 +4,7 @@
 
 interface haa
 {
-    public int a(int i, int i_0_);
+    public int getClientVarpBit(int i, int i_0_);
     
-    public int b(int i, int i_1_);
+    public int getClientVarp(int i, int i_1_);
 }

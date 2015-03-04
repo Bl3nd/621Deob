@@ -40,7 +40,7 @@ final class di implements lv
 	    ss var_ss = tv.e.a(is[0], -8727);
 	    return var_ss.d(-24908, (int) l);
 	}
-	if (var_baa == client.gb || var_baa == qm.a) {
+	if (var_baa == client.baa || var_baa == qm.a) {
 	    ItemDef var_uv = laa.itemDefLoader.d(12388, (int) l);
 	    return ((ItemDef) var_uv).itemName;
 	}
@@ -60,17 +60,17 @@ final class di implements lv
 		if (var_lca.e((byte) 23))
 		    lm.Nh[i_6_][fg.a[i_6_]++] = var_lca;
 		else
-		    aaa.k[i_6_][baa.l[i_6_]++] = var_lca;
+		    aaa.animables[i_6_][baa.l[i_6_]++] = var_lca;
 	    } else
-		cca.d[i_6_][cc.f[i_6_]++] = var_lca;
+		InputStreamSub_1.d[i_6_][cc.f[i_6_]++] = var_lca;
 	    if (var_lca_5_ != null) {
 		if (var_lca_5_.g((byte) 122)) {
 		    if (var_lca_5_.e((byte) 23))
 			lm.Nh[i_6_][fg.a[i_6_]++] = var_lca_5_;
 		    else
-			aaa.k[i_6_][baa.l[i_6_]++] = var_lca_5_;
+			aaa.animables[i_6_][baa.l[i_6_]++] = var_lca_5_;
 		} else
-		    cca.d[i_6_][cc.f[i_6_]++] = var_lca_5_;
+		    InputStreamSub_1.d[i_6_][cc.f[i_6_]++] = var_lca_5_;
 	    }
 	}
     }

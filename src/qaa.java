@@ -74,8 +74,8 @@ final class qaa extends dfa implements vda
 	return false;
     }
     
-    final void a(boolean bool, int i, byte i_3_, Class_r class_r, Animable var_lo,
-		 int i_4_, int i_5_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_3_, Class_r class_r, Animable var_lo,
+                                          int i_4_, int i_5_) {
 	R++;
 	int i_6_ = -89 % ((-50 - i_3_) / 55);
 	throw new IllegalStateException();

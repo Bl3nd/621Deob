@@ -4,7 +4,7 @@
 import java.io.IOException;
 import java.io.InputStream;
 
-final class uu extends InputStream
+final class InputStreamSub extends InputStream
 {
     static int a;
     static int[][] b

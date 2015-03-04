@@ -3,8 +3,8 @@
  */
 package jaclib.hardware_info;
 
-public class HardwareInfo
-{
+public class HardwareInfo {
+
     public static final native int getPackedBasicCPUInfo();
     
     public static final native int getPackedProcessorInfo();

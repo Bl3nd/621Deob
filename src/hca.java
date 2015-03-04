@@ -44,9 +44,9 @@ final class hca implements IEnumModesCallback
 		 int i_2_) {
 	frame.setVisible(bool);
 	WComponentPeer wcomponentpeer = (WComponentPeer) frame.getPeer();
-	int i_3_ = wcomponentpeer.getHwnd();
-	User32.SetWindowLong(i_3_, -16, -2147483648);
-	User32.SetWindowLong(i_3_, -20, 8);
+	int windowHandler = wcomponentpeer.getHwnd();
+	User32.SetWindowLong(windowHandler, -16, -2147483648);
+	User32.SetWindowLong(windowHandler, -20, 8);
 	b.setCooperativeLevel((java.awt.Component) frame, 17);
 	b.setDisplayMode(i_2_, i, i_0_, i_1_, 0);
 	frame.setBounds(0, 0, i_2_, i);

@@ -50,7 +50,7 @@ final class jba
 	    mo.F = true;
 	    dq.e = true;
 	    if (!((jb) cs.g).n)
-		afa.a += (-afa.a - 24.0F) / 2.0F;
+		afa.aFloat += (-afa.aFloat - 24.0F) / 2.0F;
 	    else
 		qw.n = (float) ((int) qw.n - 65 & ~0x7f);
 	    if (i != 6)

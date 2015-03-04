@@ -11,12 +11,12 @@ final class vm extends Node
     volatile int o = -1;
     static int p;
     static int q;
-    static boolean r = false;
+    static boolean isTweening = false;
     
     static final void a(boolean bool, boolean bool_0_, boolean bool_1_,
 			tt var_tt) {
 	if (bool_1_ != false)
-	    r = true;
+	    isTweening = true;
 	q++;
 	int i = ((tt) var_tt).l;
 	int i_2_ = (int) ((Node) var_tt).nodeID;
@@ -33,7 +33,7 @@ final class vm extends Node
 	ufa var_ufa = new ufa(ida.l);
 	for (tt var_tt_3_ = (tt) var_ufa.a((byte) -120); var_tt_3_ != null;
 	     var_tt_3_ = (tt) var_ufa.a((int) 1)) {
-	    if (!var_tt_3_.g(-95)) {
+	    if (!var_tt_3_.isNextNode(-95)) {
 		var_tt_3_ = (tt) var_ufa.a((byte) -121);
 		if (var_tt_3_ == null)
 		    break;

@@ -12,7 +12,7 @@ final class pfa
 {
     static int a;
     static fa b;
-    static Hashtable c = new Hashtable();
+    static Hashtable hashtable = new Hashtable();
     static ida d;
     static int e = 0;
     static int f;
@@ -80,7 +80,7 @@ final class pfa
     }
     
     public static void a(byte i) {
-	c = null;
+	hashtable = null;
 	b = null;
 	if (i != 113)
 	    d = null;

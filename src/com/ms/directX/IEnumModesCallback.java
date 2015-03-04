@@ -3,6 +3,5 @@
  */
 package com.ms.directX;
 
-public interface IEnumModesCallback
-{
+public interface IEnumModesCallback {
 }

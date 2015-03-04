@@ -37,10 +37,10 @@ final class kk extends iea
 	int i = 0;
 	int i_9_;
 	for (i_9_ = string.length(); i < i_9_; i++) {
-	    if (!GameText.a((int) 0, string.charAt(i)))
+	    if (!GameText.isCharacter(string.charAt(i)))
 		break;
 	}
-	for (/**/; i_9_ > i && GameText.a((int) 0, string.charAt(i_9_ - 1));
+	for (/**/; i_9_ > i && GameText.isCharacter(string.charAt(i_9_ - 1));
 	     i_9_--) {
 	    /* empty */
 	}

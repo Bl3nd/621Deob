@@ -45,7 +45,7 @@ final class Class_ic extends mca
 	if (((Interface) var_kp).o == 4)
 	    ((Interface) var_kp).minVScroll
 		= ((Interface) var_kp).minHScroll * ((Interface) var_kp).Uc / ((Interface) var_kp).Rb;
-	if (lba.Q
+	if (lba.qa_op_test
 	    && (((nm) client.c(var_kp)).l != 0 || ((Interface) var_kp).type == 0)) {
 	    if (((Interface) var_kp).minVScroll < 5 && ((Interface) var_kp).minHScroll < 5) {
 		((Interface) var_kp).minHScroll = 5;

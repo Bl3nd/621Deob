@@ -200,7 +200,7 @@ final class mw extends cl
 	    if (bool_9_)
 		class_ac.a(i_14_, 1003, true);
 	    class_ac.a(i_13_ == 1, i_15_ + ((Entity) up.thisPlayer).regionLocalY[0], (byte) 45,
-		       class_ac.i((int) -1), i_12_, ((Entity) up.thisPlayer).regionLocalX[0] + i_11_);
+		       class_ac.getNPCDefinition((int) -1), i_12_, ((Entity) up.thisPlayer).regionLocalX[0] + i_11_);
 	    if (((NPC) class_ac).npcDef.a((byte) 119))
 		kg.a(-112, null, null, 0, class_ac, ((Entity) class_ac).regionLocalX[0],
 		     ((Entity) class_ac).regionLocalY[0], ((Animable) class_ac).height);

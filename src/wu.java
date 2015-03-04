@@ -22,7 +22,7 @@ final class wu extends Interactable
 	    lg.r.d(ru.canvas);
 	    lg.r.a(ru.canvas);
 	} else
-	    ur.a(on.performance, true);
+	    ur.setTKVersion(on.performance, true);
 	j++;
 	fda.a(0);
 	if (i != 4)

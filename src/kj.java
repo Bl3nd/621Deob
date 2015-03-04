@@ -6,7 +6,7 @@ final class kj
 {
     static int a;
     static int b;
-    static GameOutPacket c = new GameOutPacket(56, -1);
+    static GameOutPacket outgoingPacket56 = new GameOutPacket(56, -1);
     da d;
     ha e;
     
@@ -25,7 +25,7 @@ final class kj
     }
     
     public static void a(byte i) {
-	c = null;
+	outgoingPacket56 = null;
 	int i_1_ = 54 % ((i - 11) / 42);
     }
 }

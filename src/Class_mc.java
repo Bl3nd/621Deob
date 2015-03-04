@@ -76,7 +76,7 @@ final class Class_mc
     static final void b(int i) {
 	or.a((int) -71);
 	Class_mc.i++;
-	jt.c = null;
+	jt.incomingPacket = null;
 	sw.currentGameInPacket = null;
 	ClientScript.gameInPacket = null;
 	dj.b = 0;
@@ -102,7 +102,7 @@ final class Class_mc
 	ei.a(10, 20);
 	for (int i_8_ = 0; i_8_ < 100; i_8_++)
 	    la.q[i_8_] = true;
-	jp.a(true);
+	RSKeyListener.a(true);
 	pga.a = 0L;
 	bg.a = null;
     }
@@ -122,7 +122,7 @@ final class Class_mc
     
     Class_mc(BytesParser var_es) {
 	int i = var_es.readUnsignedByte(-9268);
-	if (!cs.g.a((int) -67, on.performance) || lm.Kh.c() <= 0) {
+	if (!cs.g.isLighting((int) -67, on.performance) || lm.Kh.c() <= 0) {
 	    if ((i & 0x1) != 0)
 		var_es.readInt(88);
 	    if ((i & 0x2) != 0)

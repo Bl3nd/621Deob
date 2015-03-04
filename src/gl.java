@@ -478,8 +478,8 @@ final class gl extends cd
     static final void a(boolean bool, byte i) {
 	G++;
 	if (gca.l.length() != 0) {
-	    ia.a(4, "--> " + gca.l);
-	    bj.applyClientCommand(0, bool, gca.l, false);
+	    ia.sendConsoleCommandText(4, "--> " + gca.l);
+	    Commands.applyClientCommand(0, bool, gca.l, false);
 	    Entity.tc = 0;
 	    qda.z = 0;
 	    gca.l = "";
@@ -688,7 +688,7 @@ final class gl extends cd
 	    if (((gl) this).L > i_129_)
 		((gl) this).L = i_129_;
 	    ObjectDef var_bda = ul.k.getObjectDef((byte) 77, i_127_);
-	    if (!class_r.g() || !((jb) cs.g).k || !((ObjectDef) var_bda).K) {
+	    if (!class_r.g() || !((jb) cs.g).isTextures || !((ObjectDef) var_bda).K) {
 		if (i_126_ != -12)
 		    P = null;
 		int i_131_;

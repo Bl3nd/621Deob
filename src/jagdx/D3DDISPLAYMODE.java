@@ -3,8 +3,8 @@
  */
 package jagdx;
 
-public class D3DDISPLAYMODE
-{
+public class D3DDISPLAYMODE {
+
     public int Width;
     public int RefreshRate;
     public int Format;

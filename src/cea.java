@@ -34,7 +34,7 @@ final class cea
 		string_0_ = ev.a(0, string_0_, "#", "%23");
 		if (to.e != null) {
 		    vfa var_vfa
-			= ah.p.a(new URL(to.e.getCodeBase(),
+			= ah.signlink.a(new URL(to.e.getCodeBase(),
 					 ("clienterror.ws?nullLoader=" + il.n + "&u="
 					  + qea.a + "&v1=" + Signlink.javaVendor + "&v2="
 					  + Signlink.javaVersion + "&unlink=" + string_0_)),
@@ -140,7 +140,7 @@ final class cea
     static final void b(int i, int i_23_, int i_24_) {
 	b++;
 	if (i == -1630137275 && gf.a((byte) 110, i_23_))
-	    us.a(aa.o[i_23_], i_24_, false);
+	    us.a(Node_Sub.o[i_23_], i_24_, false);
     }
     
     static final String bytesToString(int i, int i_25_, byte[] is, int i_26_) {

@@ -107,7 +107,7 @@ final class s extends Class_i implements p
     final void a(int i, int i_54_, int i_55_, boolean[][] bools,
 		 boolean bool) {
 	int i_56_ = 0;
-	float[] fs = new float[m.b((int) -91)];
+	float[] fs = new float[m.soundStreamCount((int) -91)];
 	for (gga var_gga = (gga) m.a((int) 99); var_gga != null;
 	     var_gga = (gga) m.b((byte) 28))
 	    fs[i_56_++] = var_gga.b((int) 100);

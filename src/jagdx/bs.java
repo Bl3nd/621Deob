@@ -3,13 +3,13 @@
  */
 package jagdx;
 
-public final class bs extends RuntimeException
-{
+public final class bs extends RuntimeException {
+
     public bs() {
-	/* empty */
+    /* empty */
     }
-    
-    bs(String string) {
-	super(string);
+
+    public bs(String string) {
+        super(string);
     }
 }

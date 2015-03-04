@@ -6,7 +6,7 @@ final class sl extends Class_pb
 {
     static int j;
     static int k;
-    static boolean l = false;
+    static boolean fpsOn = false;
     private int m;
     static int n;
     private int o;

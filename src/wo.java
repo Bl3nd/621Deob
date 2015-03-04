@@ -34,7 +34,7 @@ final class wo
 	bq var_bq = (bq) pu.m.get((long) i_3_, (byte) 100);
 	if (var_bq != null) {
 	    if (bool && ((bq) var_bq).a == null) {
-		sa var_sa = GameOutPacket.a(lm.vh, i_3_, (byte) 32);
+		sa var_sa = GameOutPacket.a(lm.vh, i_3_);
 		if (var_sa == null)
 		    return null;
 		((bq) var_bq).a = var_sa;
@@ -44,7 +44,7 @@ final class wo
 	aga[] var_agas = aga.a(GameText.wb, i_3_);
 	if (var_agas == null)
 	    return null;
-	sa var_sa = GameOutPacket.a(lm.vh, i_3_, (byte) 32);
+	sa var_sa = GameOutPacket.a(lm.vh, i_3_);
 	if (var_sa == null)
 	    return null;
 	if (bool)
@@ -116,22 +116,22 @@ final class wo
 				    ev var_ev = ((vf) var_vf).l;
 				    ev var_ev_18_ = ((vf) var_vf).h;
 				    if (var_ev != null && var_ev.h((byte) -90))
-					var_lo.a(bool,
-						 ((i_15_ - i_6_) * bea.o
-						  + (1 - i_8_) * dba.k),
-						 (byte) 47, nda.k, var_ev,
-						 i_17_,
-						 ((i_16_ - i_7_) * bea.o
-						  + (1 - i_9_) * dba.k));
+					var_lo.throwIllegalStateException(bool,
+                            ((i_15_ - i_6_) * bea.o
+                                    + (1 - i_8_) * dba.k),
+                            (byte) 47, nda.k, var_ev,
+                            i_17_,
+                            ((i_16_ - i_7_) * bea.o
+                                    + (1 - i_9_) * dba.k));
 				    if (var_ev_18_ != null
 					&& var_ev_18_.h((byte) -81))
-					var_lo.a(bool,
-						 ((i_15_ - i_6_) * bea.o
-						  + (1 - i_8_) * dba.k),
-						 (byte) -120, nda.k,
-						 var_ev_18_, i_17_,
-						 ((i_16_ - i_7_) * bea.o
-						  + (1 - i_9_) * dba.k));
+					var_lo.throwIllegalStateException(bool,
+                            ((i_15_ - i_6_) * bea.o
+                                    + (1 - i_8_) * dba.k),
+                            (byte) -120, nda.k,
+                            var_ev_18_, i_17_,
+                            ((i_16_ - i_7_) * bea.o
+                                    + (1 - i_9_) * dba.k));
 				    for (ida var_ida = ((vf) var_vf).f;
 					 var_ida != null;
 					 var_ida = ((ida) var_ida).d) {
@@ -148,17 +148,17 @@ final class wo
 					    int i_20_
 						= (((qda) var_qda).y
 						   - ((qda) var_qda).x + 1);
-					    var_lo.a(bool,
-						     ((((qda) var_qda).B
-						       - i_6_) * bea.o
-						      + ((i_19_ - i_8_)
-							 * dba.k)),
-						     (byte) 59, nda.k, var_qda,
-						     i_17_,
-						     ((((qda) var_qda).x
-						       - i_7_) * bea.o
-						      + ((i_20_ - i_9_)
-							 * dba.k)));
+					    var_lo.throwIllegalStateException(bool,
+                                ((((qda) var_qda).B
+                                        - i_6_) * bea.o
+                                        + ((i_19_ - i_8_)
+                                        * dba.k)),
+                                (byte) 59, nda.k, var_qda,
+                                i_17_,
+                                ((((qda) var_qda).x
+                                        - i_7_) * bea.o
+                                        + ((i_20_ - i_9_)
+                                        * dba.k)));
 					}
 				    }
 				}

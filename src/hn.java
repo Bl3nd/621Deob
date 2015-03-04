@@ -5,7 +5,7 @@
 final class hn
 {
     static int a;
-    static int b;
+    static int y_;
     static GameOutPacket outgoingPacket32 = new GameOutPacket(32, -1);
     static int d;
     static int e;
@@ -50,14 +50,14 @@ final class hn
 	a++;
 	if (((ql) var_ql).p != -1 || ((ql) var_ql).E != null) {
 	    int i_6_ = i_2_;
-	    if (((ql) var_ql).z >= i_3_) {
+	    if (((ql) var_ql)._x >= i_3_) {
 		if (((ql) var_ql).xLoc > i_3_)
 		    i_6_ += ((ql) var_ql).xLoc - i_3_;
 	    } else
-		i_6_ += i_3_ - ((ql) var_ql).z;
+		i_6_ += i_3_ - ((ql) var_ql)._x;
 	    int i_7_ = ((jb) cs.g).Y * ((ql) var_ql).J >> 8;
-	    if (((ql) var_ql).y < i_4_)
-		i_6_ += i_4_ - ((ql) var_ql).y;
+	    if (((ql) var_ql)._y < i_4_)
+		i_6_ += i_4_ - ((ql) var_ql)._y;
 	    else if (((ql) var_ql).yLoc > i_4_)
 		i_6_ += ((ql) var_ql).yLoc - i_4_;
 	    if (((ql) var_ql).t == 0 || i_6_ - 256 > ((ql) var_ql).t
@@ -109,7 +109,7 @@ final class hn
 		}
 		if (((ql) var_ql).w != null) {
 		    ((ql) var_ql).w.j(i_8_);
-		    if (!((ql) var_ql).w.g(116)) {
+		    if (!((ql) var_ql).w.isNextNode(116)) {
 			((ql) var_ql).I = null;
 			((ql) var_ql).w = null;
 			((ql) var_ql).L = null;

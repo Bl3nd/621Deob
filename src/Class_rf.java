@@ -9,7 +9,7 @@ final class Class_rf
     static int c;
     static int d;
     static nw e;
-    static boolean f = false;
+    static boolean fromBilling = false;
     String g;
     int h;
     
@@ -66,7 +66,7 @@ final class Class_rf
 		if (gd.b > i_7_)
 		    i_7_ = gd.b;
 		int i_10_ = gf.e.a(baa.d, i, 2) + lf.o;
-		int i_11_ = at.J.a(Class_vb.r, i_7_, -123) + tea.p;
+		int i_11_ = at.rc.a(Class_vb.r, i_7_, -123) + tea.p;
 		class_r.a(hq.f, false).DA(((aga) taa.g).b + i_10_,
 					  i_11_ + ((aga) taa.g).d,
 					  i - 2 * ((aga) taa.g).b,

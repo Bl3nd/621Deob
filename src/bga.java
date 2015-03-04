@@ -74,7 +74,7 @@ public abstract class bga extends Applet
         f++;
         if (tg.D == this && !iga.k) {
             sea.d = true;
-            if (ip.S && us.a(103) - ko.f > 1000L) {
+            if (ip.S && us.getCurrentTime(103) - ko.f > 1000L) {
                 Rectangle rectangle = graphics.getClipBounds();
                 if (rectangle == null
                         || rectangle.width >= rda.width && rectangle.height >= Class_jg.height)
@@ -85,7 +85,7 @@ public abstract class bga extends Applet
 
     public abstract void init();
 
-    final void a(String string, int i) {
+    final void sendErrorGame(String string, int i) {
         w++;
         if (!z) {
             z = true;
@@ -126,7 +126,7 @@ public abstract class bga extends Applet
 
     private final void b(byte i) {
         D++;
-        long l = us.a(114);
+        long l = us.getCurrentTime(114);
         long l_0_ = td.n[ik.s];
         td.n[ik.s] = l;
         if (i < 63)
@@ -134,7 +134,7 @@ public abstract class bga extends Applet
         ik.s = ik.s + 1 & 0x1f;
         if (l_0_ != 0L && l_0_ < l) {
             int i_1_ = (int) (l - l_0_);
-            fu.v = (32000 + (i_1_ >> 1)) / i_1_;
+            fu.fps = (32000 + (i_1_ >> 1)) / i_1_;
         }
         if (fp.B++ > 50) {
             fp.B -= 50;
@@ -153,7 +153,7 @@ public abstract class bga extends Applet
     public final void stop() {
         q++;
         if (tg.D == this && !iga.k)
-            Class_ef.E = us.a(100) + 4000L;
+            Class_ef.E = us.getCurrentTime(100) + 4000L;
     }
 
     final void a(boolean bool, int i, int i_2_, boolean bool_3_, int i_4_,
@@ -175,7 +175,7 @@ public abstract class bga extends Applet
             ws.J.toFront();
             Insets insets = ws.J.getInsets();
             ws.J.setSize(insets.right + (insets.left + rda.width), insets.bottom + Class_jg.height + insets.top);
-            ah.p = nda.signlink = new Signlink(i_5_, string, i_6_, true);
+            ah.signlink = nda.signlink = new Signlink(i_5_, string, i_6_, true);
             vfa var_vfa = nda.signlink.a(1, this, 0);
             while (var_vfa.f == 0)
                 Connection.a(-28448, 10L);
@@ -210,7 +210,7 @@ public abstract class bga extends Applet
         }
         if (string.endsWith("192.168.1."))
             return true;
-        a("invalidhost", -1);
+        sendErrorGame("invalidhost", -1);
         return false;
     }
 
@@ -222,9 +222,9 @@ public abstract class bga extends Applet
     public final void destroy() {
         A++;
         if (this == tg.D && !iga.k) {
-            Class_ef.E = us.a(127);
+            Class_ef.E = us.getCurrentTime(127);
             Connection.a(-28448, 5000L);
-            ah.p = null;
+            ah.signlink = null;
             a((byte) -75, false);
         }
     }
@@ -244,7 +244,7 @@ public abstract class bga extends Applet
         return super.getCodeBase();
     }
 
-    public synchronized void c(byte b) {
+    public synchronized void setCanvas(byte b) {
         if (ru.canvas != null) {
             ru.canvas.removeFocusListener(this);
             ru.canvas.getParent().setBackground(Color.black);
@@ -281,7 +281,7 @@ public abstract class bga extends Applet
         sea.d = true;
         if (b >= 20) {
             vv.o = false;
-            ko.f = us.a(110);
+            ko.f = us.getCurrentTime(110);
         }
     }
 
@@ -319,7 +319,7 @@ public abstract class bga extends Applet
         return super.getParameter(string);
     }
 
-    String d(byte dummy) {
+    String errorMessage(byte dummy) {
         if (dummy != -30)
             provideLoaderApplet(null);
         h++;
@@ -337,7 +337,7 @@ public abstract class bga extends Applet
             if (tg.D != null) {
                 dn.a++;
                 if (dn.a >= 3)
-                    a("alreadyloaded", -1);
+                    sendErrorGame("alreadyloaded", -1);
                 else
                     getAppletContext().showDocument(getDocumentBase(),
                             "_self");
@@ -346,19 +346,19 @@ public abstract class bga extends Applet
                 to.e = vj.applet;
                 vh.yLoc = 0;
                 if (i_8_ != -21)
-                    c((byte) -77);
+                    setCanvas((byte) -77);
                 il.n = i_9_;
                 rda.width = ff.width = i_10_;
                 ia.xLoc = 0;
                 Class_jg.height = eh.height = i_12_;
-                ah.p = nda.signlink = new Signlink(i, string, i_11_, vj.applet != null);
+                ah.signlink = nda.signlink = new Signlink(i, string, i_11_, vj.applet != null);
                 vfa var_vfa = nda.signlink.a(1, this, 0);
                 while (var_vfa.f == 0)
                     Connection.a(-28448, 10L);
             }
         } catch (Throwable throwable) {
             cea.a(null, -2, throwable);
-            a("crash", i_8_ + 20);
+            sendErrorGame("crash", i_8_ + 20);
         }
     }
 
@@ -386,7 +386,7 @@ public abstract class bga extends Applet
             m = false;
         }
         iba.a(true, (byte) -28);
-        rv.b((int) -96);
+        rv.unloadNativeLibraries();
         if (ru.canvas != null) {
             try {
                 ru.canvas.removeFocusListener(this);
@@ -416,7 +416,7 @@ public abstract class bga extends Applet
     private final void a(boolean bool) {
         if (bool == false) {
             bga.l++;
-            long l = us.a(92);
+            long l = us.getCurrentTime(92);
             long l_13_ = ji.i[qe.d];
             ji.i[qe.d] = l;
             if (l_13_ != 0L && l > l_13_) {
@@ -449,7 +449,7 @@ public abstract class bga extends Applet
                             && string.indexOf("apple") == -1) {
                         if (string.indexOf("ibm") != -1
                                 && (Signlink.javaVersion == null || Signlink.javaVersion.equals("1.4.2"))) {
-                            a("wrongjava", -1);
+                            sendErrorGame("wrongjava", -1);
                             break;
                         }
                     } else {
@@ -458,7 +458,7 @@ public abstract class bga extends Applet
                                 || string_14_.startsWith("1.1.")
                                 || string_14_.equals("1.2")
                                 || string_14_.startsWith("1.2.")) {
-                            a("wrongjava", -1);
+                            sendErrorGame("wrongjava", -1);
                             break;
                         }
                     }
@@ -488,19 +488,19 @@ public abstract class bga extends Applet
                 }
                 op.i(-3);
                 as.b((byte) 92);
-                c((byte) 118);
-                g(511);
-                aea.F = in.c(15902);
-                while (Class_ef.E == 0L || Class_ef.E > us.a(106)) {
-                    mj.k = aea.F.a(-13, nh.j);
+                setCanvas((byte) 118);
+                startUp(511);
+                aea.bc = in.c(15902);
+                while (Class_ef.E == 0L || Class_ef.E > us.getCurrentTime(106)) {
+                    mj.k = aea.bc.a(-13, nh.j);
                     for (int i = 0; mj.k > i; i++)
                         a(false);
                     b((byte) 114);
                     Class_q.a(nda.signlink, (byte) -99, ru.canvas);
                 }
             } catch (Throwable throwable) {
-                cea.a(d((byte) -30), -2, throwable);
-                a("crash", -1);
+                cea.a(errorMessage((byte) -30), -2, throwable);
+                sendErrorGame("crash", -1);
             } finally {
                 a((byte) -117, true);
             }
@@ -527,7 +527,7 @@ public abstract class bga extends Applet
         vj.applet = applet;
     }
 
-    abstract void g(int i);
+    abstract void startUp(int i);
 
     public final void start() {
         G++;

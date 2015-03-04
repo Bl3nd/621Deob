@@ -110,7 +110,7 @@ final class tg extends fu implements ls
 	if (client.c(var_kp).a(-1035661311) == 0)
 	    return null;
 	if (((Interface) var_kp).G == null || ((Interface) var_kp).G.trim().length() == 0) {
-	    if (lba.Q)
+	    if (lba.qa_op_test)
 		return "Hidden-use";
 	    return null;
 	}

@@ -55,7 +55,7 @@ final class iga
 	boolean bool = kr.a != null || bg.e > 0;
 	if (bool)
 	    Class_ad.h = 1;
-	if (vh.a && uc.c.a((byte) -68, (int) 81) && mu.j > 2) {
+	if (vh.shiftClickEnabled && uc.c.a((byte) -68, (int) 81) && mu.j > 2) {
 	    if (bool)
 		ej.q = (bfa) ((Node) ((Node) ((Class_ae) oba.I).o).next).next;
 	    else

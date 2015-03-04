@@ -12,7 +12,7 @@ final class sb extends as
 	return true;
     }
     
-    final Object a(int i) {
+    final Object getObject(int i) {
 	if (i != -9023)
 	    return null;
 	return B.get();

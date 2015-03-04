@@ -11,6 +11,6 @@ final class tr extends oga
     final long a(boolean bool) {
 	if (bool != false)
 	    return -113L;
-	return 1000000L * us.a(116);
+	return 1000000L * us.getCurrentTime(116);
     }
 }

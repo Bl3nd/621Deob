@@ -26,7 +26,7 @@ final class sf {
 					ou.g.b(i ^ ~0x20);
 					ou.g.a((byte) -108);
 					Node.a = null;
-					ak.i = null;
+					ak.vw = null;
 					if (Class_vb.s != null)
 						pj.j = 2;
 					else
@@ -48,7 +48,7 @@ final class sf {
 				exception.printStackTrace();
 				ou.g.b((int) 32);
 				Class_vb.s = null;
-				ak.i = null;
+				ak.vw = null;
 				pj.j = 0;
 				Node.a = null;
 				break;
@@ -66,7 +66,7 @@ final class sf {
 	static final pk a(byte b, int modeWhere) {
 		d++;
 		int i_3_ = 77 % ((13 - b) / 49);
-		pk[] var_pks = as.e((byte) -105);
+		pk[] var_pks = as.getPKs();
 		for (int index = 0; var_pks.length > index; index++) {
 			pk var_pk = var_pks[index];
 			if (modeWhere == ((pk) var_pk).a)

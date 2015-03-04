@@ -9,7 +9,7 @@ final class pt
     static int[] c = new int[4];
     static int d;
     static int e;
-    static Connection f;
+    static Connection connection;
     static ah g;
     private tb h = new tb(64);
     int i;
@@ -55,8 +55,8 @@ final class pt
 		    i_8_ = (int) qw.n + b & 0x3fff;
 		else
 		    i_8_ = (int) qw.n & 0x3fff;
-		int i_9_ = GameInPacket.h[i_8_];
-		int i_10_ = GameInPacket.i[i_8_];
+		int i_9_ = GameInPacket.ints1[i_8_];
+		int i_10_ = GameInPacket.ints2[i_8_];
 		if (ll.x != 4) {
 		    i_9_ = i_9_ * 256 / (vd.N + 256);
 		    i_10_ = 256 * i_10_ / (vd.N + 256);
@@ -78,7 +78,7 @@ final class pt
     public static void a(byte i) {
 	if (i == -109) {
 	    c = null;
-	    f = null;
+	    connection = null;
 	    g = null;
 	}
     }

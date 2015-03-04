@@ -32,7 +32,7 @@ final class qfa implements fv
 	}
 	if (uj.x == null || !uj.x.a(100, class_mc)) {
 	    uj.x = class_mc;
-	    pr.D = us.a(105);
+	    pr.D = us.getCurrentTime(105);
 	    ur.g = mv.a = i;
 	    if (ur.g == 0)
 		tfa.a(true);
@@ -46,7 +46,7 @@ final class qfa implements fv
 		qd.x = bq.k;
 		Class_ab.c = hq.b;
 		mda.H = kw.v;
-		bj.b = dh.e;
+		Commands.b = dh.e;
 	    }
 	}
     }

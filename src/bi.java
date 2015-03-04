@@ -244,8 +244,8 @@ final class bi extends qda
 	}
     }
     
-    final void a(boolean bool, int i, byte i_10_, Class_r class_r, Animable var_lo,
-		 int i_11_, int i_12_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_10_, Class_r class_r, Animable var_lo,
+                                          int i_11_, int i_12_) {
 	kb++;
 	int i_13_ = -64 % ((i_10_ + 50) / 55);
 	throw new IllegalStateException();
@@ -317,7 +317,7 @@ final class bi extends qda
 	N++;
 	if (i < 95)
 	    a((String) null, -107, null);
-	Class var_class_27_ = (Class) pfa.c.get(string);
+	Class var_class_27_ = (Class) pfa.hashtable.get(string);
 	if (var_class_27_ != null) {
 	    if (var_class_27_.getClassLoader() != var_class.getClassLoader())
 		return false;
@@ -325,7 +325,7 @@ final class bi extends qda
 	}
 	File file = null;
 	if (file == null)
-	    file = (File) aea.H.get(string);
+	    file = (File) aea.hashtable.get(string);
 	if (file != null) {
 	    try {
 		file = new File(file.getCanonicalPath());
@@ -345,11 +345,11 @@ final class bi extends qda
 		method_30_.invoke(Runtime.getRuntime(),
 				  new Object[] { var_class, file.getPath() });
 		method.invoke(method_30_, new Object[] { Boolean.FALSE });
-		pfa.c.put(string, var_class);
+		pfa.hashtable.put(string, var_class);
 		return true;
 	    } catch (NoSuchMethodException nosuchmethodexception) {
 		System.load(file.getPath());
-		pfa.c.put(string, Ib != null ? Ib : (Ib = a("ka")));
+		pfa.hashtable.put(string, Ib != null ? Ib : (Ib = a("ka")));
 		return true;
 	    } catch (Throwable throwable) {
 		/* empty */

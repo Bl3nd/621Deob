@@ -3,7 +3,7 @@
  */
 import java.io.InputStream;
 
-final class cca extends InputStream
+final class InputStreamSub_1 extends InputStream
 {
     static int a;
     static Object b;

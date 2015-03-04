@@ -2,74 +2,77 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class World {
-	String lobbyAddress;
-	static float b;
-	static int c;
-	static int d;
-	static int e;
-	int worldID;
-	int secondPort = 443;
-	private boolean h = false;
-	int firstPort = 43594;
-	private boolean isPort = false;
-	static int[] k = new int[5];
-	static int l;
+public final class World {
 
-	static final int a(String string, int i) {
-		l++;
-		if (i != -13319)
-			a((byte) -83);
-		int i_0_ = string.length();
-		int i_1_ = 0;
-		for (int i_2_ = 0; i_0_ > i_2_; i_2_++)
-			i_1_ = (i_1_ << 5) - i_1_ + ou.a((byte) 99, string.charAt(i_2_));
-		return i_1_;
-	}
+    public String lobbyAddress;
+    public static float b;
+    public static int c;
+    public static int rotateConnectionMethods;
+    public static int isWorld;
+    public int worldID;
+    public int worldPort = 443;
+    private boolean isWorldPort = false;
+    public int mainPort = 43594;
+    private boolean isMainPort = false;
+    public static int[] k = new int[5];
+    public static int l;
 
-	final vfa a(Signlink signlink) {//int i was always 0
-		c++;
-		/*if (i != 0) {
-			writeBytesWithSetOffset((String) null, 72);
-		}*/
-		return signlink.a(!isPort ? ((World) this).firstPort : ((World) this).secondPort, (byte) -73, h, ((World) this).lobbyAddress);
-	}
+    public static int a(String string) {
+        l++;
+        int length = string.length();
+        int j = 0;
+        for (int index = 0; length > index; index++) {
+            j = (j << 5) - j + ou.a((byte) 99, string.charAt(index));
+        }
+        return j;
+    }
 
-	public static void a(byte i) {
-		k = null;
-		if (i != -79)
-			a((String) null, 61);
-	}
+    public final vfa a(Signlink signlink) {
+        c++;
+        return signlink.a(!isMainPort ? this.mainPort : this.worldPort, (byte) -73, isWorldPort, this.lobbyAddress);
+    }
 
-	final boolean a(World var_jda_3_, byte i) {
-		if (i != 28)
-			a((World) null, (byte) 120);
-		e++;
-		if (var_jda_3_ == null)
-			return false;
-		if (((World) var_jda_3_).worldID != ((World) this).worldID
-				|| !((World) this).lobbyAddress
-						.equals(((World) var_jda_3_).lobbyAddress))
-			return false;
-		return true;
-	}
+    public static void nullLoader() {
+        k = null;
+    }
 
-	final void a(int i) {
-		if (i == 0) {
-			if (isPort) {
-				if (h)
-					h = false;
-				else
-					isPort = false;
-			} else {
-				h = true;
-				isPort = true;
-			}
-			d++;
-		}
-	}
+    /**
+     * Is world?
+     * @param world The world to be questioned.
+     * @return true if so.
+     */
+    public final boolean isWorld(World world) {
+        isWorld++;
+        if (world == null) {
+            return false;
+        }
+        if (world.worldID != this.worldID || !this.lobbyAddress.equals(world.lobbyAddress)) {
+            return false;
+        }
+        return true;
+    }
 
-	public World() {
+    /**
+     * Rotates the connect methods. Called by the command (rotateconnectmethods).
+     * @param i
+     */
+    public final void rotateConnectionMethods(int i) {
+        if (i == 0) {
+            if (isMainPort) {
+                if (isWorldPort) {
+                    isWorldPort = false;
+                } else {
+                    isMainPort = false;
+                }
+            } else {
+                isWorldPort = true;
+                isMainPort = true;
+            }
+            rotateConnectionMethods++;
+        }
+    }
+
+    public World() {
 		/* empty */
-	}
+    }
 }

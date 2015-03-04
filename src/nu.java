@@ -49,7 +49,7 @@ final class nu extends ua
 	    && (i_15_ >= 0 && Class_hc.e > i_15_ && i >= 0 && i < bw.v)) {
 	    int i_20_
 		= dr.a(bn.c, 0, i_17_, 0, i, true, 0, su.a[((Animable) var_qi).height],
-		       i_19_, i_15_, true, var_qi.i(-1), kq.S, -4, 0);
+		       i_19_, i_15_, true, var_qi.getNPCDefinition(-1), kq.S, -4, 0);
 	    if (i_20_ >= 1 && i_20_ <= 3) {
 		for (int i_21_ = 0; i_20_ - 1 > i_21_; i_21_++)
 		    var_qi.a(kq.S[i_21_], i_16_, bn.c[i_21_], true);

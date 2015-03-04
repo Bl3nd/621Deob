@@ -42,7 +42,7 @@ final class fi
 		var_f = lg.r.a(var_agas[0], true);
 		br.k.put((long) i_10_, var_f, 1);
 	    }
-	    pfa.a(0, ((Animable) var_ni).locY, var_ni.i(-1) * 256, i - 1071156936, i_2_,
+	    pfa.a(0, ((Animable) var_ni).locY, var_ni.getNPCDefinition(-1) * 256, i - 1071156936, i_2_,
 		  i_7_ >> 1, ((Animable) var_ni).height, i_8_, i_9_ >> 1,
 		  ((Animable) var_ni).locX);
 	    int i_11_ = i_6_ + lt.h[0] - 18;
@@ -163,8 +163,8 @@ final class fi
 			    int i_54_ = ((cg) var_cg).y[i_40_][0];
 			    int i_55_ = ((cg) var_cg).y[i_40_][2];
 			    int i_56_ = ((Entity) var_ni).class_kd.getOrientation((byte) 67);
-			    int i_57_ = GameInPacket.h[i_56_];
-			    int i_58_ = GameInPacket.i[i_56_];
+			    int i_57_ = GameInPacket.ints1[i_56_];
+			    int i_58_ = GameInPacket.ints2[i_56_];
 			    int i_59_ = i_54_ * i_58_ + i_57_ * i_55_ >> 14;
 			    i_55_ = i_55_ * i_58_ - i_57_ * i_54_ >> 14;
 			    i_54_ = i_59_;

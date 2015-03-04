@@ -2,17 +2,17 @@
  * Visit http://jode.sourceforge.net/
  */
 
-interface aca
-{
-    public void a(boolean bool, boolean bool_0_);
-    
+public interface aca {
+
+    public void a(boolean bool, boolean bool1);
+
     public void a(int i);
-    
-    public void a(byte i);
-    
-    public int b(byte i);
-    
+
+    public void a(byte b);
+
+    public int b(byte b);
+
     public boolean a(long l, int i);
-    
-    public int c(byte i);
+
+    public int c(byte b);
 }

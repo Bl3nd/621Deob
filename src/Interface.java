@@ -3,11 +3,9 @@
 // Decompiler options: packimports(3) 
 
 
-final class Interface
-{
+public final class Interface {
 
-    final void a(int i1)
-    {
+    public final void reset(int i1) {
         J = null;
         nd = null;
         k = null;
@@ -29,11 +27,9 @@ final class Interface
         pb = null;
         Sb = null;
         Q = null;
-        if(i1 != 0)
-        {
+        if (i1 != 0) {
             return;
-        } else
-        {
+        } else {
             rd = null;
             Mb = null;
             sc = null;
@@ -54,715 +50,679 @@ final class Interface
         }
     }
 
-    final void a(int i1, String s1, int j1)
-    {
+    public final void a(int i, String string, int j) {
         rb++;
-        int k1 = 19 % ((j1 - 20) / 53);
-        if(itemActions == null || itemActions.length <= i1)
-        {
-            String as[] = new String[i1 + 1];
-            if(itemActions != null)
-            {
-                for(int l1 = 0; l1 < itemActions.length; l1++)
-                    as[l1] = itemActions[l1];
-
+        if (itemActions == null || itemActions.length <= i) {
+            String actions[] = new String[i + 1];
+            if (itemActions != null) {
+                for (int index = 0; index < itemActions.length; index++) {
+                    actions[index] = itemActions[index];
+                }
             }
-            itemActions = as;
+            itemActions = actions;
         }
-        itemActions[i1] = s1;
+        itemActions[i] = string;
     }
 
-    final void b(int i1, String s1, int j1)
-    {
+    public final void b(int i, String string, int j) {
         A++;
-        if(qb == null)
-        {
+        if (qb == null) {
             qb = new il(16);
-            qb.a(new aa(s1), (byte)-61, i1);
+            qb.a(new Node_Sub(string), (byte) -61, i);
             return;
         }
-        if(j1 != 100)
+        if (j != 100) {
             ib = true;
-        aa aa1 = (aa)qb.a(-32748, i1);
-        if(aa1 != null)
-        {
-            aa1.m = s1;
+        }
+        Node_Sub aa1 = (Node_Sub) qb.a(-32748, i);
+        if (aa1 != null) {
+            aa1.m = string;
             return;
-        } else
-        {
-            qb.a(new aa(s1), (byte)-27, i1);
+        } else {
+            qb.a(new Node_Sub(string), (byte) -27, i);
             return;
         }
     }
 
-    final da a(Class_r class_r, haa haa, int i1, wca wca, ItemDefLoader mf1, int j1, PlayerUpdateLocation cn,
-            dr dr1, PlayerDef kn1, int k1, int l1, Class_lb class_lb, int i2, hl hl)
-    {
+    public final da a(Class_r class_r, haa haa, int i, wca wca, ItemDefLoader itemDefLoader, int j, PlayerUpdateLocation updateLocation,
+               dr dr, PlayerDef playerDef, int k, int mask_, Class_lb class_lb, int j2, hl hl) {
         fo.r = false;
         Hc++;
-        if(modelType == 0)
+        if (modelType == 0) {
             return null;
-        if(modelType == 1 && ~modelID == 0)
+        }
+        if (modelType == 1 && ~modelID == 0) {
             return null;
-        if(modelType == 1)
-        {
-            int j2 = l1;
-            if(dr1 != null)
-                l1 |= dr1.a(1024, k1, true, i2);
-            long l2 = (class_r.b << 29) + (modelType << 16) + modelID;
-            da da5 = (da)gea.m.get(l2, (byte)100);
-            if(da5 == null || class_r.b(da5.PA(), l1) != 0)
-            {
-                if(da5 != null)
-                    l1 = class_r.a(l1, da5.PA());
+        }
+        if (modelType == 1) {
+            int mask = mask_;
+            if (dr != null) {
+                mask_ |= dr.a(1024, k, true, j2);
+            }
+            long id = (class_r.b << 29) + (modelType << 16) + modelID;
+            da da = (da) gea.m.get(id, (byte) 100);
+            if (da == null || class_r.b(da.PA(), mask_) != 0) {
+                if (da != null) {
+                    mask_ = class_r.a(mask_, da.PA());
+                }
                 eg eg1 = efa.a(modelID, nr.i, 0, false);
-                if(eg1 == null)
-                {
+                if (eg1 == null) {
                     fo.r = true;
                     return null;
                 }
-                if(eg1.bb < 13)
-                    eg1.a((byte)-107, 2);
-                da5 = class_r.a(
-                		eg1, 
-                		l1, 
-                		Class_fd.y, 
-                		64, 
-                		768);
-                gea.m.put(l2, da5, 1);
+                if (eg1.bb < 13) {
+                    eg1.a((byte) -107, 2);
+                }
+                da = class_r.a(eg1, mask_, Class_fd.y, 64, 768);
+                gea.m.put(id, da, 1);
             }
-            if(dr1 != null)
-                da5 = dr1.a(i2, l1, (byte)122, i1, k1, da5);
-            da5.SA(j2);
-            return da5;
+            if (dr != null) {
+                da = dr.a(j2, mask_, (byte) 122, i, k, da);
+            }
+            da.SA(mask);
+            return da;
         }
-        if(modelType == 2)
-        {
-            da da1 = class_lb.getNPCDef(modelID, (byte)-114).a(haa, l1, (byte)71, dr1, k1, hl, i1, class_r, i2);
-            if(da1 == null)
-            {
+        if (modelType == 2) {
+            da da1 = class_lb.getNPCDef(modelID, (byte) -114).a(haa, mask_, (byte) 71, dr, k, hl, i, class_r, j2);
+            if (da1 == null) {
                 fo.r = true;
                 return null;
-            } else
-            {
+            } else {
                 return da1;
             }
         }
-        if(modelType == 3)
-        {
-            if(kn1 == null)
+        if (modelType == 3) {
+            if (playerDef == null) {
                 return null;
-            da da2 = kn1.a(i1, l1, haa, dr1, i2, mf1, 768, hl, k1, class_lb, cn, class_r);
-            if(da2 == null)
-            {
+            }
+            da da2 = playerDef.a(i, mask_, haa, dr, j2, itemDefLoader, 768, hl, k, class_lb, updateLocation, class_r);
+            if (da2 == null) {
                 fo.r = true;
                 return null;
-            } else
-            {
+            } else {
                 return da2;
             }
         }
-        if(modelType == 4)
-        {
-            ItemDef uv1 = mf1.d(12388, modelID);
-            da da4 = uv1.a(i1, class_r, l1, dr1, i2, kn1, 10, k1, 0xffffff);
-            if(da4 == null)
-            {
+        if (modelType == 4) {
+            ItemDef itemDef = itemDefLoader.d(12388, modelID);
+            da da4 = itemDef.a(i, class_r, mask_, dr, j2, playerDef, 10, k, 0xffffff);
+            if (da4 == null) {
                 fo.r = true;
                 return null;
-            } else
-            {
+            } else {
                 return da4;
             }
         }
-        if(modelType == 6)
-        {
-            da da3 = class_lb.getNPCDef(modelID, (byte)-91).a(i2, 0, k1, wca, 0, i1, null, 13770, 0, dr1, hl, l1, null, class_r, haa);
-            if(da3 == null)
-            {
+        if (modelType == 6) {
+            da da3 = class_lb.getNPCDef(modelID, (byte) -91).a(j2, 0, k, wca, 0, i, null, 13770, 0, dr, hl, mask_, null, class_r, haa);
+            if (da3 == null) {
                 fo.r = true;
                 return null;
-            } else
-            {
+            } else {
                 return da3;
             }
         }
-        if(modelType == 7)
-        {
-            if(kn1 == null)
+        if (modelType == 7) {
+            if (playerDef == null) {
                 return null;
+            }
             int k2 = modelID >>> 16;
             int i3 = 0xffff & modelID;
             int j3 = U;
-            da da6 = kn1.a(k2, hl, i1, k1, i3, (byte)-42, dr1, j3, class_r, i2, l1, cn);
-            if(da6 == null)
-            {
+            da da6 = playerDef.a(k2, hl, i, k, i3, (byte) -42, dr, j3, class_r, j2, mask_, updateLocation);
+            if (da6 == null) {
                 fo.r = true;
                 return null;
-            } else
-            {
+            } else {
                 return da6;
             }
         }
-        if(j1 > -107)
+        if (j > -107) {
             return null;
-        else
+        } else {
             return null;
+        }
     }
 
-    final void a(byte byte0, int i1, int j1)
-    {
+    public final void a(byte b, int i, int id) {
         g++;
-        if(qb == null)
-        {
+        if (qb == null) {
             qb = new il(16);
-            qb.a(new GameInPacketHandler(i1), (byte)-30, j1);
+            qb.a(new GameInPacketHandler(i), (byte) -30, id);
             return;
         }
-        GameInPacketHandler hda1 = (GameInPacketHandler)qb.a(-32748, j1);
-        if(hda1 != null)
-            hda1.k = i1;
-        else
-            qb.a(new GameInPacketHandler(i1), (byte)-89, j1);
-        int k1 = 91 % ((byte0 - 4) / 53);
+        GameInPacketHandler hda1 = (GameInPacketHandler) qb.a(-32748, id);
+        if (hda1 != null) {
+            hda1.k = i;
+        } else {
+            qb.a(new GameInPacketHandler(i), (byte) -89, id);
+        }
     }
 
-    static final void a(int i1, int j1, int k1, int l1)
-    {
+    public static void a(int i, int j, int k, int i1) {
         N++;
-        if(l1 != 0)
+        if (i1 != 0) {
             eb = null;
-        tu.b = new byte[i1][k1][j1];
+        }
+        tu.b = new byte[i][k][j];
     }
 
-    final void a(int i1, int j1, int k1)
-    {
+    public final void a(int i, int j, int k) {
         t++;
-        if(kb == null || kb.length <= j1)
-        {
-            int ai[] = new int[j1 + 1];
-            if(kb != null)
-            {
-                for(int l1 = 0; l1 < kb.length; l1++)
-                    ai[l1] = kb[l1];
-
-                for(int i2 = kb.length; j1 > i2; i2++)
-                    ai[i2] = -1;
-
+        if (kb == null || kb.length <= j) {
+            int ai[] = new int[j + 1];
+            if (kb != null) {
+                for (int index = 0; index < kb.length; index++) {
+                    ai[index] = kb[index];
+                }
+                for (int index = kb.length; j > index; index++) {
+                    ai[index] = -1;
+                }
             }
             kb = ai;
         }
-        kb[j1] = k1;
-        if(i1 != 0)
+        kb[j] = k;
+        if (i != 0) {
             a(((Class_r) (null)), 70);
+        }
     }
 
-    final void a(BytesParser es1, int i1)
-    {
+    public final void a(BytesParser bytesParser, int i) {
         mc++;
-        int j1 = es1.readUnsignedByte(-9268);
-        if(j1 == 255)
-            j1 = -1;
-        type = es1.readUnsignedByte(-9268);
-        if((0x80 & type) != 0)
-        {
+        int j = bytesParser.readUnsignedByte(-9268);
+        if (j == 255) {
+            j = -1;
+        }
+        type = bytesParser.readUnsignedByte(-9268);
+        if ((0x80 & type) != 0) {
             type &= 0x7f;
-            Hb = es1.readString((byte)116);
+            Hb = bytesParser.readString((byte) 116);
         }
-        v = es1.readShort(13111);
-        hc = es1.readShort2(48);
-        Wc = es1.readShort2(i1 ^ 0x6a73);
-        width = es1.readShort(13111);
-        height = es1.readShort(i1 ^ 0x5922);
-        f = es1.readByte(-20933);
-        o = es1.readByte(i1 - 48090);
-        hd = es1.readByte(-20933);
-        ab = es1.readByte(i1 ^ 0xffffc42e);
-        parentID = es1.readShort(13111);
-        if(parentID != 65535)
+        v = bytesParser.readShort(13111);
+        hc = bytesParser.readShort2(48);
+        Wc = bytesParser.readShort2(i ^ 0x6a73);
+        width = bytesParser.readShort(13111);
+        height = bytesParser.readShort(i ^ 0x5922);
+        f = bytesParser.readByte(-20933);
+        o = bytesParser.readByte(i - 48090);
+        hd = bytesParser.readByte(-20933);
+        ab = bytesParser.readByte(i ^ 0xffffc42e);
+        parentID = bytesParser.readShort(13111);
+        if (parentID != 65535) {
             parentID = parentID + (interfaceID & 0xffff0000);
-        else
+        } else {
             parentID = -1;
-        int k1 = es1.readUnsignedByte(-9268);
-        if(j1 >= 0)
-            vc = (k1 & 2) != 0;
-        hidden = (1 & k1) != 0;
-        if(type == 0)
-        {
-            maxHScroll = es1.readShort(13111);
-            maxVScroll = es1.readShort(13111);
-            if(j1 < 0)
-                vc = es1.readUnsignedByte(-9268) == 1;
         }
-        if(type == 5)
-        {
-            textureID = es1.readInt(i1 - 27069);
-            db = es1.readShort(13111);
-            int l1 = es1.readUnsignedByte(-9268);
-            jd = (1 & l1) != 0;
-            xb = (2 & l1) != 0;
-            mb = es1.readUnsignedByte(-9268);
-            borderThickness = es1.readUnsignedByte(-9268);
-            shadowColor = es1.readInt(88);
-            flippedVertically = es1.readUnsignedByte(-9268) == 1;
-            flippedHorizontally = es1.readUnsignedByte(-9268) == 1;
-            textColor = es1.readInt(57);
+        int k = bytesParser.readUnsignedByte(-9268);
+        if (j >= 0) {
+            vc = (k & 2) != 0;
         }
-        if(type == 6)
-        {
-            modelType = 1;
-            modelID = es1.readShort(13111);
-            if(modelID == 65535)
-                modelID = -1;
-            int i2 = es1.readUnsignedByte(-9268);
-            boolean flag = (i2 & 1) == 1;
-            w = (i2 & 4) == 4;
-            C = (i2 & 2) == 2;
-            ad = (i2 & 8) == 8;
-            if(!flag)
-            {
-                if(C)
-                {
-                    vb = es1.readShort2(71);
-                    H = es1.readShort2(116);
-                    O = es1.readShort2(i1 ^ 0x6a53);
-                    modelRotationX = es1.readShort(i1 - 14046);
-                    modelRotationY = es1.readShort(13111);
-                    modelRotationZ = es1.readShort(13111);
-                    modelZoom = es1.readShort2(117);
-                }
-            } else
-            {
-                vb = es1.readShort2(i1 ^ 0x6a52);
-                H = es1.readShort2(i1 - 27127);
-                modelRotationX = es1.readShort(i1 ^ 0x5922);
-                modelRotationY = es1.readShort(13111);
-                modelRotationZ = es1.readShort(13111);
-                modelZoom = es1.readShort(13111);
+        hidden = (1 & k) != 0;
+        if (type == 0) {
+            maxHScroll = bytesParser.readShort(13111);
+            maxVScroll = bytesParser.readShort(13111);
+            if (j < 0) {
+                vc = bytesParser.readUnsignedByte(-9268) == 1;
             }
-            V = es1.readShort(13111);
-            if(V == 65535)
+        }
+        if (type == 5) {
+            textureID = bytesParser.readInt(i - 27069);
+            db = bytesParser.readShort(13111);
+            int i1 = bytesParser.readUnsignedByte(-9268);
+            jd = (1 & i1) != 0;
+            xb = (2 & i1) != 0;
+            mb = bytesParser.readUnsignedByte(-9268);
+            borderThickness = bytesParser.readUnsignedByte(-9268);
+            shadowColor = bytesParser.readInt(88);
+            flippedVertically = bytesParser.readUnsignedByte(-9268) == 1;
+            flippedHorizontally = bytesParser.readUnsignedByte(-9268) == 1;
+            textColor = bytesParser.readInt(57);
+        }
+        if (type == 6) {
+            modelType = 1;
+            modelID = bytesParser.readShort(13111);
+            if (modelID == 65535) {
+                modelID = -1;
+            }
+            int i1 = bytesParser.readUnsignedByte(-9268);
+            boolean flag = (i1 & 1) == 1;
+            w = (i1 & 4) == 4;
+            C = (i1 & 2) == 2;
+            ad = (i1 & 8) == 8;
+            if (!flag) {
+                if (C) {
+                    vb = bytesParser.readShort2(71);
+                    H = bytesParser.readShort2(116);
+                    O = bytesParser.readShort2(i ^ 0x6a53);
+                    modelRotationX = bytesParser.readShort(i - 14046);
+                    modelRotationY = bytesParser.readShort(13111);
+                    modelRotationZ = bytesParser.readShort(13111);
+                    modelZoom = bytesParser.readShort2(117);
+                }
+            } else {
+                vb = bytesParser.readShort2(i ^ 0x6a52);
+                H = bytesParser.readShort2(i - 27127);
+                modelRotationX = bytesParser.readShort(i ^ 0x5922);
+                modelRotationY = bytesParser.readShort(13111);
+                modelRotationZ = bytesParser.readShort(13111);
+                modelZoom = bytesParser.readShort(13111);
+            }
+            V = bytesParser.readShort(13111);
+            if (V == 65535) {
                 V = -1;
-            if(f != 0)
-                n = es1.readShort(i1 ^ 0x5922);
-            if(o != 0)
-                dc = es1.readShort(13111);
+            }
+            if (f != 0) {
+                n = bytesParser.readShort(i ^ 0x5922);
+            }
+            if (o != 0) {
+                dc = bytesParser.readShort(13111);
+            }
         }
-        if(type == 4)
-        {
-            Ab = es1.readShort(13111);
-            if(Ab == 65535)
+        if (type == 4) {
+            Ab = bytesParser.readShort(13111);
+            if (Ab == 65535) {
                 Ab = -1;
-            text = es1.readString((byte)125);
-            Db = es1.readUnsignedByte(-9268);
-            Fb = es1.readUnsignedByte(-9268);
-            Z = es1.readUnsignedByte(-9268);
-            isInventoryInterface = es1.readUnsignedByte(-9268) == 1;
-            textColor = es1.readInt(79);
-            mb = es1.readUnsignedByte(-9268);
-            if(j1 >= 0)
-                r = es1.readUnsignedByte(-9268);
+            }
+            text = bytesParser.readString((byte) 125);
+            Db = bytesParser.readUnsignedByte(-9268);
+            Fb = bytesParser.readUnsignedByte(-9268);
+            Z = bytesParser.readUnsignedByte(-9268);
+            isInventoryInterface = bytesParser.readUnsignedByte(-9268) == 1;
+            textColor = bytesParser.readInt(79);
+            mb = bytesParser.readUnsignedByte(-9268);
+            if (j >= 0) {
+                r = bytesParser.readUnsignedByte(-9268);
+            }
         }
-        if(type == 3)
-        {
-            textColor = es1.readInt(103);
-            c = es1.readUnsignedByte(-9268) == 1;
-            mb = es1.readUnsignedByte(-9268);
+        if (type == 3) {
+            textColor = bytesParser.readInt(103);
+            c = bytesParser.readUnsignedByte(-9268) == 1;
+            mb = bytesParser.readUnsignedByte(-9268);
         }
-        if(type == 9)
-        {
-            X = es1.readUnsignedByte(-9268);
-            textColor = es1.readInt(i1 - 27041);
-            oc = es1.readUnsignedByte(-9268) == 1;
+        if (type == 9) {
+            X = bytesParser.readUnsignedByte(-9268);
+            textColor = bytesParser.readInt(i - 27041);
+            oc = bytesParser.readUnsignedByte(-9268) == 1;
         }
-        int j2 = es1.readTribyte(i1 ^ 0xffff95ea);
-        int k2 = es1.readUnsignedByte(i1 - 36425);
-        if(k2 != 0)
-        {
+        int hash = bytesParser.readTribyte(i ^ 0xffff95ea);
+        int j1 = bytesParser.readUnsignedByte(i - 36425);
+        if (j1 != 0) {
             ub = new byte[11];
             tc = new int[11];
             Nc = new byte[11];
-            for(; k2 != 0; k2 = es1.readUnsignedByte(-9268))
-            {
-                int l2 = (k2 >> 4) - 1;
-                k2 = k2 << 8 | es1.readUnsignedByte(i1 - 36425);
-                k2 &= 0xfff;
-                if(k2 == 4095)
-                    k2 = -1;
-                byte byte0 = es1.readByte(-20933);
-                if(byte0 != 0)
+            for (; j1 != 0; j1 = bytesParser.readUnsignedByte(-9268)) {
+                int k1 = (j1 >> 4) - 1;
+                j1 = j1 << 8 | bytesParser.readUnsignedByte(i - 36425);
+                j1 &= 0xfff;
+                if (j1 == 4095) {
+                    j1 = -1;
+                }
+                byte b = bytesParser.readByte(-20933);
+                if (b != 0) {
                     Ic = true;
-                byte byte1 = es1.readByte(-20933);
-                tc[l2] = k2;
-                ub[l2] = byte0;
-                Nc[l2] = byte1;
+                }
+                byte b1 = bytesParser.readByte(-20933);
+                tc[k1] = j1;
+                ub[k1] = b;
+                Nc[k1] = b1;
             }
 
         }
-        itemName = es1.readString((byte)127);
-        int i3 = es1.readUnsignedByte(-9268);
-        int j3 = 0xf & i3;
-        int k3 = i3 >> 4;
-        if(j3 > 0)
-        {
-            itemActions = new String[j3];
-            for(int l3 = 0; j3 > l3; l3++)
-                itemActions[l3] = es1.readString((byte)126);
-
+        itemName = bytesParser.readString((byte) 127);
+        int k1 = bytesParser.readUnsignedByte(-9268);
+        int i2 = 0xf & k1;
+        int j2 = k1 >> 4;
+        if (i2 > 0) {
+            itemActions = new String[i2];
+            for (int actions = 0; i2 > actions; actions++) {
+                itemActions[actions] = bytesParser.readString((byte) 126);
+            }
         }
-        if(k3 > 0)
-        {
-            int i4 = es1.readUnsignedByte(-9268);
-            kb = new int[i4 + 1];
-            for(int l4 = 0; kb.length > l4; l4++)
-                kb[l4] = -1;
-
-            kb[i4] = es1.readShort(13111);
+        if (j2 > 0) {
+            int k2 = bytesParser.readUnsignedByte(-9268);
+            kb = new int[k2 + 1];
+            for (int index = 0; kb.length > index; index++) {
+                kb[index] = -1;
+            }
+            kb[k2] = bytesParser.readShort(13111);
         }
-        if(k3 > 1)
-        {
-            int j4 = es1.readUnsignedByte(-9268);
-            kb[j4] = es1.readShort(13111);
+        if (j2 > 1) {
+            int k2 = bytesParser.readUnsignedByte(-9268);
+            kb[k2] = bytesParser.readShort(13111);
         }
-        bd = es1.readString((byte)123);
-        if(bd.equals(""))
+        bd = bytesParser.readString((byte) 123);
+        if (bd.equals("")) {
             bd = null;
-        x = es1.readUnsignedByte(-9268);
-        lb = es1.readUnsignedByte(i1 ^ 0xffffb1d9);
-        od = es1.readUnsignedByte(i1 ^ 0xffffb1d9);
-        G = es1.readString((byte)118);
-        int k4 = -1;
-        if(mv.a(j2, (byte)109) != 0)
-        {
-            k4 = es1.readShort(13111);
-            if(k4 == 65535)
-                k4 = -1;
-            tb = es1.readShort(13111);
-            if(tb == 65535)
+        }
+        x = bytesParser.readUnsignedByte(-9268);
+        lb = bytesParser.readUnsignedByte(i ^ 0xffffb1d9);
+        od = bytesParser.readUnsignedByte(i ^ 0xffffb1d9);
+        G = bytesParser.readString((byte) 118);
+        int id = -1;
+        if (mv.a(hash, (byte) 109) != 0) {
+            id = bytesParser.readShort(13111);
+            if (id == 65535) {
+                id = -1;
+            }
+            tb = bytesParser.readShort(13111);
+            if (tb == 65535) {
                 tb = -1;
-            cc = es1.readShort(13111);
-            if(cc == 65535)
+            }
+            cc = bytesParser.readShort(13111);
+            if (cc == 65535) {
                 cc = -1;
+            }
         }
-        if(j1 >= 0)
-        {
-            Mc = es1.readShort(13111);
-            if(Mc == 65535)
+        if (j >= 0) {
+            Mc = bytesParser.readShort(13111);
+            if (Mc == 65535) {
                 Mc = -1;
+            }
         }
-        qd = new nm(j2, k4);
-        if(j1 >= 0)
-        {
-            int i5 = es1.readUnsignedByte(i1 - 36425);
-            for(int j5 = 0; i5 > j5; j5++)
-            {
-                int k5 = es1.readTribyte(-1);
-                int i6 = es1.readInt(97);
-                qb.a(new GameInPacketHandler(i6), (byte)-77, k5);
+        qd = new nm(hash, id);
+        if (j >= 0) {
+            int k2 = bytesParser.readUnsignedByte(i - 36425);
+            for (int i3 = 0; k2 > i3; i3++) {
+                int j3 = bytesParser.readTribyte(-1);
+                int k3 = bytesParser.readInt(97);
+                qb.a(new GameInPacketHandler(k3), (byte) -77, j3);
             }
 
-            int l5 = es1.readUnsignedByte(-9268);
-            for(int j6 = 0; l5 > j6; j6++)
-            {
-                int k6 = es1.readTribyte(-1);
-                String s1 = es1.readString2(-1);
-                qb.a(new aa(s1), (byte)-100, k6);
+            int i3 = bytesParser.readUnsignedByte(-9268);
+            for (int j3 = 0; i3 > j3; j3++) {
+                int k3 = bytesParser.readTribyte(-1);
+                String string = bytesParser.readString2(-1);
+                qb.a(new Node_Sub(string), (byte) -100, k3);
             }
 
         }
-        Tb = a(false, es1);
-        e = a(false, es1);
-        Bb = a(false, es1);
-        E = a(false, es1);
-        jb = a(false, es1);
-        Zc = a(false, es1);
-        Cc = a(false, es1);
-        ec = a(false, es1);
-        Q = a(false, es1);
-        nd = a(false, es1);
-        if(j1 >= 0)
-            zb = a(false, es1);
-        wb = a(false, es1);
-        Pb = a(false, es1);
-        Pc = a(false, es1);
-        cb = a(false, es1);
-        if(i1 != 27157)
-        {
+        Tb = a(false, bytesParser);
+        e = a(false, bytesParser);
+        Bb = a(false, bytesParser);
+        E = a(false, bytesParser);
+        jb = a(false, bytesParser);
+        Zc = a(false, bytesParser);
+        Cc = a(false, bytesParser);
+        ec = a(false, bytesParser);
+        Q = a(false, bytesParser);
+        nd = a(false, bytesParser);
+        if (j >= 0) {
+            zb = a(false, bytesParser);
+        }
+        wb = a(false, bytesParser);
+        Pb = a(false, bytesParser);
+        Pc = a(false, bytesParser);
+        cb = a(false, bytesParser);
+        if (i != 27157) {
             return;
-        } else
-        {
-            Sb = a(false, es1);
-            L = a(false, es1);
-            gd = a(false, es1);
-            T = a(false, es1);
-            k = a(false, es1);
-            S = a(false, es1);
-            q = a(es1, (byte)57);
-            P = a(es1, (byte)51);
-            qc = a(es1, (byte)-75);
-            lc = a(es1, (byte)116);
-            pb = a(es1, (byte)71);
+        } else {
+            Sb = a(false, bytesParser);
+            L = a(false, bytesParser);
+            gd = a(false, bytesParser);
+            T = a(false, bytesParser);
+            this.k = a(false, bytesParser);
+            S = a(false, bytesParser);
+            q = a(bytesParser, (byte) 57);
+            P = a(bytesParser, (byte) 51);
+            qc = a(bytesParser, (byte) -75);
+            lc = a(bytesParser, (byte) 116);
+            pb = a(bytesParser, (byte) 71);
             return;
         }
     }
 
-    final void a(byte byte0, da da1, Class_q class_q, Class_r class_r, int i1)
-    {
+    public final void a(byte b, da da, Class_q class_q, Class_r class_r, int ticks) {
         Eb++;
-        da1.a(class_q);
-        hi ahi[] = da1.c();
-        if(byte0 != 55)
+        da.a(class_q);
+        hi his[] = da.c();
+        if (b != 55) {
             b(null, -7);
-        qg aqg[] = da1.f();
-        if((Qc == null || Qc.k) && (ahi != null || aqg != null))
-            Qc = tq.a(i1, false);
-        if(Qc != null)
-            Qc.a(class_r, i1, ahi, aqg, false);
-    }
-
-    final tw a(hu hu1, nk nk, byte byte0)
-    {
-        Lb++;
-        if(~yc == 0)
-            return null;
-        long l1 = ((long)Tc & 65535L) << 16 | ((65535L & (long)D) << 32 | (65535L & (long)y) << 48) | (long)yc & 65535L;
-        if(byte0 < 57)
-            H = -69;
-        tw tw1 = (tw)up.K.get(l1, (byte)100);
-        if(tw1 == null)
-        {
-            tw1 = hu1.a(nk, y, D, Tc, -29532, yc);
-            up.K.put(l1, tw1, 1);
         }
-        return tw1;
+        qg qgs[] = da.f();
+        if ((Qc == null || Qc.k) && (his != null || qgs != null)) {
+            Qc = tq.a(ticks, false);
+        }
+        if (Qc != null) {
+            Qc.a(class_r, ticks, his, qgs, false);
+        }
     }
 
-    private final int[] a(BytesParser es1, byte byte0)
-    {
-        W++;
-        int i1 = es1.readUnsignedByte(-9268);
-        if(i1 == 0)
+    public final tw a(hu hu, nk nk, byte b) {
+        Lb++;
+        if (~yc == 0) {
             return null;
-        int ai[] = new int[i1];
-        int j1 = 0;
-        int k1 = 111 % ((-13 - byte0) / 40);
-        for(; i1 > j1; j1++)
-            ai[j1] = es1.readInt(82);
+        }
+        long id = ((long) Tc & 65535L) << 16 | ((65535L & (long) D) << 32 | (65535L & (long) y) << 48) | (long) yc & 65535L;
+        if (b < 57) {
+            H = -69;
+        }
+        tw tw = (tw) up.K.get(id, (byte) 100);
+        if (tw == null) {
+            tw = hu.a(nk, y, D, Tc, -29532, yc);
+            up.K.put(id, tw, 1);
+        }
+        return tw;
+    }
 
+    private int[] a(BytesParser bytesParser, byte b) {
+        W++;
+        int i = bytesParser.readUnsignedByte(-9268);
+        if (i == 0) {
+            return null;
+        }
+        int ai[] = new int[i];
+        int index = 0;
+        for (; i > index; index++) {
+            ai[index] = bytesParser.readInt(82);
+        }
         return ai;
     }
 
-    final String a(String s1, int i1, int j1)
-    {
+    public final String a(String string, int id, int j) {
         fc++;
-        if(j1 != 4095)
+        if (j != 4095) {
             return null;
-        if(qb == null)
-            return s1;
-        aa aa1 = (aa)qb.a(-32748, i1);
-        if(aa1 == null)
-            return s1;
-        else
-            return aa1.m;
+        }
+        if (qb == null) {
+            return string;
+        }
+        Node_Sub aa = (Node_Sub) qb.a(-32748, id);
+        if (aa == null) {
+            return string;
+        } else {
+            return aa.m;
+        }
     }
 
-    public static void b(int i1)
-    {
+    public static void nullLoader(int i) {
         password = null;
         Yc = null;
-        if(i1 != -1)
-        {
+        if (i != -1) {
             return;
-        } else
-        {
+        } else {
             grandExchangeItems = null;
             eb = null;
             incomingPacket22 = null;
             return;
         }
     }
-    
 
-    final f a(Class_r class_r, int i1)
-    {
-        try
-        {
-            long l1;
+
+    public final f a(Class_r class_r, int i) {
+        try {
+            long id;
             aga aga1;
-label0:
+            label0:
             {
                 Nb++;
                 fo.r = false;
-                if(i1 >= -33)
+                if (i >= -33) {
                     J = null;
-                l1 = ((long)shadowColor << 0xd3bbbee8) + (((flippedVertically ? 1L : 0L) << 0xd5bcd26) + (long)textureID + (((xb ? 1L : 0L) << 0x67164023) + ((long)borderThickness << 0x796ccba4) + ((flippedHorizontally ? 1L : 0L) << 0x6c79de67)));
-                f f1 = (f)sr.U.get(l1, (byte)100);
-                if(f1 != null)
-                    return f1;
+                }
+                id = ((long) shadowColor << 0xd3bbbee8) + (((flippedVertically ? 1L : 0L) << 0xd5bcd26) + (long) textureID
+                        + (((xb ? 1L : 0L) << 0x67164023) + ((long) borderThickness << 0x796ccba4)
+                        + ((flippedHorizontally ? 1L : 0L) << 0x6c79de67)));
+                f f = (f) sr.U.get(id, (byte) 100);
+                if (f != null) {
+                    return f;
+                }
                 aga1 = aga.a(dga.G, textureID, 0);
-                if(aga1 == null)
-                {
+                if (aga1 == null) {
                     fo.r = true;
                     return null;
                 }
-                if(flippedVertically)
+                if (flippedVertically) {
                     aga1.g();
-                if(flippedHorizontally)
+                }
+                if (flippedHorizontally) {
                     aga1.a();
-                if(borderThickness <= 0)
-                {
-                    if(shadowColor == 0)
+                }
+                if (borderThickness <= 0) {
+                    if (shadowColor == 0) {
                         break label0;
+                    }
                     aga1.b(1);
-                    if(!client.sb)
+                    if (!client.sb) {
                         break label0;
+                    }
                 }
                 aga1.b(borderThickness);
             }
-            if(~borderThickness <= -2)
+            if (~borderThickness <= -2) {
                 aga1.a(1);
-            if(~borderThickness <= -3)
+            }
+            if (~borderThickness <= -3) {
                 aga1.a(0xffffff);
-            if(~shadowColor != -1)
+            }
+            if (~shadowColor != -1) {
                 aga1.c(shadowColor | 0xff000000);
-            f f2 = class_r.a(aga1, true);
-            sr.U.put((byte)-124, 4 * (f2.E() * f2.u()), l1, f2);
-            return f2;
-        }
-        catch(RuntimeException runtimeexception)
-        {
+            }
+            f f1 = class_r.a(aga1, true);
+            sr.U.put((byte) -124, 4 * (f1.E() * f1.u()), id, f1);
+            return f1;
+        } catch (RuntimeException runtimeexception) {
             //throw nc.nullLoader(runtimeexception, "kp.N(" + (class_r == null ? "null" : "{...}") + ',' + i1 + ')');
-        	runtimeexception.printStackTrace();
-        	return null;
+            runtimeexception.printStackTrace();
+            return null;
         }
     }
 
-    final void a(int i1, byte byte0)
-    {
+    public final void a(int id, byte b) {
         d++;
-        if(qb != null)
-        {
-            Node class_d = qb.a(-32748, i1);
-            if(class_d != null)
-                class_d.unlink(-38);
+        if (qb != null) {
+            Node node = qb.a(-32748, id);
+            if (node != null) {
+                node.unlink(-38);
+            }
         }
-        if(byte0 != -106)
+        if (b != -106) {
             mb = -58;
+        }
     }
 
-    static final void c(int i1)
-    {
+    public static void c(int i) {
         Sc++;
         Node.b = new String[500];
         uj.L = Class_nd.o.n + Class_nd.o.b + 2;
         el.e = dca.R.n + dca.R.b + 2;
-        for(int j1 = 0; Node.b.length > j1; j1++)
-            Node.b[j1] = "";
-
-        int k1 = 5 / ((-8 - i1) / 57);
-        ia.a(4, GameText.developerConsoleInfoText.getString((byte)-105, cba.languageID));
+        for (int index = 0; Node.b.length > index; index++) {
+            Node.b[index] = "";
+        }
+        ia.sendConsoleCommandText(4, GameText.developerConsoleInfoText.getString(cba.languageID));
     }
 
-    private final Object[] a(boolean flag, BytesParser es1)
-    {
+    private Object[] a(boolean flag, BytesParser bytesParser) {
         bb++;
-        int i1 = es1.readUnsignedByte(-9268);
-        if(i1 == 0)
+        int i = bytesParser.readUnsignedByte(-9268);
+        if (i == 0) {
             return null;
-        Object aobj[] = new Object[i1];
-        if(flag)
-            a(41, (byte)20);
-        for(int j1 = 0; j1 < i1; j1++)
-        {
-            int k1 = es1.readUnsignedByte(-9268);
-            if(k1 != 0)
-            {
-                if(k1 == 1)
-                    aobj[j1] = es1.readString((byte)119);
-            } else
-            {
-                aobj[j1] = new Integer(es1.readInt(94));
+        }
+        Object objects[] = new Object[i];
+        if (flag) {
+            a(41, (byte) 20);
+        }
+        for (int index = 0; index < i; index++) {
+            int j = bytesParser.readUnsignedByte(-9268);
+            if (j != 0) {
+                if (j == 1) {
+                    objects[index] = bytesParser.readString((byte) 119);
+                }
+            } else {
+                objects[index] = new Integer(bytesParser.readInt(94));
             }
         }
-
         Kb = true;
-        return aobj;
+        return objects;
     }
 
-    final int b(int i1, int j1, int k1)
-    {
+    public final int b(int i, int j, int id) {
         ac++;
-        if(qb == null)
-            return j1;
-        int l1 = -35 % ((i1 - 2) / 52);
-        GameInPacketHandler hda1 = (GameInPacketHandler)qb.a(-32748, k1);
-        if(hda1 == null)
-            return j1;
-        else
-            return hda1.k;
-    }
-
-    final ua a(byte byte0, Class_r class_r)
-    {
-        gb++;
-        ua ua1 = (ua)up.D.get(interfaceID, (byte)100);
-        if(ua1 != null)
-            return ua1;
-        aga aga1 = aga.a(dga.G, textureID, 0);
-        if(aga1 == null)
-            return null;
-        int i1 = aga1.e + (aga1.b + aga1.a);
-        int j1 = aga1.d + (aga1.g + aga1.h);
-        pc = new int[j1];
-        Jc = new int[j1];
-        for(int k1 = 0; aga1.d > k1; k1++)
-        {
-            int l1 = 0;
-            for(int j2 = 0; j2 < aga1.b; j2++)
-            {
-                if(aga1.c[j2 + aga1.b * k1] == 0)
-                    continue;
-                l1 = j2;
-                break;
-            }
-
-            int i2 = i1;
-            for(int k2 = l1; k2 < aga1.b; k2++)
-            {
-                if(aga1.c[aga1.b * k1 + k2] != 0)
-                    continue;
-                i2 = k2;
-                break;
-            }
-
-            pc[aga1.g + k1] = aga1.e + l1;
-            Jc[k1 + aga1.g] = i2 - l1;
+        if (qb == null) {
+            return j;
         }
-
-        ua1 = class_r.a(i1, j1, pc, Jc);
-        up.D.put(interfaceID, ua1, 1);
-        if(byte0 != 125)
-            return null;
-        else
-            return ua1;
+        GameInPacketHandler inPacketHandler = (GameInPacketHandler) qb.a(-32748, id);
+        if (inPacketHandler == null) {
+            return j;
+        } else {
+            return inPacketHandler.k;
+        }
     }
 
-    final la b(Class_r class_r, int i1)
-    {
+    public final ua a(byte b, Class_r class_r) {
+        gb++;
+        ua ua = (ua) up.D.get(interfaceID, (byte) 100);
+        if (ua != null) {
+            return ua;
+        }
+        aga aga1 = aga.a(dga.G, textureID, 0);
+        if (aga1 == null) {
+            return null;
+        }
+        int i = aga1.e + (aga1.b + aga1.a);
+        int j = aga1.d + (aga1.g + aga1.h);
+        pc = new int[j];
+        Jc = new int[j];
+        for (int k = 0; aga1.d > k; k++) {
+            int i1 = 0;
+            for (int j1 = 0; j1 < aga1.b; j1++) {
+                if (aga1.c[j1 + aga1.b * k] == 0) {
+                    continue;
+                }
+                i1 = j1;
+                break;
+            }
+            int j1 = i;
+            for (int k1 = i1; k1 < aga1.b; k1++) {
+                if (aga1.c[aga1.b * k + k1] != 0) {
+                    continue;
+                }
+                j1 = k1;
+                break;
+            }
+            pc[aga1.g + k] = aga1.e + i1;
+            Jc[k + aga1.g] = j1 - i1;
+        }
+        ua = class_r.a(i, j, pc, Jc);
+        up.D.put(interfaceID, ua, 1);
+        if (b != 125) {
+            return null;
+        } else {
+            return ua;
+        }
+    }
+
+    public final la b(Class_r class_r, int i) {
         Ob++;
         la la = ao.a(false, Ab, class_r, 0);
-        if(i1 != -7230)
-        {
+        if (i != -7230) {
             return null;
-        } else
-        {
+        } else {
             fo.r = la == null;
             return la;
         }
     }
 
-    public Interface()
-    {
+    public Interface() {
         a = -1;
         height = 0;
         minVScroll = 0;

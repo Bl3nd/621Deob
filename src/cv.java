@@ -71,10 +71,10 @@ final class cv
 		    q += (long) i_5_;
 		}
 	    } else {
-		p.seek(q, -1);
+		p.seek(q);
 		s = q;
 		while (i_1_ > 0) {
-		    int i_6_ = p.read(i, is, i_1_, 3);
+		    int i_6_ = p.read(i, is, i_1_);
 		    if ((i_6_ ^ 0xffffffff) == 0)
 			break;
 		    q += (long) i_6_;
@@ -137,10 +137,10 @@ final class cv
     private final void a(int i) throws IOException {
 	if (this.l != -1L) {
 	    if (this.l != s) {
-		p.seek(this.l, i);
+		p.seek(this.l);
 		s = this.l;
 	    }
-	    p.write(0, (byte) 59, z, j);
+	    p.write(0, z, j);
 	    s += (long) z;
 	    if (this.i < s)
 		this.i = s;
@@ -179,7 +179,7 @@ final class cv
 	r++;
 	m = i;
 	if (s != q) {
-	    p.seek(q, -1);
+	    p.seek(q);
 	    s = q;
 	}
 	a = q;
@@ -187,7 +187,7 @@ final class cv
 	    int i_15_ = c.length - m;
 	    if (i_15_ > 200000000)
 		i_15_ = 200000000;
-	    int i_16_ = p.read(m, c, i_15_, 3);
+	    int i_16_ = p.read(m, c, i_15_);
 	    if (i_16_ == -1)
 		break;
 	    m += i_16_;
@@ -224,10 +224,10 @@ final class cv
 		}
 		if (i_17_ > j.length) {
 		    if (q != s) {
-			p.seek(q, i_18_ ^ ~0x6cf7);
+			p.seek(q);
 			s = q;
 		    }
-		    p.write(i, (byte) -122, i_17_, is);
+		    p.write(i, i_17_, is);
 		    s += (long) i_17_;
 		    if (s > this.i)
 			this.i = s;
@@ -281,7 +281,7 @@ final class cv
 	h++;
 	if (i > -20)
 	    c = null;
-	return p.getFile((byte) -126);
+	return p.getFile();
     }
     
     final long d(int i) {
@@ -295,7 +295,7 @@ final class cv
 	if (i == 101) {
 	    v++;
 	    a((int) -1);
-	    p.close((byte) -127);
+	    p.close();
 	}
     }
     
@@ -308,7 +308,7 @@ final class cv
     
     cv(FileOnDisk var_cu, int i, int i_23_) throws IOException {
 	p = var_cu;
-	b = this.i = var_cu.getLength((int) 0);
+	b = this.i = var_cu.getLength();
 	j = new byte[i_23_];
 	c = new byte[i];
 	q = 0L;

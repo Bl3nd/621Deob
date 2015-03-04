@@ -97,7 +97,7 @@ final class ge extends mca
 	    }
 	}
 	if (!bool)
-	    cba.a(4, false, GameText.unableToFind_.getString((byte) -74, cba.languageID) + string);
+	    cba.a(4, false, GameText.unableToFind_.getString(cba.languageID) + string);
     }
     
     public ge() {

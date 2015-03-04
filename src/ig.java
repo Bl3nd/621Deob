@@ -59,14 +59,14 @@ final class ig
 		rda.width -= insets.right + insets.left;
 		Class_jg.height -= insets.top + insets.bottom;
 	    }
-	    if (ia.g(115) == 1) {
+	    if (ia.getWMVersion(115) == 1) {
 		ff.width = baa.d;
 		eh.height = Class_vb.r;
 		ia.xLoc = (rda.width - baa.d) / 2;
 		vh.yLoc = 0;
 	    } else
 		lfa.b((byte) -10);
-	    if (oba.K != hs.modeWhere) {
+	    if (oba.pk != hs.modeWhere) {
 		if (ff.width < 1024 && eh.height < 768) {
 		    /* empty */
 		}

@@ -41,7 +41,7 @@ abstract class qda extends Animable
 	    ((qda) this).I = (short) 75;
 	A++;
 	return vg.a((byte) 57, this.g((int) -103), ((qda) this).x,
-		    ((qda) this).I, ((Animable) this).h, ((qda) this).y,
+		    ((qda) this).I, ((Animable) this).height_, ((qda) this).y,
 		    ((qda) this).B);
     }
     
@@ -146,7 +146,7 @@ abstract class qda extends Animable
 	((qda) this).B = (short) i_24_;
 	((qda) this).x = (short) i_26_;
 	((Animable) this).j = i_22_;
-	((Animable) this).h = (byte) i_20_;
+	((Animable) this).height_ = (byte) i_20_;
 	((qda) this).y = (short) i_27_;
 	((Animable) this).locY = i_23_;
     }

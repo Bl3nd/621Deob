@@ -7,7 +7,7 @@ final class dm extends IOException
 {
     static float a;
     static int b;
-    static GameOutPacket c = new GameOutPacket(52, 4);
+    static GameOutPacket outgoingPacket52 = new GameOutPacket(52, 4);
     static boolean d = false;
     
     static final void setItemOnInterface(int dummy, boolean split, int itemID, int itemIndex, int amount, int itemContainerIndex) {
@@ -42,7 +42,7 @@ final class dm extends IOException
     }
     
     public static void a(boolean bool) {
-	c = null;
+	outgoingPacket52 = null;
 	if (bool != false)
 	    a(false);
     }

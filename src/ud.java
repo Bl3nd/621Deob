@@ -97,7 +97,7 @@ final class ud extends pp
 		   ("Static Anim: OW: " + cc.f[0] + "/" + dca.T[0] + " UW: "
 		    + cc.f[1] + "/" + dca.T[1]),
 		   -16777216, i_3_ + 30);
-	    us.c.a(-256, true, i, "Dynamic: " + aa.n + "/" + 5000, -16777216,
+	    us.c.a(-256, true, i, "Dynamic: " + Node_Sub.n + "/" + 5000, -16777216,
 		   i_3_ + 45);
 	    us.c.a(-256, true, i,
 		   "Total Opaque Onscreen: " + ii.d + "/" + 10000, -16777216,

@@ -121,7 +121,7 @@ final class gv
 		rv.a(-1, true);
 		te.a(true);
 	    } else if (taa.b == 76) {
-		al.o = new oj(class_r, 14, true, ru.canvas);
+		al.oj = new oj(class_r, 14, true, ru.canvas);
 		taa.b = 79;
 		rv.a(i ^ 0x49, true);
 		te.a(true);

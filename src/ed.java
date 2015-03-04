@@ -20,7 +20,7 @@ final class ed extends bc
 	    return (e - f) / 1000000L;
 	return 0L;
     }
-    
+
     final int a(long l, byte i) {
 	int i_0_ = 121 / ((50 - i) / 63);
 	if (e <= f) {
@@ -39,8 +39,8 @@ final class ed extends bc
 	return 1;
     }
     
-    final void d(int i) {
-	j = (long) i;
+    final void d(int time) {
+	j = (long) time;
 	if (e > f)
 	    f += e - f;
     }
@@ -74,9 +74,9 @@ final class ed extends bc
 	return l_3_ / (long) h;
     }
     
-    final long b(int i) {
-	if (i != 26262)
-	    return 95L;
+    final long b() {
+	/*if (i != 26262)
+	    return 95L;*/
 	return f;
     }
 }

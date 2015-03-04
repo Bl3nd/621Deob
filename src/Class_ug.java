@@ -148,8 +148,8 @@ final class Class_ug extends ev implements vda
 	return C;
     }
     
-    final void a(boolean bool, int i, byte i_4_, Class_r class_r, Animable var_lo,
-		 int i_5_, int i_6_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_4_, Class_r class_r, Animable var_lo,
+                                          int i_5_, int i_6_) {
 	int i_7_ = -101 % ((i_4_ + 50) / 55);
 	bb++;
 	throw new IllegalStateException();

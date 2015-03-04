@@ -194,7 +194,7 @@ final class pe extends of
 	((pq) var_pq).t = i_6_;
 	((pq) var_pq).r = i_7_;
 	((pq) var_pq).s = i_4_;
-	((pq) var_pq).q = us.a(i_5_ ^ 0x6274);
+	((pq) var_pq).q = us.getCurrentTime(i_5_ ^ 0x6274);
 	((pq) var_pq).p = i;
 	if (i_5_ == 25112)
 	    n.b(var_pq, (byte) 93);

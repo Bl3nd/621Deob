@@ -58,7 +58,7 @@ class im extends mp
             qca.a(-99);
             if(nu.i.equals(""))
             {
-                jp.s = 39;
+                RSKeyListener.s = 39;
                 return;
             }
         }
@@ -78,7 +78,7 @@ class im extends mp
             }
             catch(Exception _ex)
             {
-                jp.s = 39;
+                RSKeyListener.s = 39;
                 return;
             }
         } else
@@ -111,7 +111,7 @@ class im extends mp
         Class_eb.q = 1;
         tfa.u = 0;
         lr.j = 0;
-        jp.s = -3;
+        RSKeyListener.s = -3;
     }
 
     public static void d(byte byte0)

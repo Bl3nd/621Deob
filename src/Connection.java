@@ -6,76 +6,73 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.Arrays;
 
+@SuppressWarnings("ALL")
 public final class Connection implements Runnable {
-	
-	static dt dt;
-	static int finalizeCount;
-	static int c;
-	static int d;
+
+	public static dt dt;
+    public static int finalizeCount;
+    public static int c;
+    public static int readCount;
 	private vfa vfa;
-	static vfa vfa_;
+    public static vfa vfa_;
 	private boolean g = false;
-	static int h;
+    public static int write;
 	private Signlink signLink;
 	private InputStream inputStream;
-	static int k;
-	static int l;
-	static int m;
+    public static int setStreamsToSubs;
+    public static int availableSkips;
+    public static int m;
 	private int off = 0;
-	static int o;
-	static wea wea = new wea(0, 1);
-	private int q;
-	static cv[] cvs = new cv[35];
-	private boolean s = false;
-	static tw tw;
-	static int u;
-	static int v;
+    public static int o;
+    public static wea wea = new wea(0, 1);
+	private int offset;
+    public static cv[] cvs = new cv[35];
+	private boolean cannotWriteOrFlush = false;
+    public static tw tw;
+    public static int u;
+    public static int read;
 	private OutputStream outputStream;
 	private byte[] buf;
-	static int y;
+    public static int killThread;
 	private Socket sock;
 
-	public static void a(int i, int j, int k) {
+	public static void a(int xPos, int yPos, int dummy) {
 		o++;
-		int i1 = dca.R.a((byte) 99, GameText.chooseOptionText.getString((byte) 71, cba.languageID));
-		for (bfa bfa = (bfa) oba.I.a(k + 11488); bfa != null; bfa = (bfa) oba.I.b((byte) 88)) {
-			int j1 = hv.a(k + 36709, bfa);
-			if (j1 > i1) {
-				i1 = j1;
+		int option = dca.R.a((byte) 99, GameText.chooseOptionText.getString(cba.languageID));
+		for (bfa bfa = (bfa) oba.I.a(dummy + 11488); bfa != null; bfa = (bfa) oba.I.b((byte) 88)) {
+			int option_ = hv.a(dummy + 36709, bfa);
+			if (option_ > option) {
+				option = option_;
 			}
 		}
-		i1 += 8;
-		if (k != -11387) {
-			cvs = null;
-		}
+		option += 8;
 		int j1 = 16 * mu.j + 21;
-		int x = i - i1 / 2;
-		if (i1 + x > ff.width) {
-			x = ff.width - i1;
+		int x = xPos - option / 2;
+		if (option + x > ff.width) {
+			x = ff.width - option;
 		}
 		if (x < 0) {
 			x = 0;
 		}
-		int y = j;
+		int y = yPos;
 		if (eh.height < y + j1) {
 			y = eh.height - j1;
 		}
-		mr.a = x;
+		mr.x_ = x;
 		if (y < 0) {
 			y = 0;
 		}
-		aw.l = i1;
+		aw.option = option;
 		lfa.r = (!lq.hb ? 22 : mu.j * 16) + 26;
 		gea.n = true;
-		hn.b = y;
+		hn.y_ = y;
 	}
 
-	public final int read(int i) throws IOException {
-		d++;
-		if (i != 12410) {
-			outputStream = null;
-		}
+	public final int read() throws IOException {
+        System.out.println("[Connection] Reading!");
+		readCount++;
 		if (g) {
 			return 0;
 		}
@@ -88,7 +85,7 @@ public final class Connection implements Runnable {
 				int offset;
 				int length;
 				synchronized (this) {
-					if (q == off) {
+					if (this.offset == off) {
 						if (g) {
 							break;
 						}
@@ -99,8 +96,8 @@ public final class Connection implements Runnable {
 						}
 					}
 					offset = off;
-					if (q >= off) {
-						length = q - off;
+					if (this.offset >= off) {
+						length = this.offset - off;
 					} else {
 						length = 5000 - off;
 					}
@@ -109,15 +106,15 @@ public final class Connection implements Runnable {
 					try {
 						outputStream.write(buf, offset, length);
 					} catch (IOException ioexception) {
-						s = true;
+						cannotWriteOrFlush = true;
 					}
 					off = (off + length) % 5000;
 					try {
-						if (q == off) {
+						if (this.offset == off) {
 							outputStream.flush();
 						}
 					} catch (IOException ioexception) {
-						s = true;
+						cannotWriteOrFlush = true;
 					}
 				}
 			}
@@ -141,18 +138,15 @@ public final class Connection implements Runnable {
 		c++;
 	}
 
-	public final void b(int i) {
-		k++;
+	public final void setStreamsToSubs() {
+		setStreamsToSubs++;
 		if (!g) {
-			inputStream = new uu();
-			if (i != 35) {
-				tw = null;
-			}
-			outputStream = new na();
+			inputStream = new InputStreamSub();
+			outputStream = new OutputStreamSub();
 		}
 	}
 
-	public static final void a(int i, long l) {
+	public static void a(int i, long l) {
 		u++;
 		if (l > 0L) {
 			if (l % 10L != 0L) {
@@ -161,50 +155,46 @@ public final class Connection implements Runnable {
 				he.a(l - 1L, (byte) -103);
 				he.a(1L, (byte) -122);
 			}
-			if (i != -28448) {
-				nullLoader(49);
-			}
 		}
 	}
 
-	protected final void finalize() {
-		a((byte) 61);
+	@Override
+    protected final void finalize() {
+		killThread((byte) 61);
 		finalizeCount++;
 	}
 
-	public final void a(int offset, byte[] buf, int length, int i) throws IOException {
-		v++;
+	public final void read(int offset, byte[] buf, int length) throws IOException {
+        System.out.println("[Connection] " + offset + ", " + Arrays.toString(buf) + ", " + length);
+		read++;
 		if (!g) {
-			int j;
-			for (/**/; length > 0; length -= j) {
-				j = inputStream.read(buf, offset, length);
-				if (j <= 0) {
+			int read;
+			for (/**/; length > 0; length -= read) {
+				read = inputStream.read(buf, offset, length);
+				if (read <= 0) {
 					throw new EOFException();
 				}
-				offset += j;
-			}
+				offset += read;
+			}/*
 			if (i != 14216) {
 				sock = null;
-			}
+			}*/
 		}
 	}
 
-	public static void nullLoader(int i) {
+	public static void nullLoader() {
 		wea = null;
-		if (i != 0) {
-			a(-8, -40, 90);
-		}
 		vfa_ = null;
 		dt = null;
 		tw = null;
 		cvs = null;
 	}
 
-	public final void a(int i, int j, byte b, byte[] buffer) throws IOException {
-		h++;
+	public final void write(int i, int j, byte[] buffer) throws IOException {
+		write++;
 		if (!g) {
-			if (s) {
-				s = false;
+			if (cannotWriteOrFlush) {
+				cannotWriteOrFlush = false;
 				throw new IOException();
 			}
 			if (buf == null) {
@@ -213,14 +203,11 @@ public final class Connection implements Runnable {
 			synchronized (this) {
                 System.out.println("[Connection] " + i + ", " + j);
 				for (int k = 0; k < i; k++) {
-					buf[q] = buffer[j + k];
-					q = (q + 1) % 5000;
-					if (q == (off + 4900) % 5000) {
+					buf[offset] = buffer[j + k];
+					offset = (offset + 1) % 5000;
+					if (offset == (off + 4900) % 5000) {
 						throw new IOException();
 					}
-				}
-				if (b > -36) {
-					finalize();
 				}
 				if (vfa == null) {
 					vfa = this.signLink.a(3, this, 0);
@@ -230,14 +217,11 @@ public final class Connection implements Runnable {
 		}
 	}
 
-	public final void a(byte b) {
-		y++;
+	public final void killThread(byte b) {
+		killThread++;
 		if (!g) {
 			synchronized (this) {
 				g = true;
-				if (b != 61) {
-					return;
-				}
 				this.notifyAll();
 			}
 			if (vfa != null) {
@@ -256,32 +240,26 @@ public final class Connection implements Runnable {
 		}
 	}
 
-	public final void b(byte b) throws IOException {
-		if (b != 17) {
-			buf = null;
-		}
+	public final void b() throws IOException {
 		m++;
 		if (!g) {
-			if (s) {
-				s = false;
+			if (cannotWriteOrFlush) {
+				cannotWriteOrFlush = false;
 				throw new IOException();
 			}
 		}
 	}
 
-	public final int availableSkips(int i) throws IOException {
-		l++;
+	public final int availableSkips() throws IOException {
+		availableSkips++;
 		if (g) {
 			return 0;
-		}
-		if (i != -22874) {
-			return 112;
 		}
 		return inputStream.available();
 	}
 
 	public Connection(Socket socket, Signlink sign) throws IOException {
-		q = 0;
+		offset = 0;
 		signLink = sign;
 		sock = socket;
 		sock.setSoTimeout(30000);

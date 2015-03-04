@@ -13,7 +13,7 @@ final class oba extends gga
     static int H;
     static Class_ae I;
     static wea J;
-    static pk K;
+    static pk pk;
     
     oba(int i, int i_0_, int i_1_, int i_2_, int i_3_, float f) {
 	super(i, i_0_, i_1_, i_2_, i_3_, f);
@@ -47,7 +47,7 @@ final class oba extends gga
 	J = null;
 	if (i > 100) {
 	    F = null;
-	    K = null;
+	    pk = null;
 	}
     }
     
@@ -98,7 +98,7 @@ final class oba extends gga
 		ia.xLoc = (rda.width - baa.d) / 2;
 		eh.height = Class_vb.r;
 	    }
-	    if (K != hs.modeWhere) {
+	    if (pk != hs.modeWhere) {
 		if (ff.width < 1024 && eh.height < 768) {
 		    /* empty */
 		}
@@ -121,7 +121,7 @@ final class oba extends gga
 	    if ((Class_vb.u ^ 0xffffffff) != 0)
 		cv.a(true, (byte) 105);
 	    if (ce.y != null && bc.a(hm.h, (byte) -62))
-		jp.a(true);
+		RSKeyListener.a(true);
 	    for (int i_16_ = 0; i_16_ < 100; i_16_++)
 		la.q[i_16_] = true;
 	    sea.d = true;
@@ -215,6 +215,6 @@ final class oba extends gga
 	F[62] = '*';
 	I = new Class_ae();
 	J = new wea(6, 1);
-	K = new pk("LIVE", 0);
+	pk = new pk("LIVE", 0);
     }
 }

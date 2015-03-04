@@ -462,7 +462,7 @@ final class eca extends f
 	if (i != -4)
 	    w = -1.049912F;
 	l++;
-	if (iga.j.b(i ^ 0x48) != 0) {
+	if (iga.j.soundStreamCount(i ^ 0x48) != 0) {
 	    if (on.performance != 0) {
 		if (kea.i == null) {
 		    Canvas canvas = new Canvas();

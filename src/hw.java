@@ -245,7 +245,7 @@ final class hw extends pn
 	    return null;
 	return new hw(var_oaa,
 		      (int) ((long) ((oaa) var_oaa).n * 256L * (long) i
-			     / (long) (100 * gba.G)),
+			     / (long) (100 * gba.samplesPerSec)),
 		      i_56_ << 6);
     }
     

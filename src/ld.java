@@ -9,12 +9,12 @@ final class ld
     static int c;
     
     static final void a() {
-	for (int i = 0; i < aa.n; i++) {
+	for (int i = 0; i < Node_Sub.n; i++) {
 	    qda var_qda = sw.a[i];
 	    mn.a(var_qda, true);
 	    sw.a[i] = null;
 	}
-	aa.n = 0;
+	Node_Sub.n = 0;
     }
     
     static final boolean a(int i, int i_0_) {

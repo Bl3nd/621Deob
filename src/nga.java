@@ -829,7 +829,7 @@ final class nga extends Class_r
 	((jea) var_jea).j = false;
     }
     
-    final void b(int i) {
+    final void getTexSize(int size) {
 	/* empty */
     }
     
@@ -916,7 +916,7 @@ final class nga extends Class_r
 	/* empty */
     }
     
-    final boolean z() {
+    final boolean bloom() {
 	return false;
     }
     
@@ -1677,7 +1677,7 @@ final class nga extends Class_r
 	}
     }
     
-    final void a(boolean bool) {
+    final void renderProfile(boolean profile) {
 	/* empty */
     }
     
@@ -1768,7 +1768,7 @@ final class nga extends Class_r
 	f(0);
 	gda.a(true, false, (byte) 88);
 	r = true;
-	q = (int) us.a(112);
+	q = (int) us.getCurrentTime(112);
     }
     
     final int DA() {

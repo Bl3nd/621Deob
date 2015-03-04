@@ -24,7 +24,7 @@ final class sm
 		oh.h++;
 		lea.setClickMenuOption(((Interface) var_kp).itemIndex, false, ((Interface) var_kp).interfaceID,
 		      ((Interface) var_kp).itemID, true, uk.d, i ^ ~0x403d, 0L,
-		      Class_ag.k + " -> " + ((Interface) var_kp).itemName, 45, Class_kd.b);
+		      Class_ag.k + " -> " + ((Interface) var_kp).itemName, 45, Class_kd.itemName);
 	    }
 	}
 	h++;
@@ -60,7 +60,7 @@ final class sm
 		if (((Interface) var_kp).bd == null)
 		    lea.setClickMenuOption(((Interface) var_kp).itemIndex, false, ((Interface) var_kp).interfaceID,
 			  ((Interface) var_kp).itemID, true, -1, i + 16325, 0L, "", 50,
-			  GameText.continueText.getString((byte) -37, cba.languageID));
+			  GameText.continueText.getString(cba.languageID));
 		else
 		    lea.setClickMenuOption(((Interface) var_kp).itemIndex, false, ((Interface) var_kp).interfaceID,
 			  ((Interface) var_kp).itemID, true, -1, 126, 0L, "", 50,
@@ -158,24 +158,24 @@ final class sm
 	    qn.k = 0;
 	}
 	il.b(false);
-	aaa.k = new Animable[2][];
-	aaa.k[0] = new Animable[of.d[0]];
-	aaa.k[1] = new Animable[of.d[1]];
+	aaa.animables = new Animable[2][];
+	aaa.animables[0] = new Animable[of.d[0]];
+	aaa.animables[1] = new Animable[of.d[1]];
 	baa.l = new int[2];
 	lm.Nh = new Animable[2][];
 	lm.Nh[0] = new Animable[nq.n[0]];
 	lm.Nh[1] = new Animable[nq.n[1]];
 	fg.a = new int[2];
-	cca.d = new Animable[2][];
-	cca.d[0] = new Animable[dca.T[0]];
-	cca.d[1] = new Animable[dca.T[1]];
+	InputStreamSub_1.d = new Animable[2][];
+	InputStreamSub_1.d[0] = new Animable[dca.T[0]];
+	InputStreamSub_1.d[1] = new Animable[dca.T[1]];
 	cc.f = new int[2];
 	ht.F = new Animable[10000];
 	ii.d = 0;
 	uq.H = new Animable[5000];
 	Class_u.Q = 0;
 	sw.a = new qda[5000];
-	aa.n = 0;
+	Node_Sub.n = 0;
 	vd.O = new boolean[FileOnDisk.k + FileOnDisk.k + 1][FileOnDisk.k + FileOnDisk.k + 1];
 	kl.i = new boolean[FileOnDisk.k + FileOnDisk.k + 2][FileOnDisk.k + FileOnDisk.k + 2];
 	if (kw.B) {
@@ -227,7 +227,7 @@ final class sm
 	    class_r.J(i_22_ - 150, i_23_ + 2, 3 * taa.b, 30,
 		      os.i[jr.colourId].getRGB(), 0);
 	    pv.j.a(uca.a[jr.colourId].getRGB(), -142, i_22_, -1, i_23_ + i_21_,
-		   GameText.loadingText.getString((byte) -76, cba.languageID));
+		   GameText.loadingText.getString(cba.languageID));
 	} else {
 	    int i_24_ = ut.I - (int) ((float) i_20_ / kca.m);
 	    int i_25_ = (int) ((float) i_19_ / kca.m) + cv.d;
@@ -249,10 +249,10 @@ final class sm
 		    sh.h = 20;
 		}
 	    }
-	    if (sl.l) {
+	    if (sl.fpsOn) {
 		int i_28_ = i_20_ + i_17_ - 5;
 		int i_29_ = i - (-i_19_ + 8);
-		pm.v.a(i_28_, i_29_, "Fps:" + fu.v, 16776960, -1, -98);
+		pm.v.a(i_28_, i_29_, "Fps:" + fu.fps, 16776960, -1, -98);
 		i_29_ -= 15;
 		Runtime runtime = Runtime.getRuntime();
 		int i_30_

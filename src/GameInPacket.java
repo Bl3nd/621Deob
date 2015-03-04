@@ -3,25 +3,22 @@
  */
 
 public final class GameInPacket {
-	
-	static int a;
-	int packetSize;
-	static int[][] c;
-	static ih d;
-	static int getPacketIDs;
-	static int toStrings;
-	private int packetID;
-	static int[] h = new int[16384];
-	static int[] i = new int[16384];
-	static int j_;
-	static tb tb;
-	static boolean l;
 
-	public final int getPacketID(int dummy) {
+    public static int a;
+    public int packetSize;
+    public static int[][] ints;
+    public static ih d;
+    public static int getPacketIDs;
+    public static int toStrings;
+	private int packetID;
+    public static int[] ints1 = new int[16384];
+    public static int[] ints2 = new int[16384];
+    public static int j_;
+    public static tb tb;
+    public static boolean l;
+
+	public final int getPacketID() {
 		getPacketIDs++;
-		if (dummy != 25569) {
-			toString();
-		}
 		return packetID;
 	}
 
@@ -30,7 +27,7 @@ public final class GameInPacket {
 		throw new IllegalStateException();
 	}
 
-	public static final boolean a(int i, int j, int i1, int j1, byte[] buf, int k1) {
+	public static boolean a(int i, int j, int i1, int j1, byte[] buf, int k1) {
 		a++;
 		int i2 = i % j;
 		int j2;
@@ -59,19 +56,17 @@ public final class GameInPacket {
 
 	public static void nullLoader() {
 		d = null;
-		h = null;
-		i = null;
-		c = null;
+		ints1 = null;
+		ints2 = null;
+		ints = null;
 		tb = null;
 	}
 
-	public static void a(int i, int y, int height, int j, int x) {
+	public static void a(int y, int height, int j, int x) {
+        int i = 1; //Was parameter
 		j_++;
 		for (ql ql = (ql) pu.o.a(122); ql != null; ql = (ql) pu.o.b((byte) 60)) {
 			hn.a(j, 0, ql, x, y, height);
-		}
-		if (i != 1) {
-			c = null;
 		}
 		for (ql ql = (ql) bea.h.a(84); ql != null; ql = (ql) bea.h.b((byte) 32)) {
 			int k1 = 1;
@@ -111,9 +106,9 @@ public final class GameInPacket {
 				ql.A = k1;
 			}
 			ql.xLoc = ql.H.locX;
-			ql.z = ql.H.locX + (ql.H.i(-1) << 8);
+			ql._x = ql.H.locX + (ql.H.getNPCDefinition(-1) << 8);
 			ql.yLoc = ql.H.locY;
-			ql.y = ql.H.locY + (ql.H.i(-1) << 8);
+			ql._y = ql.H.locY + (ql.H.getNPCDefinition(-1) << 8);
 			hn.a(j, 0, ql, x, y, height);
 		}
 		for (ql ql = (ql) gl.O.b((byte) 124); ql != null; ql = (ql) gl.O.b(12561)) {
@@ -141,9 +136,9 @@ public final class GameInPacket {
 				ql.A = k1;
 			}
 			ql.xLoc = ql.F.locX;
-			ql.z = ql.F.locX + (ql.F.i(-1) << 8);
+			ql._x = ql.F.locX + (ql.F.getNPCDefinition(-1) << 8);
 			ql.yLoc = ql.F.locY;
-			ql.y = ql.F.locY + (ql.F.i(i - 2) << 8);
+			ql._y = ql.F.locY + (ql.F.getNPCDefinition(i - 2) << 8);
 			hn.a(j, i - 1, ql, x, y, height);
 		}
 	}
@@ -156,8 +151,8 @@ public final class GameInPacket {
 	static {
 		double d = 3.834951969714103E-4;
 		for (int i = 0; i < 16384; i++) {
-			h[i] = (int) (Math.sin(d * (double) i) * 16384.0);
-			GameInPacket.i[i] = (int) (16384.0 * Math.cos((double) i * d));
+			ints1[i] = (int) (Math.sin(d * (double) i) * 16384.0);
+			GameInPacket.ints2[i] = (int) (16384.0 * Math.cos((double) i * d));
 		}
 		tb = new tb(8);
 		l = false;

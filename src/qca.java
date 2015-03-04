@@ -106,14 +106,14 @@ final class qca extends Node
 	    if (i > -87)
 		a(null, -21, false);
 	    var_cu = (FileOnDisk) var_vfa.hostName;
-	    byte[] is = new byte[(int) var_cu.getLength((int) 0)];
+	    byte[] is = new byte[(int) var_cu.getLength()];
 	    if (is.length == 0) {
 		nu.i = "";
 		eo.n = "";
 	    } else {
 		int i_9_;
 		for (int i_10_ = 0; is.length > i_10_; i_10_ += i_9_) {
-		    i_9_ = var_cu.read(i_10_, is, is.length - i_10_, 3);
+		    i_9_ = var_cu.read(i_10_, is, is.length - i_10_);
 		    if (i_9_ == -1)
 			throw new IOException("EOF");
 		}
@@ -153,7 +153,7 @@ final class qca extends Node
 	    try {
 		if (var_cu == null)
 		    break;
-		var_cu.close((byte) -127);
+		var_cu.close();
 	    } catch (Exception exception) {
 		break;
 	    }

@@ -2,66 +2,66 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class SpecialOutPacket
-{
+public final class SpecialOutPacket {
+
     static int a;
     static int b;
     static pl c;
     static Class_ae d = new Class_ae();
     int packetID;
-    static int f;
+    static int toString;
     static int g;
-    static il h = new il(8);
-    
-    public static void a(int i) {
-	if (i != 0)
-	    c = null;
-	c = null;
-	d = null;
-	h = null;
+    static il i1 = new il(8);
+
+    public static void nullLoader() {
+        c = null;
+        d = null;
+        i1 = null;
     }
-    
+
     public final String toString() {
-	f++;
-	throw new IllegalStateException();
+        toString++;
+        throw new IllegalStateException();
     }
-    
-    static final void a(byte i) {
-	if (i > -102)
-	    c = null;
-	b++;
-	int i_0_ = (int) (34.46 * (double) Class_hc.e);
-	i_0_ <<= 2;
-	if (lg.r.o())
-	    i_0_ += 512;
-	lg.r.GA(200, i_0_);
+
+    public static void a(byte b) {
+        if (b > -102) {
+            c = null;
+        }
+        SpecialOutPacket.b++;
+        int i = (int) (34.46 * (double) Class_hc.e);
+        i <<= 2;
+        if (lg.r.o()) {
+            i += 512;
+        }
+        lg.r.GA(200, i);
     }
-    
-    static final void a(da var_da, int i, sd var_sd, int i_1_, int i_2_,
-			int i_3_) {
-	a++;
-	if (var_da != null && i_3_ == 26219)
-	    var_sd.a(i, true, var_da.J(), var_da.K(), var_da.OA(), i_2_,
-		     var_da.l(), var_da.KA(), var_da.H(), i_1_, var_da.za());
+
+    public static void a(da da, int x, sd sd, int i, int y, int j) {
+        a++;
+        if (da != null && j == 26219) {
+            sd.a(x, true, da.J(), da.K(), da.OA(), y, da.l(), da.KA(), da.H(), i, da.za());
+        }
     }
-    
-    static final void b(byte i) {
-	g++;
-	int[] is = new int[((ItemDefLoader) laa.itemDefLoader).g];
-	int i_4_ = 0;
-	for (int i_5_ = 0; ((ItemDefLoader) laa.itemDefLoader).g > i_5_; i_5_++) {
-	    ItemDef var_uv = laa.itemDefLoader.d(12388, i_5_);
-	    if (((ItemDef) var_uv).B >= 0 || ((ItemDef) var_uv).J >= 0)
-		is[i_4_++] = i_5_;
-	}
-	kq.U = new int[i_4_];
-	int i_6_ = 0;
-	int i_7_ = -26 / ((i - 63) / 42);
-	for (/**/; i_6_ < i_4_; i_6_++)
-	    kq.U[i_6_] = is[i_6_];
+
+    public static void b(byte b) {
+        g++;
+        int[] buf = new int[laa.itemDefLoader.g];
+        int i = 0;
+        for (int j = 0; laa.itemDefLoader.g > j; j++) {
+            ItemDef itemDef = laa.itemDefLoader.d(12388, j);
+            if (itemDef.B >= 0 || itemDef.J >= 0) {
+                buf[i++] = j;
+            }
+        }
+        kq.U = new int[i];
+        int index = 0;
+        for (/**/; index < i; index++) {
+            kq.U[index] = buf[index];
+        }
     }
-    
-    SpecialOutPacket(int packetID, int packetSize) {
-	((SpecialOutPacket) this).packetID = packetID;
+
+    public SpecialOutPacket(int packetID, int packetSize) {
+        this.packetID = packetID;
     }
 }

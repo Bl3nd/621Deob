@@ -44,9 +44,9 @@ final class re
 	    int toY = (regionY << 6) + localY - BytesParser.thisPlayersRegionY;
 	    ((Player) p).cd = ((GPIPlayer) gpip).b;
 	    ((Entity) p).moveTypes[0] = hg.moveTypePerPlayer[playerID];
-	    ((Animable) p).height = ((Animable) p).h = (byte) height;
+	    ((Animable) p).height = ((Animable) p).height_ = (byte) height;
 	    if (ItemDef.b(toY, toX, 5706))
-	    	((Animable) p).h++;
+	    	((Animable) p).height_++;
 	    p.updateLocation(-3377, toX, toY);
 	    ((Player) p).Vc = false;
 	    ega.gpiPlayers[playerID] = null;
@@ -126,7 +126,7 @@ final class re
 	    return class_qb;
 	byte[] is;
 	synchronized (g) {
-	    is = g.b(tn.a(i_27_, 1023), 119, na.a(i_27_, -252896726));
+	    is = g.b(tn.a(i_27_, 1023), 119, OutputStreamSub.a(i_27_, -252896726));
 	}
 	class_qb = new Class_qb();
 	if (is != null)

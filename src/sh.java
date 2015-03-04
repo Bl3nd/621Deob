@@ -5,7 +5,7 @@
 final class sh
 {
     static int a;
-    static GameOutPacket b = new GameOutPacket(62, -1);
+    static GameOutPacket outgoingPacket62 = new GameOutPacket(62, -1);
     static int c;
     private pl d;
     static int e;
@@ -20,10 +20,10 @@ final class sh
     private lv n;
     
     public static void a(int i) {
-	b = null;
+	outgoingPacket62 = null;
 	sh.i = null;
 	if (i != 4664)
-	    b = null;
+	    outgoingPacket62 = null;
     }
     
     static final void updatePlayer(LoginStream stream, int dummy, int pos) {

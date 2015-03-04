@@ -132,12 +132,12 @@ final class fp extends Interactable
 		    } else {
 			int i_19_ = (int) ((double) G * Math.random()) + E;
 			i_19_ &= 0x3fff;
-			int i_20_ = GameInPacket.h[i_19_];
-			int i_21_ = GameInPacket.i[i_19_];
+			int i_20_ = GameInPacket.ints1[i_19_];
+			int i_21_ = GameInPacket.ints2[i_19_];
 			int i_22_ = C + (int) (Math.random() * (double) A);
 			i_22_ &= 0x1fff;
-			int i_23_ = GameInPacket.h[i_22_];
-			int i_24_ = GameInPacket.i[i_22_];
+			int i_23_ = GameInPacket.ints1[i_22_];
+			int i_24_ = GameInPacket.ints2[i_22_];
 			int i_25_ = 13;
 			i_16_ = i_23_ * i_21_ >> i_25_;
 			i_17_ = (i_24_ << 1) * -1;

@@ -2,8 +2,8 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class aba
-{
+public final class aba {
+
     private int[] a;
     private int[] b;
     int c;
@@ -15,52 +15,54 @@ final class aba
     private int i;
     private int j;
     private int k;
-    
-    final int a(int i) {
-	if (h >= g) {
-	    j = a[this.i++] << 15;
-	    if (this.i >= e)
-		this.i = e - 1;
-	    g = (int) ((double) b[this.i] / 65536.0 * (double) i);
-	    if (g > h)
-		k = ((a[this.i] << 15) - j) / (g - h);
-	}
-	j += k;
-	h++;
-	return j - k >> 15;
+
+    public final int a(int i) {
+        if (h >= g) {
+            j = a[this.i++] << 15;
+            if (this.i >= e) {
+                this.i = e - 1;
+            }
+            g = (int) ((double) b[this.i] / 65536.0 * (double) i);
+            if (g > h) {
+                k = ((a[this.i] << 15) - j) / (g - h);
+            }
+        }
+        j += k;
+        h++;
+        return j - k >> 15;
     }
-    
-    final void a() {
-	g = 0;
-	i = 0;
-	k = 0;
-	j = 0;
-	h = 0;
+
+    public final void resetValues() {
+        g = 0;
+        i = 0;
+        k = 0;
+        j = 0;
+        h = 0;
     }
-    
-    final void a(BytesParser var_es) {
-	e = var_es.readUnsignedByte(-9268);
-	b = new int[e];
-	a = new int[e];
-	for (int i = 0; i < e; i++) {
-	    b[i] = var_es.readShort(13111);
-	    a[i] = var_es.readShort(13111);
-	}
+
+    public final void a(BytesParser bytesParser) {
+        e = bytesParser.readUnsignedByte(-9268);
+        b = new int[e];
+        a = new int[e];
+        for (int i = 0; i < e; i++) {
+            b[i] = bytesParser.readShort(13111);
+            a[i] = bytesParser.readShort(13111);
+        }
     }
-    
-    final void b(BytesParser var_es) {
-	((aba) this).f = var_es.readUnsignedByte(-9268);
-	((aba) this).d = var_es.readInt(86);
-	((aba) this).c = var_es.readInt(113);
-	a(var_es);
+
+    public final void b(BytesParser bytesParser) {
+        this.f = bytesParser.readUnsignedByte(-9268);
+        this.d = bytesParser.readInt(86);
+        this.c = bytesParser.readInt(113);
+        a(bytesParser);
     }
-    
+
     public aba() {
-	b = new int[2];
-	a = new int[2];
-	b[0] = 0;
-	b[1] = 65535;
-	a[0] = 0;
-	a[1] = 65535;
+        b = new int[2];
+        a = new int[2];
+        b[0] = 0;
+        b[1] = 65535;
+        a[0] = 0;
+        a[1] = 65535;
     }
 }

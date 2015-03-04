@@ -23,15 +23,15 @@ final class ol implements aca
     static vf[][][] p;
     private ica[] q;
     
-    public final void a(byte i) {
+    public final void a(byte b) {
 	ol.i++;
-	if (i != -22)
+	if (b != -22)
 	    p = null;
     }
     
-    public final int c(byte i) {
-	b++;
-	if (i > -88)
+    public final int c(byte b) {
+	ol.b++;
+	if (b > -88)
 	    n = null;
 	return ((nh) g).a;
     }
@@ -86,19 +86,19 @@ final class ol implements aca
 	if (i != 21336)
 	    d = -0.9429004F;
 	f++;
-	if (l + (long) ((nh) g).c > us.a(121))
+	if (l + (long) ((nh) g).c > us.getCurrentTime(121))
 	    return false;
 	return true;
     }
     
-    public final void a(boolean bool, boolean bool_15_) {
-	bool_15_ = bool;
+    public final void a(boolean bool, boolean bool1) {
+	bool1 = bool;
 	e++;
 	ica[] var_icas = q;
 	for (int i = 0; i < var_icas.length; i++) {
 	    ica var_ica = var_icas[i];
 	    if (var_ica != null)
-		var_ica.a(bool_15_ || m, 6621);
+		var_ica.a(bool1 || m, 6621);
 	}
 	m = false;
     }
@@ -150,10 +150,10 @@ final class ol implements aca
 	if (bool) {
 	    int i_17_ = ((Entity) var_ni).ab - ((Entity) var_ni).xc;
 	    int i_18_ = pm.currentTimedTicks - ((Entity) var_ni).xc;
-	    int i_19_ = 512 * ((Entity) var_ni).M + var_ni.i(-1) * 256;
-	    int i_20_ = ((Entity) var_ni).fc * 512 + 256 * var_ni.i(-1);
-	    int i_21_ = 512 * ((Entity) var_ni).Yb + var_ni.i(-1) * 256;
-	    int i_22_ = ((Entity) var_ni).Db * 512 + 256 * var_ni.i(-1);
+	    int i_19_ = 512 * ((Entity) var_ni).M + var_ni.getNPCDefinition(-1) * 256;
+	    int i_20_ = ((Entity) var_ni).fc * 512 + 256 * var_ni.getNPCDefinition(-1);
+	    int i_21_ = 512 * ((Entity) var_ni).Yb + var_ni.getNPCDefinition(-1) * 256;
+	    int i_22_ = ((Entity) var_ni).Db * 512 + 256 * var_ni.getNPCDefinition(-1);
 	    ((Animable) var_ni).locX
 		= (i_19_ * (i_17_ - i_18_) + i_18_ * i_21_) / i_17_;
 	    ((Animable) var_ni).locY
@@ -179,8 +179,8 @@ final class ol implements aca
 	    q[i] = var_hm.a((byte) 94, ((nh) g).d[i]);
     }
     
-    public final int b(byte i) {
-	if (i <= 74)
+    public final int b(byte b) {
+	if (b <= 74)
 	    return -42;
 	c++;
 	int i_23_ = 0;

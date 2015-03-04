@@ -15,7 +15,7 @@ final class ei
 	if (i != -27622)
 	    e = -75L;
 	c++;
-	return aea.F.b(26262);
+	return aea.bc.b();
     }
     
     static final void a(NPC class_ac, byte i) {
@@ -106,13 +106,13 @@ final class ei
 		if (bool) {
 		    ws.G = cga.E;
 		    if (((jb) cs.g).V != 0)
-			jv.a(mq.a, cga.E, 15, 0, 2, false, ((jb) cs.g).V);
+			jv.a(mq.pl, cga.E, 15, 0, 2, false, ((jb) cs.g).V);
 		    else
 			mg.b(-124, 2);
-		    bl.I.a(127, false);
+		    bl.uaa.a(127, false);
 		} else {
 		    mg.b(-93, 2);
-		    bl.I.a(127, true);
+		    bl.uaa.a(127, true);
 		}
 	    }
 	    if (ml.a((byte) 22, i) || i == 13)

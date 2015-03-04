@@ -71,7 +71,7 @@ final class Class_is implements Runnable
 	    return true;
 	if (l == null) {
 	    try {
-		int i_3_ = hs.modeWhere == oba.K ? 80 : ((World) kfa.world).worldID + 7000;
+		int i_3_ = hs.modeWhere == oba.pk ? 80 : ((World) kfa.world).worldID + 7000;
 		l = nda.signlink.a(new URL("http://" + ((World) kfa.world).lobbyAddress + ":" + i_3_
 				    + "/news.ws?game=" + ((Class_rf) me.q).h),
 			    4851);

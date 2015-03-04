@@ -22,7 +22,7 @@ final class nh
 	b++;
 	((nh) this).a = var_es.readShort(13111);
 	((nh) this).d = new oc[var_es.readUnsignedByte(-9268)];
-	wea[] var_weas = cca.a(true);
+	wea[] var_weas = InputStreamSub_1.a(true);
 	if (i == -80) {
 	    for (int i_0_ = 0; ((nh) this).d.length > i_0_; i_0_++)
 		((nh) this).d[i_0_]

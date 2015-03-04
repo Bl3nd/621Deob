@@ -269,8 +269,8 @@ final class vaa extends da
     
     final void M(int i) {
 	Eb++;
-	int i_2_ = GameInPacket.h[i];
-	int i_3_ = GameInPacket.i[i];
+	int i_2_ = GameInPacket.ints1[i];
+	int i_3_ = GameInPacket.ints2[i];
 	for (int i_4_ = 0; qc > i_4_; i_4_++) {
 	    int i_5_ = nc[i_4_] * i_3_ + Ab[i_4_] * i_2_ >> 14;
 	    Ab[i_4_] = i_3_ * Ab[i_4_] - i_2_ * nc[i_4_] >> 14;
@@ -373,7 +373,7 @@ final class vaa extends da
 						is_16_ = ((iq) Pb).b
 						    = mca.a(0, cb);
 						is_17_ = ((iq) Pb).a
-						    = cca.a(true, kb);
+						    = InputStreamSub_1.a(true, kb);
 					    }
 					    if (is_23_ == null) {
 						iq var_iq
@@ -385,7 +385,7 @@ final class vaa extends da
 						is_21_ = ((iq) var_iq).b
 						    = mca.a(0, is_14_);
 						is_22_ = ((iq) var_iq).a
-						    = cca.a(true, is_15_);
+						    = InputStreamSub_1.a(true, is_15_);
 					    }
 					    short i_43_ = Wb[i_36_];
 					    short i_44_ = Hb[i_36_];
@@ -672,7 +672,7 @@ final class vaa extends da
 		for (int i_105_ = 0; E > i_105_; i_105_++) {
 		    ik var_ik = F[i_105_];
 		    rda var_rda = B[i_105_];
-		    if (!((ik) var_ik).j || !ib.z()) {
+		    if (!((ik) var_ik).j || !ib.bloom()) {
 			float f
 			    = 0.3333333F * (float) (nc[((ik) var_ik).p]
 						    + (nc[((ik) var_ik).g]
@@ -821,8 +821,8 @@ final class vaa extends da
 			    Xb[i_141_] -= ul.l;
 			    Ab[i_141_] -= Class_i.a;
 			    if (i_121_ != 0) {
-				int i_142_ = GameInPacket.h[i_121_];
-				int i_143_ = GameInPacket.i[i_121_];
+				int i_142_ = GameInPacket.ints1[i_121_];
+				int i_143_ = GameInPacket.ints2[i_121_];
 				int i_144_ = ((i_143_ * Xb[i_141_] + 16383
 					       - i_142_ * Ab[i_141_])
 					      >> 14);
@@ -831,8 +831,8 @@ final class vaa extends da
 				Xb[i_141_] = i_144_;
 			    }
 			    if (i_123_ != 0) {
-				int i_145_ = GameInPacket.h[i_123_];
-				int i_146_ = GameInPacket.i[i_123_];
+				int i_145_ = GameInPacket.ints1[i_123_];
+				int i_146_ = GameInPacket.ints2[i_123_];
 				int i_147_ = ((nc[i_141_] * i_146_
 					       + i_145_ * Xb[i_141_] + 16383)
 					      >> 14);
@@ -843,8 +843,8 @@ final class vaa extends da
 				nc[i_141_] = i_147_;
 			    }
 			    if (i_122_ != 0) {
-				int i_148_ = GameInPacket.h[i_122_];
-				int i_149_ = GameInPacket.i[i_122_];
+				int i_148_ = GameInPacket.ints1[i_122_];
+				int i_149_ = GameInPacket.ints2[i_122_];
 				int i_150_ = ((nc[i_141_] * i_149_
 					       + i_148_ * Ab[i_141_] + 16383)
 					      >> 14);
@@ -865,8 +865,8 @@ final class vaa extends da
 			    Xb[i_152_] -= ul.l;
 			    Ab[i_152_] -= Class_i.a;
 			    if (i_123_ != 0) {
-				int i_153_ = GameInPacket.h[i_123_];
-				int i_154_ = GameInPacket.i[i_123_];
+				int i_153_ = GameInPacket.ints1[i_123_];
+				int i_154_ = GameInPacket.ints2[i_123_];
 				int i_155_ = ((i_154_ * nc[i_152_]
 					       + (i_153_ * Xb[i_152_] + 16383))
 					      >> 14);
@@ -875,8 +875,8 @@ final class vaa extends da
 				nc[i_152_] = i_155_;
 			    }
 			    if (i_121_ != 0) {
-				int i_156_ = GameInPacket.h[i_121_];
-				int i_157_ = GameInPacket.i[i_121_];
+				int i_156_ = GameInPacket.ints1[i_121_];
+				int i_157_ = GameInPacket.ints2[i_121_];
 				int i_158_ = ((Xb[i_152_] * i_157_
 					       - Ab[i_152_] * i_156_ + 16383)
 					      >> 14);
@@ -886,8 +886,8 @@ final class vaa extends da
 				Xb[i_152_] = i_158_;
 			    }
 			    if (i_122_ != 0) {
-				int i_159_ = GameInPacket.h[i_122_];
-				int i_160_ = GameInPacket.i[i_122_];
+				int i_159_ = GameInPacket.ints1[i_122_];
+				int i_160_ = GameInPacket.ints2[i_122_];
 				int i_161_ = ((Ab[i_152_] * i_159_
 					       + i_160_ * nc[i_152_] + 16383)
 					      >> 14);
@@ -919,8 +919,8 @@ final class vaa extends da
 				if ((i_170_ ^ 0xffffffff) == 0)
 				    break;
 				if (i_123_ != 0) {
-				    int i_171_ = GameInPacket.h[i_123_];
-				    int i_172_ = GameInPacket.i[i_123_];
+				    int i_171_ = GameInPacket.ints1[i_123_];
+				    int i_172_ = GameInPacket.ints2[i_123_];
 				    int i_173_
 					= ((i_171_ * Hb[i_170_]
 					    - (-(i_172_ * Wb[i_170_]) - 16383))
@@ -933,8 +933,8 @@ final class vaa extends da
 				    Wb[i_170_] = (short) i_173_;
 				}
 				if (i_121_ != 0) {
-				    int i_174_ = GameInPacket.h[i_121_];
-				    int i_175_ = GameInPacket.i[i_121_];
+				    int i_174_ = GameInPacket.ints1[i_121_];
+				    int i_175_ = GameInPacket.ints2[i_121_];
 				    int i_176_
 					= ((Hb[i_170_] * i_175_
 					    - (i_174_ * cb[i_170_] - 16383))
@@ -947,8 +947,8 @@ final class vaa extends da
 				    Hb[i_170_] = (short) i_176_;
 				}
 				if (i_122_ != 0) {
-				    int i_177_ = GameInPacket.h[i_122_];
-				    int i_178_ = GameInPacket.i[i_122_];
+				    int i_177_ = GameInPacket.ints1[i_122_];
+				    int i_178_ = GameInPacket.ints2[i_122_];
 				    int i_179_ = ((i_177_ * cb[i_170_] + 16383
 						   + i_178_ * Wb[i_170_])
 						  >> 14);
@@ -1826,8 +1826,8 @@ final class vaa extends da
     
     final void MA(int i) {
 	Q++;
-	int i_326_ = GameInPacket.h[i];
-	int i_327_ = GameInPacket.i[i];
+	int i_326_ = GameInPacket.ints1[i];
+	int i_327_ = GameInPacket.ints2[i];
 	for (int i_328_ = 0; qc > i_328_; i_328_++) {
 	    int i_329_ = i_327_ * Xb[i_328_] - i_326_ * Ab[i_328_] >> 14;
 	    Ab[i_328_] = Xb[i_328_] * i_326_ + i_327_ * Ab[i_328_] >> 14;
@@ -1955,8 +1955,8 @@ final class vaa extends da
 		Xb[i_355_] -= ul.l;
 		Ab[i_355_] -= Class_i.a;
 		if (i_351_ != 0) {
-		    int i_356_ = GameInPacket.h[i_351_];
-		    int i_357_ = GameInPacket.i[i_351_];
+		    int i_356_ = GameInPacket.ints1[i_351_];
+		    int i_357_ = GameInPacket.ints2[i_351_];
 		    int i_358_
 			= (i_357_ * nc[i_355_] + i_356_ * Xb[i_355_] + 16383
 			   >> 14);
@@ -1966,8 +1966,8 @@ final class vaa extends da
 		    nc[i_355_] = i_358_;
 		}
 		if (i_349_ != 0) {
-		    int i_359_ = GameInPacket.h[i_349_];
-		    int i_360_ = GameInPacket.i[i_349_];
+		    int i_359_ = GameInPacket.ints1[i_349_];
+		    int i_360_ = GameInPacket.ints2[i_349_];
 		    int i_361_
 			= (Xb[i_355_] * i_360_ - i_359_ * Ab[i_355_] + 16383
 			   >> 14);
@@ -1977,8 +1977,8 @@ final class vaa extends da
 		    Xb[i_355_] = i_361_;
 		}
 		if (i_350_ != 0) {
-		    int i_362_ = GameInPacket.h[i_350_];
-		    int i_363_ = GameInPacket.i[i_350_];
+		    int i_362_ = GameInPacket.ints1[i_350_];
+		    int i_363_ = GameInPacket.ints2[i_350_];
 		    int i_364_
 			= (i_362_ * Ab[i_355_] + i_363_ * nc[i_355_] + 16383
 			   >> 14);
@@ -2130,8 +2130,8 @@ final class vaa extends da
     
     final void W(int i) {
 	qb++;
-	int i_391_ = GameInPacket.h[i];
-	int i_392_ = GameInPacket.i[i];
+	int i_391_ = GameInPacket.ints1[i];
+	int i_392_ = GameInPacket.ints2[i];
 	for (int i_393_ = 0; qc > i_393_; i_393_++) {
 	    int i_394_ = nc[i_393_] * i_392_ + Xb[i_393_] * i_391_ >> 14;
 	    Xb[i_393_] = Xb[i_393_] * i_392_ - i_391_ * nc[i_393_] >> 14;
@@ -2573,8 +2573,8 @@ final class vaa extends da
 				Xb[i_459_] -= ul.l;
 				Ab[i_459_] -= Class_i.a;
 				if (i_437_ != 0) {
-				    int i_460_ = GameInPacket.h[i_437_];
-				    int i_461_ = GameInPacket.i[i_437_];
+				    int i_460_ = GameInPacket.ints1[i_437_];
+				    int i_461_ = GameInPacket.ints2[i_437_];
 				    int i_462_
 					= ((i_461_ * nc[i_459_]
 					    + Xb[i_459_] * i_460_ + 16383)
@@ -2584,8 +2584,8 @@ final class vaa extends da
 				    nc[i_459_] = i_462_;
 				}
 				if (i_435_ != 0) {
-				    int i_463_ = GameInPacket.h[i_435_];
-				    int i_464_ = GameInPacket.i[i_435_];
+				    int i_463_ = GameInPacket.ints1[i_435_];
+				    int i_464_ = GameInPacket.ints2[i_435_];
 				    int i_465_ = ((i_464_ * Xb[i_459_] + 16383
 						   - i_463_ * Ab[i_459_])
 						  >> 14);
@@ -2595,8 +2595,8 @@ final class vaa extends da
 				    Xb[i_459_] = i_465_;
 				}
 				if (i_436_ != 0) {
-				    int i_466_ = GameInPacket.h[i_436_];
-				    int i_467_ = GameInPacket.i[i_436_];
+				    int i_466_ = GameInPacket.ints1[i_436_];
+				    int i_467_ = GameInPacket.ints2[i_436_];
 				    int i_468_
 					= ((i_466_ * Ab[i_459_]
 					    - (-(i_467_ * nc[i_459_]) - 16383))
@@ -2629,8 +2629,8 @@ final class vaa extends da
 					if (i_477_ == -1)
 					    break;
 					if (i_437_ != 0) {
-					    int i_478_ = GameInPacket.h[i_437_];
-					    int i_479_ = GameInPacket.i[i_437_];
+					    int i_478_ = GameInPacket.ints1[i_437_];
+					    int i_479_ = GameInPacket.ints2[i_437_];
 					    int i_480_ = (Hb[i_477_] * i_478_
 							  + Wb[i_477_] * i_479_
 							  + 16383) >> 14;
@@ -2643,8 +2643,8 @@ final class vaa extends da
 					    Wb[i_477_] = (short) i_480_;
 					}
 					if (i_435_ != 0) {
-					    int i_481_ = GameInPacket.h[i_435_];
-					    int i_482_ = GameInPacket.i[i_435_];
+					    int i_481_ = GameInPacket.ints1[i_435_];
+					    int i_482_ = GameInPacket.ints2[i_435_];
 					    int i_483_
 						= ((i_482_ * Hb[i_477_]
 						    + (-(i_481_ * cb[i_477_])
@@ -2659,8 +2659,8 @@ final class vaa extends da
 					    Hb[i_477_] = (short) i_483_;
 					}
 					if (i_436_ != 0) {
-					    int i_484_ = GameInPacket.h[i_436_];
-					    int i_485_ = GameInPacket.i[i_436_];
+					    int i_484_ = GameInPacket.ints1[i_436_];
+					    int i_485_ = GameInPacket.ints2[i_436_];
 					    int i_486_ = (i_485_ * Wb[i_477_]
 							  + cb[i_477_] * i_484_
 							  + 16383) >> 14;
@@ -2708,12 +2708,12 @@ final class vaa extends da
 		    ul.t = false;
 		}
 		int[] is_496_ = new int[9];
-		int i_497_ = GameInPacket.i[i_435_];
-		int i_498_ = GameInPacket.h[i_435_];
-		int i_499_ = GameInPacket.i[i_436_];
-		int i_500_ = GameInPacket.h[i_436_];
-		int i_501_ = GameInPacket.i[i_437_];
-		int i_502_ = GameInPacket.h[i_437_];
+		int i_497_ = GameInPacket.ints2[i_435_];
+		int i_498_ = GameInPacket.ints1[i_435_];
+		int i_499_ = GameInPacket.ints2[i_436_];
+		int i_500_ = GameInPacket.ints1[i_436_];
+		int i_501_ = GameInPacket.ints2[i_437_];
+		int i_502_ = GameInPacket.ints1[i_437_];
 		int i_503_ = i_501_ * i_498_ + 8192 >> 14;
 		int i_504_ = i_498_ * i_502_ + 8192 >> 14;
 		is_496_[7] = i_502_ * i_500_ + (i_503_ * i_499_ + 8192) >> 14;
@@ -3094,8 +3094,8 @@ final class vaa extends da
     
     final void fa(int i) {
 	ic++;
-	int i_607_ = GameInPacket.h[i];
-	int i_608_ = GameInPacket.i[i];
+	int i_607_ = GameInPacket.ints1[i];
+	int i_608_ = GameInPacket.ints2[i];
 	for (int i_609_ = 0; qc > i_609_; i_609_++) {
 	    int i_610_ = Ab[i_609_] * i_607_ + i_608_ * nc[i_609_] >> 14;
 	    Ab[i_609_] = Ab[i_609_] * i_608_ - i_607_ * nc[i_609_] >> 14;
@@ -4081,19 +4081,19 @@ final class vaa extends da
 				 ((eg) var_eg).W[i_748_], f_759_, i_751_,
 				 f_756_, i_752_, fs_754_);
 			    f = dda.j;
-			    f_739_ = na.f;
+			    f_739_ = OutputStreamSub.f;
 			    rm.a(i_746_, i_753_, ((eg) var_eg).R[i_749_],
 				 i_755_, f_760_, ((eg) var_eg).o[i_749_], -59,
 				 ((eg) var_eg).W[i_749_], f_759_, i_751_,
 				 f_756_, i_752_, fs_754_);
-			    f_741_ = na.f;
+			    f_741_ = OutputStreamSub.f;
 			    f_740_ = dda.j;
 			    rm.a(i_746_, i_753_, ((eg) var_eg).R[i_750_],
 				 i_755_, f_760_, ((eg) var_eg).o[i_750_], 97,
 				 ((eg) var_eg).W[i_750_], f_759_, i_751_,
 				 f_756_, i_752_, fs_754_);
 			    f_742_ = dda.j;
-			    f_743_ = na.f;
+			    f_743_ = OutputStreamSub.f;
 			} else if (i_747_ == 3) {
 			    gk.a(fs_754_, i_751_, ((eg) var_eg).R[i_748_],
 				 ((eg) var_eg).o[i_748_], i_755_, f_756_,

@@ -42,7 +42,7 @@ abstract class dfa extends Animable
     final int a(gga[] var_ggas, int i) {
 	int i_0_ = -19 % ((i + 87) / 32);
 	w++;
-	return this.a((byte) 66, var_ggas, ((Animable) this).locX >> Class_fb.a,
+	return this.a(var_ggas, ((Animable) this).locX >> Class_fb.a,
 		      ((Animable) this).locY >> Class_fb.a);
     }
     
@@ -52,14 +52,14 @@ abstract class dfa extends Animable
 	((Animable) this).locX = i;
 	((Animable) this).locY = i_2_;
 	((Animable) this).height = (byte) i_3_;
-	((Animable) this).h = (byte) i_4_;
+	((Animable) this).height_ = (byte) i_4_;
     }
     
     final boolean f(byte i) {
 	if (i <= 111)
 	    i((byte) -40);
 	A++;
-	return vk.a(((Animable) this).h, ((Animable) this).locX >> Class_fb.a, -1,
+	return vk.a(((Animable) this).height_, ((Animable) this).locX >> Class_fb.a, -1,
 		    ((Animable) this).locY >> Class_fb.a);
     }
     

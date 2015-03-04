@@ -112,9 +112,9 @@ final class vt
 	    int i_0_ = ((Animable) var_ni).locX;
 	    int i_1_ = ((Animable) var_ni).locY;
 	    int i_2_ = (512 * ((Entity) var_ni).regionLocalX[((Entity) var_ni).Nc - 1]
-			+ 256 * var_ni.i(i ^ ~0x4e));
+			+ 256 * var_ni.getNPCDefinition(i ^ ~0x4e));
 	    int i_3_ = (512 * ((Entity) var_ni).regionLocalY[((Entity) var_ni).Nc - 1]
-			+ 256 * var_ni.i(i - 79));
+			+ 256 * var_ni.getNPCDefinition(i - 79));
 	    if (i_0_ >= i_2_) {
 		if (i_2_ < i_0_) {
 		    if (i_3_ <= i_1_) {

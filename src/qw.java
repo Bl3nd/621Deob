@@ -118,9 +118,9 @@ final class qw extends uc
 	    else {
 		if (em.e != 0)
 		    Class_rf.a(true, lg.r, true, Class_nd.o, pm.v,
-			       GameText.loadingPleaseWait.getString((byte) -88, cba.languageID) + "<br>(100%)");
+			       GameText.loadingPleaseWait.getString(cba.languageID) + "<br>(100%)");
 		naa.d((byte) 76);
-		um.a(0);
+		um.resetCache(0);
 		boolean bool_7_ = false;
 		if (lg.r.e() && ((jb) cs.g).L) {
 		    for (int i_8_ = 0; pw.b.length > i_8_; i_8_++) {
@@ -137,9 +137,9 @@ final class qw extends uc
 		    i_9_ = Class_fc.h[ri.u];
 		if (lg.r.o())
 		    i_9_++;
-		sm.a(lg.r, gd.d, 9, 4, Class_hc.e, bw.v, i_9_, bool_7_,
+		sm.a(lg.r, gd.cores, 9, 4, Class_hc.e, bw.v, i_9_, bool_7_,
 		     lg.r.c() > 0);
-		if (!la.u)
+		if (!la.w2Debug)
 		    bf.a((la) null);
 		else
 		    bf.a(bq.e);
@@ -157,11 +157,11 @@ final class qw extends uc
 		Interface.pd = cs.g.b(on.performance, i ^ ~0x7a);
 		qaa.O = ((jb) cs.g).L;
 		av.j = qm.heapSize >= 96;
-		iv.y = cs.g.a((int) -51, on.performance);
-		ha.v = !((jb) cs.g).B;
+		iv.y = cs.g.isLighting((int) -51, on.performance);
+		ha.v = !((jb) cs.g).isOT;
 		or.e = !cs.g.e(on.performance, i + 95) ? qca.E : -1;
-		dh.d = vea.a(5, on.performance) || ((jb) cs.g).Q;
-		pea.d = ((jb) cs.g).k;
+		dh.d = vea.a(5, on.performance) || ((jb) cs.g).isGB;
+		pea.d = ((jb) cs.g).isTextures;
 		gba.E = new gl(4, Class_hc.e, bw.v, false);
 		if (vn.J != 0)
 		    ul.a((byte) 111, pw.b, gba.E);
@@ -193,9 +193,9 @@ final class qw extends uc
 		    rv.a(-1, true);
 		    ld.a(-111, gba.E, lca.D);
 		}
-		um.a(i ^ 0x4);
+		um.resetCache(i ^ 0x4);
 		if (qm.heapSize < 96)
-		    he.c((byte) 88);
+		    he.cleanup((byte) 88);
 		rv.a(-1, true);
 		gba.E.a(!bool_7_ ? null : wr.D[0], null, -23, lg.r);
 		gba.E.a(false, (byte) 45, lg.r);
@@ -207,7 +207,7 @@ final class qw extends uc
 			ld.a(124, Class_fd.r, kaa.q);
 		    else
 			qe.a(kaa.q, Class_fd.r, (byte) 50);
-		    um.a(i ^ 0x4);
+		    um.resetCache(i ^ 0x4);
 		    rv.a(-1, true);
 		    Class_fd.r.a(null, vr.b[0], i + 100, lg.r);
 		    Class_fd.r.a(true, (byte) 45, lg.r);
@@ -233,7 +233,7 @@ final class qw extends uc
 		kl.b(-110);
 		naa.d((byte) 76);
 		tm.c(-1);
-		um.a(i ^ i);
+		um.resetCache(i ^ i);
 		ida.b(false);
 		if (ws.J != null && ce.y != null && hm.h == 11) {
 		    vu.f++;
@@ -262,7 +262,7 @@ final class qw extends uc
 		else if (hm.h != 8) {
 		    ei.a(10, -119);
 		    if (ce.y != null) {
-			tba var_tba = jga.sendGameOutPacket(ak.o, pca.isaac, (byte) -69);
+			tba var_tba = jga.sendGameOutPacket(ak.outgoingPacket48, pca.isaac, (byte) -69);
 			ud.a(var_tba, (byte) -36);
 		    }
 		} else
@@ -271,7 +271,7 @@ final class qw extends uc
 		naa.d((byte) 76);
 		te.a(true);
 		if (dp.m) {
-		    ia.a(4, "Took: " + (us.a(i ^ 0x6a) - ft.t) + "ms");
+		    ia.sendConsoleCommandText(4, "Took: " + (us.getCurrentTime(i ^ 0x6a) - ft.currentTime) + "ms");
 		    dp.m = false;
 		}
 	    }

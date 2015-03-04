@@ -77,7 +77,7 @@ abstract class Class_r
     
     abstract void j();
     
-    abstract void a(boolean bool);
+    abstract void renderProfile(boolean profile);
     
     final void b(int i, int i_37_, int i_38_, int i_39_, int i_40_,
 		 int i_41_) {
@@ -136,11 +136,11 @@ abstract class Class_r
 	if (i_67_ == 1)
 	    return pg.a(i, canvas, var_fa, 191);
 	if (i_67_ == 5)
-	    return aa.a(var_fa, canvas, i, (byte) -94, var_pl);
+	    return Node_Sub.a(var_fa, canvas, i, (byte) -94, var_pl);
 	if (i_68_ != -19464)
 	    bigInterfaceConfigGameInPacket = null;
 	if (i_67_ == 3)
-	    return aq.a(-110, var_pl, canvas, var_fa, i);
+	    return aq.createToolkit(var_pl, canvas, var_fa, i);
 	throw new IllegalArgumentException("UM");
     }
     
@@ -193,7 +193,7 @@ abstract class Class_r
     
     abstract void q();
     
-    abstract void b(int i);
+    abstract void getTexSize(int size);
     
     abstract boolean r();
     
@@ -254,7 +254,7 @@ abstract class Class_r
     
     abstract GraphicsCard y();
     
-    abstract boolean z();
+    abstract boolean bloom();
     
     abstract void g(int i);
     
@@ -298,7 +298,7 @@ abstract class Class_r
 	Class_eb.q = 1;
 	lr.j = 0;
 	tfa.u = 0;
-	jp.s = -3;
+	RSKeyListener.s = -3;
     }
     
     abstract void VA(int i, float f, float f_138_, float f_139_, float f_140_,

@@ -4,13 +4,13 @@
 
 final class Class_ag
 {
-    int a;
+    int y;
     private int b;
     qn c;
     static int d;
     static int e;
     static int f;
-    int g;
+    int x;
     static lea h = new lea();
     static maa i = new maa();
     static GameOutPacket j;
@@ -32,8 +32,8 @@ final class Class_ag
 	if (i_2_ == 1)
 	    b = var_es.readShort(13111);
 	else if (i_2_ == 2) {
-	    ((Class_ag) this).g = var_es.readUnsignedByte(-9268);
-	    ((Class_ag) this).a = var_es.readUnsignedByte(-9268);
+	    ((Class_ag) this).x = var_es.readUnsignedByte(-9268);
+	    ((Class_ag) this).y = var_es.readUnsignedByte(-9268);
 	}
 	if (i >= -67)
 	    j = null;

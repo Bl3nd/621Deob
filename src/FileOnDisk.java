@@ -6,42 +6,38 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
+@SuppressWarnings("ALL")
 public final class FileOnDisk {
 	
 	private File file;
-	static int getFiles;
-	static int writes;
-	static int d;
-	static int reads;
-	static int getLengths;
+    public static int getFiles;
+    public static int writes;
+    public static int d;
+    public static int reads;
+    public static int getLengths;
 	private RandomAccessFile raf;
-	static int h;
+    public static int h;
 	private long pos;
-	static int seeks;
-	static int k;
-	static int closes;
-	static int finalizes;
+    public static int seeks;
+    public static int k;
+    public static int closes;
+    public static int finalizes;
 	private long length;
 
-	public final void close(byte b) throws IOException {
-		if (b < -126) {
-			if (raf != null) {
-				raf.close();
-				raf = null;
-			}
-			closes++;
+	public final void close() throws IOException {
+		if (raf != null) {
+			raf.close();
+			raf = null;
 		}
+		closes++;
 	}
 
-	public final long getLength(int i) throws IOException {
-		if (i != 0) {
-			file = null;
-		}
+	public final long getLength() throws IOException {
 		getLengths++;
 		return raf.length();
 	}
 
-	public final void write(int offset, byte dummy, int lengthToWrite, byte[] data) throws IOException {
+	public final void write(int offset, int lengthToWrite, byte[] data) throws IOException {
 		writes++;
 		if (length < (long) lengthToWrite + this.pos) {
 			raf.seek(length);
@@ -52,11 +48,8 @@ public final class FileOnDisk {
 		this.pos += (long) lengthToWrite;
 	}
 
-	public final File getFile(byte b) {
+	public final File getFile() {
 		getFiles++;
-		if (b >= -112) {
-			return null;
-		}
 		return file;
 	}
 
@@ -65,23 +58,20 @@ public final class FileOnDisk {
 		finalizes++;
 		if (raf != null) {
 			System.out.println("Warning! fileondisk " + file + " not closed correctly using close(). Auto-closing instead. ");
-			close((byte) -128);
+			close();
 		}
 	}
 
-	public final int read(int offset, byte[] buf, int length, int i) throws IOException {
+	public final int read(int offset, byte[] buf, int length) throws IOException {
 		reads++;
 		int data = raf.read(buf, offset, length);
-		if (i != 3) {
-			raf = null;
-		}
 		if (data > 0) {
 			this.pos += (long) data;
 		}
 		return data;
 	}
 
-	public static void c(byte b) {
+	public static void c() {
 		for (int index = 0; index < 5; index++) {
 			Class_ug.W[index] = false;
 		}
@@ -91,26 +81,17 @@ public final class FileOnDisk {
 		li.z = 0;
 		mg.t = -1;
 		ll.x = 1;
-		if (b != -110) {
-			a(-94, -127, (byte) -72);
-		}
 		hp.z = 0;
 	}
 
-	public final void seek(long pos, int i) throws IOException {
+	public final void seek(long pos) throws IOException {
 		seeks++;
 		raf.seek(pos);
 		this.pos = pos;
-		if (i != -1) {
-			a(-31, -89, (byte) 71);
-		}
 	}
 
-	public static int a(int i, int j, byte b) {
+	public static int a(int i, int j) {
 		h++;
-		if (b > -126) {
-			k = -72;
-		}
 		if (j == 1 || j == 3) {
 			return wk.j[0x3 & i];
 		}
@@ -128,10 +109,10 @@ public final class FileOnDisk {
 		this.pos = 0L;
 		length = len;
 		this.file = file;
-		int i = raf.read();
-		if ((~i) != 0 && !string.equals("r")) {
+		int whatToWrite = raf.read();
+		if ((~whatToWrite) != 0 && !string.equals("r")) {
 			raf.seek(0L);
-			raf.write(i);
+			raf.write(whatToWrite);
 		}
 		raf.seek(0L);
 	}

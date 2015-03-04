@@ -24,12 +24,12 @@ final class lk extends Node
 	int i_3_ = (i_1_ & 0xfffcd27) >> 14;
 	((Entity) var_qi).regionLocalX[0] = i_3_ - bfa.thisPlayersRegionX;
 	int i_4_ = 0x3fff & i_1_;
-	((Animable) var_qi).locX = (((Entity) var_qi).regionLocalX[0] << 9) + (var_qi.i(-1) << 8);
+	((Animable) var_qi).locX = (((Entity) var_qi).regionLocalX[0] << 9) + (var_qi.getNPCDefinition(-1) << 8);
 	((Entity) var_qi).regionLocalY[i] = i_4_ - BytesParser.thisPlayersRegionY;
-	((Animable) var_qi).locY = (((Entity) var_qi).regionLocalY[0] << 9) + (var_qi.i(-1) << 8);
-	vo.clientHeight = ((Animable) var_qi).height = ((Animable) var_qi).h = i_2_;
+	((Animable) var_qi).locY = (((Entity) var_qi).regionLocalY[0] << 9) + (var_qi.getNPCDefinition(-1) << 8);
+	vo.clientHeight = ((Animable) var_qi).height = ((Animable) var_qi).height_ = i_2_;
 	if (ItemDef.b(((Entity) var_qi).regionLocalY[0], ((Entity) var_qi).regionLocalX[0], 5706))
-	    ((Animable) var_qi).h++;
+	    ((Animable) var_qi).height_++;
 	if (vo.J[i_0_] != null)
 	    var_qi.playerAppearanceUpdate(-1, vo.J[i_0_]);
 	oca.inScreenPlayers = 0;

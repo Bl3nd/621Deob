@@ -56,16 +56,16 @@ final class lg extends Node {
         B++;
         if (i == -4) {
             if (r != null) {
-                oea.fb.b(i + 132);
+                oea.fb.clearTextCoords(i + 132);
                 li.a();
-                Entity.c((byte) -79);
+                Entity.rebuildMap((byte) -79);
                 ir.b(17381);
                 bfa.a((byte) -103);
                 ss.a(true);
                 if (Connection.tw != null)
                     Connection.tw.a((byte) 112);
                 ci.a(-37);
-                um.a(i ^ ~0x3);
+                um.resetCache(i ^ ~0x3);
                 of.a((int) -67);
                 lq.i((byte) 23);
                 lba.b(98, false);

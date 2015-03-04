@@ -3,11 +3,11 @@
  */
 package jaclib.peer;
 
-class IUnknownReference extends PeerReference
-{
-    protected final native long releasePeer(long l);
-    
-    IUnknownReference(IUnknown iunknown, am var_am) {
-	super((Peer) iunknown, var_am);
+class IUnknownReference extends PeerReference {
+
+    protected final native long releasePeer(long peer);
+
+    public IUnknownReference(IUnknown iunknown, am am) {
+        super(iunknown, am);
     }
 }

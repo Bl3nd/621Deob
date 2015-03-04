@@ -155,7 +155,7 @@ final class ss
 				int i_22_ = var_es.readInt(68);
 				Node class_d;
 				if (i_19_ == 5)
-				    class_d = new aa(var_es.readString((byte) 119));
+				    class_d = new Node_Sub(var_es.readString((byte) 119));
 				else
 				    class_d = new GameInPacketHandler(var_es.readInt(57));
 				((ss) this).e.a(class_d, (byte) -60,
@@ -178,11 +178,11 @@ final class ss
     private final void a(byte i) {
 	r = new il(((ss) this).e.c((int) -1));
 	g++;
-	aa var_aa = (aa) ((ss) this).e.b((byte) 124);
+	Node_Sub var_aa = (Node_Sub) ((ss) this).e.b((byte) 124);
 	int i_23_ = -65 % ((-21 - i) / 53);
-	for (/**/; var_aa != null; var_aa = (aa) ((ss) this).e.b(12561)) {
-	    gca var_gca = new gca(((aa) var_aa).m, (int) ((Node) var_aa).nodeID);
-	    r.a(var_gca, (byte) -60, ar.b((byte) -120, ((aa) var_aa).m));
+	for (/**/; var_aa != null; var_aa = (Node_Sub) ((ss) this).e.b(12561)) {
+	    gca var_gca = new gca(((Node_Sub) var_aa).m, (int) ((Node) var_aa).nodeID);
+	    r.a(var_gca, (byte) -60, ar.b((byte) -120, ((Node_Sub) var_aa).m));
 	}
     }
     
@@ -273,7 +273,7 @@ final class ss
 	    c = null;
 	int i_62_ = 2055;
 	if (var_da == null) {
-	    eg var_eg = efa.a(i, av.l, 0, false);
+	    eg var_eg = efa.a(i, av.pl1, 0, false);
 	    if (var_eg == null)
 		return null;
 	    if (((eg) var_eg).bb < 13)
@@ -361,10 +361,10 @@ final class ss
 	t++;
 	if (((ss) this).e == null)
 	    return l;
-	aa var_aa = (aa) ((ss) this).e.a(-32748, (long) i_67_);
+	Node_Sub var_aa = (Node_Sub) ((ss) this).e.a(-32748, (long) i_67_);
 	if (var_aa == null)
 	    return l;
-	return ((aa) var_aa).m;
+	return ((Node_Sub) var_aa).m;
     }
     
     public ss() {

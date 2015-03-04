@@ -56,7 +56,7 @@ final class Class_nb extends Node
 	    a('\037', true);
 	for (int i_10_ = i_5_; i_10_ <= i; i_10_++) {
 	    for (int i_11_ = i_6_; i_8_ >= i_11_; i_11_++) {
-		if (i_7_ == gi.k[i_10_][i_11_] && GameInPacket.c[i_10_][i_11_] <= 1)
+		if (i_7_ == gi.k[i_10_][i_11_] && GameInPacket.ints[i_10_][i_11_] <= 1)
 		    return true;
 	    }
 	}
@@ -122,7 +122,7 @@ final class Class_nb extends Node
     static final ah a(int i, Signlink var_rj, int i_27_, Component component,
 		      int i_28_) {
 	p++;
-	if (gba.G == 0)
+	if (gba.samplesPerSec == 0)
 	    throw new IllegalStateException();
 	if (i_28_ < 0 || i_28_ >= 2)
 	    throw new IllegalArgumentException();
@@ -134,7 +134,7 @@ final class Class_nb extends Node
 	    ah var_ah = (ah) Class.forName("o").newInstance();
 	    ((ah) var_ah).A = i_27_;
 	    ((ah) var_ah).k = new int[(wq.p ? 2 : 1) * 256];
-	    var_ah.a(component);
+	    var_ah.getComponent(component);
 	    ((ah) var_ah).B = (~0x3ff & i_27_) + 1024;
 	    if (((ah) var_ah).B > 16384)
 		((ah) var_ah).B = 16384;
@@ -155,7 +155,7 @@ final class Class_nb extends Node
 		be var_be = new be(var_rj, i_28_);
 		((ah) var_be).A = i_27_;
 		((ah) var_be).k = new int[(wq.p ? 2 : 1) * 256];
-		var_be.a(component);
+		var_be.getComponent(component);
 		((ah) var_be).B = 16384;
 		var_be.d(((ah) var_be).B);
 		if (pi.k > 0 && av.m == null) {

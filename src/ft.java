@@ -4,8 +4,8 @@
 
 abstract class ft extends pp
 {
-    static wl s = new wl("LIVE", 0);
-    static long t;
+    static wl LIVE = new wl("LIVE", 0);
+    static long currentTime;
     boolean u;
     static int[] v = new int[1];
     boolean w;
@@ -15,9 +15,9 @@ abstract class ft extends pp
     
     public static void c(byte i) {
 	if (i != -93)
-	    t = -100L;
+	    currentTime = -100L;
 	v = null;
-	s = null;
+	LIVE = null;
     }
     
     abstract byte[] d(byte i);

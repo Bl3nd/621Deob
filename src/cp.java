@@ -96,7 +96,7 @@ final class cp
 		    }
 		    vr.b[i_19_].a(0, 0, 1024, i_15_, i_16_, i_17_, i_18_,
 				  bools);
-		    if (!Class_qb.k) {
+		    if (!Class_qb.showColMap) {
 			for (int i_22_ = -4; i_22_ < ak.r; i_22_++) {
 			    for (int i_23_ = -4; i_23_ < ak.r; i_23_++) {
 				int i_24_ = i_11_ + i_22_;
@@ -117,7 +117,7 @@ final class cp
 			}
 		    }
 		}
-		if (Class_qb.k) {
+		if (Class_qb.showColMap) {
 		    wd var_wd = su.a[i];
 		    for (int i_27_ = 0; ak.r > i_27_; i_27_++) {
 			for (int i_28_ = 0; i_28_ < ak.r; i_28_++) {
@@ -164,7 +164,7 @@ final class cp
 	fda.a(0);
 	on.j = 0;
 	ok.x.d(i_0_ - 102);
-	if (!Class_qb.k) {
+	if (!Class_qb.showColMap) {
 	    for (int i_32_ = i_1_; i_1_ + 104 > i_32_; i_32_++) {
 		for (int i_33_ = i_2_; i_2_ + 104 > i_33_; i_33_++) {
 		    for (int i_34_ = i; i + 1 >= i_34_ && i_34_ <= 3;

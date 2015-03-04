@@ -5,10 +5,10 @@ package jagdx;
 import jaclib.peer.IUnknown;
 import jaclib.peer.am;
 
-public class IDirect3DEventQuery extends IUnknown
-{
-    IDirect3DEventQuery(am var_am) {
-	super(var_am);
+public class IDirect3DEventQuery extends IUnknown {
+
+    IDirect3DEventQuery(am am) {
+	super(am);
     }
     
     public final native int Issue();

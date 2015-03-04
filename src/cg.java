@@ -100,8 +100,8 @@ final class cg
 		int i_17_ = is[i_15_];
 		for (int i_18_ = 0; i_18_ < i_11_; i_18_++) {
 		    int i_19_ = (i_18_ << 14) / i_11_;
-		    int i_20_ = GameInPacket.h[i_19_] * i_16_ >> 14;
-		    int i_21_ = GameInPacket.i[i_19_] * i_17_ >> 14;
+		    int i_20_ = GameInPacket.ints1[i_19_] * i_16_ >> 14;
+		    int i_21_ = GameInPacket.ints2[i_19_] * i_17_ >> 14;
 		    is_14_[i_15_][i_18_] = var_eg.a(i_20_, i_21_, 0, -21519);
 		}
 	    }

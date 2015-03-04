@@ -24,7 +24,7 @@ final class bq
 	    Class_i.l = ((Class_mc) class_mc).j;
 	    bl.k = ((Class_mc) class_mc).g;
 	}
-	at.f((byte) -38);
+	at.f();
 	if (bool != false)
 	    j = null;
     }
@@ -74,13 +74,13 @@ final class bq
 	daa.ab = Class_nb.a(12869, nda.signlink, 22050, ru.canvas, 0);
 	if (i > -76)
 	    a(-32, -104, 9, 2, (byte) 90);
-	daa.ab.a(Connection.dt, (byte) 88);
+	daa.ab.setPn(Connection.dt, (byte) 88);
 	kba.a(Connection.dt, sr.S, ii.b, jt.e, -92);
 	pt.g = Class_nb.a(12869, nda.signlink, 2048, ru.canvas, 1);
 	ej.r = new ch();
-	pt.g.a(ej.r, (byte) 88);
-	kfa.o = new ui(22050, gba.G);
-	cga.E = mq.a.a("scape main", (int) -62);
+	pt.g.setPn(ej.r, (byte) 88);
+	kfa.o = new ui(22050, gba.samplesPerSec);
+	cga.E = mq.pl.a("scape main", (int) -62);
     }
     
     public static void a(int i) {

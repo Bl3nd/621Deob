@@ -13,7 +13,7 @@ final class ek
     static int g;
     static int h;
     boolean i = false;
-    static GameOutPacket j = new GameOutPacket(64, 6);
+    static GameOutPacket outgoingPacket64 = new GameOutPacket(64, 6);
     static int k;
     static pl l;
     static int m;
@@ -79,7 +79,7 @@ final class ek
 	l = null;
 	clientScriptGameInPacket = null;
 	w = null;
-	j = null;
+	outgoingPacket64 = null;
     }
     
     final void b(int i) {
@@ -117,7 +117,7 @@ final class ek
 	synchronized (((ek) this).v) {
 	    ((ek) this).v.c((byte) 66);
 	    if (i < 82)
-		j = null;
+		outgoingPacket64 = null;
 	}
 	synchronized (((ek) this).x) {
 	    ((ek) this).x.c((byte) 76);

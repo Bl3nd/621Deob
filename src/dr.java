@@ -182,7 +182,7 @@ final class dr {
         i_38_ &= 0xffff;
         if (var_wa_39_ == null)
             return i_36_;
-        if ((((dr) this).z || vm.r) && (i_34_ ^ 0xffffffff) != 0
+        if ((((dr) this).z || vm.isTweening) && (i_34_ ^ 0xffffffff) != 0
                 && ((dr) this).p.length > i_34_) {
             i_37_ = ((dr) this).p[i_34_];
             var_wa = ((dr) this).r.b(i_37_ >> 16, 57);
@@ -222,7 +222,7 @@ final class dr {
                     }
                 }
             }
-            if ((((dr) this).z || vm.r) && i_34_ != -1 && i_34_ < E.length) {
+            if ((((dr) this).z || vm.isTweening) && i_34_ != -1 && i_34_ < E.length) {
                 int i_42_ = E[i_34_];
                 if (i_42_ != 65535) {
                     wa var_wa_43_ = ((dr) this).r.b(i_42_ >> 16, i ^ ~0x45b);
@@ -329,7 +329,7 @@ final class dr {
         wa var_wa_64_ = null;
         if (i_59_ <= 91)
             return null;
-        if ((((dr) this).z || vm.r) && i_61_ != -1
+        if ((((dr) this).z || vm.isTweening) && i_61_ != -1
                 && i_61_ < ((dr) this).p.length) {
             i_61_ = ((dr) this).p[i_61_];
             var_wa_64_ = ((dr) this).r.b(i_61_ >> 16, -123);
@@ -347,7 +347,7 @@ final class dr {
                     i_67_ &= 0xffff;
                 }
             }
-            if ((((dr) this).z || vm.r) && i_61_ != -1 && i_61_ < E.length) {
+            if ((((dr) this).z || vm.isTweening) && i_61_ != -1 && i_61_ < E.length) {
                 i_68_ = E[i_61_];
                 if (i_68_ != 65535) {
                     var_wa_66_ = ((dr) this).r.b(i_68_ >> 16, 58);
@@ -417,7 +417,7 @@ final class dr {
         if (var_wa == null)
             return var_da.a(i, i_72_, true);
         wa var_wa_79_ = null;
-        if ((((dr) this).z || vm.r) && i_77_ != -1
+        if ((((dr) this).z || vm.isTweening) && i_77_ != -1
                 && i_77_ < ((dr) this).p.length) {
             i_77_ = ((dr) this).p[i_77_];
             var_wa_79_ = ((dr) this).r.b(i_77_ >> 16, -101);

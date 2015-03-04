@@ -3,13 +3,14 @@
  */
 import java.io.IOException;
 
+@SuppressWarnings("ALL")
 public final class GameInPacketHandler extends Node {
 
-	int k;
-	static int parseIncomingPackets;
-	static baa m = new baa(13, 0, 1, 0);
-	static int[] var_n = new int[4];
-	static int o;
+    public int k;
+    public static int parseIncomingPackets;
+    public static baa baa = new baa(13, 0, 1, 0);
+    public static int[] var_n = new int[4];
+    public static int isKeyTyped;
 
 	public static boolean parseIncomingPackets(int i) throws IOException {
 		GameInPacketHandler.parseIncomingPackets++;
@@ -75,7 +76,7 @@ public final class GameInPacketHandler extends Node {
 			gv.a = 0;
 			ga.J += ck.currentGameInPacketSize;
 		}
-		jt.c = ClientScript.gameInPacket;
+		jt.incomingPacket = ClientScript.gameInPacket;
 		ClientScript.gameInPacket = ng.u;
 		ng.u = sw.currentGameInPacket;
 
@@ -373,7 +374,7 @@ public final class GameInPacketHandler extends Node {
             System.out.println("[GameInPacketHandler] Incoming Packet 53.");
 			int j = faa.loginStream.readShort(i ^ ~0x3337);
 			if (Class_cb.interfacePacketCounterCheck(j, 65535)) {
-                FileOnDisk.c((byte) -110);
+                FileOnDisk.c();
             }
 			sw.currentGameInPacket = null;
 			return true;
@@ -1021,11 +1022,11 @@ public final class GameInPacketHandler extends Node {
 			int k = faa.loginStream.readShort(13111);
 			int i1 = faa.loginStream.readShort(13111);
 			int j1 = faa.loginStream.readShort(i + 13112);
-			if (Class_cb.interfacePacketCounterCheck(j, i ^ ~0xffff) && aa.o[k] != null) {
+			if (Class_cb.interfacePacketCounterCheck(j, i ^ ~0xffff) && Node_Sub.o[k] != null) {
 				for (int k1 = i1; k1 < j1; k1++) {
 					int i2 = faa.loginStream.readTribyte(-1);
-					if (aa.o[k].length > k1 && aa.o[k][k1] != null) {
-                        aa.o[k][k1].bc = i2;
+					if (Node_Sub.o[k].length > k1 && Node_Sub.o[k][k1] != null) {
+                        Node_Sub.o[k][k1].bc = i2;
                     }
 				}
 			}
@@ -1283,7 +1284,7 @@ public final class GameInPacketHandler extends Node {
 			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
 				for (int j1 = id; id_ >= j1; j1++) {
 					long l = (long) j1 + ((long) k << 32);
-					nm nm = (nm) aea.E.a(-32748, l);
+					nm nm = (nm) aea.il.a(-32748, l);
 					nm nm1;
 					if (nm != null) {
 						nm1 = new nm(nm.l, interfaceId);
@@ -1293,7 +1294,7 @@ public final class GameInPacketHandler extends Node {
                     } else {
                         nm1 = new nm(efa.a(-1018745488, k).qd.l, interfaceId);
                     }
-					aea.E.a(nm1, (byte) -87, l);
+					aea.il.a(nm1, (byte) -87, l);
 				}
 			}
 			sw.currentGameInPacket = null;
@@ -1536,7 +1537,7 @@ public final class GameInPacketHandler extends Node {
 			}
 			String string2 = faa.loginStream.readString((byte) 123);
 			if (j == 99) {
-                ia.a(4, string2);
+                ia.sendConsoleCommandText(4, string2);
             } else {
 				if (!string1.equals("") && qf.a(string1, -117)) {
 					sw.currentGameInPacket = null;
@@ -1567,7 +1568,7 @@ public final class GameInPacketHandler extends Node {
 			if (Class_cb.interfacePacketCounterCheck(interfacePacketCounter, 65535)) {
 				for (int loopID = beginOffset; loopID <= endOffset; loopID++) {
 					long l = ((long) interfaceHash << 32) + (long) loopID;
-					nm nm = (nm) aea.E.a(i - 32747, l);
+					nm nm = (nm) aea.il.a(i - 32747, l);
 					nm nm1;
 					if (nm == null) {
 						if ((~loopID) != 0) {
@@ -1579,7 +1580,7 @@ public final class GameInPacketHandler extends Node {
 						nm1 = new nm(settingsHash, nm.q);
 						nm.unlink(-123);
 					}
-					aea.E.a(nm1, (byte) -56, l);
+					aea.il.a(nm1, (byte) -56, l);
 				}
 			}
 			sw.currentGameInPacket = null;
@@ -1740,8 +1741,7 @@ public final class GameInPacketHandler extends Node {
          */
 		if (sw.currentGameInPacket == Player.incomingPacket78) {
             System.out.println("[GameInPacketHandler] Incoming Packet 78.");
-			lw.e = ck.currentGameInPacketSize <= 2 ? GameText.walkHereText.getString((byte) -58,
-                    cba.languageID) : faa.loginStream.readString((byte) 127);
+			lw.e = ck.currentGameInPacketSize <= 2 ? GameText.walkHereText.getString(cba.languageID) : faa.loginStream.readString((byte) 127);
 			it.K = ck.currentGameInPacketSize <= 0 ? -1 : faa.loginStream.readShort(13111);
 			sw.currentGameInPacket = null;
 			if (it.K == 65535) {
@@ -1753,7 +1753,7 @@ public final class GameInPacketHandler extends Node {
         /**
          * Incoming Packet 113.
          */
-		if (aa.incomingPacket113 == sw.currentGameInPacket) {
+		if (Node_Sub.incomingPacket113 == sw.currentGameInPacket) {
             System.out.println("[GameInPacketHandler] Incoming Packet 113.");
 			qaa.T = faa.loginStream.readUnsignedByte(-9268);
 			sw.currentGameInPacket = null;
@@ -1857,14 +1857,14 @@ public final class GameInPacketHandler extends Node {
                     }
 					if (k != 2) {
 						if (k != 1) {
-                            at.a(player.hd, string, j1, 0, i1, player.a(false, (byte) -7), null, (byte) 109,
+                            at.a(player.playerName, string, j1, 0, i1, player.getDisplayName(false, (byte) -7), null, (byte) 109,
                                     player.getUserDisplayName((byte) -128, true));
                         } else {
-                            at.a(player.hd, string, j1, 0, i1, "<img=0>" + player.a(false, (byte) -7), null, (byte) 110, "<img=0>"
+                            at.a(player.playerName, string, j1, 0, i1, "<img=0>" + player.getDisplayName(false, (byte) -7), null, (byte) 110, "<img=0>"
                                     + player.getUserDisplayName((byte) -124, true));
                         }
 					} else
-						at.a(player.hd, string, j1, 0, i1, "<img=1>" + player.a(false, (byte) -7), null, (byte) 107, "<img=1>"
+						at.a(player.playerName, string, j1, 0, i1, "<img=1>" + player.getDisplayName(false, (byte) -7), null, (byte) 107, "<img=1>"
                                 + player.getUserDisplayName((byte) -127, true));
 				}
 			}
@@ -2228,7 +2228,7 @@ public final class GameInPacketHandler extends Node {
 		if (sw.currentGameInPacket == sca.incomingPacket97) {
             System.out.println("[GameInPacketHandler] Incoming Packet 97.");
 			if (em.a != null) {
-                kea.a(false, (byte) 126, -1, -1, cs.g.w);
+                kea.setWM(false, (byte) 126, -1, -1, cs.g.w);
             }
 			byte[] buf = new byte[ck.currentGameInPacketSize];
 			faa.loginStream.a(0, ck.currentGameInPacketSize, buf, -122);
@@ -2572,9 +2572,9 @@ public final class GameInPacketHandler extends Node {
 			sw.currentGameInPacket = null;
 			return true;
 		}
-		cea.a(("T1 - " + (sw.currentGameInPacket == null ? -1 : sw.currentGameInPacket.getPacketID(25569)) + ","
-                        + (ClientScript.gameInPacket != null ? ClientScript.gameInPacket.getPacketID(25569) : -1) + ","
-                        + (jt.c != null ? jt.c.getPacketID(25569) : -1) + " - " + ck.currentGameInPacketSize), -2, null);
+		cea.a(("T1 - " + (sw.currentGameInPacket == null ? -1 : sw.currentGameInPacket.getPacketID()) + ","
+                        + (ClientScript.gameInPacket != null ? ClientScript.gameInPacket.getPacketID() : -1) + ","
+                        + (jt.incomingPacket != null ? jt.incomingPacket.getPacketID() : -1) + " - " + ck.currentGameInPacketSize), -2, null);
 		la.logout((byte) -125, false);
 		return true;
 	}
@@ -2583,19 +2583,13 @@ public final class GameInPacketHandler extends Node {
 		/* empty */
 	}
 
-	public static void nullLoader(boolean bool) {
-		if (bool) {
-            nullLoader(true);
-        }
-		m = null;
+	public static void nullLoader() {
+		baa = null;
 		var_n = null;
 	}
 
-	public static boolean a(byte b, char c) {
-		o++;
-		if (b != 24) {
-            var_n = null;
-        }
+	public static boolean isKeyTyped(char c) {
+		isKeyTyped++;
 		if (c > 0 && c < '\u0080' || c >= '\u00a0' && c <= '\u00ff') {
             return true;
         }
@@ -2611,7 +2605,7 @@ public final class GameInPacketHandler extends Node {
 		return false;
 	}
 
-	GameInPacketHandler(int i) {
+	public GameInPacketHandler(int i) {
 		this.k = i;
 	}
 }

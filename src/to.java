@@ -105,16 +105,16 @@ final class to
 	    }
 	}
 	if (bool)
-	    sw.a[aa.n++] = var_qda;
+	    sw.a[Node_Sub.n++] = var_qda;
 	else {
 	    int i_11_ = Class_q.b == wr.D ? 1 : 0;
 	    if (var_qda.g((byte) 115)) {
 		if (var_qda.e((byte) 23))
 		    lm.Nh[i_11_][fg.a[i_11_]++] = var_qda;
 		else
-		    aaa.k[i_11_][baa.l[i_11_]++] = var_qda;
+		    aaa.animables[i_11_][baa.l[i_11_]++] = var_qda;
 	    } else
-		cca.d[i_11_][cc.f[i_11_]++] = var_qda;
+		InputStreamSub_1.d[i_11_][cc.f[i_11_]++] = var_qda;
 	}
 	if (bool)
 	    ((Animable) var_qda).j -= i_5_;

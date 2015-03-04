@@ -254,7 +254,7 @@ final class qd
 					break while_151_;
 				    }
 				} else {
-				    i_12_ = (GameInPacket.h[i_13_ << 3] >> 4) + 1024;
+				    i_12_ = (GameInPacket.ints1[i_13_ << 3] >> 4) + 1024;
 				    break while_154_;
 				}
 				i_12_ = nda.j[i_13_] >> 1;

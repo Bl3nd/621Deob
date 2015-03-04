@@ -32,7 +32,7 @@ final class dca extends kca
 	    ew.k = 1;
 	}
 	if (ew.k == 1) {
-	    taa.l = fba.b((int) -111);
+	    taa.l = fba.getFBAs();
 	    fba.i.a(new kv(qu.a), (byte) -84);
 	    fba.n.a(new po("jaggl"), (byte) 125);
 	    fba.o.a(new po("jagdx"), (byte) 124);
@@ -51,7 +51,7 @@ final class dca extends kca
 	    fba.B.a(new kv(pga.g), (byte) -45);
 	    fba.C.a(new kv(tn.k), (byte) 118);
 	    fba.D.a(new kv(ufa.b), (byte) -12);
-	    fba.E.a(new kv(Login.i), (byte) 121);
+	    fba.E.a(new kv(Login.pl), (byte) 121);
 	    fba.F.a(new kv(Animable.pl), (byte) -86);
 	    fba.G.a(new rr(nda.c, "huffman"), (byte) 120);
 	    fba.H.a(new kv(ui.c), (byte) 115);

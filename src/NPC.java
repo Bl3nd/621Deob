@@ -75,7 +75,7 @@ public final class NPC extends Entity {
         return null;
     }
 
-    public final void a(boolean bool, int i, byte b, Class_r class_r, Animable animable, int j, int k) {
+    public final void throwIllegalStateException(boolean bool, int i, byte b, Class_r class_r, Animable animable, int j, int k) {
         id++;
         throw new IllegalStateException();
     }
@@ -90,9 +90,9 @@ public final class NPC extends Entity {
 
     public final void a(boolean bool, int y, byte b, int i, int height, int x) {
         ld++;
-        this.height = this.h = (byte) height;
+        this.height = this.height_ = (byte) height;
         if (ItemDef.b(y, x, 5706)) {
-            this.h++;
+            this.height_++;
         }
         if (this.yb != -1 && Class_ef.J.c(64, this.yb).k == 1) {
             this.yb = -1;
@@ -353,7 +353,7 @@ public final class NPC extends Entity {
                 this.das[0].oa(0, this.pb, 0);
             }
         } else {
-            this.a(-2912, orientation, this.i(-1) << 9, 0, this.i(-1) << 9, 0);
+            this.a(-2912, orientation, this.getNPCDefinition(-1) << 9, 0, this.getNPCDefinition(-1) << 9, 0);
         }
         if (bool) {
             da.a(this.vb, this.Mb, this.Tb, 0xff & this.Xb);

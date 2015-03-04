@@ -4,7 +4,7 @@
 
 final class vh
 {
-    static boolean a = false;
+    static boolean shiftClickEnabled = false;
     static int yLoc;
     static int c = 0;
     static int[] d;

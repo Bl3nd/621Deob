@@ -209,7 +209,7 @@ final class mda extends mca
 	if (dg.zb < 102)
 	    dg.zb += 6;
 	L++;
-	if (Class_cb.g != -1 && naa.L < us.a(126)) {
+	if (Class_cb.g != -1 && naa.L < us.getCurrentTime(126)) {
 	    for (int i = Class_cb.g; kaa.o.length > i; i++) {
 		if (!kaa.o[i].startsWith("pause")) {
 		    gca.l = kaa.o[i];
@@ -221,9 +221,9 @@ final class mda extends mca
 		    } catch (Exception exception) {
 			/* empty */
 		    }
-		    ia.a(4, "Pausing for " + i_19_ + " seconds...");
+		    ia.sendConsoleCommandText(4, "Pausing for " + i_19_ + " seconds...");
 		    Class_cb.g = i + 1;
-		    naa.L = us.a(120) + (long) (1000 * i_19_);
+		    naa.L = us.getCurrentTime(120) + (long) (1000 * i_19_);
 		    return;
 		}
 	    }
@@ -315,11 +315,11 @@ final class mda extends mca
 						} catch (Exception exception) {
 						    /* empty */
 						}
-						ia.a(4, ("Pausing for " + i_24_
-							 + " seconds..."));
+						ia.sendConsoleCommandText(4, ("Pausing for " + i_24_
+                                + " seconds..."));
 						kaa.o = strings;
 						Class_cb.g = i_23_ + 1;
-						naa.L = (us.a(97)
+						naa.L = (us.getCurrentTime(97)
 							 + (long) (i_24_
 								   * 1000));
 						return;

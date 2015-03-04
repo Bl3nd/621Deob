@@ -82,7 +82,7 @@ final class kga extends lca implements vda
 	    hb = null;
 	}
 	if (var_ha != null)
-	    oga.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    oga.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
     }
     
     final boolean g(byte i) {
@@ -116,7 +116,7 @@ final class kga extends lca implements vda
 	if (Class_ad.h == 1)
 	    un.a(0, i_5_, ej.q, i);
 	else if (Class_ad.h == 2)
-	    Connection.a(i, i_5_, -11387);
+	    Connection.a(i, i_5_);
 	kb++;
 	Class_ad.h = 0;
 	if (i_4_ <= 74)
@@ -166,7 +166,7 @@ final class kga extends lca implements vda
 	    var_ha = var_kj == null ? null : ((kj) var_kj).e;
 	}
 	if (var_ha != null)
-	    ck.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    ck.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
     }
     
     static final void a(int i, int i_7_, boolean bool, int i_8_, int i_9_) {
@@ -180,7 +180,7 @@ final class kga extends lca implements vda
 		qca.E = 0;
 	    ei.a(i, -117);
 	    Class_rf.a(true, lg.r, true, Class_nd.o, pm.v,
-		       GameText.loadingPleaseWait.getString((byte) -103, cba.languageID));
+		       GameText.loadingPleaseWait.getString(cba.languageID));
 	    int i_10_ = bfa.thisPlayersRegionX;
 	    bfa.thisPlayersRegionX = 8 * (wj.q - (Class_hc.e >> 4));
 	    int i_11_ = BytesParser.thisPlayersRegionY;
@@ -311,13 +311,13 @@ final class kga extends lca implements vda
 		    uc.d -= i_13_;
 		    ada.N -= i_13_ * 512;
 		    if (Math.abs(i_12_) > Class_hc.e || Math.abs(i_13_) > bw.v)
-			Class_ad.b(2);
+			Class_ad.lighting(2);
 		}
 		sd.a(10);
-		Entity.c((byte) -108);
+		Entity.rebuildMap((byte) -108);
 		rv.o.d(i_7_ ^ 0x202);
 		iq.g.d(2);
-		gs.v.b(128);
+		gs.v.clearTextCoords(128);
 		kh.a(i_7_ ^ ~0x252);
 	    }
 	}
@@ -351,14 +351,14 @@ final class kga extends lca implements vda
 	Class_i class_i;
 	Class_i class_i_31_;
 	if (!ib) {
-	    if (((Animable) this).h >= 3)
+	    if (((Animable) this).height_ >= 3)
 		class_i = null;
 	    else
-		class_i = vr.b[((Animable) this).h + 1];
-	    class_i_31_ = vr.b[((Animable) this).h];
+		class_i = vr.b[((Animable) this).height_ + 1];
+	    class_i_31_ = vr.b[((Animable) this).height_];
 	} else {
 	    class_i = vr.b[0];
-	    class_i_31_ = wr.D[((Animable) this).h];
+	    class_i_31_ = wr.D[((Animable) this).height_];
 	}
 	return var_bda.a(i, class_r, ((Animable) this).j, class_i_31_, ((Animable) this).locX,
 			 -129, class_i, ((Animable) this).locY, bool, T, eb);

@@ -5,7 +5,7 @@
 final class wd
 {
     static int a;
-    static wl b;
+    static wl WIP;
     static int c;
     static int d;
     int[][] e;
@@ -34,23 +34,23 @@ final class wd
     static int B;
     
     public static void a(byte i) {
-	b = null;
+	WIP = null;
 	if (i > 13)
 	    y = null;
     }
     
     static final void a(int i, Class_r class_r) {
 	wd.i++;
-	int i_0_ = mr.a;
-	int i_1_ = hn.b;
-	int i_2_ = aw.l;
+	int i_0_ = mr.x_;
+	int i_1_ = hn.y_;
+	int i_2_ = aw.option;
 	int i_3_ = lfa.r;
 	int i_4_ = -10660793;
 	class_r.f(i_4_, i_0_, i_1_, i - 30, i_3_, i_2_);
 	class_r.f(-16777216, i_0_ + 1, i_1_ + 1, i - 30, 16, i_2_ - 2);
 	class_r.b(i_2_ - 2, i_1_ + 18, i_3_ - 19, i_0_ + 1, i ^ 0x5149,
 		  -16777216);
-	pv.j.a(i_4_, true, i_0_ + 3, GameText.chooseOptionText.getString((byte) 120, cba.languageID), -1, i_1_ + 14);
+	pv.j.a(i_4_, true, i_0_ + 3, GameText.chooseOptionText.getString(cba.languageID), -1, i_1_ + 14);
 	int i_5_ = Class_md.e.d(i ^ 0x7cf);
 	if (i != 31)
 	    a((byte) 8, (BytesParser) null);
@@ -101,7 +101,7 @@ final class wd
 		ua.e.a(dca.R.a((byte) 99, string) + i_0_ + 5, i_8_ - 12);
 	    i_7_++;
 	}
-	vv.a(hn.b, mr.a, aw.l, (byte) -63, lfa.r);
+	vv.a(hn.y_, mr.x_, aw.option, (byte) -63, lfa.r);
     }
     
     static final void a(boolean bool) {
@@ -230,7 +230,7 @@ final class wd
     
     static final mj a(byte i, BytesParser var_es) {
 	if (i != 1)
-	    b = null;
+	    WIP = null;
 	m++;
 	return new mj(var_es.readShort2(91), var_es.readShort2(118), var_es.readShort2(55), var_es.readShort2(43),
 		      var_es.readTribyte(-1), var_es.readTribyte(i - 2), var_es.readUnsignedByte(-9268));
@@ -1159,6 +1159,6 @@ final class wd
     }
     
     static {
-	b = new wl("WIP", 2);
+	WIP = new wl("WIP", 2);
     }
 }

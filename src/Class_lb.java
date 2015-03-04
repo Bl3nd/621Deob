@@ -17,9 +17,9 @@ final class Class_lb
     Class_rf k;
     static int l;
     static int m;
-    tb n = new tb(50);
+    final tb n = new tb(50);
     static int o;
-    tb p = new tb(5);
+    final tb p = new tb(5);
     int q;
     
     final void a(byte i) {
@@ -67,7 +67,7 @@ final class Class_lb
 	    return def;
 	byte[] is;
 	synchronized (this.i) {
-	    is = this.i.b(mq.a(24231, npcID), 1, fda.a(npcID, 766538279));
+	    is = this.i.b(mq.putNpcId(npcID), 1, fda.a(npcID, 766538279));
 	}
 	def = new NPCDef();
 	((NPCDef) def).npcID = npcID;

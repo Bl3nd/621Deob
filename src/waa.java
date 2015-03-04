@@ -78,11 +78,11 @@ final class waa extends rg
 		    String string = nt.d[i_15_];
 		    if (i_12_ - 1 > i_15_)
 			string = string.substring(0, string.length() - 4);
-		    int i_16_ = al.o.a(string);
+		    int i_16_ = al.oj.a(string);
 		    if (i_16_ > i_13_)
 			i_13_ = i_16_;
 		}
-		i_14_ = i_12_ * al.o.a() + al.o.b() / 2;
+		i_14_ = i_12_ * al.oj.a() + al.oj.b() / 2;
 	    }
 	    int i_17_ = ((Class_vb) class_vb).p + i_8_ / 2;
 	    int i_18_ = ((Class_vb) class_vb).k;
@@ -122,7 +122,7 @@ final class waa extends rg
 		i_21_ = i_18_;
 		i_20_ = -(i_13_ / 2) - 5 + i_17_;
 		i_22_ = i_20_ + i_13_ + 10;
-		i_23_ = i_21_ + 3 + al.o.a() * i_12_;
+		i_23_ = i_21_ + 3 + al.oj.a() * i_12_;
 		if (((ww) var_ww).p != 0)
 		    class_r.f(((ww) var_ww).p, i_20_, i_21_, 1, i_23_ - i_21_,
 			      i_22_ - i_20_);
@@ -133,9 +133,9 @@ final class waa extends rg
 		    String string = nt.d[i_24_];
 		    if (i_24_ < i_12_ - 1)
 			string = string.substring(0, string.length() - 4);
-		    al.o.a(class_r, string, i_17_, i_18_, ((ww) var_ww).E,
+		    al.oj.a(class_r, string, i_17_, i_18_, ((ww) var_ww).E,
 			   true);
-		    i_18_ += al.o.a();
+		    i_18_ += al.oj.a();
 		}
 	    }
 	    if ((((ww) var_ww).L ^ 0xffffffff) != 0

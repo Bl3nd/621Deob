@@ -552,7 +552,7 @@ final class qj extends Class_r
     
     final boolean d() {
 	bc++;
-	if (!Mg || z() && !Vf)
+	if (!Mg || bloom() && !Vf)
 	    return false;
 	return true;
     }
@@ -927,11 +927,11 @@ final class qj extends Class_r
 	((qj) this).Nf = i;
     }
     
-    final void b(int i) {
+    final void getTexSize(int size) {
 	ic++;
-	if (i < 128 || i > 1024)
+	if (size < 128 || size > 1024)
 	    throw new IllegalArgumentException();
-	((qj) this).Wd = i;
+	((qj) this).Wd = size;
 	Id.b(6408);
     }
     
@@ -2449,9 +2449,9 @@ final class qj extends Class_r
 				 ((GameInPacketHandler) var_hda).k);
 	}
 	Id.a((int) 118);
-	if (b() > 100663296 && Te + 60000L < us.a(124)) {
+	if (b() > 100663296 && Te + 60000L < us.getCurrentTime(124)) {
 	    System.gc();
-	    Te = us.a(90);
+	    Te = us.getCurrentTime(90);
 	}
 	((qj) this).je = i;
     }
@@ -2495,7 +2495,7 @@ final class qj extends Class_r
 	He.b(var_hda, (byte) 93);
     }
     
-    final void a(boolean bool) {
+    final void renderProfile(boolean profile) {
 	Vc++;
     }
     
@@ -2856,7 +2856,7 @@ final class qj extends Class_r
 	return new eca(this, i, i_250_, bool);
     }
     
-    final boolean z() {
+    final boolean bloom() {
 	bd++;
 	if (Yd == null || !Yd.j(-16056))
 	    return false;

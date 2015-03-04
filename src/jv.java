@@ -101,7 +101,7 @@ final class jv
 	if (!sda.a((byte) 85, i_3_, i_2_))
 	    return false;
 	if (kl.a((byte) 46, i_3_, i_2_) | (0x9000 & i_2_) != 0
-	    | WorldSub.a(i_2_, i_3_, (byte) 36))
+	    | WorldSub.a(i_2_, i_3_))
 	    return true;
 	if (i != 3)
 	    t = 108L;

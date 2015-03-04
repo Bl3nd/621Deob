@@ -17,7 +17,7 @@ final class hga
 	g++;
 	if ((on.performance ^ 0xffffffff) != i_0_) {
 	    it.N = on.performance;
-	    ur.a(0, true);
+	    ur.setTKVersion(0, true);
 	} else
 	    lba.b(i_0_ ^ ~0x49, false);
 	ofa.O = i_2_;

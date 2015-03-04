@@ -32,9 +32,9 @@ final class em
 		if (var_wr.e((byte) 23))
 		    lm.Nh[i_6_][fg.a[i_6_]++] = var_wr;
 		else
-		    aaa.k[i_6_][baa.l[i_6_]++] = var_wr;
+		    aaa.animables[i_6_][baa.l[i_6_]++] = var_wr;
 	    } else
-		cca.d[i_6_][cc.f[i_6_]++] = var_wr;
+		InputStreamSub_1.d[i_6_][cc.f[i_6_]++] = var_wr;
 	}
     }
     

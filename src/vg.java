@@ -402,7 +402,7 @@ final class vg extends ha
     static final boolean a(byte i, int i_22_, int i_23_, int i_24_, int i_25_,
 			   int i_26_, int i_27_) {
 	B++;
-	if (!il.k)
+	if (!il.occlude)
 	    return false;
 	if (io.X < 100)
 	    return false;

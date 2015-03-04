@@ -7,7 +7,7 @@ final class gd
     static int a;
     static int b;
     static int c;
-    static int d = 1;
+    static int cores = 1;
     static boolean e = false;
     static int f = 0;
     

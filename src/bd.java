@@ -22,12 +22,12 @@ final class bd
     
     final boolean a(boolean bool) {
 	if (((bd) this).h == null) {
-	    if (cca.b == null) {
+	    if (InputStreamSub_1.b == null) {
 		byte[] is = Class_rb.a(0, 8, 16.0F, 16, 0.5F, 0.6F, 4.0F, 128,
 				       128, new vq(419684), 4.0F);
-		cca.b = kg.a(-137, is, false);
+		InputStreamSub_1.b = kg.a(-137, is, false);
 	    }
-	    byte[] is = wi.a(-7374, false, cca.b);
+	    byte[] is = wi.a(-7374, false, InputStreamSub_1.b);
 	    byte[] is_0_ = new byte[4 * is.length];
 	    int i = 0;
 	    for (int i_1_ = 0; i_1_ < 16; i_1_++) {

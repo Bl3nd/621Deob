@@ -725,7 +725,7 @@ class cd
 				if (class_i == null
 				    || Class_lc.X[i_138_][i_162_]) {
 				    if (class_i_135_ != null
-					&& !ClientScript.m[i_138_][i_162_]) {
+					&& !ClientScript.booleans[i_138_][i_162_]) {
 					int i_169_ = (i_136_ << 9) + i_163_;
 					int i_170_ = (i_137_ << 9) + i_163_;
 					is_161_[i_162_]
@@ -777,7 +777,7 @@ class cd
 			    i_181_ = oi.a(i_136_, i_137_);
 			}
 			class_i_134_.a(i_136_, i_137_, is_158_, is_160_,
-				       is_159_, is_161_, uu.b[i_138_],
+				       is_159_, is_161_, InputStreamSub.b[i_138_],
 				       Class_qb.h[i_138_], vk.h[i_138_],
 				       is_147_, is_148_, is_149_, is_150_,
 				       i_179_, i_180_, i_181_, false);
@@ -981,7 +981,7 @@ class cd
 			if (bool_212_) {
 			    is_216_ = Class_qb.h[i_194_];
 			    i_217_ = var_gda == null ? 0 : bm.j[i_194_];
-			    is_218_ = uu.b[i_194_];
+			    is_218_ = InputStreamSub.b[i_194_];
 			    is_215_ = vk.h[i_194_];
 			    i_214_ = var_ng == null ? 0 : Class_ab.a[i_194_];
 			} else if (bool_193_) {
@@ -1128,7 +1128,7 @@ class cd
 						|| (Class_lc.X[i_194_]
 						    [i_239_])) {
 						if (class_i_183_ != null
-						    && !(ClientScript.m[i_194_]
+						    && !(ClientScript.booleans[i_194_]
 							 [i_239_])) {
 						    int i_247_
 							= (i_244_
@@ -1298,7 +1298,7 @@ class cd
 									i_267_,
 									true));
 					    } else if (class_i_183_ != null
-						       && !(ClientScript.m[i_194_]
+						       && !(ClientScript.booleans[i_194_]
 							    [i_259_])) {
 						int i_269_
 						    = (i_189_ << 9) + i_263_;

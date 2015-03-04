@@ -16,7 +16,7 @@ final class vk extends nfa
     
     static final boolean a(int i, int i_0_, int i_1_, int i_2_) {
 	j++;
-	if (!il.k)
+	if (!il.occlude)
 	    return false;
 	if (io.X < 100)
 	    return false;
@@ -59,7 +59,7 @@ final class vk extends nfa
 	    vk.i = null;
 	if (dd.I.a(-32748, (long) ((ww) var_ww).G) != null)
 	    return false;
-	if (SpecialOutPacket.h.a(-32748, (long) ((ww) var_ww).C) != null)
+	if (SpecialOutPacket.i1.a(-32748, (long) ((ww) var_ww).C) != null)
 	    return false;
 	return true;
     }

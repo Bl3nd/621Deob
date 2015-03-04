@@ -56,7 +56,7 @@ final class Class_mb extends qda implements vda
 	    return -5;
 	if (kr.a == null) {
 	    if (!gea.n && mu.j > 0) {
-		if (vh.a && uc.c.a((byte) -68, (int) 81) && mu.j > 2)
+		if (vh.shiftClickEnabled && uc.c.a((byte) -68, (int) 81) && mu.j > 2)
 		    return (((bfa) (bfa)
 			     ((Node) ((Node) ((Class_ae) oba.I).o).next).next)
 			    .s);
@@ -64,9 +64,9 @@ final class Class_mb extends qda implements vda
 	    }
 	    int i_0_ = Class_md.e.d(i ^ ~0x7d2);
 	    int i_1_ = Class_md.e.b((int) 104);
-	    int i_2_ = mr.a;
-	    int i_3_ = hn.b;
-	    int i_4_ = aw.l;
+	    int i_2_ = mr.x_;
+	    int i_3_ = hn.y_;
+	    int i_4_ = aw.option;
 	    if (i_0_ > i_2_ && i_0_ < i_4_ + i_2_) {
 		int i_5_ = -1;
 		for (int i_6_ = 0; i_6_ < mu.j; i_6_++) {
@@ -122,13 +122,13 @@ final class Class_mb extends qda implements vda
 	    var_ha = var_kj == null ? null : ((kj) var_kj).e;
 	}
 	if (var_ha != null)
-	    ck.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    ck.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
     }
     
     static final void a(int i, int i_13_, boolean bool, int i_14_, int i_15_) {
 	qb++;
 	if (i == 4 && gf.a((byte) 108, i_14_))
-	    sca.a(i_15_, i_13_, aa.o[i_14_], -1, bool, i ^ ~0x7e);
+	    sca.a(i_15_, i_13_, Node_Sub.o[i_14_], -1, bool, i ^ ~0x7e);
     }
     
     final boolean h(byte i) {
@@ -158,7 +158,7 @@ final class Class_mb extends qda implements vda
 	    var_ha = var_kj == null ? null : ((kj) var_kj).e;
 	}
 	if (var_ha != null)
-	    oga.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    oga.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
 	if (i != -114)
 	    c((byte) 30);
     }
@@ -182,8 +182,8 @@ final class Class_mb extends qda implements vda
 	return null;
     }
     
-    final void a(boolean bool, int i, byte i_18_, Class_r class_r, Animable var_lo,
-		 int i_19_, int i_20_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_18_, Class_r class_r, Animable var_lo,
+                                          int i_19_, int i_20_) {
 	kb++;
 	int i_21_ = -58 / ((-50 - i_18_) / 55);
 	if (var_lo instanceof Class_jc) {
@@ -291,13 +291,13 @@ final class Class_mb extends qda implements vda
 	Class_i class_i;
 	Class_i class_i_25_;
 	if (!pb) {
-	    class_i = vr.b[((Animable) this).h];
-	    if (((Animable) this).h >= 3)
+	    class_i = vr.b[((Animable) this).height_];
+	    if (((Animable) this).height_ >= 3)
 		class_i_25_ = null;
 	    else
-		class_i_25_ = vr.b[((Animable) this).h + 1];
+		class_i_25_ = vr.b[((Animable) this).height_ + 1];
 	} else {
-	    class_i = wr.D[((Animable) this).h];
+	    class_i = wr.D[((Animable) this).height_];
 	    class_i_25_ = vr.b[0];
 	}
 	return var_bda.a(i_24_, class_r, ((Animable) this).j, class_i, ((Animable) this).locX,
@@ -348,7 +348,7 @@ final class Class_mb extends qda implements vda
 	     int i_32_, int i_33_, int i_34_, int i_35_, boolean bool_36_) {
 	super(i, i_26_, i_27_, i_28_, i_29_, i_30_, i_31_, i_32_, i_33_,
 	      ((ObjectDef) var_bda).i == 1, ka.a(i_34_, i_35_, 99));
-	((Animable) this).h = (byte) i_26_;
+	((Animable) this).height_ = (byte) i_26_;
 	Z = (byte) i_34_;
 	pb = bool;
 	rb = ((ObjectDef) var_bda).jb != 0 && !bool;

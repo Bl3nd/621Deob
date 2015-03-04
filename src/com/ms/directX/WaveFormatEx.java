@@ -3,8 +3,8 @@
  */
 package com.ms.directX;
 
-public class WaveFormatEx
-{
+public class WaveFormatEx {
+
     public int avgBytesPerSec;
     public int blockAlign;
     public int samplesPerSec;

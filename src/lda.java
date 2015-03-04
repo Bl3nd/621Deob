@@ -133,7 +133,7 @@ final class lda {
         if (i != 11493)
             p = null;
         ah.b(true, i_5_);
-        GameInPacket.a(1, ((Animable) up.thisPlayer).locY, ((Animable) up.thisPlayer).height, nq.x, ((Animable) up.thisPlayer).locX);
+        GameInPacket.a(up.thisPlayer.locY, up.thisPlayer.height, nq.x, up.thisPlayer.locX);
         nq.x = 0;
     }
 

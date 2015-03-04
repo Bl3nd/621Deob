@@ -32,7 +32,7 @@ final class oi extends cl
 	    qda var_qda = ((ida) var_ida).a;
 	    if (var_qda instanceof Entity) {
 		Entity var_ni_4_ = (Entity) var_qda;
-		int i_5_ = 256 * (var_ni_4_.i(-1) - 1) + 252;
+		int i_5_ = 256 * (var_ni_4_.getNPCDefinition(-1) - 1) + 252;
 		int i_6_ = ((Animable) var_ni_4_).locX - i_5_ >> 9;
 		int i_7_ = ((Animable) var_ni_4_).locY - i_5_ >> 9;
 		int i_8_ = i_5_ + ((Animable) var_ni_4_).locX >> 9;
@@ -141,7 +141,7 @@ final class oi extends cl
 	    if (E) {
 		((cl) this).l.e(i ^ ~0x4a93, 1);
 		((cl) this).l.a((hfa) null, 0);
-		((cl) this).l.a(aaa.s, 9);
+		((cl) this).l.a(aaa.rca, 9);
 		((cl) this).l.j((byte) -70);
 		if (y) {
 		    ((cl) this).l.a(Class_rf.e, true, Class_rf.e);

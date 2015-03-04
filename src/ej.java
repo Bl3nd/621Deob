@@ -42,17 +42,17 @@ final class ej extends Interactable
 		if (var_ev.e((byte) 23))
 		    lm.Nh[i_5_][fg.a[i_5_]++] = var_ev;
 		else
-		    aaa.k[i_5_][baa.l[i_5_]++] = var_ev;
+		    aaa.animables[i_5_][baa.l[i_5_]++] = var_ev;
 	    } else
-		cca.d[i_5_][cc.f[i_5_]++] = var_ev;
+		InputStreamSub_1.d[i_5_][cc.f[i_5_]++] = var_ev;
 	    if (var_ev_4_ != null) {
 		if (var_ev_4_.g((byte) 124)) {
 		    if (var_ev_4_.e((byte) 23))
 			lm.Nh[i_5_][fg.a[i_5_]++] = var_ev_4_;
 		    else
-			aaa.k[i_5_][baa.l[i_5_]++] = var_ev_4_;
+			aaa.animables[i_5_][baa.l[i_5_]++] = var_ev_4_;
 		} else
-		    cca.d[i_5_][cc.f[i_5_]++] = var_ev_4_;
+		    InputStreamSub_1.d[i_5_][cc.f[i_5_]++] = var_ev_4_;
 	    }
 	}
     }

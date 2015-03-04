@@ -31,7 +31,7 @@ final class pea
 			+= "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
 		else
 		    string_2_ += ("; Expires="
-				  + er.a(us.a(105) + 94608000000L, (byte) 117)
+				  + er.a(us.getCurrentTime(105) + 94608000000L, (byte) 117)
 				  + "; Max-Age=" + 94608000L);
 		rp.a("document.cookie=\"" + string_2_ + "\"", (byte) -69,
 		     vj.applet);

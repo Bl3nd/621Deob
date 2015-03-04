@@ -61,7 +61,7 @@ final class lh
     
     static final void a(int i) {
 	c++;
-	aa.o = new Interface[Class_fc.a.a((byte) -107)][];
+	Node_Sub.o = new Interface[Class_fc.a.a((byte) -107)][];
 	mv.b = new Interface[Class_fc.a.a((byte) -107)][];
 	pu.p = new boolean[Class_fc.a.a((byte) -107)];
 	if (i != 1)

@@ -35,8 +35,7 @@ final class Class_ad {
         }
     }
 
-    static final void b(int i) {
-        int i_1_ = 18 / ((i - 82) / 34);
+    public static void lighting(int i) {
         f++;
         hv.t = true;
     }

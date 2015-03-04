@@ -15,76 +15,68 @@ public class Node {
 	Node previous;
 	static GameInPacket bigConfigPacket = new GameInPacket(93, 6);
 
-	public static void d(int i) {
+	public static void nullLoader(int i) {
 		a = null;
 		b = null;
-		if (i != -7141)
-			d(103);
+		if (i != -7141) {
+            nullLoader(103);
+        }
 		bigConfigPacket = null;
 	}
 
-	final void unlink(int i) {
+	public final void unlink(int i) {
 		f++;
-		if (i <= -8 && ((Node) this).next != null) {
-			((Node) ((Node) this).next).previous = ((Node) this).previous;
-			((Node) ((Node) this).previous).next = ((Node) this).next;
-			((Node) this).next = null;
-			((Node) this).previous = null;
+		if (i <= -8 && this.next != null) {
+			this.next.previous = this.previous;
+			this.previous.next = this.next;
+			this.next = null;
+			this.previous = null;
 		}
 	}
 
-	static final int[] f(int i) {
+	public static int[] getFonts(int i) {
 		h++;
-		if (i >= -81)
-			d(-113);
+		if (i >= -81) {
+            nullLoader(-113);
+        }
 		return new int[] { od.smallFont, iq.plainFont, la.boldFont};
 	}
 
-	final boolean g(int i) {
+	public final boolean isNextNode(int i) {
 		e++;
-		int i_0_ = 32 / ((54 - i) / 62);
-		if (((Node) this).next == null)
-			return false;
+		if (this.next == null) {
+            return false;
+        }
 		return true;
 	}
 
-	static final void h(int i) {
+	public static void h(int i) {
 		c++;
-		if (i != -21715)
-			b = null;
-		for (nv var_nv = (nv) Class_u.L.a((int) 120); var_nv != null; var_nv = (nv) Class_u.L
-				.b((byte) 85)) {
-			if (((nv) var_nv).n > 0)
-				((nv) var_nv).n--;
-			if (((nv) var_nv).n == 0) {
-				if (((nv) var_nv).p < 0
-						|| qda.a((byte) -110, ((nv) var_nv).r, ((nv) var_nv).p)) {
-					nda.a(((nv) var_nv).o, -1, ((nv) var_nv).q, (byte) 68,
-							((nv) var_nv).u, ((nv) var_nv).k, ((nv) var_nv).r,
-							((nv) var_nv).t, ((nv) var_nv).p);
-					var_nv.unlink(-95);
+		if (i != -21715) {
+            b = null;
+        }
+		for (nv nv = (nv) Class_u.L.a(120); nv != null; nv = (nv) Class_u.L.b((byte) 85)) {
+			if (nv.n > 0) {
+                nv.n--;
+            }
+			if (nv.n == 0) {
+				if (nv.p < 0 || qda.a((byte) -110, nv.r, nv.p)) {
+					nda.a(nv.o, -1, nv.q, (byte) 68, nv.u, nv.k, nv.r, nv.t, nv.p);
+					nv.unlink(-95);
 				}
 			} else {
-				if (((nv) var_nv).s > 0)
-					((nv) var_nv).s--;
-				if (((nv) var_nv).s == 0
-						&& ((nv) var_nv).u >= 1
-						&& ((nv) var_nv).k >= 1
-						&& Class_hc.e - 2 >= ((nv) var_nv).u
-						&& bw.v - 2 >= ((nv) var_nv).k
-						&& (((nv) var_nv).m < 0 || qda.a((byte) -110,
-								((nv) var_nv).l, ((nv) var_nv).m))) {
-					nda.a(((nv) var_nv).o, -1, ((nv) var_nv).v, (byte) 68,
-							((nv) var_nv).u, ((nv) var_nv).k, ((nv) var_nv).l,
-							((nv) var_nv).t, ((nv) var_nv).m);
-					((nv) var_nv).s = -1;
-					if (((nv) var_nv).m == ((nv) var_nv).p
-							&& ((nv) var_nv).p == -1)
-						var_nv.unlink(-55);
-					else if (((nv) var_nv).p == ((nv) var_nv).m
-							&& ((nv) var_nv).v == ((nv) var_nv).q
-							&& ((nv) var_nv).r == ((nv) var_nv).l)
-						var_nv.unlink(-50);
+				if (nv.s > 0) {
+                    nv.s--;
+                }
+				if (nv.s == 0 && nv.u >= 1 && nv.k >= 1 && Class_hc.e - 2 >= nv.u && bw.v - 2 >= nv.k
+                        && (nv.m < 0 || qda.a((byte) -110, nv.l, nv.m))) {
+					nda.a(nv.o, -1, nv.v, (byte) 68, nv.u, nv.k, nv.l, nv.t, nv.m);
+					nv.s = -1;
+					if (nv.m == nv.p && nv.p == -1) {
+                        nv.unlink(-55);
+                    } else if (nv.p == nv.m && nv.v == nv.q && nv.r == nv.l) {
+                        nv.unlink(-50);
+                    }
 				}
 			}
 		}

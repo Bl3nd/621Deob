@@ -50,7 +50,7 @@ final class vn extends mca
 	N++;
 	if (i != 65)
 	    P = null;
-	return na.b(1, 105);
+	return OutputStreamSub.b(1, 105);
     }
     
     static final void i(int i) {

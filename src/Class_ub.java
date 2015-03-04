@@ -87,11 +87,11 @@ final class Class_ub extends dfa implements vda
 	Class_i class_i_8_;
 	if (hb) {
 	    class_i_8_ = vr.b[0];
-	    class_i = wr.D[((Animable) this).h];
+	    class_i = wr.D[((Animable) this).height_];
 	} else {
-	    class_i = vr.b[((Animable) this).h];
-	    if (((Animable) this).h < 3)
-		class_i_8_ = vr.b[((Animable) this).h + 1];
+	    class_i = vr.b[((Animable) this).height_];
+	    if (((Animable) this).height_ < 3)
+		class_i_8_ = vr.b[((Animable) this).height_ + 1];
 	    else
 		class_i_8_ = null;
 	}
@@ -138,8 +138,8 @@ final class Class_ub extends dfa implements vda
 	return false;
     }
     
-    final void a(boolean bool, int i, byte i_12_, Class_r class_r, Animable var_lo,
-		 int i_13_, int i_14_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_12_, Class_r class_r, Animable var_lo,
+                                          int i_13_, int i_14_) {
 	if (var_lo instanceof Class_ub) {
 	    Class_ub class_ub_15_ = (Class_ub) var_lo;
 	    if (bb != null && class_ub_15_.bb != null)
@@ -263,7 +263,7 @@ final class Class_ub extends dfa implements vda
 	    var_ha = var_kj == null ? null : ((kj) var_kj).e;
 	}
 	if (var_ha != null)
-	    oga.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    oga.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
     }
     
     public final void a(byte i, Class_r class_r) {
@@ -279,7 +279,7 @@ final class Class_ub extends dfa implements vda
 	    var_ha = var_kj == null ? null : ((kj) var_kj).e;
 	}
 	if (var_ha != null)
-	    ck.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    ck.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
     }
     
     static final void a(boolean bool, int i, int i_19_, int i_20_,

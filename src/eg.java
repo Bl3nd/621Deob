@@ -577,8 +577,8 @@ final class eg
     final void b(int i, int i_126_, int i_127_, int i_128_) {
 	u++;
 	if (i_127_ != 0) {
-	    int i_129_ = GameInPacket.h[i_127_];
-	    int i_130_ = GameInPacket.i[i_127_];
+	    int i_129_ = GameInPacket.ints1[i_127_];
+	    int i_130_ = GameInPacket.ints2[i_127_];
 	    for (int i_131_ = 0; i_131_ < ((eg) this).z; i_131_++) {
 		int i_132_ = ((i_130_ * ((eg) this).o[i_131_]
 			       + ((eg) this).W[i_131_] * i_129_)
@@ -590,8 +590,8 @@ final class eg
 	    }
 	}
 	if (i != 0) {
-	    int i_133_ = GameInPacket.h[i];
-	    int i_134_ = GameInPacket.i[i];
+	    int i_133_ = GameInPacket.ints1[i];
+	    int i_134_ = GameInPacket.ints2[i];
 	    for (int i_135_ = 0; i_135_ < ((eg) this).z; i_135_++) {
 		int i_136_ = ((i_134_ * ((eg) this).W[i_135_]
 			       - ((eg) this).R[i_135_] * i_133_)
@@ -603,8 +603,8 @@ final class eg
 	    }
 	}
 	if (i_128_ != 0) {
-	    int i_137_ = GameInPacket.h[i_128_];
-	    int i_138_ = GameInPacket.i[i_128_];
+	    int i_137_ = GameInPacket.ints1[i_128_];
+	    int i_138_ = GameInPacket.ints2[i_128_];
 	    for (int i_139_ = 0; i_139_ < ((eg) this).z; i_139_++) {
 		int i_140_ = ((i_137_ * ((eg) this).R[i_139_]
 			       + ((eg) this).o[i_139_] * i_138_)

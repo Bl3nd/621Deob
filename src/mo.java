@@ -68,8 +68,8 @@ final class mo extends ew
 	if (i >= -63)
 	    y = null;
 	int i_6_ = ((Entity) var_ni).xc - pm.currentTimedTicks;
-	int i_7_ = 512 * ((Entity) var_ni).M + var_ni.i(-1) * 256;
-	int i_8_ = ((Entity) var_ni).fc * 512 + var_ni.i(-1) * 256;
+	int i_7_ = 512 * ((Entity) var_ni).M + var_ni.getNPCDefinition(-1) * 256;
+	int i_8_ = ((Entity) var_ni).fc * 512 + var_ni.getNPCDefinition(-1) * 256;
 	((Entity) var_ni).Fc = 0;
 	((Animable) var_ni).locX += (i_7_ - ((Animable) var_ni).locX) / i_6_;
 	((Animable) var_ni).locY += (i_8_ - ((Animable) var_ni).locY) / i_6_;

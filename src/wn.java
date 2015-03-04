@@ -108,14 +108,14 @@ final class wn
 	if (i_4_ < 10)
 	    return wn.d;
 	double d = (double) i / ((double) i_4_ + 0.0);
-	p.a();
-	b.a();
+	p.resetValues();
+	b.resetValues();
 	int i_5_ = 0;
 	int i_6_ = 0;
 	int i_7_ = 0;
 	if (t != null) {
-	    t.a();
-	    q.a();
+	    t.resetValues();
+	    q.resetValues();
 	    i_5_ = (int) ((double) (((aba) t).c - ((aba) t).d) * 32.768 / d);
 	    i_6_ = (int) ((double) ((aba) t).d * 32.768 / d);
 	}
@@ -123,8 +123,8 @@ final class wn
 	int i_9_ = 0;
 	int i_10_ = 0;
 	if (j != null) {
-	    j.a();
-	    k.a();
+	    j.resetValues();
+	    k.resetValues();
 	    i_8_ = (int) ((double) (((aba) j).c - ((aba) j).d) * 32.768 / d);
 	    i_9_ = (int) ((double) ((aba) j).d * 32.768 / d);
 	}
@@ -168,8 +168,8 @@ final class wn
 	    }
 	}
 	if (n != null) {
-	    n.a();
-	    a.a();
+	    n.resetValues();
+	    a.resetValues();
 	    int i_21_ = 0;
 	    boolean bool = false;
 	    boolean bool_22_ = true;
@@ -198,7 +198,7 @@ final class wn
 		wn.d[i_28_] += wn.d[i_28_ - i_27_] * m / 100;
 	}
 	if (((om) l).c[0] > 0 || ((om) l).c[1] > 0) {
-	    o.a();
+	    o.resetValues();
 	    int i_29_ = o.a(i + 1);
 	    int i_30_ = l.a(0, (float) i_29_ / 65536.0F);
 	    int i_31_ = l.a(1, (float) i_29_ / 65536.0F);

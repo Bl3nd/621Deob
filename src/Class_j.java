@@ -25,8 +25,8 @@ abstract class Class_j extends jt
 			    wo.a(var_ev, i, i_0_, i_1_, 1, 1);
 			    if (var_ev_2_ != null && var_ev_2_.h((byte) -29)) {
 				wo.a(var_ev_2_, i, i_0_, i_1_, 1, 1);
-				var_ev_2_.a(false, 0, (byte) 106, nda.k,
-					    var_ev, 0, 0);
+				var_ev_2_.throwIllegalStateException(false, 0, (byte) 106, nda.k,
+                        var_ev, 0, 0);
 				var_ev_2_.sendIllegalStateException((int) -1);
 			    }
 			    var_ev.sendIllegalStateException((int) -1);

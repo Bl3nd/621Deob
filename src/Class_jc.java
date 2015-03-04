@@ -85,8 +85,8 @@ final class Class_jc extends ev implements vda
 	return 0;
     }
     
-    final void a(boolean bool, int i, byte i_2_, Class_r class_r, Animable var_lo,
-		 int i_3_, int i_4_) {
+    final void throwIllegalStateException(boolean bool, int i, byte i_2_, Class_r class_r, Animable var_lo,
+                                          int i_3_, int i_4_) {
 	int i_5_ = 93 / ((-50 - i_2_) / 55);
 	kb++;
 	if (!(var_lo instanceof Class_jc)) {
@@ -135,13 +135,13 @@ final class Class_jc extends ev implements vda
 	Class_i class_i;
 	Class_i class_i_9_;
 	if (!jb) {
-	    if (((Animable) this).h >= 3)
+	    if (((Animable) this).height_ >= 3)
 		class_i_9_ = null;
 	    else
-		class_i_9_ = vr.b[((Animable) this).h + 1];
-	    class_i = vr.b[((Animable) this).h];
+		class_i_9_ = vr.b[((Animable) this).height_ + 1];
+	    class_i = vr.b[((Animable) this).height_];
 	} else {
-	    class_i = wr.D[((Animable) this).h];
+	    class_i = wr.D[((Animable) this).height_];
 	    class_i_9_ = vr.b[0];
 	}
 	return var_bda.a(i_8_, class_r, ((Animable) this).j, class_i, ((Animable) this).locX,
@@ -169,7 +169,7 @@ final class Class_jc extends ev implements vda
 	}
 	int i_10_ = -33 / ((-19 - i) / 34);
 	if (var_ha != null)
-	    ck.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    ck.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
     }
     
     final sd a(Class_r class_r, int i) {
@@ -194,7 +194,7 @@ final class Class_jc extends ev implements vda
     Class_jc(Class_r class_r, ObjectDef var_bda, int i, int i_11_, int i_12_,
 	     int i_13_, int i_14_, boolean bool, int i_15_, int i_16_,
 	     boolean bool_17_) {
-	super(i_12_, i_13_, i_14_, i, i_11_, FileOnDisk.a(i_16_, i_15_, (byte) -127));
+	super(i_12_, i_13_, i_14_, i, i_11_, FileOnDisk.a(i_16_, i_15_));
 	((Animable) this).locY = i_14_;
 	nb = (byte) i_16_;
 	gb = bool_17_;
@@ -320,7 +320,7 @@ final class Class_jc extends ev implements vda
 	    I = null;
 	}
 	if (var_ha != null)
-	    oga.a(var_ha, ((Animable) this).h, ((Animable) this).locX, ((Animable) this).locY, null);
+	    oga.a(var_ha, ((Animable) this).height_, ((Animable) this).locX, ((Animable) this).locY, null);
 	if (i != -114)
 	    a((Class_r) null, -127);
     }

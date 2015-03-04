@@ -76,10 +76,10 @@ final class ww {
             return string;
         if (i <= 77)
             ((ww) this).r = 55;
-        aa var_aa = (aa) I.a(-32748, (long) i_0_);
+        Node_Sub var_aa = (Node_Sub) I.a(-32748, (long) i_0_);
         if (var_aa == null)
             return string;
-        return ((aa) var_aa).m;
+        return ((Node_Sub) var_aa).m;
     }
 
     final boolean a(haa var_haa, boolean bool) {
@@ -88,9 +88,9 @@ final class ww {
         if ((o ^ 0xffffffff) == 0) {
             if ((v ^ 0xffffffff) == 0)
                 return true;
-            i = var_haa.a(117, v);
+            i = var_haa.getClientVarpBit(117, v);
         } else
-            i = var_haa.b(o, -99);
+            i = var_haa.getClientVarp(o, -99);
         if (d > i || i > l)
             return false;
         if (bool != false)
@@ -99,11 +99,11 @@ final class ww {
         int i_2_;
         if (H == -1) {
             if ((this.i ^ 0xffffffff) != 0)
-                i_2_ = var_haa.a(115, this.i);
+                i_2_ = var_haa.getClientVarpBit(115, this.i);
             else
                 return true;
         } else
-            i_2_ = var_haa.b(H, -127);
+            i_2_ = var_haa.getClientVarp(H, -127);
         if (i_2_ < s || M < i_2_)
             return false;
         return true;
@@ -172,7 +172,7 @@ final class ww {
                                     if (!bool)
                                         class_d = new GameInPacketHandler(var_es.readInt(116));
                                     else
-                                        class_d = new aa(var_es.readString((byte) 115));
+                                        class_d = new Node_Sub(var_es.readString((byte) 115));
                                     I.a(class_d, (byte) -48, (long) i_10_);
                                 }
                             }

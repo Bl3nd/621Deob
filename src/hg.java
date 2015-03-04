@@ -152,7 +152,7 @@ final class hg extends Node
 		bool_21_ |= var_wa.a((byte) -101, i_22_);
 		bool_20_ |= ((dr) var_dr).n;
 	    }
-	    if ((((dr) var_dr).z || vm.r) && i_10_ != -1
+	    if ((((dr) var_dr).z || vm.isTweening) && i_10_ != -1
 		&& i_10_ < ((dr) var_dr).p.length) {
 		i_23_ = ((dr) var_dr).p[i_10_];
 		i_24_ = ((dr) var_dr).B[i_13_];

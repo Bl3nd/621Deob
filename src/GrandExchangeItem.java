@@ -32,7 +32,7 @@ public final class GrandExchangeItem {
             }
             for (tt tt = (tt) ida.l.b((byte) 124); tt != null;
                  tt = (tt) ida.l.b(12561)) {
-                if (!tt.g(-76)) {
+                if (!tt.isNextNode(-76)) {
                     tt = (tt) ida.l.b((byte) 124);
                     if (tt == null) {
                         break;
@@ -69,7 +69,7 @@ public final class GrandExchangeItem {
         } else {
             fi.a(-1202242076);
         }
-        Class_ad.b(124);
+        Class_ad.lighting(124);
     }
 
     public static void nulLLoader(int i) {

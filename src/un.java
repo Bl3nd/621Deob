@@ -5,23 +5,23 @@ import jaggl.OpenGL;
 
 final class un extends uc
 {
-    private bj i;
+    private Commands i;
     static int j;
     static int k;
     static int l;
     private boolean m;
     static int var_n;
     static int o;
-    private bj p;
+    private Commands p;
     static int q;
-    private bj r;
+    private Commands r;
     private boolean s;
     static int t;
     static int u;
     static GameOutPacket v = new GameOutPacket(44, 3);
     static int w;
     private boolean x;
-    private bj y;
+    private Commands y;
     private pm z;
     static int[] A = new int[16];
     static wea B = new wea(2, 2);
@@ -38,11 +38,11 @@ final class un extends uc
 	if (!x)
 	    OpenGL.glBindProgramARB(34336,
 				    (((qj) ((uc) this).h).Nf != 2147483647
-				     ? ((bj) r).c : ((bj) p).c));
+				     ? ((Commands) r).c : ((Commands) p).c));
 	else
 	    OpenGL.glBindProgramARB(34336,
 				    (((qj) ((uc) this).h).Nf != 2147483647
-				     ? ((bj) y).c : ((bj) this.i).c));
+				     ? ((Commands) y).c : ((Commands) this.i).c));
 	class_db.a((byte) 24, -1.0F, 0.0F, 0.0F, Class_is.j,
 		   (float) ((qj) ((uc) this).h).Nf);
 	OpenGL.glProgramLocalParameter4fARB(34336, 1, Class_is.j[0],
@@ -182,9 +182,9 @@ final class un extends uc
 		    vo.c((byte) 31);
 		    nm var_nm = client.c(var_kp);
 		    ega.a(0, var_kp, var_nm.a(-1035661311), ((nm) var_nm).q);
-		    Class_kd.b = tg.a(var_kp, (byte) -105);
-		    if (Class_kd.b == null)
-			Class_kd.b = "Null";
+		    Class_kd.itemName = tg.a(var_kp, (byte) -105);
+		    if (Class_kd.itemName == null)
+			Class_kd.itemName = "Null";
 		    Class_ag.k = ((Interface) var_kp).itemName + "<col=ffffff>";
 		}
 	    } else {
@@ -202,9 +202,9 @@ final class un extends uc
 					    (byte) 7);
 			((tba) var_tba).loginStream.writeShort(i_7_, 13469);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, var_qi.i(-1), 0, true,
+			la.a(1, 0, -2, var_qi.getNPCDefinition(-1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(i ^ 0xffffffff));
+			     var_qi.getNPCDefinition(i ^ 0xffffffff));
 		    }
 		}
 		if (i_6_ == 47) {
@@ -238,9 +238,9 @@ final class un extends uc
 						   ? 0 : 1),
 					    (byte) -109);
 			ud.a(var_tba, (byte) -36);
-			la.a(i + 1, 0, -2, class_ac.i((int) -1), 0, true,
+			la.a(i + 1, 0, -2, class_ac.getNPCDefinition((int) -1), 0, true,
 			     ((Entity) class_ac).regionLocalX[0], ((Entity) class_ac).regionLocalY[0],
-			     class_ac.i((int) -1));
+			     class_ac.getNPCDefinition((int) -1));
 		    }
 		}
 		if (i_6_ == 2) {
@@ -293,9 +293,9 @@ final class un extends uc
 						   ? 1 : 0));
 			((tba) var_tba).loginStream.writeShortReversedPlus128(-126, i_7_);
 			ud.a(var_tba, (byte) -36);
-			la.a(i ^ 0x1, 0, -2, var_qi.i(-1), 0, true,
+			la.a(i ^ 0x1, 0, -2, var_qi.getNPCDefinition(-1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(-1));
+			     var_qi.getNPCDefinition(-1));
 		    }
 		}
 		if (i_6_ == 1008) {
@@ -309,7 +309,7 @@ final class un extends uc
 		    ud.a(var_tba, (byte) -36);
 		}
 		if (i_6_ == 50 && rd.D == null) {
-		    NPCDef.a(0, i_4_, i_5_);
+		    NPCDef.a(i_4_, i_5_);
 		    rd.D = ida.a(i_5_, i_4_, (byte) 66);
 		    tn.a(rd.D, i ^ 0x3ff);
 		}
@@ -329,9 +329,9 @@ final class un extends uc
 						   ? 0 : 1));
 			((tba) var_tba).loginStream.writeShortReversedPlus128(i ^ 0x58, i_7_);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, class_ac.i((int) -1), 0, true,
+			la.a(1, 0, -2, class_ac.getNPCDefinition((int) -1), 0, true,
 			     ((Entity) class_ac).regionLocalX[0], ((Entity) class_ac).regionLocalY[0],
-			     class_ac.i((int) -1));
+			     class_ac.getNPCDefinition((int) -1));
 		    }
 		}
 		if (i_6_ == 1001) {
@@ -368,9 +368,9 @@ final class un extends uc
 							   (int) 82)
 						   ? 0 : 1));
 			ud.a(var_tba, (byte) -36);
-			la.a(i + 1, 0, -2, var_qi.i(-1), 0, true,
+			la.a(i + 1, 0, -2, var_qi.getNPCDefinition(-1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(i - 1));
+			     var_qi.getNPCDefinition(i - 1));
 		    }
 		}
 		if (i_6_ == 5) {
@@ -389,9 +389,9 @@ final class un extends uc
 					    (byte) -119);
 			((tba) var_tba).loginStream.writeShortSecondBytePlusArg1(128, i_7_);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, class_ac.i((int) -1), 0, true,
+			la.a(1, 0, -2, class_ac.getNPCDefinition((int) -1), 0, true,
 			     ((Entity) class_ac).regionLocalX[0], ((Entity) class_ac).regionLocalY[0],
-			     class_ac.i(i - 1));
+			     class_ac.getNPCDefinition(i - 1));
 		    }
 		}
 		if (i_6_ == 8) {
@@ -409,9 +409,9 @@ final class un extends uc
 						   ? 0 : 1),
 					    (byte) -120);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, var_qi.i(i - 1), 0, true,
+			la.a(1, 0, -2, var_qi.getNPCDefinition(i - 1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(-1));
+			     var_qi.getNPCDefinition(-1));
 		    }
 		}
 		if (i_6_ == 46) {
@@ -459,9 +459,9 @@ final class un extends uc
 			((tba) var_tba).loginStream
 			    .writeNegativeBytePlus128(uc.c.a((byte) -68, (int) 82) ? 1 : 0, (byte) 7);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, class_ac.i((int) -1), 0, true,
+			la.a(1, 0, -2, class_ac.getNPCDefinition((int) -1), 0, true,
 			     ((Entity) class_ac).regionLocalX[0], ((Entity) class_ac).regionLocalY[0],
-			     class_ac.i(i ^ 0xffffffff));
+			     class_ac.getNPCDefinition(i ^ 0xffffffff));
 		    }
 		}
 		if (i_6_ == 48) {
@@ -500,9 +500,9 @@ final class un extends uc
 					    (byte) -110);
 			((tba) var_tba).loginStream.writeShortReversedPlus128(-113, i_7_);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, class_ac.i(i - 1), 0, true,
+			la.a(1, 0, -2, class_ac.getNPCDefinition(i - 1), 0, true,
 			     ((Entity) class_ac).regionLocalX[0], ((Entity) class_ac).regionLocalY[0],
-			     class_ac.i((int) -1));
+			     class_ac.getNPCDefinition((int) -1));
 		    }
 		}
 		if (i_6_ == 10) {
@@ -570,9 +570,9 @@ final class un extends uc
 					    (byte) -121);
 			((tba) var_tba).loginStream.writeShortReversedPlus128(i ^ ~0x7d, th.i);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, class_ac.i((int) -1), 0, true,
+			la.a(1, 0, -2, class_ac.getNPCDefinition((int) -1), 0, true,
 			     ((Entity) class_ac).regionLocalX[0], ((Entity) class_ac).regionLocalY[0],
-			     class_ac.i((int) -1));
+			     class_ac.getNPCDefinition((int) -1));
 		    }
 		}
 		if (i_6_ == 3) {
@@ -590,9 +590,9 @@ final class un extends uc
 						   ? 0 : 1));
 			((tba) var_tba).loginStream.writeShortReversedPlus128(75, i_7_);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, var_qi.i(-1), 0, true,
+			la.a(1, 0, -2, var_qi.getNPCDefinition(-1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(i - 1));
+			     var_qi.getNPCDefinition(i - 1));
 		    }
 		}
 		if (i_6_ == 51) {
@@ -626,9 +626,9 @@ final class un extends uc
 					     : 1),
 					    (byte) 7);
 			ud.a(var_tba, (byte) -36);
-			la.a(i + 1, 0, -2, var_qi.i(i ^ 0xffffffff), 0, true,
+			la.a(i + 1, 0, -2, var_qi.getNPCDefinition(i ^ 0xffffffff), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(-1));
+			     var_qi.getNPCDefinition(-1));
 		    }
 		}
 		if (i_6_ == 49) {
@@ -644,9 +644,9 @@ final class un extends uc
 			((tba) var_tba).loginStream
 			    .writeNegativeBytePlus128(uc.c.a((byte) -68, (int) 82) ? 1 : 0, (byte) 7);
 			ud.a(var_tba, (byte) -36);
-			la.a(i + 1, 0, -2, var_qi.i(-1), 0, true,
+			la.a(i + 1, 0, -2, var_qi.getNPCDefinition(-1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(-1));
+			     var_qi.getNPCDefinition(-1));
 		    }
 		}
 		if (i_6_ == 18) {
@@ -655,7 +655,7 @@ final class un extends uc
 		    nm.s = 2;
 		    to.h = 0;
 		    ji.e++;
-		    tba var_tba = jga.sendGameOutPacket(PlayerDef.i, pca.isaac, (byte) 77);
+		    tba var_tba = jga.sendGameOutPacket(PlayerDef.outgoingPacket29, pca.isaac, (byte) 77);
 		    ((tba) var_tba).loginStream.writeShortReversed(108, 0x7fffffff & (int) (l >>> 32));
 		    ((tba) var_tba).loginStream.writeByte((int) (!uc.c.a((byte) -68, (int) 82)
 					       ? 0 : 1),
@@ -671,7 +671,7 @@ final class un extends uc
 		    nm.s = 2;
 		    hv.q = i_3_;
 		    fm.a = i_2_;
-		    tba var_tba = jga.sendGameOutPacket(Player.outgoingPacekt69, pca.isaac, (byte) 98);
+		    tba var_tba = jga.sendGameOutPacket(Player.outgoingPacket69, pca.isaac, (byte) 98);
 		    ((tba) var_tba).loginStream.writeShort(bfa.thisPlayersRegionX + i_4_, 13469);
 		    ((tba) var_tba).loginStream.writeShortReversedPlus128(i ^ 0x15, i_5_ + BytesParser.thisPlayersRegionY);
 		    ((tba) var_tba).loginStream.writeNegativeByte((byte) 125,
@@ -699,9 +699,9 @@ final class un extends uc
 			((tba) var_tba).loginStream.writeShortSecondBytePlusArg1(i ^ 0x80, th.i);
 			((tba) var_tba).loginStream.writeShortSecondBytePlusArg1(128, i_7_);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, var_qi.i(-1), 0, true,
+			la.a(1, 0, -2, var_qi.getNPCDefinition(-1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(-1));
+			     var_qi.getNPCDefinition(-1));
 		    }
 		}
 		if (i_6_ == 44) {
@@ -717,9 +717,9 @@ final class un extends uc
 			((tba) var_tba).loginStream
 			    .writeNegativeBytePlus128(uc.c.a((byte) -68, (int) 82) ? 1 : 0, (byte) 7);
 			ud.a(var_tba, (byte) -36);
-			la.a(1, 0, -2, var_qi.i(i - 1), 0, true,
+			la.a(1, 0, -2, var_qi.getNPCDefinition(i - 1), 0, true,
 			     ((Entity) var_qi).regionLocalX[0], ((Entity) var_qi).regionLocalY[0],
-			     var_qi.i(i ^ 0xffffffff));
+			     var_qi.getNPCDefinition(i ^ 0xffffffff));
 		    }
 		}
 		if (ba.c)

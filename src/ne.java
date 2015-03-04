@@ -11,14 +11,12 @@ final class ne extends bc
     private long i = 0L;
     private int j;
     
-    final long b(int i) {
-	if (i != 26262)
-	    d(23);
+    final long b() {
 	return f;
     }
     
-    final void d(int i) {
-	this.i = (long) i;
+    final void d(int time) {
+	this.i = (long) time;
 	if (f < e)
 	    f += e - f;
     }

@@ -3,9 +3,9 @@
  */
 
 final class dj implements haa {
-    static int a;
+    static int getClientVarpBit;
     static int b = 0;
-    static int c;
+    static int getClientVarp;
     private int[] configs;
     static int e;
     static int f;
@@ -26,10 +26,10 @@ final class dj implements haa {
         ((dj) this).k[i_0_] = i;
         Class_nd class_nd = (Class_nd) m.a(-32748, (long) i_0_);
         if (class_nd == null) {
-            class_nd = new Class_nd(us.a(102) + 500L);
+            class_nd = new Class_nd(us.getCurrentTime(102) + 500L);
             m.a(class_nd, (byte) -36, (long) i_0_);
         } else
-            ((Class_nd) class_nd).m = us.a(101) + 500L;
+            ((Class_nd) class_nd).m = us.getCurrentTime(101) + 500L;
     }
 
     final void a(int i, int i_1_, int i_2_) {
@@ -47,10 +47,9 @@ final class dj implements haa {
         setConfig(i_3_, 0, (i_6_ ^ 0xffffffff) & configs[i_3_] | i_1_ << i_4_ & i_6_);
     }
 
-    public final int b(int i, int i_7_) {
-        c++;
-        int i_8_ = -80 / ((i_7_ + 27) / 62);
-        return ((dj) this).k[i];
+    public final int getClientVarp(int clientVarp, int i) {
+        getClientVarp++;
+        return ((dj) this).k[clientVarp];
     }
 
     final void setConfig(int configID, int dummy, int value) {
@@ -63,19 +62,20 @@ final class dj implements haa {
             class_nd = new Class_nd(4611686018427387905L);
             m.a(class_nd, (byte) -85, (long) configID);
         } else if (((Class_nd) class_nd).m != 4611686018427387905L)
-            ((Class_nd) class_nd).m = 0x4000000000000000L | us.a(120) + 500L;
+            ((Class_nd) class_nd).m = 0x4000000000000000L | us.getCurrentTime(120) + 500L;
     }
 
-    public final int a(int i, int i_11_) {
-        a++;
-        if (i < 111)
+    public final int getClientVarpBit(int i, int varpBit) {
+        getClientVarpBit++;
+        if (i < 111) {
             return 124;
-        Class_qb class_qb = bw.t.a((byte) 126, i_11_);
-        int i_12_ = ((Class_qb) class_qb).c;
-        int i_13_ = ((Class_qb) class_qb).d;
-        int i_14_ = ((Class_qb) class_qb).b;
-        int i_15_ = Class_qb.j[i_14_ - i_13_];
-        return i_15_ & ((dj) this).k[i_12_] >> i_13_;
+        }
+        Class_qb class_qb = bw.t.a((byte) 126, varpBit);
+        int j = class_qb.c;
+        int k = class_qb.d;
+        int i1 = class_qb.b;
+        int j1 = Class_qb.j[i1 - k];
+        return j1 & this.k[j] >> k;
     }
 
     final void c(int i, int i_16_, int i_17_) {
@@ -120,8 +120,8 @@ final class dj implements haa {
         int i_30_ = Math.max(((Interface) var_kp).minHScroll / 2, ((Interface) var_kp).minVScroll / 2) + 10;
         int i_31_ = i * i + i_27_ * i_27_;
         if (i_31_ <= i_30_ * i_30_) {
-            int i_32_ = GameInPacket.h[i_29_];
-            int i_33_ = GameInPacket.i[i_29_];
+            int i_32_ = GameInPacket.ints1[i_29_];
+            int i_33_ = GameInPacket.ints2[i_29_];
             if (ll.x != 4) {
                 i_32_ = 256 * i_32_ / (vd.N + 256);
                 i_33_ = 256 * i_33_ / (vd.N + 256);
@@ -148,7 +148,7 @@ final class dj implements haa {
 
     final int a(byte i, boolean bool) {
         dj.l++;
-        long l = us.a(109);
+        long l = us.getCurrentTime(109);
         int i_39_ = 119 / ((16 - i) / 46);
         for (Class_nd class_nd
                      = bool ? (Class_nd) m.b((byte) 124) : (Class_nd) m.b(12561);

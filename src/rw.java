@@ -972,8 +972,8 @@ final class rw extends da
 		qb[i_146_] -= Q;
 		E[i_146_] -= Fb;
 		if (i_142_ != 0) {
-		    int i_147_ = GameInPacket.h[i_142_];
-		    int i_148_ = GameInPacket.i[i_142_];
+		    int i_147_ = GameInPacket.ints1[i_142_];
+		    int i_148_ = GameInPacket.ints2[i_142_];
 		    int i_149_
 			= (qb[i_146_] * i_147_ + A[i_146_] * i_148_ + 16383
 			   >> 14);
@@ -983,8 +983,8 @@ final class rw extends da
 		    A[i_146_] = i_149_;
 		}
 		if (i_140_ != 0) {
-		    int i_150_ = GameInPacket.h[i_140_];
-		    int i_151_ = GameInPacket.i[i_140_];
+		    int i_150_ = GameInPacket.ints1[i_140_];
+		    int i_151_ = GameInPacket.ints2[i_140_];
 		    int i_152_
 			= (qb[i_146_] * i_151_ - E[i_146_] * i_150_ + 16383
 			   >> 14);
@@ -994,8 +994,8 @@ final class rw extends da
 		    qb[i_146_] = i_152_;
 		}
 		if (i_141_ != 0) {
-		    int i_153_ = GameInPacket.h[i_141_];
-		    int i_154_ = GameInPacket.i[i_141_];
+		    int i_153_ = GameInPacket.ints1[i_141_];
+		    int i_154_ = GameInPacket.ints2[i_141_];
 		    int i_155_
 			= (E[i_146_] * i_153_ + A[i_146_] * i_154_ + 16383
 			   >> 14);
@@ -1182,8 +1182,8 @@ final class rw extends da
     final void W(int i) {
 	if ((Vb & 0x3) != 3)
 	    throw new IllegalStateException();
-	int i_175_ = GameInPacket.h[i];
-	int i_176_ = GameInPacket.i[i];
+	int i_175_ = GameInPacket.ints1[i];
+	int i_176_ = GameInPacket.ints2[i];
 	synchronized (this) {
 	    for (int i_177_ = 0; i_177_ < Zb; i_177_++) {
 		int i_178_ = qb[i_177_] * i_175_ + A[i_177_] * i_176_ >> 14;
@@ -1463,12 +1463,12 @@ final class rw extends da
 		    ab = false;
 		}
 		int[] is_222_ = new int[9];
-		int i_223_ = GameInPacket.i[i_190_];
-		int i_224_ = GameInPacket.h[i_190_];
-		int i_225_ = GameInPacket.i[i_191_];
-		int i_226_ = GameInPacket.h[i_191_];
-		int i_227_ = GameInPacket.i[i_192_];
-		int i_228_ = GameInPacket.h[i_192_];
+		int i_223_ = GameInPacket.ints2[i_190_];
+		int i_224_ = GameInPacket.ints1[i_190_];
+		int i_225_ = GameInPacket.ints2[i_191_];
+		int i_226_ = GameInPacket.ints1[i_191_];
+		int i_227_ = GameInPacket.ints2[i_192_];
+		int i_228_ = GameInPacket.ints1[i_192_];
 		int i_229_ = i_224_ * i_227_ + 8192 >> 14;
 		int i_230_ = i_224_ * i_228_ + 8192 >> 14;
 		is_222_[0] = i_225_ * i_227_ + i_226_ * i_230_ + 8192 >> 14;
@@ -1579,8 +1579,8 @@ final class rw extends da
 				qb[i_265_] -= Q;
 				E[i_265_] -= Fb;
 				if (i_192_ != 0) {
-				    int i_266_ = GameInPacket.h[i_192_];
-				    int i_267_ = GameInPacket.i[i_192_];
+				    int i_266_ = GameInPacket.ints1[i_192_];
+				    int i_267_ = GameInPacket.ints2[i_192_];
 				    int i_268_
 					= ((qb[i_265_] * i_266_
 					    + A[i_265_] * i_267_ + 16383)
@@ -1591,8 +1591,8 @@ final class rw extends da
 				    A[i_265_] = i_268_;
 				}
 				if (i_190_ != 0) {
-				    int i_269_ = GameInPacket.h[i_190_];
-				    int i_270_ = GameInPacket.i[i_190_];
+				    int i_269_ = GameInPacket.ints1[i_190_];
+				    int i_270_ = GameInPacket.ints2[i_190_];
 				    int i_271_
 					= ((qb[i_265_] * i_270_
 					    - E[i_265_] * i_269_ + 16383)
@@ -1603,8 +1603,8 @@ final class rw extends da
 				    qb[i_265_] = i_271_;
 				}
 				if (i_191_ != 0) {
-				    int i_272_ = GameInPacket.h[i_191_];
-				    int i_273_ = GameInPacket.i[i_191_];
+				    int i_272_ = GameInPacket.ints1[i_191_];
+				    int i_273_ = GameInPacket.ints2[i_191_];
 				    int i_274_
 					= ((E[i_265_] * i_272_
 					    + A[i_265_] * i_273_ + 16383)
@@ -1883,8 +1883,8 @@ final class rw extends da
 	else if (i == 12288)
 	    n();
 	else {
-	    int i_348_ = GameInPacket.h[i];
-	    int i_349_ = GameInPacket.i[i];
+	    int i_348_ = GameInPacket.ints1[i];
+	    int i_349_ = GameInPacket.ints2[i];
 	    synchronized (this) {
 		for (int i_350_ = 0; i_350_ < Zb; i_350_++) {
 		    int i_351_ = E[i_350_] * i_348_ + A[i_350_] * i_349_ >> 14;
@@ -1907,8 +1907,8 @@ final class rw extends da
 	    else if (i == 12288)
 		j();
 	    else {
-		int i_352_ = GameInPacket.h[i];
-		int i_353_ = GameInPacket.i[i];
+		int i_352_ = GameInPacket.ints1[i];
+		int i_353_ = GameInPacket.ints2[i];
 		synchronized (this) {
 		    for (int i_354_ = 0; i_354_ < tb; i_354_++) {
 			int i_355_
@@ -2348,8 +2348,8 @@ final class rw extends da
 			    qb[i_457_] -= Q;
 			    E[i_457_] -= Fb;
 			    if (i_437_ != 0) {
-				int i_458_ = GameInPacket.h[i_437_];
-				int i_459_ = GameInPacket.i[i_437_];
+				int i_458_ = GameInPacket.ints1[i_437_];
+				int i_459_ = GameInPacket.ints2[i_437_];
 				int i_460_ = ((qb[i_457_] * i_458_
 					       + A[i_457_] * i_459_ + 16383)
 					      >> 14);
@@ -2359,8 +2359,8 @@ final class rw extends da
 				A[i_457_] = i_460_;
 			    }
 			    if (i_435_ != 0) {
-				int i_461_ = GameInPacket.h[i_435_];
-				int i_462_ = GameInPacket.i[i_435_];
+				int i_461_ = GameInPacket.ints1[i_435_];
+				int i_462_ = GameInPacket.ints2[i_435_];
 				int i_463_ = ((qb[i_457_] * i_462_
 					       - E[i_457_] * i_461_ + 16383)
 					      >> 14);
@@ -2370,8 +2370,8 @@ final class rw extends da
 				qb[i_457_] = i_463_;
 			    }
 			    if (i_436_ != 0) {
-				int i_464_ = GameInPacket.h[i_436_];
-				int i_465_ = GameInPacket.i[i_436_];
+				int i_464_ = GameInPacket.ints1[i_436_];
+				int i_465_ = GameInPacket.ints2[i_436_];
 				int i_466_ = ((E[i_457_] * i_464_
 					       + A[i_457_] * i_465_ + 16383)
 					      >> 14);
@@ -2392,8 +2392,8 @@ final class rw extends da
 			    qb[i_468_] -= Q;
 			    E[i_468_] -= Fb;
 			    if (i_435_ != 0) {
-				int i_469_ = GameInPacket.h[i_435_];
-				int i_470_ = GameInPacket.i[i_435_];
+				int i_469_ = GameInPacket.ints1[i_435_];
+				int i_470_ = GameInPacket.ints2[i_435_];
 				int i_471_ = ((qb[i_468_] * i_470_
 					       - E[i_468_] * i_469_ + 16383)
 					      >> 14);
@@ -2403,8 +2403,8 @@ final class rw extends da
 				qb[i_468_] = i_471_;
 			    }
 			    if (i_437_ != 0) {
-				int i_472_ = GameInPacket.h[i_437_];
-				int i_473_ = GameInPacket.i[i_437_];
+				int i_472_ = GameInPacket.ints1[i_437_];
+				int i_473_ = GameInPacket.ints2[i_437_];
 				int i_474_ = ((qb[i_468_] * i_472_
 					       + A[i_468_] * i_473_ + 16383)
 					      >> 14);
@@ -2414,8 +2414,8 @@ final class rw extends da
 				A[i_468_] = i_474_;
 			    }
 			    if (i_436_ != 0) {
-				int i_475_ = GameInPacket.h[i_436_];
-				int i_476_ = GameInPacket.i[i_436_];
+				int i_475_ = GameInPacket.ints1[i_436_];
+				int i_476_ = GameInPacket.ints2[i_436_];
 				int i_477_ = ((E[i_468_] * i_475_
 					       + A[i_468_] * i_476_ + 16383)
 					      >> 14);
@@ -3779,8 +3779,8 @@ final class rw extends da
     final void MA(int i) {
 	if ((Vb & 0x6) != 6)
 	    throw new IllegalStateException();
-	int i_757_ = GameInPacket.h[i];
-	int i_758_ = GameInPacket.i[i];
+	int i_757_ = GameInPacket.ints1[i];
+	int i_758_ = GameInPacket.ints2[i];
 	synchronized (this) {
 	    for (int i_759_ = 0; i_759_ < Zb; i_759_++) {
 		int i_760_ = qb[i_759_] * i_758_ - E[i_759_] * i_757_ >> 14;

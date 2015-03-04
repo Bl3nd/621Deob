@@ -70,7 +70,7 @@ final class rq extends mca
 	if (i_14_ >= -69)
 	    K = -89;
 	O++;
-	int i_15_ = -GameInPacket.i[i_11_ * 8192 / i] + 65536 >> 1;
+	int i_15_ = -GameInPacket.ints2[i_11_ * 8192 / i] + 65536 >> 1;
 	return (i_13_ * i_15_ >> 16) + (i_12_ * (65536 - i_15_) >> 16);
     }
 }

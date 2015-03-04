@@ -103,16 +103,16 @@ final class gfa implements aca
 	}
     }
     
-    public final void a(byte i) {
+    public final void a(byte b) {
 	tn.a((byte) 114);
-	if (i != -22)
+	if (b != -22)
 	    F = 56;
 	y++;
     }
     
-    public final int b(byte i) {
+    public final int b(byte b) {
 	q++;
-	if (i < 74)
+	if (b < 74)
 	    a((byte) 69);
 	return 100;
     }
@@ -145,7 +145,7 @@ final class gfa implements aca
 	npcIndices = null;
     }
     
-    public final void a(boolean bool, boolean bool_4_) {
+    public final void a(boolean bool, boolean bool1) {
 	n++;
 	if (!h) {
 	    if (vj.applet != null) {
@@ -296,9 +296,9 @@ final class gfa implements aca
 	/* empty */
     }
     
-    public final int c(byte i) {
+    public final int c(byte b) {
 	R++;
-	if (i > -88)
+	if (b > -88)
 	    return 55;
 	return 0;
     }

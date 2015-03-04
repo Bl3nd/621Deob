@@ -3,11 +3,11 @@
  */
 package jaclib.memory;
 
-public interface Buffer
-{
+public interface Buffer {
+
     public long getAddress();
     
     public int getSize();
     
-    public void a(byte[] is, int i, int i_0_, int i_1_);
+    public void put(byte[] buf, int i, int j, int k);
 }

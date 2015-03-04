@@ -25,7 +25,7 @@ abstract class la {
     static int r;
     static int s;
     static int t;
-    static boolean u = false;
+    static boolean w2Debug = false;
     static int v;
     static int w;
     static int x;
@@ -241,7 +241,7 @@ abstract class la {
         }
         y++;
         hk.loginStage = 0;
-        um.a(0);
+        um.resetCache(0);
         li.a();
         for (int i_31_ = 0; i_31_ < 4; i_31_++)
             su.a[i_31_].a(2097152);
@@ -266,7 +266,7 @@ abstract class la {
         uo.a.a(true);
         ObjectDef.Ib = 0;
         jt.a.a(true);
-        FileOnDisk.c((byte) -110);
+        FileOnDisk.c();
         qs.a = 0;
         cp.e.a(10542);
         ns.c((byte) -58);
@@ -649,7 +649,7 @@ abstract class la {
     private final void a(int i, byte i_132_, String string) {
         z++;
         if (i_132_ != 122)
-            u = false;
+            w2Debug = false;
         int i_133_ = 0;
         boolean bool = false;
         for (int i_134_ = 0; i_134_ < string.length(); i_134_++) {
@@ -679,7 +679,7 @@ abstract class la {
             return false;
         int i_144_ = dr.a(bn.c, i_137_, i_142_, i_135_, i_140_, bool, i_141_,
                 su.a[((Animable) up.thisPlayer).height], i_143_, i_139_, true,
-                up.thisPlayer.i(i - 2), kq.S, i_136_, i_138_);
+                up.thisPlayer.getNPCDefinition(i - 2), kq.S, i_136_, i_138_);
         if (i_144_ < 1)
             return false;
         bca.c = kq.S[i_144_ - 1];

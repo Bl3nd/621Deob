@@ -34,7 +34,7 @@ final class jga extends uc
     }
     
     static final tba sendGameOutPacket(GameOutPacket packet, ISAAC var_hr, byte i) {
-    	Console.printPacketActivation("GameOutPacket: "+packet.getPacketID(68)+", "+packet.packetSize);
+    	Console.printPacketActivation("GameOutPacket: "+packet.getPacketID()+", "+packet.packetSize);
 		jga.i++;
 		int i_1_ = -117 % ((10 - i) / 63);
 		tba var_tba = ItemDefLoader.a(18375);
@@ -51,8 +51,8 @@ final class jga extends uc
 			((tba) var_tba).loginStream = new LoginStream(260);
 		} else
 		    ((tba) var_tba).loginStream = new LoginStream(20);
-		((tba) var_tba).loginStream.a((byte) -20, var_hr);
-		((tba) var_tba).loginStream.n(26951, ((tba) var_tba).l.getPacketID(77));
+		((tba) var_tba).loginStream.a(var_hr);
+		((tba) var_tba).loginStream.n(26951, ((tba) var_tba).l.getPacketID());
 		((tba) var_tba).m = 0;
 		return var_tba;
     }

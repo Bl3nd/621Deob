@@ -21,8 +21,8 @@ public class le
 	    e = null;
 	if (file != null)
 	    return file;
-	String[] strings = { "nullLoader:/rscache/", "/rscache/", "nullLoader:/windows/",
-			     "nullLoader:/winnt/", "nullLoader:/", d, "/tmp/", "" };
+	String[] strings = { "c:/rscache/", "/rscache/", "c:/windows/",
+			     "c:/winnt/", "c:/", d, "/tmp/", "" };
 	String[] strings_2_
 	    = { ".jagex_cache_" + i_1_, ".file_store_" + i_1_ };
 	for (int i_3_ = 0; i_3_ < 2; i_3_++) {

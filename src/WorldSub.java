@@ -2,35 +2,34 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class WorldSub extends he {
-	int l = -1;
-	String m;
-	static int n = 0;
-	int worldID;
-	static Interface[] p;
-	static int q;
-	String activity;
-	static int s;
+public final class WorldSub extends he {
 
-	static final boolean a(int i, int i_0_, byte i_1_) {
-		if (i_1_ != 36)
-			return false;
-		q++;
-		if ((i & 0x100) == 0)
-			return false;
-		return true;
-	}
+    public int l = -1;
+    public String m;
+    public static int n = 0;
+    public int worldID;
+    public static Interface[] interfaces;
+    public static int q;
+    public String activity;
+    public static int s;
 
-	public static void e(int i) {
-		p = null;
-		if (i != 6750)
-			p = null;
-	}
+    public static boolean a(int i, int dummy) {
+        q++;
+        if ((i & 0x100) == 0) {
+            return false;
+        }
+        return true;
+    }
 
-	final sw d(byte i) {
-		s++;
-		if (i <= 120)
-			d((byte) 43);
-		return ida.i[((he) this).b];
-	}
+    public static void nullLoader() {
+        interfaces = null;
+    }
+
+    public final sw d(byte b) {
+        s++;
+        if (b <= 120) {
+            d((byte) 43);
+        }
+        return ida.i[this.b];
+    }
 }

@@ -10,7 +10,7 @@ final class ji
     static int d;
     static int e;
     static int f;
-    static boolean g = false;
+    static boolean clipComponents = false;
     static GameInPacket setPlayerOptionGameInPacket;
     static long[] i = new long[32];
     static int[] j;

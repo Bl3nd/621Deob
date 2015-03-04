@@ -2,126 +2,114 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class ao extends ua
-{
+public final class ao extends ua {
+
     static int f;
-    ls g;
+    ls ls;
     static int h = -1;
     static int i;
     static int j;
     static int k = 0;
     static GameInPacket incomingPacket12 = new GameInPacket(12, -1);
     static int m;
-    
-    static final la a(boolean bool, int i, Class_r class_r, int i_0_) {
-	m++;
-	bq var_bq = wo.a((byte) -56, i, class_r, bool);
-	if (i_0_ != 0)
-	    return null;
-	if (var_bq == null)
-	    return null;
-	return ((bq) var_bq).g;
+
+    public static la a(boolean bool, int i, Class_r class_r, int j) {
+        m++;
+        bq bq = wo.a((byte) -56, i, class_r, bool);
+        if (j != 0) {
+            return null;
+        }
+        if (bq == null) {
+            return null;
+        }
+        return bq.g;
     }
-    
-    static final void a(int i, int i_1_, int i_2_, byte i_3_) {
-	i_1_ = ((jb) cs.g).N * i_1_ >> 8;
-	f++;
-	if (i_3_ != -123)
-	    h = 97;
-	if ((i ^ 0xffffffff) != 0 || Class_jc.ib) {
-	    if ((i ^ 0xffffffff) != 0 && (i != ws.G || !ir.a(true))
-		&& i_1_ != 0 && !Class_jc.ib)
-		Class_hc.a(i_1_, false, i, mq.a, i_2_, 0, (byte) 117);
-	} else
-	    ku.a(true);
-	ws.G = i;
+
+    public static void a(int i, int j, int k, byte b) {
+        j = cs.g.N * j >> 8;
+        f++;
+        if (b != -123) {
+            h = 97;
+        }
+        if ((~i) != 0 || Class_jc.ib) {
+            if ((~i) != 0 && (i != ws.G || !ir.a(true)) && j != 0 && !Class_jc.ib) {
+                Class_hc.a(j, false, i, mq.pl, k, 0, (byte) 117);
+            }
+        } else {
+            ku.a(true);
+        }
+        ws.G = i;
     }
-    
-    static final void b(int i) {
-	j++;
-	for (ri var_ri = (ri) iq.g.a((int) 86); var_ri != null;
-	     var_ri = (ri) iq.g.b((byte) 122)) {
-	    bi var_bi = ((ri) var_ri).s;
-	    if (((bi) var_bi).mb < pm.currentTimedTicks) {
-		var_ri.unlink(-61);
-		var_bi.a((byte) 105);
-	    } else if (((bi) var_bi).tb <= pm.currentTimedTicks) {
-		if (((bi) var_bi).ub > 0) {
-		    NPCNode var_mi
-			= (NPCNode) uo.a.a(-32748, (long) (((bi) var_bi).ub - 1));
-		    if (var_mi != null) {
-			NPC class_ac = ((NPCNode) var_mi).npc;
-			if (((Animable) class_ac).locX >= 0
-			    && 512 * Class_hc.e > ((Animable) class_ac).locX
-			    && ((Animable) class_ac).locY >= 0
-			    && bw.v * 512 > ((Animable) class_ac).locY)
-			    var_bi.a(((Animable) class_ac).locY, ((Animable) class_ac).locX, 0,
-				     pm.currentTimedTicks,
-				     (Class_u.b(((Animable) class_ac).locX,
-						((Animable) var_bi).height, -20214,
-						((Animable) class_ac).locY)
-				      - ((bi) var_bi).jb));
-		    }
-		}
-		if (((bi) var_bi).ub < 0) {
-		    int i_4_ = -((bi) var_bi).ub - 1;
-		    Player var_qi;
-		    if (i_4_ == ih.n)
-			var_qi = up.thisPlayer;
-		    else
-			var_qi = Class_fc.playersInScreen[i_4_];
-		    if (var_qi != null && ((Animable) var_qi).locX >= 0
-			&& ((Animable) var_qi).locX < Class_hc.e * 512
-			&& ((Animable) var_qi).locY >= 0
-			&& ((Animable) var_qi).locY < 512 * bw.v)
-			var_bi.a(((Animable) var_qi).locY, ((Animable) var_qi).locX, 0, pm.currentTimedTicks,
-				 (Class_u.b(((Animable) var_qi).locX, ((Animable) var_bi).height,
-					    -20214, ((Animable) var_qi).locY)
-				  - ((bi) var_bi).jb));
-		}
-		var_bi.a(nq.x, 0);
-		to.a(var_bi, true);
-	    }
-	}
-	if (i > -64)
-	    a(-68, 62, -61, (byte) -46);
+
+    public static void b() {
+        j++;
+        for (ri ri = (ri) iq.g.a(86); ri != null; ri = (ri) iq.g.b((byte) 122)) {
+            bi bi = ri.s;
+            if (bi.mb < pm.currentTimedTicks) {
+                ri.unlink(-61);
+                bi.a((byte) 105);
+            } else if (bi.tb <= pm.currentTimedTicks) {
+                if (bi.ub > 0) {
+                    NPCNode npcNode = (NPCNode) uo.a.a(-32748, (long) (bi.ub - 1));
+                    if (npcNode != null) {
+                        NPC npc = npcNode.npc;
+                        if (npc.locX >= 0 && 512 * Class_hc.e > npc.locX && npc.locY >= 0 && bw.v * 512 > npc.locY) {
+                            bi.a(npc.locY, npc.locX, 0, pm.currentTimedTicks, (Class_u.b(npc.locX, bi.height, -20214, npc.locY) - bi.jb));
+                        }
+                    }
+                }
+                if (bi.ub < 0) {
+                    int inScreenIndex = -bi.ub - 1;
+                    Player player;
+                    if (inScreenIndex == ih.n) {
+                        player = up.thisPlayer;
+                    } else {
+                        player = Class_fc.playersInScreen[inScreenIndex];
+                    }
+                    if (player != null && player.locX >= 0 && player.locX < Class_hc.e * 512 && player.locY >= 0 && player.locY < 512 * bw.v) {
+                        bi.a(player.locY, player.locX, 0, pm.currentTimedTicks, (Class_u.b(player.locX, bi.height, -20214, player.locY) - bi.jb));
+                    }
+                }
+                bi.a(nq.x, 0);
+                to.a(bi, true);
+            }
+        }
     }
-    
-    public static void a(byte i) {
-	incomingPacket12 = null;
-	if (i >= -99)
-	    incomingPacket12 = null;
+
+    public static void nullLoader() {
+        incomingPacket12 = null;
     }
-    
-    ao(en var_en, int i, int i_5_, byte[] is) {
-	((ao) this).g = var_en.a(is, i, i_5_, NPCDef.hb, false, (byte) 73);
-	((ao) this).g.a((byte) -81, false, false);
+
+    public ao(en en, int i, int j, byte[] buf) {
+        this.ls = en.a(buf, i, j, NPCDef.hb, false, (byte) 73);
+        this.ls.a((byte) -81, false, false);
     }
-    
-    ao(en var_en, int i, int i_6_, int[] is) {
-	((ao) this).g = var_en.a(i, false, i_6_, is, (byte) 65);
-	((ao) this).g.a((byte) -81, false, false);
+
+    public ao(en en, int i, int j, int[] buf) {
+        this.ls = en.a(i, false, j, buf, (byte) 65);
+        this.ls.a((byte) -81, false, false);
     }
-    
-    static final int a(byte i, float f, float f_7_, float f_8_) {
-	ao.i++;
-	float f_9_ = f_8_ < 0.0F ? -f_8_ : f_8_;
-	if (i > -90)
-	    incomingPacket12 = null;
-	float f_10_ = f < 0.0F ? -f : f;
-	float f_11_ = !(f_7_ < 0.0F) ? f_7_ : -f_7_;
-	if (f_9_ < f_10_ && f_11_ < f_10_) {
-	    if (!(f > 0.0F))
-		return 1;
-	    return 0;
-	}
-	if (f_9_ < f_11_ && f_11_ > f_10_) {
-	    if (!(f_7_ > 0.0F))
-		return 3;
-	    return 2;
-	}
-	if (f_8_ > 0.0F)
-	    return 4;
-	return 5;
+
+    public static int a(float f, float f1, float f2) {
+        ao.i++;
+        float f3 = f2 < 0.0F ? -f2 : f2;
+        float f4 = f < 0.0F ? -f : f;
+        float f5 = !(f1 < 0.0F) ? f1 : -f1;
+        if (f3 < f4 && f5 < f4) {
+            if (!(f > 0.0F)) {
+                return 1;
+            }
+            return 0;
+        }
+        if (f3 < f5 && f5 > f4) {
+            if (!(f1 > 0.0F)) {
+                return 3;
+            }
+            return 2;
+        }
+        if (f2 > 0.0F) {
+            return 4;
+        }
+        return 5;
     }
 }

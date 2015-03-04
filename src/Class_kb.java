@@ -24,8 +24,8 @@ final class Class_kb extends Node
 		= Math.max(((Interface) var_kp).minHScroll / 2, ((Interface) var_kp).minVScroll / 2) + 10;
 	    int i_6_ = i_0_ * i_0_ + i_1_ * i_1_;
 	    if (i_5_ * i_5_ >= i_6_) {
-		int i_7_ = GameInPacket.h[i_4_];
-		int i_8_ = GameInPacket.i[i_4_];
+		int i_7_ = GameInPacket.ints1[i_4_];
+		int i_8_ = GameInPacket.ints2[i_4_];
 		int i_9_ = -58 / ((9 - i_3_) / 63);
 		if (ll.x != 4) {
 		    i_8_ = i_8_ * 256 / (vd.N + 256);

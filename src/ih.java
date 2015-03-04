@@ -22,7 +22,7 @@ final class ih
     
     static final void a(String string, File file, int i) {
 	k++;
-	aea.H.put(string, file);
+	aea.hashtable.put(string, file);
 	int i_0_ = -114 / ((i + 57) / 62);
     }
     

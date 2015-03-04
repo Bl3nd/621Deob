@@ -68,7 +68,7 @@ final class sda
 	vca var_vca = j.a(i, (byte) 86);
 	int i_19_ = !((vca) var_vca).p ? ((en) e).ve : 64;
 	ls var_ls;
-	if (((vca) var_vca).t && e.z()) {
+	if (((vca) var_vca).t && e.bloom()) {
 	    float[] fs = j.a(110, i_19_, false, 0.7F, i_19_, i);
 	    var_ls = e.a(i_19_, fs, nda.h, ((vca) var_vca).g != 0, i_19_,
 			 i_18_ + 23049);
@@ -147,7 +147,7 @@ final class sda
 	for (/**/; i_25_ >= i_26_; i_26_++) {
 	    client.a();
 	    client.m(i_26_);
-	    client.i(i_26_);
+	    client.setLocation(i_26_);
 	}
 	client.d();
 	client.c();

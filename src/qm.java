@@ -10,7 +10,7 @@ final class qm
     private Inflater c;
     static int heapSize = 64;
     static int e;
-    static boolean f = false;
+    static boolean isNonpcs = false;
     static int g;
     
     final void a(byte i, BytesParser var_es, byte[] is) {
@@ -30,7 +30,7 @@ final class qm
 	}
 	c.reset();
 	if (i < 118)
-	    f = true;
+	    isNonpcs = true;
     }
     
     final byte[] a(byte[] is, int i) {
@@ -48,7 +48,7 @@ final class qm
     public static void a(int i) {
 	a = null;
 	if (i <= 119)
-	    f = false;
+	    isNonpcs = false;
     }
     
     static final void a(int i, long l) {
@@ -76,7 +76,7 @@ final class qm
 	    vaa.L += i_6_;
 	}
 	if (!((jb) cs.g).n) {
-	    qw.n += (float) l * afa.a / 6.0F;
+	    qw.n += (float) l * afa.aFloat / 6.0F;
 	    pm.F += (float) l * pda.J / 6.0F;
 	}
 	if (i_4_ != Class_k.N) {

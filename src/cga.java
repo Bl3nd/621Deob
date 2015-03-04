@@ -39,14 +39,14 @@ final class cga extends Node
 	k++;
 	try {
 	    if (pj.j == 2) {
-		if (ak.i == null) {
-		    ak.i = vw.a(Class_vb.s, ha.u, ifa.a);
-		    if (ak.i == null)
+		if (ak.vw == null) {
+		    ak.vw = vw.a(Class_vb.s, ha.u, ifa.a);
+		    if (ak.vw == null)
 			return false;
 		}
 		if (Node.a == null)
 		    Node.a = new pj(Animable.pl_, qs.h);
-		if (ou.g.a(re.e, ak.i, (byte) 116, 22050, Node.a)) {
+		if (ou.g.a(re.e, ak.vw, (byte) 116, 22050, Node.a)) {
 		    ou.g.d((byte) -53);
 		    if (dt.nb > 0) {
 			pj.j = 3;
@@ -56,10 +56,10 @@ final class cga extends Node
 			ou.g.b(-73, uaa.e);
 		    }
 		    if (wl.g > 0L)
-			ou.g.a(wl.g, ak.i, -104, nj.m, true);
+			ou.g.a(wl.g, ak.vw, -104, nj.m, true);
 		    else
-			ou.g.a(ak.i, nj.m, 4096);
-		    ak.i = null;
+			ou.g.a(ak.vw, nj.m, 4096);
+		    ak.vw = null;
 		    wl.g = 0L;
 		    Class_vb.s = null;
 		    Node.a = null;
@@ -72,7 +72,7 @@ final class cga extends Node
 	    ou.g.b((int) 32);
 	    Node.a = null;
 	    pj.j = 0;
-	    ak.i = null;
+	    ak.vw = null;
 	    Class_vb.s = null;
 	}
 	return false;

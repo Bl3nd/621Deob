@@ -341,10 +341,10 @@ public final class ObjectDef {
         }
         if (b == -1) {
             if (r != -1) {
-                index = haa.b(r, i + 1527);
+                index = haa.getClientVarp(r, i + 1527);
             }
         } else {
-            index = haa.a(112, b);
+            index = haa.getClientVarpBit(112, b);
         }
         if (index < 0 || index >= this.xb.length - 1 || (~this.xb[index]) == 0) {
             int j = this.xb[this.xb.length - 1];
@@ -506,7 +506,7 @@ public final class ObjectDef {
                                                                                                                 int j1 = stream.readTribyte(-1);
                                                                                                                 Node node;
                                                                                                                 if (bool) {
-                                                                                                                    node = new aa(stream.readString((byte) 125));
+                                                                                                                    node = new Node_Sub(stream.readString((byte) 125));
                                                                                                                 } else {
                                                                                                                     node = new GameInPacketHandler(stream.readInt(dummy ^ ~0x784a));
                                                                                                                 }
@@ -796,9 +796,10 @@ public final class ObjectDef {
 
     public final String a(int i, String string, int j) {
         lb++;
-        if (Mb == null)
+        if (Mb == null) {
             return string;
-        aa aa = (aa) Mb.a(j ^ ~0x882, (long) i);
+        }
+        Node_Sub aa = (Node_Sub) Mb.a(j ^ ~0x882, (long) i);
         if (aa == null) {
             return string;
         }

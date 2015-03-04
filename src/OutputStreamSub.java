@@ -4,7 +4,7 @@
 import java.io.IOException;
 import java.io.OutputStream;
 
-final class na extends OutputStream
+final class OutputStreamSub extends OutputStream
 {
     static int a;
     static int b;

@@ -3,25 +3,25 @@
  */
 
 public final class GameOutPacket {
-	
-	static GameInPacket incomingPacket102 = new GameInPacket(102, 12);
-	static int getPacketIDs;
-	static int c;
-	static String[] d = new String[100];
-	private int packetID;
-	static pl pl;
-	static float g = 1.0F;
-	static int h;
-	static int toStrings;
-	static GameInPacket incomingPacket46 = new GameInPacket(46, 4);
-	int packetSize;
-	static wl wl = new wl("RC", 1);
-	static String[] m;
-	static float[] n = { 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F };
-	static GameInPacket incomingPacket59;
-	static int p;
 
-	public static WorldSub a(int i) {
+    public static GameInPacket incomingPacket102 = new GameInPacket(102, 12);
+    public static int getPacketIDs;
+    public static int c;
+    public static String[] d = new String[100];
+    private int packetID;
+    public static pl pl;
+    public static float g = 1.0F;
+    public static int h;
+    public static int toStrings;
+    public static GameInPacket incomingPacket46 = new GameInPacket(46, 4);
+    public int packetSize;
+    public static wl RC = new wl("RC", 1);
+    public static String[] m;
+    public static float[] n = { 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F };
+    public static GameInPacket incomingPacket59;
+    public static int dataToString;
+
+	public static WorldSub a() {
 		c++;
 		if (ff.s < il.o.length) {
 			return il.o[ff.s++];
@@ -29,10 +29,7 @@ public final class GameOutPacket {
 		return null;
 	}
 
-	public static sa a(pl pl, int i, byte b) {
-		if (b != 32) {
-			return null;
-		}
+	public static sa a(pl pl, int i) {
 		h++;
 		byte[] buf = pl.a(103, i);
 		if (buf == null) {
@@ -41,24 +38,21 @@ public final class GameOutPacket {
 		return new sa(buf);
 	}
 
-	public static String a(String[] strings, int i, int j, int k) {
-		p++;
+	public static String dataToString(String[] strings, int i, int offset) {
+		dataToString++;
 		if (i == 0) {
 			return "";
 		}
 		if (i == 1) {
-			String string = strings[k];
+			String string = strings[offset];
 			if (string == null) {
 				return "null";
 			}
-			return string.toString();
+			return string;
 		}
-		int i1 = k + i;
+		int i1 = offset + i;
 		int j1 = 0;
-		if (j != 4) {
-			return null;
-		}
-		for (int index = k; i1 > index; index++) {
+		for (int index = offset; i1 > index; index++) {
 			String string = strings[index];
 			if (string != null) {
 				j1 += string.length();
@@ -67,7 +61,7 @@ public final class GameOutPacket {
 			}
 		}
 		StringBuffer stringbuffer = new StringBuffer(j1);
-		for (int index = k; index < i1; index++) {
+		for (int index = offset; index < i1; index++) {
 			String string = strings[index];
 			if (string == null) {
 				stringbuffer.append("null");
@@ -78,22 +72,16 @@ public final class GameOutPacket {
 		return stringbuffer.toString();
 	}
 
-	public final int getPacketID(int dummy) {
-		if (dummy < 68) {
-			return 38;
-		}
+	public final int getPacketID() {
 		getPacketIDs++;
 		return packetID;
 	}
 
-	public static void nullLoader(int i) {
+	public static void nullLoader() {
 		d = null;
 		pl = null;
 		m = null;
-		if (i != 27598) {
-			incomingPacket46 = null;
-		}
-		wl = null;
+		RC = null;
 		incomingPacket102 = null;
 		n = null;
 		incomingPacket46 = null;

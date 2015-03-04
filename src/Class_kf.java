@@ -202,7 +202,7 @@ final class Class_kf extends ft
 	C++;
 	int i = ((Interface) var_kp).maxHScroll != 0 ? ((Interface) var_kp).maxHScroll : ((Interface) var_kp).minHScroll;
 	int i_22_ = ((Interface) var_kp).maxVScroll != 0 ? ((Interface) var_kp).maxVScroll : ((Interface) var_kp).minVScroll;
-	sca.a(i_22_, i, aa.o[((Interface) var_kp).interfaceID >> 16], ((Interface) var_kp).interfaceID,
+	sca.a(i_22_, i, Node_Sub.o[((Interface) var_kp).interfaceID >> 16], ((Interface) var_kp).interfaceID,
 	      bool_21_, -115);
 	if (((Interface) var_kp).children != null)
 	    sca.a(i_22_, i, ((Interface) var_kp).children, ((Interface) var_kp).interfaceID, bool_21_, -116);

@@ -298,8 +298,8 @@ public abstract class Entity extends qda {
 		xb++;
 		int i2 = this.B + this.I >> 1;
 		int j2 = this.x + this.y >> 1;
-		int k2 = GameInPacket.h[j];
-		int i3 = GameInPacket.i[j];
+		int k2 = GameInPacket.ints1[j];
+		int i3 = GameInPacket.ints2[j];
 		int j3 = -k / 2;
 		int k3 = -j1 / 2;
 		int i4 = j3 * i3 + k2 * k3 >> 14;
@@ -577,7 +577,11 @@ public abstract class Entity extends qda {
 		this.Oc = false;
 	}
 
-	public static void c(byte b) {
+    /**
+     * Called by the command (rebuild).
+     * @param b
+     */
+	public static void rebuildMap(byte b) {
 		rb++;
 		dg.Cb = -1;
 		tl.e = null;
@@ -586,7 +590,7 @@ public abstract class Entity extends qda {
 		}
 	}
 
-	int i(int i) {
+	int getNPCDefinition(int i) {
 		if (i != -1) {
 			this.hitBarScale = -92;
 		}
@@ -596,7 +600,7 @@ public abstract class Entity extends qda {
 
 	public static void cancel(boolean bool) {
 		Lb++;
-		oca.m = new bfa(GameText.cancelText.getString((byte) 103, cba.languageID), "", da.e, 1003, -1, 0L, 0, 0, true, bool);
+		oca.m = new bfa(GameText.cancelText.getString(cba.languageID), "", da.e, 1003, -1, 0L, 0, 0, true, bool);
 	}
 
 	public int j(int i) {
@@ -623,7 +627,7 @@ public abstract class Entity extends qda {
 		if (j != -1) {
 			return hs.f.a(j, (byte) 99);
 		}
-		return av.g;
+		return av.cg;
 	}
 
 	public final void a(int orientation, int i, boolean bool) {

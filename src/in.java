@@ -58,8 +58,8 @@ final class in extends bv implements nl
 	if (mu.j == 1)
 	    eq.b(-8234);
 	else {
-	    caa.a(aw.l, hn.b, lfa.r, (byte) 31, mr.a);
-	    int i_3_ = dca.R.a((byte) 99, GameText.chooseOptionText.getString((byte) -99, cba.languageID));
+	    caa.a(aw.option, hn.y_, lfa.r, (byte) 31, mr.x_);
+	    int i_3_ = dca.R.a((byte) 99, GameText.chooseOptionText.getString(cba.languageID));
 	    for (bfa var_bfa_4_ = (bfa) oba.I.a((int) 96); var_bfa_4_ != null;
 		 var_bfa_4_ = (bfa) oba.I.b((byte) 36)) {
 		int i_5_ = hv.a(25322, var_bfa_4_);
@@ -67,7 +67,7 @@ final class in extends bv implements nl
 		    i_3_ = i_5_;
 	    }
 	    lfa.r = (!lq.hb ? 22 : 16 * mu.j) + 26;
-	    aw.l = i_3_ + 8;
+	    aw.option = i_3_ + 8;
 	}
     }
     

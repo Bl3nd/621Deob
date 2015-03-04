@@ -13,8 +13,8 @@ final class tp
         pc.P = 0;
         Class_jc.hb = 0;
         bga.s = 0;
-        cca.a = 0;
-        Connection.k = 0;
+        InputStreamSub_1.a = 0;
+        Connection.setStreamsToSubs = 0;
         wj.m = 0;
         pr.C = 0;
         ss.q = 0;
@@ -26,16 +26,16 @@ final class tp
         dd.H = 0;
         tfa.d = 0;
         caa.s = 0;
-        bj.f = 0;
+        Commands.applyClientCommand = 0;
         LoginStream.Mb = 0;
-        client.cb = 0;
+        client.nullContainer = 0;
         ui.b = 0;
         Class_db.C = 0;
         Class_kf.C = 0;
         NPCDef.k = 0;
         eda.b = 0;
         sq.e = 0;
-        ISAAC.getNextKeyAndPrepareNexts = 0;
+        ISAAC.getNextKeyAndPrepareNext = 0;
         kq.P = 0;
         efa.f = 0;
         ww.g = 0;
@@ -95,7 +95,7 @@ final class tp
         cd.D = 0;
         qj.md = 0;
         ew.n = 0;
-        World.e = 0;
+        World.isWorld = 0;
         tf.e = 0;
         qj.W = 0;
         tfa.k = 0;
@@ -182,7 +182,7 @@ final class tp
         dga.v = 0;
         bt.e = 0;
         qj.jc = 0;
-        jp.n = 0;
+        RSKeyListener.n = 0;
         cq.M = 0;
         gfa.g = 0;
         qj.sc = 0;
@@ -193,14 +193,14 @@ final class tp
         ObjectDef.Jb = 0;
         la.e = 0;
         aaa.j = 0;
-        LoginStream.Lb = 0;
+        LoginStream.readBits = 0;
         vm.q = 0;
         qk.r = 0;
         oba.D = 0;
         vv.s = 0;
         te.r = 0;
         lm.Oh = 0;
-        jp.t = 0;
+        RSKeyListener.t = 0;
         ik.i = 0;
         dt.M = 0;
         fh.b = 0;
@@ -209,7 +209,7 @@ final class tp
         cj.k = 0;
         ida.f = 0;
         ItemDefLoader.o = 0;
-        ak.g = 0;
+        ak.close = 0;
         ar.U = 0;
         qs.d = 0;
         lw.i = 0;
@@ -239,7 +239,7 @@ final class tp
         tn.g = 0;
         pl.b = 0;
         ek.n = 0;
-        jp.j = 0;
+        RSKeyListener.j = 0;
         qj.E = 0;
         NPCDef.tb = 0;
         wi.c = 0;
@@ -252,7 +252,7 @@ final class tp
         wd.s = 0;
         jj.t = 0;
         te.x = 0;
-        bj.e = 0;
+        Commands.e = 0;
         iv.x = 0;
         qj.zd = 0;
         gda.j = 0;
@@ -262,7 +262,7 @@ final class tp
         jk.l = 0;
         nu.l = 0;
         ji.d = 0;
-        Player.Ad = 0;
+        Player.updateLocation = 0;
         Class_jc.E = 0;
         LoginStream.Ob = 0;
         Class_hb.x = 0;
@@ -275,7 +275,7 @@ final class tp
         bf.D = 0;
         jv.g = 0;
         qj.dd = 0;
-        jp.q = 0;
+        RSKeyListener.q = 0;
         cv.h = 0;
         en.Bc = 0;
         lm.Ih = 0;
@@ -315,9 +315,9 @@ final class tp
         Entity.Z = 0;
         fi.c = 0;
         lm.Zg = 0;
-        Connection.d = 0;
+        Connection.readCount = 0;
         er.b = 0;
-        SpecialOutPacket.f = 0;
+        SpecialOutPacket.toString = 0;
         en.Pc = 0;
         um.d = 0;
         po.f = 0;
@@ -362,7 +362,7 @@ final class tp
         ia.v = 0;
         qk.a = 0;
         jf.h = 0;
-        fca.a = 0;
+        fca.clearTextCoords = 0;
         rv.v = 0;
         kga.Y = 0;
         qca.k = 0;
@@ -398,7 +398,7 @@ final class tp
         qj.xb = 0;
         rea.I = 0;
         pj.a = 0;
-        GameText.c = 0;
+        GameText.toString = 0;
         qj.wb = 0;
         qj.Ad = 0;
         pm.J = 0;
@@ -415,7 +415,7 @@ final class tp
         Player.Fd = 0;
         sq.a = 0;
         td.j = 0;
-        jp.r = 0;
+        RSKeyListener.r = 0;
         fr.m = 0;
         kw.y = 0;
         qj.Bc = 0;
@@ -453,7 +453,7 @@ final class tp
         n.k = 0;
         qj.w = 0;
         bu.q = 0;
-        ah.h = 0;
+        ah.setPN = 0;
         bl.p = 0;
         id.i = 0;
         dg.Bb = 0;
@@ -558,11 +558,11 @@ final class tp
         LoginStream.Hb = 0;
         rr.b = 0;
         lm.Yh = 0;
-        World.d = 0;
+        World.rotateConnectionMethods = 0;
         cv.v = 0;
         lm.Xh = 0;
         en.Yb = 0;
-        LoginStream.Eb = 0;
+        LoginStream.initBits = 0;
         client.Z = 0;
         Class_mb.kb = 0;
         BytesParser.writeLongs = 0;
@@ -571,7 +571,7 @@ final class tp
         nk.c = 0;
         vea.b = 0;
         qba.D = 0;
-        PlayerDef.h = 0;
+        PlayerDef.getGameStatus = 0;
         it.s = 0;
         dt.D = 0;
         ti.x = 0;
@@ -587,7 +587,7 @@ final class tp
         dr.o = 0;
         sca.d = 0;
         dj.l = 0;
-        gba.u = 0;
+        gba.dumpHeap = 0;
         eq.E = 0;
         qca.v = 0;
         cm.L = 0;
@@ -635,7 +635,7 @@ final class tp
         pg.c = 0;
         br.f = 0;
         cga.L = 0;
-        jp.k = 0;
+        RSKeyListener.k = 0;
         Class_kf.J = 0;
         Entity.xb = 0;
         ei.c = 0;
@@ -832,7 +832,7 @@ final class tp
         Class_jc.Z = 0;
         pm.I = 0;
         Interface.N = 0;
-        na.a = 0;
+        OutputStreamSub.a = 0;
         qt.v = 0;
         ow.J = 0;
         dfa.z = 0;
@@ -874,7 +874,7 @@ final class tp
         ida.c = 0;
         rh.r = 0;
         nr.h = 0;
-        cc.k = 0;
+        cc.saveVarcs = 0;
         eca.j = 0;
         gn.F = 0;
         Entity.Vb = 0;
@@ -903,13 +903,13 @@ final class tp
         n.a = 0;
         gm.f = 0;
         baa.m = 0;
-        Class_fd.O = 0;
+        Class_fd.demoLogin = 0;
         gfa.Q = 0;
         NPCDef.C = 0;
         nf.y = 0;
         pl.d = 0;
         Class_ug.R = 0;
-        cca.e = 0;
+        InputStreamSub_1.e = 0;
         lu.q = 0;
         op.U = 0;
         ln.n = 0;
@@ -995,7 +995,7 @@ final class tp
         wo.c = 0;
         rg.c = 0;
         mga.N = 0;
-        jb.U = 0;
+        jb.shadows = 0;
         vaa.U = 0;
         me.n = 0;
         en.Ad = 0;
@@ -1031,7 +1031,7 @@ final class tp
         lq.applyPlayerAnimations = 0;
         qaa.S = 0;
         dfa.D = 0;
-        bca.b = 0;
+        bca.showTextures = 0;
         wea.d = 0;
         en.jc = 0;
         PlayerUpdateLocation.f = 0;
@@ -1188,9 +1188,9 @@ final class tp
         qfa.b = 0;
         en.Tb = 0;
         tn.d = 0;
-        ur.e = 0;
-        vca.l = 0;
-        uu.c = 0;
+        ur.setTKVersion = 0;
+        vca.selectAutoWorld = 0;
+        InputStreamSub.c = 0;
         rea.var_n = 0;
         Class_ad.d = 0;
         id.f = 0;
@@ -1219,7 +1219,7 @@ final class tp
         iu.j = 0;
         client.hb = 0;
         ja.v = 0;
-        uca.c = 0;
+        uca.dropClient = 0;
         bn.d = 0;
         mga.z = 0;
         bi.Gb = 0;
@@ -1272,9 +1272,9 @@ final class tp
         Class_q.c = 0;
         ItemDef.s = 0;
         dt.J = 0;
-        jp.v = 0;
+        RSKeyListener.v = 0;
         fq.d = 0;
-        LoginStream.Gb = 0;
+        LoginStream.finishBits = 0;
         ds.a = 0;
         on.m = 0;
         nj.p = 0;
@@ -1319,7 +1319,7 @@ final class tp
         eca.d = 0;
         pl.h = 0;
         dr.d = 0;
-        dj.c = 0;
+        dj.getClientVarp = 0;
         bca.e = 0;
         Class_g.w = 0;
         Class_fd.w = 0;
@@ -1343,7 +1343,7 @@ final class tp
         ao.i = 0;
         eg.H = 0;
         qj.lb = 0;
-        ak.d = 0;
+        ak.setToNewInputStream = 0;
         gfa.q = 0;
         nf.C = 0;
         im.D = 0;
@@ -1372,7 +1372,7 @@ final class tp
         qj.Rb = 0;
         kga.M = 0;
         dk.i = 0;
-        uaa.g = 0;
+        uaa.dropClientJS5 = 0;
         ip.F = 0;
         ce.q = 0;
         qc.e = 0;
@@ -1457,7 +1457,7 @@ final class tp
         lq.eb = 0;
         ek.p = 0;
         en.Hb = 0;
-        jp.h = 0;
+        RSKeyListener.h = 0;
         sc.h = 0;
         en.Kb = 0;
         ih.a = 0;
@@ -1480,7 +1480,7 @@ final class tp
         vaa.nb = 0;
         jfa.M = 0;
         fba.h = 0;
-        GameOutPacket.p = 0;
+        GameOutPacket.dataToString = 0;
         bi.vb = 0;
         io.W = 0;
         Interface.mc = 0;
@@ -1598,7 +1598,7 @@ final class tp
         kq.I = 0;
         lm.oh = 0;
         BytesParser.readUnsignedNegativeBytePlus128s = 0;
-        Player.Uc = 0;
+        Player.playerAppearanceUpdate = 0;
         mga.O = 0;
         ek.d = 0;
         gs.w = 0;
@@ -1730,7 +1730,7 @@ final class tp
         lu.v = 0;
         Class_ob.s = 0;
         od.L = 0;
-        ClientScript.r = 0;
+        ClientScript.getFonts = 0;
         ht.t = 0;
         kq.N = 0;
         vv.p = 0;
@@ -1745,7 +1745,7 @@ final class tp
         mga.eb = 0;
         vq.g = 0;
         en.vc = 0;
-        Connection.h = 0;
+        Connection.write = 0;
         BytesParser.writeIntReverseds = 0;
         wf.i = 0;
         pl.F = 0;
@@ -1793,7 +1793,7 @@ final class tp
         gfa.I = 0;
         en.mc = 0;
         ja.qc = 0;
-        Player.Cd = 0;
+        Player.getNPCDefinition = 0;
         tfa.j = 0;
         n.l = 0;
         hq.e = 0;
@@ -1849,7 +1849,7 @@ final class tp
         dt.T = 0;
         wr.E = 0;
         je.h = 0;
-        jp.p = 0;
+        RSKeyListener.p = 0;
         qj.T = 0;
         bd.d = 0;
         qj.Cc = 0;
@@ -2055,7 +2055,7 @@ final class tp
         re.d = 0;
         Interface.ob = 0;
         pm.A = 0;
-        bj.g = 0;
+        Commands.g = 0;
         qj.Gc = 0;
         uc.f = 0;
         PlayerDef.f = 0;
@@ -2107,7 +2107,7 @@ final class tp
         en.Oc = 0;
         iv.g = 0;
         ms.b = 0;
-        ah.j = 0;
+        ah.getComponent = 0;
         pj.c = 0;
         bga.C = 0;
         lq.W = 0;
@@ -2126,7 +2126,7 @@ final class tp
         rd.F = 0;
         io.M = 0;
         ItemDef.w = 0;
-        ItemDef.W = 0;
+        ItemDef.parseValueCount = 0;
         ms.c = 0;
         Class_ae.m = 0;
         qj.tb = 0;
@@ -2144,7 +2144,7 @@ final class tp
         qj.ab = 0;
         cq.I = 0;
         ce.p = 0;
-        he.j = 0;
+        he.cleanup = 0;
         fj.w = 0;
         Class_lc.M = 0;
         js.k = 0;
@@ -2175,7 +2175,7 @@ final class tp
         jm.l = 0;
         qj.u = 0;
         vaa.Ob = 0;
-        Player.td = 0;
+        Player.throwIllegalStateException = 0;
         rh.w = 0;
         Class_ub.mb = 0;
         un.t = 0;
@@ -2305,7 +2305,7 @@ final class tp
         ea.P = 0;
         un.u = 0;
         vk.k = 0;
-        jp.m = 0;
+        RSKeyListener.m = 0;
         vaa.pc = 0;
         da.var_l = 0;
         BytesParser.M = 0;
@@ -2329,7 +2329,7 @@ final class tp
         lm.Ch = 0;
         gh.O = 0;
         qj.xd = 0;
-        dj.a = 0;
+        dj.getClientVarpBit = 0;
         dq.b = 0;
         Class_ae.l = 0;
         iaa.l = 0;
@@ -2409,7 +2409,7 @@ final class tp
         lm.yg = 0;
         fo.g = 0;
         pda.o = 0;
-        uaa.s = 0;
+        uaa.breakConnections = 0;
         jn.u = 0;
         mga.l = 0;
         qj.Fb = 0;
@@ -2433,7 +2433,7 @@ final class tp
         gfa.K = 0;
         ia.y = 0;
         id.d = 0;
-        jp.u = 0;
+        RSKeyListener.u = 0;
         PlayerDef.b = 0;
         en.E = 0;
         on.q = 0;
@@ -2585,7 +2585,7 @@ final class tp
         Class_jg.I = 0;
         pl.P = 0;
         Class_db.I = 0;
-        jp.i = 0;
+        RSKeyListener.i = 0;
         kv.a = 0;
         qj.r = 0;
         gea.b = 0;
@@ -2654,7 +2654,7 @@ final class tp
         ss.var_n = 0;
         Entity.rb = 0;
         lu.C = 0;
-        GameInPacketHandler.o = 0;
+        GameInPacketHandler.isKeyTyped = 0;
         ia.k = 0;
         en.Ab = 0;
         Class_db.y = 0;
@@ -2798,7 +2798,7 @@ final class tp
         en.wb = 0;
         lda.i = 0;
         lea.a = 0;
-        ri.v = 0;
+        ri.showFPS = 0;
         vd.V = 0;
         Class_eb.n = 0;
         mga.m = 0;
@@ -2807,7 +2807,7 @@ final class tp
         tea.j = 0;
         Class_ug.V = 0;
         fu.g = 0;
-        client.B = 0;
+        client.mainMethod = 0;
         en.Tc = 0;
         en.x = 0;
         bga.h = 0;
@@ -2839,7 +2839,7 @@ final class tp
         sa.j = 0;
         cl.o = 0;
         Login.processLoginCount = 0;
-        Connection.y = 0;
+        Connection.killThread = 0;
         lm.xh = 0;
         client.mb = 0;
         jr.p = 0;
@@ -2857,7 +2857,7 @@ final class tp
         BytesParser.readIntReversed2s = 0;
         ja.ic = 0;
         ke.J = 0;
-        jp.l = 0;
+        RSKeyListener.l = 0;
         lm.Cg = 0;
         vv.k = 0;
         kq.J = 0;
@@ -2948,7 +2948,7 @@ final class tp
         dga.r = 0;
         lt.d = 0;
         nda.b = 0;
-        mq.b = 0;
+        mq.putNpcId = 0;
         vn.L = 0;
         rv.u = 0;
         qm.g = 0;
@@ -3161,7 +3161,7 @@ final class tp
         lw.b = 0;
         te.v = 0;
         jl.l = 0;
-        cca.c = 0;
+        InputStreamSub_1.c = 0;
         daa.v = 0;
         lq.ib = 0;
         ufa.i = 0;
@@ -3192,7 +3192,7 @@ final class tp
         tb.p = 0;
         wk.d = 0;
         ol.c = 0;
-        jb.u = 0;
+        jb.isLighting = 0;
         Class_ug.P = 0;
         fba.c = 0;
         jn.E = 0;
@@ -3235,7 +3235,7 @@ final class tp
         dt.u = 0;
         Interactable.unlinkCount = 0;
         Class_jc.X = 0;
-        Connection.v = 0;
+        Connection.read = 0;
         dda.f = 0;
         en.v = 0;
         jt.f = 0;
@@ -3300,7 +3300,7 @@ final class tp
         kw.u = 0;
         ja.Ac = 0;
         im.o = 0;
-        Connection.l = 0;
+        Connection.availableSkips = 0;
         te.s = 0;
         qj.Dc = 0;
         mda.N = 0;
@@ -3315,7 +3315,7 @@ final class tp
         ti.u = 0;
         kl.b = 0;
         ok.F = 0;
-        na.c = 0;
+        OutputStreamSub.c = 0;
         nr.g = 0;
         GameOutPacket.c = 0;
         eda.f = 0;
@@ -3377,7 +3377,7 @@ final class tp
         en.t = 0;
         gga.y = 0;
         Class_ef.D = 0;
-        bj.a = 0;
+        Commands.a = 0;
         dn.m = 0;
         bn.a = 0;
         ufa.c = 0;
@@ -3494,7 +3494,7 @@ final class tp
         tv.c = 0;
         Class_ob.n = 0;
         vaa.D = 0;
-        NPCDef.A = 0;
+        NPCDef.parseValues = 0;
         qj.Eb = 0;
         en.Zc = 0;
         en.sc = 0;
@@ -3530,7 +3530,7 @@ final class tp
         ah.o = 0;
         pl.u = 0;
         hea.a = 0;
-        uu.a = 0;
+        InputStreamSub.a = 0;
         sl.y = 0;
         pc.I = 0;
         rd.p = 0;
@@ -3592,11 +3592,11 @@ final class tp
         qj.mb = 0;
         Class_ub.lb = 0;
         Class_lc.Z = 0;
-        rv.m = 0;
+        rv.unloadNativeLibraries = 0;
         BytesParser.readUTF8s = 0;
         dt.vb = 0;
         in.c = 0;
-        jp.w = 0;
+        RSKeyListener.w = 0;
         Class_mb.ib = 0;
         vaa.ic = 0;
         bl.r = 0;
@@ -3610,7 +3610,7 @@ final class tp
         wr.C = 0;
         Class_rb.M = 0;
         ww.y = 0;
-        jp.o = 0;
+        RSKeyListener.o = 0;
         pg.g = 0;
         ar.R = 0;
         NPC.cd = 0;
@@ -3665,7 +3665,7 @@ final class tp
         Player.Wc = 0;
         Class_ug.bb = 0;
         jf.e = 0;
-        na.b = 0;
+        OutputStreamSub.b = 0;
         ida.e = 0;
         lm.nh = 0;
         pi.d = 0;
@@ -3711,7 +3711,7 @@ final class tp
         eba.r = 0;
         mca.o = 0;
         bh.s = 0;
-        aa.k = 0;
+        Node_Sub.k = 0;
         bq.d = 0;
         lp.a = 0;
         lm.ah = 0;
@@ -3744,7 +3744,7 @@ final class tp
         uo.a.a(true);
         iq.g.d(i + 2);
         rv.o.d(i ^ 2);
-        gs.v.b(128);
+        gs.v.clearTextCoords(128);
         jt.a.a(true);
         Class_u.L = new Class_ae();
         cp.e.a(i + 10542);
@@ -3767,7 +3767,7 @@ final class tp
             li.a(Class_vb.u, 0);
         for(tt tt1 = (tt)ida.l.b((byte)124); tt1 != null; tt1 = (tt)ida.l.b(i ^ 0x3111))
         {
-            if(!tt1.g(-29))
+            if(!tt1.isNextNode(-29))
             {
                 tt1 = (tt)ida.l.b((byte)124);
                 if(tt1 == null)
@@ -3802,15 +3802,15 @@ final class tp
             mfa.j[l1] = 0;
         }
 
-        Class_ad.b(i ^ 0x7c);
+        Class_ad.lighting(i ^ 0x7c);
         mo.F = true;
         lf.n = Class_pd.s = qn.l = ua.d = new short[256];
-        lw.e = GameText.walkHereText.getString((byte)79, cba.languageID);
+        lw.e = GameText.walkHereText.getString(cba.languageID);
         qs.a = 0;
         cs.g.Hb = false;
         cs.g.qb = false;
         sd.a(-100);
-        jp.a(true);
+        RSKeyListener.a(true);
         bg.a = null;
         fu.b.y = 2;
         pga.a = 0L;

@@ -441,7 +441,7 @@ final class tfa
     static final void a(boolean bool) {
 	tfa.f++;
 	if (mv.a >= 0) {
-	    long l = us.a(127);
+	    long l = us.getCurrentTime(127);
 	    mv.a -= l - pr.D;
 	    if (mv.a <= 0) {
 		dr.e = ((Class_mc) uj.x).p;
@@ -476,7 +476,7 @@ final class tfa
 		ei.d = f_86_ * (((Class_mc) uj.x).n - Class_hc.f) + Class_hc.f;
 		hq.b = f_86_ * (((Class_mc) uj.x).r - Class_ab.c) + Class_ab.c;
 		qda.D = ej.i * i + i_85_ * ((Class_mc) uj.x).q >> 8;
-		dh.e = bj.b + (((Class_mc) uj.x).c - bj.b) * f_86_;
+		dh.e = Commands.b + (((Class_mc) uj.x).c - Commands.b) * f_86_;
 		dm.a = dd.J + (((Class_mc) uj.x).k - dd.J) * f_86_;
 		bq.k = qd.x + f_86_ * (((Class_mc) uj.x).b - qd.x);
 		if (((Class_mc) uj.x).p != GameText.vb)

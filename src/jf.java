@@ -77,26 +77,26 @@ final class jf
 	if (ke.H == null) {
 	    ke.H = lda.b((byte) -47);
 	    nw.a = ke.H[0];
-	    sr.V = us.a(i ^ ~0x69);
+	    sr.V = us.getCurrentTime(i ^ ~0x69);
 	}
 	if (Class_ub.W == null)
 	    ip.h((int) -128);
 	lda var_lda = nw.a;
 	int i_0_ = ik.a(-14);
 	if (var_lda == nw.a) {
-	    hk.K = ((lda) nw.a).k.getString((byte) 96, cba.languageID);
+	    hk.K = ((lda) nw.a).k.getString(cba.languageID);
 	    if (((lda) nw.a).g)
 		as.w = (i_0_ * (((lda) nw.a).m - ((lda) nw.a).o) / 100
 			+ ((lda) nw.a).o);
 	    if (((lda) nw.a).j)
 		hk.K += as.w + "%";
 	} else if (nw.a != lda.K) {
-	    hk.K = ((lda) var_lda).e.getString((byte) -50, cba.languageID);
+	    hk.K = ((lda) var_lda).e.getString(cba.languageID);
 	    if (((lda) nw.a).j)
 		hk.K += ((lda) var_lda).m + "%";
 	    as.w = ((lda) var_lda).m;
 	    if (((lda) nw.a).g || ((lda) var_lda).g)
-		sr.V = us.a(92);
+		sr.V = us.getCurrentTime(92);
 	} else {
 	    Class_ub.W = null;
 	    ei.a(3, -114);

@@ -109,9 +109,9 @@ final class oh
 	SpecialOutPacket.a((byte) -106);
 	lg.r.b(!((jb) cs.g).K);
 	if (lg.r.r())
-	    ik.a(-66, ((jb) cs.g).cb);
+	    ik.enableBloom(-66, ((jb) cs.g).cb);
 	ho.a(lg.r, bw.v >> 3, Class_hc.e >> 3, (byte) -10);
-	Class_ad.b(29);
+	Class_ad.lighting(29);
 	NPCNode.k = bool;
 	pda.v = null;
 	up.I = true;

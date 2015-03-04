@@ -366,7 +366,7 @@ final class mh
 		    li.a(Class_vb.u, (int) 0);
 		for (tt var_tt = (tt) ida.l.b((byte) 124); var_tt != null;
 		     var_tt = (tt) ida.l.b(12561)) {
-		    if (!var_tt.g(123)) {
+		    if (!var_tt.isNextNode(123)) {
 			var_tt = (tt) ida.l.b((byte) 124);
 			if (var_tt == null)
 			    break;

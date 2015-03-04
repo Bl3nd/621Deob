@@ -2,8 +2,8 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class ap
-{
+public final class ap {
+
     int[] a;
     int[] b;
     short c;
@@ -14,8 +14,8 @@ final class ap
     short[] h;
     short[] i;
     short j;
-    
+
     public ap() {
-	/* empty */
+    /* empty */
     }
 }

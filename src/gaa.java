@@ -88,7 +88,7 @@ public final class gaa extends en
 	return new gt(this, i_3_, i_4_, bool, is, i_2_, i_1_);
     }
     
-    final boolean z() {
+    final boolean bloom() {
 	return false;
     }
     
@@ -226,7 +226,7 @@ public final class gaa extends en
 	    ((gaa) this).Hg.a(161, bool);
     }
     
-    final void a(boolean bool) {
+    final void renderProfile(boolean profile) {
 	/* empty */
     }
     
@@ -603,7 +603,7 @@ public final class gaa extends en
 	    return 4;
 	if (wi.e != var_nw) {
 	    if (var_nw != hn.f) {
-		if (var_nw == Login.f)
+		if (var_nw == Login.nw)
 		    return 10;
 	    } else
 		return 7;
@@ -1062,7 +1062,7 @@ label1:
 	    xg = null;
 	if (var_ki == qca.G)
 	    return 1;
-	if (at.I != var_ki) {
+	if (at.ki != var_ki) {
 	    if (nda.d == var_ki)
 		return 3;
 	    if (ck.J == var_ki)

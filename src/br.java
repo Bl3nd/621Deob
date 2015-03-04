@@ -282,12 +282,12 @@ final class br
 					  (i_27_ << 9) + 256);
 		    ((Animable) var_ip).height = (byte) i_28_;
 		    ((ip) var_ip).J = 0;
-		    ((Animable) var_ip).h = (byte) i_28_;
+		    ((Animable) var_ip).height_ = (byte) i_28_;
 		    ((Animable) var_ip).j = i_34_;
 		    ((Animable) var_ip).locX = i_29_ << 9;
 		    ((Animable) var_ip).locY = i_27_ << 9;
 		    if (ItemDef.b(i_27_, i_29_, i ^ 0x1082))
-			((Animable) var_ip).h++;
+			((Animable) var_ip).height_++;
 		    em.a(i_28_, i_29_, i_27_, i_34_, var_ip);
 		}
 	    }

@@ -3,8 +3,8 @@
  */
 package jagdx;
 
-public class D3DCAPS
-{
+public class D3DCAPS {
+
     public int CursorCaps;
     public int MaxTextureBlendStages;
     public int DeviceType;

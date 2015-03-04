@@ -110,10 +110,10 @@ final class sba extends Node
 	li.a();
 	for (int i_15_ = 0; i_15_ < 4; i_15_++)
 	    su.a[i_15_].a(2097152);
-	Entity.c((byte) -67);
+	Entity.rebuildMap((byte) -67);
 	if (i != 9811)
 	    a((byte) -53, -47, 45);
-	um.a(0);
+	um.resetCache(0);
 	System.gc();
 	lg.r.ya();
     }

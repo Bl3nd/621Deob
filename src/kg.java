@@ -126,13 +126,13 @@ abstract class kg
 		i_13_ = ((ObjectDef) var_bda).J;
 		i_14_ = ((ObjectDef) var_bda).A;
 	    }
-	    ((ql) var_ql).y = i_11_ + i_14_ << 9;
+	    ((ql) var_ql)._y = i_11_ + i_14_ << 9;
 	    ((ql) var_ql).t = ((ObjectDef) var_bda).gb << 9;
 	    ((ql) var_ql).o = ((ObjectDef) var_bda).eb;
 	    ((ql) var_ql).x = ((ObjectDef) var_bda).Cb;
 	    ((ql) var_ql).E = ((ObjectDef) var_bda).n;
 	    ((ql) var_ql).p = ((ObjectDef) var_bda).Nb;
-	    ((ql) var_ql).z = i_13_ + i_10_ << 9;
+	    ((ql) var_ql)._x = i_13_ + i_10_ << 9;
 	    ((ql) var_ql).J = ((ObjectDef) var_bda).m;
 	    ((ql) var_ql).k = ((ObjectDef) var_bda).kb;
 	    ((ql) var_ql).l = ((ObjectDef) var_bda).Qb;
@@ -154,8 +154,8 @@ abstract class kg
 		var_du = var_du.a(-4261, cp.e);
 	    }
 	    if (var_du != null) {
-		((ql) var_ql).y = ((NPCDef) var_du).Q + i_11_ << 9;
-		((ql) var_ql).z = ((NPCDef) var_du).Q + i_10_ << 9;
+		((ql) var_ql)._y = ((NPCDef) var_du).Q + i_11_ << 9;
+		((ql) var_ql)._x = ((NPCDef) var_du).Q + i_10_ << 9;
 		((ql) var_ql).p = te.a(false, class_ac);
 		((ql) var_ql).t = ((NPCDef) var_du).pb << 9;
 		((ql) var_ql).x = ((NPCDef) var_du).v;
@@ -164,8 +164,8 @@ abstract class kg
 	    bea.h.b(var_ql, (byte) 93);
 	} else if (var_qi != null) {
 	    ((ql) var_ql).F = var_qi;
-	    ((ql) var_ql).z = var_qi.i(-1) + i_10_ << 9;
-	    ((ql) var_ql).y = i_11_ + var_qi.i(-1) << 9;
+	    ((ql) var_ql)._x = var_qi.getNPCDefinition(-1) + i_10_ << 9;
+	    ((ql) var_ql)._y = i_11_ + var_qi.getNPCDefinition(-1) << 9;
 	    ((ql) var_ql).p = wea.a(var_qi, false);
 	    ((ql) var_ql).J = ((Player) var_qi).Od;
 	    ((ql) var_ql).x = ((Player) var_qi).sd;

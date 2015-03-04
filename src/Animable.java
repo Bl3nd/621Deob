@@ -4,28 +4,28 @@
 
 public abstract class Animable extends Interactable {
 	
-	int g;
-	byte h;
-	boolean i;
-	int j;
-	static int k;
-	static pl pl;
-	int locX;
-	int var_n;
-	int o;
-	int locY;
-	static String[][] q = { { "M1", "M2", "S1", "F" }, { "M1", "M2", "M3", "S1", "S2", "F" }, { "M1", "M2", "M3", "M4", "S1", "S2", "S3", "F" } };
-	static int[] r = new int[14];
-	static pl pl_;
-	static int t;
-	static float u;
-	byte height;
+	public int g;
+    public byte height_;
+    public boolean i;
+    public int j;
+    public static int k;
+    public static pl pl;
+    public int locX;
+    public int var_n;
+    public int o;
+    public int locY;
+    public static String[][] q = {{ "M1", "M2", "S1", "F" }, { "M1", "M2", "M3", "S1", "S2", "F" }, { "M1", "M2", "M3", "M4", "S1", "S2", "S3", "F" }};
+    public static int[] r = new int[14];
+    public static pl pl_;
+    public static int t;
+    public static float u;
+    public byte height;
 
 	abstract int a(gga[] ggas, int i);
 
-	public static final int a(int i, Class_ec class_ec) {
+	public static int a(int i, Class_ec class_ec) {
 		if (i != 6407) {
-			nullLoader((int) -81);
+			nullLoader(-81);
 		}
 		k++;
 		if (uca.d != class_ec) {
@@ -61,20 +61,17 @@ public abstract class Animable extends Interactable {
 
 	abstract boolean f(byte b);
 
-	public final int a(byte b, gga[] ggas, int x, int y) {
+	public final int a(gga[] ggas, int x, int y) {
 		t++;
-		long l = tba.n[((Animable) this).height][x][y];
-		long l1 = 0L;
+		long location = tba.n[this.height][x][y];
+		long l = 0L;
 		int i = 0;
-		if (b < 59) {
-			return -34;
-		}
-		for (/**/; l1 <= 48L; l1 += 16L) {
-			int j = (int) (0xffffL & l >> (int) l1);
+		for (/**/; l <= 48L; l += 16L) {
+			int j = (int) (0xffffL & location >> (int) l);
 			if (j <= 0) {
 				break;
 			}
-			ggas[i++] = ((qd) Class_j.l[j - 1]).m;
+			ggas[i++] = Class_j.l[j - 1].m;
 		}
 		for (int index = i; index < 4; index++) {
 			ggas[index] = null;
@@ -96,7 +93,7 @@ public abstract class Animable extends Interactable {
 		}
 	}
 
-	abstract void a(boolean bool, int i, byte b, Class_r class_r, Animable animable, int j, int k);
+	abstract void throwIllegalStateException(boolean bool, int i, byte b, Class_r class_r, Animable animable, int j, int k);
 
 	abstract sd a(Class_r class_r, int i);
 

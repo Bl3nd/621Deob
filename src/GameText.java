@@ -5,7 +5,7 @@
 final class GameText {
     static int a;
     static int b;
-    static int c;
+    static int toString;
     static GameText rsIsLoading_PleaseWait = new GameText("RuneScape is loading - please wait...", "RuneScape wird geladen - bitte warten...",
             "Chargement de RuneScape en cours - veuillez patienter...", "RuneScape carregando. Aguarde...");
     static int e;
@@ -85,10 +85,7 @@ final class GameText {
     static jt vb;
     static pl wb;
 
-    public static int a(int i) {
-        if (i <= 59) {
-            nullLoader(-96);
-        }
+    public static int a() {
         a++;
         if (th.j == null) {
             return 0;
@@ -96,8 +93,8 @@ final class GameText {
         return th.j.length * 2;
     }
 
-    public final String getString(byte dummy, int langID) {
-        c++;
+    public final String getString(int langID) {
+        toString++;
         return stringsPerLang[langID];
     }
 
@@ -174,10 +171,7 @@ final class GameText {
         vb = null;
     }
 
-    public static void a(int i, int j, ua ua, int k, Interface interface_, int i1, int j1, int k1, Class_r class_r) {
-        if (i > -13) {
-            ub = -103;
-        }
+    public static void a(int j, ua ua, int k, Interface interface_, int i1, int j1, int k1, Class_r class_r) {
         e++;
         ww ww = hq.a.a(j1, -83);
         if (ww != null && ww.J && ww.a(cp.e, false)) {
@@ -190,8 +184,8 @@ final class GameText {
                     } else {
                         j2 = 0x3fff & (int) qw.n;
                     }
-                    int k2 = GameInPacket.h[j2];
-                    int i3 = GameInPacket.i[j2];
+                    int k2 = GameInPacket.ints1[j2];
+                    int i3 = GameInPacket.ints2[j2];
                     if (ll.x != 4) {
                         i3 = 256 * i3 / (vd.N + 256);
                         k2 = k2 * 256 / (vd.N + 256);
@@ -241,11 +235,8 @@ final class GameText {
         stringsPerLang = new String[]{english, german, french, portuguese};
     }
 
-    public static boolean a(int i, char c) {
+    public static boolean isCharacter(char c) {
         b++;
-        if (i != 0) {
-            _alreadyOnIgnoreList = null;
-        }
         if (c != '\u00a0' && c != ' ' && c != '_' && c != '-') {
             return false;
         }

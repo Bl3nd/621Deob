@@ -11,7 +11,7 @@ public class Interactable {
 	static byte[][][] e;
 	Interactable nextInteractable;
 
-	public static void nullLoader(byte b) {
+	public static void nullLoader() {
 		e = null;
 		c = null;
 		d = null;

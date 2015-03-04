@@ -3,8 +3,8 @@
  */
 package jagdx;
 
-public class D3DPSHADERCAPS2_0
-{
+public class D3DPSHADERCAPS2_0 {
+
     public int StaticFlowControlDepth;
     public int NumTemps;
     public int NumInstructionSlots;

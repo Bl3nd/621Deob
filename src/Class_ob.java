@@ -19,7 +19,7 @@ final class Class_ob extends IncomingPackets
 	u++;
 	if (i != -15184)
 	    a((int) -14);
-	((Class_ob) this).v.b();
+	((Class_ob) this).v.deallocate();
     }
     
     static final String a(bfa var_bfa, int i) {
@@ -28,7 +28,7 @@ final class Class_ob extends IncomingPackets
 	n++;
 	if (((bfa) var_bfa).p == null || ((bfa) var_bfa).p.length() <= 0)
 	    return ((bfa) var_bfa).k;
-	return (((bfa) var_bfa).k + GameText.space.getString((byte) -64, cba.languageID)
+	return (((bfa) var_bfa).k + GameText.space.getString(cba.languageID)
 		+ ((bfa) var_bfa).p);
     }
     
@@ -62,7 +62,7 @@ final class Class_ob extends IncomingPackets
 	return 0xff & i;
     }
     
-    Class_ob(int i) {
-	((Class_ob) this).v = new NativeHeap(i);
+    Class_ob(int heap) {
+	((Class_ob) this).v = new NativeHeap(heap);
     }
 }

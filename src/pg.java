@@ -126,7 +126,7 @@ final class pg
 	    if (((jb) cs.g).n)
 		qw.n = (float) ((int) qw.n + 191 & ~0x7f);
 	    else
-		afa.a += (-afa.a + 24.0F) / 2.0F;
+		afa.aFloat += (-afa.aFloat + 24.0F) / 2.0F;
 	    if (i == 191) {
 		dq.e = true;
 		mo.F = true;

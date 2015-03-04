@@ -41,7 +41,7 @@ final class ns extends IncomingPackets
     }
     
     final void b(byte i) {
-	((ns) this).o.b();
+	((ns) this).o.deallocate();
 	r++;
 	if (i > -77)
 	    s = null;
@@ -115,14 +115,14 @@ final class ns extends IncomingPackets
 	q++;
 	if (i == -58) {
 	    if (it.N >= 0 && it.N != 0) {
-		ur.a(it.N, true);
+		ur.setTKVersion(it.N, true);
 		it.N = -1;
 	    }
 	}
     }
     
-    ns(int i) {
-	((ns) this).o = new NativeHeap(i);
+    ns(int heap) {
+	((ns) this).o = new NativeHeap(heap);
     }
     
     static final String a(long l, int i) {

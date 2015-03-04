@@ -200,14 +200,14 @@ final class tea
     }
     
     static final void a(int i, byte[] is, boolean bool) {
-	if (ak.s == null)
-	    ak.s = new BytesParser(20000);
+	if (ak.bytesParser == null)
+	    ak.bytesParser = new BytesParser(20000);
 	if (i != 13736)
 	    l = -54;
 	j++;
-	ak.s.writeBytes(65536, is.length, 0, is);
+	ak.bytesParser.writeBytes(65536, is.length, 0, is);
 	if (bool) {
-	    gba.a(((BytesParser) ak.s).bytes, -2);
+	    gba.a(((BytesParser) ak.bytesParser).bytes, -2);
 	    il.o = new WorldSub[pga.d];
 	    int i_46_ = 0;
 	    for (int i_47_ = Class_g.B; i_47_ <= hj.g; i_47_++) {
@@ -216,8 +216,8 @@ final class tea
 		    il.o[i_46_++] = var_iw;
 	    }
 	    il.r = false;
-	    ufa.a = us.a(i ^ 0x35cc);
-	    ak.s = null;
+	    ufa.a = us.getCurrentTime(i ^ 0x35cc);
+	    ak.bytesParser = null;
 	}
     }
     
@@ -262,7 +262,7 @@ final class tea
 					mga var_mga = this.i.E(108);
 					var_mga.b(f, 18543, f, 1.0F);
 					var_mga.U(-i_54_, -i_51_, 0);
-					this.i.a(126, at.I);
+					this.i.a(126, at.ki);
 					c[i_54_][i_51_].a(-102);
 					break while_221_;
 				    }
@@ -327,7 +327,7 @@ final class tea
 				mga var_mga = this.i.E(94);
 				var_mga.b(f, 18543, f, 1.0F);
 				var_mga.U(-i_62_, -i_59_, 0);
-				this.i.a(106, at.I);
+				this.i.a(106, at.ki);
 				var_ln.a(86, i_63_ / 3, var_hh);
 			    }
 			}

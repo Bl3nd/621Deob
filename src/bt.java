@@ -54,7 +54,7 @@ final class bt
 	    vt var_vt = tn.j[i_1_];
 	    boolean bool = false;
 	    if (((vt) var_vt).a != null) {
-		if (!((vt) var_vt).a.g(-38))
+		if (!((vt) var_vt).a.isNextNode(-38))
 		    bool = true;
 	    } else {
 		((vt) var_vt).k--;
@@ -133,7 +133,7 @@ final class bt
 	}
 	if (Class_jc.ib && !ir.a(true)) {
 	    if (((jb) cs.g).N != 0 && ws.G != -1)
-		Class_b.a(false, 0, ((jb) cs.g).N, mq.a, (byte) 107, ws.G);
+		Class_b.a(false, 0, ((jb) cs.g).N, mq.pl, (byte) 107, ws.G);
 	    Class_jc.ib = false;
 	} else if (((jb) cs.g).N != 0 && ws.G != -1 && !ir.a(true)) {
 	    dga.B++;

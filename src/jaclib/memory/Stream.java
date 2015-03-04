@@ -3,146 +3,158 @@
  */
 package jaclib.memory;
 
-public final class Stream
-{
+public final class Stream {
+
     private int a;
-    private byte[] b;
-    private int c;
-    private Buffer d;
+    private byte[] buf;
+    private int pos;
+    private Buffer buffer;
     private int e;
-    
-    public Stream(Buffer buffer, int i, int i_0_) {
-	this(buffer.getSize() >= 4096 ? 4096 : buffer.getSize());
-	a(buffer, i, i_0_);
+
+    public Stream(Buffer buffer, int offset, int size) {
+        this(buffer.getSize() >= 4096 ? 4096 : buffer.getSize());
+        a(buffer, offset, size);
     }
-    
+
     public final void a(float f) {
-	if (c + 3 >= b.length)
-	    c();
-	int i = floatToRawIntBits(f);
-	b[c++] = (byte) (i >> 24);
-	b[c++] = (byte) (i >> 16);
-	b[c++] = (byte) (i >> 8);
-	b[c++] = (byte) i;
+        if (pos + 3 >= buf.length) {
+            c();
+        }
+        int value = floatToRawIntBits(f);
+        buf[pos++] = (byte) (value >> 24);
+        buf[pos++] = (byte) (value >> 16);
+        buf[pos++] = (byte) (value >> 8);
+        buf[pos++] = (byte) value;
     }
-    
-    public final void a(int i) {
-	if (c + 3 >= b.length)
-	    c();
-	b[c++] = (byte) (i >> 16);
-	b[c++] = (byte) (i >> 8);
-	b[c++] = (byte) i;
-	b[c++] = (byte) (i >> 24);
+
+    public final void a(int value) {
+        if (pos + 3 >= buf.length) {
+            c();
+        }
+        buf[pos++] = (byte) (value >> 16);
+        buf[pos++] = (byte) (value >> 8);
+        buf[pos++] = (byte) value;
+        buf[pos++] = (byte) (value >> 24);
     }
-    
-    public static final boolean a() {
-	if (getLSB(-65536) != -1)
-	    return false;
-	return true;
+
+    public static boolean a() {
+        if (getLSB(-65536) != -1) {
+            return false;
+        }
+        return true;
     }
-    
+
     public Stream() {
-	this(4096);
+        this(4096);
     }
-    
+
     public final void b(int i) {
-	c();
-	a = i;
+        c();
+        a = i;
     }
-    
+
     public Stream(Buffer buffer) {
-	this(buffer, 0, buffer.getSize());
+        this(buffer, 0, buffer.getSize());
     }
-    
-    public final void c(int i) {
-	if (c + 1 >= b.length)
-	    c();
-	b[c++] = (byte) (i >> 8);
-	b[c++] = (byte) i;
+
+    public final void c(int value) {
+        if (pos + 1 >= buf.length) {
+            c();
+        }
+        buf[pos++] = (byte) (value >> 8);
+        buf[pos++] = (byte) value;
     }
-    
+
     public final int b() {
-	return a + c;
+        return a + pos;
     }
-    
+
     public final void c() {
-	if (c > 0) {
-	    if (a + c > e)
-		throw new RuntimeException();
-	    d.a(b, 0, a, c);
-	    a += c;
-	    c = 0;
-	}
+        if (pos > 0) {
+            if (a + pos > e) {
+                throw new RuntimeException();
+            }
+            buffer.put(buf, 0, a, pos);
+            a += pos;
+            pos = 0;
+        }
     }
-    
-    public final void a(int i, int i_1_, int i_2_, int i_3_) {
-	if (b.length <= c + 3)
-	    c();
-	b[c++] = (byte) i;
-	b[c++] = (byte) i_1_;
-	b[c++] = (byte) i_2_;
-	b[c++] = (byte) i_3_;
+
+    public final void a(int i, int j, int k, int i1) {
+        if (buf.length <= pos + 3) {
+            c();
+        }
+        buf[pos++] = (byte) i;
+        buf[pos++] = (byte) j;
+        buf[pos++] = (byte) k;
+        buf[pos++] = (byte) i1;
     }
-    
-    public final void d(int i) {
-	if (c >= b.length)
-	    c();
-	b[c++] = (byte) i;
+
+    public final void d(int value) {
+        if (pos >= buf.length) {
+            c();
+        }
+        buf[pos++] = (byte) value;
     }
-    
+
     public final void b(float f) {
-	if (b.length <= c + 3)
-	    c();
-	int i = floatToRawIntBits(f);
-	b[c++] = (byte) i;
-	b[c++] = (byte) (i >> 8);
-	b[c++] = (byte) (i >> 16);
-	b[c++] = (byte) (i >> 24);
+        if (buf.length <= pos + 3) {
+            c();
+        }
+        int i = floatToRawIntBits(f);
+        buf[pos++] = (byte) i;
+        buf[pos++] = (byte) (i >> 8);
+        buf[pos++] = (byte) (i >> 16);
+        buf[pos++] = (byte) (i >> 24);
     }
-    
-    public static final native int floatToRawIntBits(float f);
-    
+
+    public static native int floatToRawIntBits(float f);
+
     public final void a(Buffer buffer) {
-	a(buffer, 0, buffer.getSize());
+        a(buffer, 0, buffer.getSize());
     }
-    
-    private static final native byte getLSB(int i);
-    
-    public final void b(int i, int i_4_, int i_5_, int i_6_) {
-	if (b.length <= c + 3)
-	    c();
-	b[c++] = (byte) i_5_;
-	b[c++] = (byte) i_4_;
-	b[c++] = (byte) i;
-	b[c++] = (byte) i_6_;
+
+    private static native byte getLSB(int i);
+
+    public final void b(int i, int j, int k, int i1) {
+        if (buf.length <= pos + 3) {
+            c();
+        }
+        buf[pos++] = (byte) k;
+        buf[pos++] = (byte) j;
+        buf[pos++] = (byte) i;
+        buf[pos++] = (byte) i1;
     }
-    
-    public final void e(int i) {
-	if (c + 1 >= b.length)
-	    c();
-	b[c++] = (byte) i;
-	b[c++] = (byte) (i >> 8);
+
+    public final void e(int value) {
+        if (pos + 1 >= buf.length) {
+            c();
+        }
+        buf[pos++] = (byte) value;
+        buf[pos++] = (byte) (value >> 8);
     }
-    
-    private final void a(Buffer buffer, int i, int i_7_) {
-	c();
-	d = buffer;
-	e = i_7_ + i;
-	a = i;
-	if (e > buffer.getSize())
-	    throw new RuntimeException();
+
+    private void a(Buffer buffer, int i, int j) {
+        c();
+        this.buffer = buffer;
+        e = j + i;
+        a = i;
+        if (e > buffer.getSize()) {
+            throw new RuntimeException();
+        }
     }
-    
-    private Stream(int i) {
-	b = new byte[i];
+
+    private Stream(int position) {
+        buf = new byte[position];
     }
-    
-    public final void f(int i) {
-	if (c + 3 >= b.length)
-	    c();
-	b[c++] = (byte) i;
-	b[c++] = (byte) (i >> 8);
-	b[c++] = (byte) (i >> 16);
-	b[c++] = (byte) (i >> 24);
+
+    public final void f(int value) {
+        if (pos + 3 >= buf.length) {
+            c();
+        }
+        buf[pos++] = (byte) value;
+        buf[pos++] = (byte) (value >> 8);
+        buf[pos++] = (byte) (value >> 16);
+        buf[pos++] = (byte) (value >> 24);
     }
 }

@@ -7,7 +7,7 @@ abstract class jt
 {
     static il a;
     static int b = -1;
-    static GameInPacket c;
+    static GameInPacket incomingPacket;
     static int d;
     static pl e;
     static int f;
@@ -52,7 +52,7 @@ abstract class jt
     public static void a(byte i) {
 	e = null;
 	int i_5_ = -2 % ((-40 - i) / 59);
-	c = null;
+	incomingPacket = null;
 	a = null;
     }
     
@@ -65,7 +65,7 @@ abstract class jt
 	ud.a(var_tba, (byte) -36);
 	for (tt var_tt = (tt) ida.l.b((byte) 124); var_tt != null;
 	     var_tt = (tt) ida.l.b(12561)) {
-	    if (!var_tt.g(123)) {
+	    if (!var_tt.isNextNode(123)) {
 		var_tt = (tt) ida.l.b((byte) 124);
 		if (var_tt == null)
 		    break;

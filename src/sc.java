@@ -12,7 +12,7 @@ final class sc
     int f;
     String g;
     static int h;
-    static GameOutPacket i = new GameOutPacket(67, -1);
+    static GameOutPacket outgoingPacket67 = new GameOutPacket(67, -1);
     String j;
     int k;
     int l;
@@ -24,7 +24,7 @@ final class sc
     }
     
     public static void a(int i) {
-	sc.i = null;
+	sc.outgoingPacket67 = null;
 	if (i != -16044)
 	    a(-56);
     }

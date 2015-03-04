@@ -293,7 +293,7 @@ final class pda extends ur
 		}
 	    }
 	}
-	if (T && us.a(116) >= U) {
+	if (T && us.getCurrentTime(116) >= U) {
 	    for (ft var_ft = (ft) D.b((byte) 124); var_ft != null;
 		 var_ft = (ft) D.b(12561)) {
 		if (!((ft) var_ft).x) {
@@ -306,7 +306,7 @@ final class pda extends ur
 		    }
 		}
 	    }
-	    U = us.a(112) + 1000L;
+	    U = us.getCurrentTime(112) + 1000L;
 	}
 	if (i < 53)
 	    d((byte) 13);
@@ -406,7 +406,7 @@ final class pda extends ur
 	r++;
 	if (cm.K) {
 	    cm.K = false;
-	    uca.b(i - 1);
+	    uca.dropClient(i - 1);
 	} else {
 	    if (!gea.n)
 		uk.a((byte) 91);
@@ -425,17 +425,17 @@ final class pda extends ur
 		    ud.a(var_tba, (byte) -36);
 		}
 		if (bg.a == null) {
-		    if (us.a(106) >= pga.a)
+		    if (us.getCurrentTime(106) >= pga.a)
 			bg.a = Class_ag.i.a(((World) gm.world).lobbyAddress, i + 89);
 		} else if ((((vm) bg.a).o ^ 0xffffffff) != 0) {
 		    tba var_tba = jga.sendGameOutPacket(nr.a, pca.isaac, (byte) -128);
 		    ((tba) var_tba).loginStream.writeShort(((vm) bg.a).o, 13469);
 		    ud.a(var_tba, (byte) -36);
 		    bg.a = null;
-		    pga.a = us.a(i ^ 0x6a) + 30000L;
+		    pga.a = us.getCurrentTime(i ^ 0x6a) + 30000L;
 		}
 		ew var_ew = (ew) qt.F.a(i ^ 0x52);
-		if (var_ew != null || bw.s < us.a(125) - 2000L) {
+		if (var_ew != null || bw.s < us.getCurrentTime(125) - 2000L) {
 		    tba var_tba = null;
 		    int i_17_ = 0;
 		    for (ew var_ew_18_ = (ew) eda.i.a((int) 115);
@@ -607,7 +607,7 @@ final class pda extends ur
 		else
 		    sa.s = false;
 		if (!dq.e)
-		    afa.a /= 2.0F;
+		    afa.aFloat /= 2.0F;
 		else
 		    dq.e = false;
 		hn.b(i + 3);
@@ -617,7 +617,7 @@ final class pda extends ur
 		    bt.a((byte) -122);
 		    gv.a++;
 		    if (gv.a > 750)
-			uca.b(7);
+			uca.dropClient(7);
 		    else {
 			pl.e(0);
 			mv.a((int) 124);
@@ -908,7 +908,7 @@ final class pda extends ur
 					}
 				    }
 				} else {
-				    client.ob[i_32_] = ((qba) var_qba).x;
+				    client.strings[i_32_] = ((qba) var_qba).x;
 				    kv.c[uca.a(31, qn.j++)] = i_32_;
 				}
 			    } else {
@@ -1020,22 +1020,20 @@ final class pda extends ur
 			NPCDef.a(true);
 			for (int i_46_ = 0; i_46_ < 5; i_46_++)
 			    gu.J[i_46_]++;
-			if (dv.d && us.a(114) - 60000L > hs.n)
-			    cc.a(false);
+			if (dv.d && us.getCurrentTime(114) - 60000L > hs.currentTime)
+			    cc.saveVarcs(false);
 			for (rk var_rk = (rk) mw.v.b((byte) 94);
 			     var_rk != null;
 			     var_rk = (rk) mw.v.a((byte) -106)) {
-			    if (us.a(i ^ 0x76) / 1000L - 5L
+			    if (us.getCurrentTime(i ^ 0x76) / 1000L - 5L
 				> (long) ((rk) var_rk).p) {
 				if (((rk) var_rk).n > 0)
 				    oba.a("",
-					  ((rk) var_rk).playerName + GameText._hasLoggedIn.getString((byte) 90,
-								   cba.languageID),
+					  ((rk) var_rk).playerName + GameText._hasLoggedIn.getString(cba.languageID),
 					  5, -1, "", 0, "");
 				if (((rk) var_rk).n == 0)
 				    oba.a("",
-					  ((rk) var_rk).playerName + GameText._hasLoggedOut.getString((byte) 117,
-								   cba.languageID),
+					  ((rk) var_rk).playerName + GameText._hasLoggedOut.getString(cba.languageID),
 					  5, -1, "", 0, "");
 				var_rk.unlink(2);
 			    }
@@ -1093,9 +1091,9 @@ final class pda extends ur
 			    fg.d = false;
 			}
 			try {
-			    uu.a((byte) 119);
+			    InputStreamSub.a((byte) 119);
 			} catch (java.io.IOException ioexception) {
-			    uca.b(7);
+			    uca.dropClient(7);
 			}
 		    }
 		}

@@ -20,9 +20,9 @@ final class ta extends Node implements p
     
     private final void a(Exception exception) {
 	if (!m) {
-	    l = us.a(99);
+	    l = us.getCurrentTime(99);
 	    m = true;
-	} else if (us.a(108) - l < 30000L)
+	} else if (us.getCurrentTime(108) - l < 30000L)
 	    ((ta) this).k.repaint();
 	else
 	    throw new RuntimeException(exception.getMessage());

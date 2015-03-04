@@ -53,7 +53,7 @@ final class lr implements ica
 	if (i >= -41)
 	    a((int) 113);
 	a++;
-	sa var_sa = GameOutPacket.a(h, ((nn) g).b, (byte) 32);
+	sa var_sa = GameOutPacket.a(h, ((nn) g).b);
 	e = lg.r.a(var_sa, aga.a(b, ((nn) g).b), true);
     }
     

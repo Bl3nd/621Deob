@@ -161,8 +161,8 @@ final class uj extends pp
 	if ((mu.j >= 2 || ba.c) && kr.a == null) {
 	    String string;
 	    if (ba.c && mu.j < 2)
-		string = Class_kd.b + GameText.space.getString((byte) 106, cba.languageID) + Class_ag.k + " ->";
-	    else if (!vh.a || !uc.c.a((byte) -68, (int) 81) || mu.j <= 2) {
+		string = Class_kd.itemName + GameText.space.getString(cba.languageID) + Class_ag.k + " ->";
+	    else if (!vh.shiftClickEnabled || !uc.c.a((byte) -68, (int) 81) || mu.j <= 2) {
 		bfa var_bfa = (bfa) ((Node) ((Class_ae) oba.I).o).next;
 		string = Class_ob.a(var_bfa, 118);
 		int[] is = null;
@@ -210,8 +210,7 @@ final class uj extends pp
 	    if (i != 16777215)
 		a((int) -120, (Class_r) null);
 	    if (mu.j > 2)
-		string += "<col=ffffff> / " + (mu.j - 2) + GameText._moreOptionsText.getString((byte) -67,
-								  cba.languageID);
+		string += "<col=ffffff> / " + (mu.j - 2) + GameText._moreOptionsText.getString(cba.languageID);
 	    if (qg.d != null) {
 		la var_la = qg.d.b(class_r, i ^ ~0xffe3c2);
 		if (var_la == null)

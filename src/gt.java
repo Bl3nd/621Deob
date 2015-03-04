@@ -88,9 +88,9 @@ final class gt extends qo implements ls
 	    int i_13_ = pixelbuffer.getRowPitch();
 	    if (i != i_13_ || i != i_11_) {
 		for (int i_14_ = 0; i_14_ < i_9_; i_14_++)
-		    pixelbuffer.a(is, i_10_ + i_14_ * i_11_, i_14_ * i_13_, i);
+		    pixelbuffer.put(is, i_10_ + i_14_ * i_11_, i_14_ * i_13_, i);
 	    } else
-		pixelbuffer.a(is, i_10_, 0, i_9_ * i);
+		pixelbuffer.put(is, i_10_, 0, i_9_ * i);
 	    this.i.UnlockRect(0);
 	}
     }
@@ -109,9 +109,9 @@ final class gt extends qo implements ls
 	    int i_22_ = pixelbuffer.getRowPitch();
 	    if (i_16_ != i_22_ || i_17_ != i_16_) {
 		for (int i_23_ = 0; i_19_ > i_23_; i_23_++)
-		    pixelbuffer.a(is, i + i_17_ * i_23_, i_23_ * i_22_, i_16_);
+		    pixelbuffer.put(is, i + i_17_ * i_23_, i_23_ * i_22_, i_16_);
 	    } else
-		pixelbuffer.a(is, i, 0, i_19_ * i_16_);
+		pixelbuffer.put(is, i, 0, i_19_ * i_16_);
 	    this.i.UnlockRect(0);
 	}
 	if (i_18_ != 996)

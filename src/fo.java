@@ -45,7 +45,7 @@ final class fo extends f
     final void a(int i, int i_5_, ua var_ua, int i_6_, int i_7_) {
 	j++;
 	ao var_ao = (ao) var_ua;
-	ls var_ls = ((ao) var_ao).g;
+	ls var_ls = ((ao) var_ao).ls;
 	i_5_ += w;
 	i += e;
 	l.a(eg.T, 15590);
@@ -60,7 +60,7 @@ final class fo extends f
 	mga var_mga_8_ = h.E(101);
 	var_mga_8_.b(l.a(false, (float) s), 18543, l.a((float) b, (byte) -59),
 		     1.0F);
-	h.a(117, at.I);
+	h.a(117, at.ki);
 	h.e(0, 1);
 	h.a(var_ls, 0);
 	h.a(ku.k, true, Class_rf.e);
@@ -70,7 +70,7 @@ final class fo extends f
 		     var_ls.a((float) b, (byte) -59), 1.0F);
 	var_mga_9_.a(var_ls.a(false, (float) (i - i_6_)), 0.0F,
 		     var_ls.a((float) (i_5_ - i_7_), (byte) -59), (byte) 95);
-	h.a(116, at.I);
+	h.a(116, at.ki);
 	h.y(9);
 	h.j((byte) -70);
 	h.a(0, 1, mca.l);
@@ -103,7 +103,7 @@ final class fo extends f
 	}
 	var_mga.b((float) i_11_, 18543, (float) i_12_, 0.0F);
 	var_mga.U(i, i_10_, 0);
-	h.a(108, at.I);
+	h.a(108, at.ki);
 	h.T(117);
 	h.y(9);
 	h.j((byte) -70);
@@ -129,7 +129,7 @@ final class fo extends f
 	var_mga.U(i, i_18_, 0);
 	var_mga_22_.b(l.a(false, (float) s), 18543, l.a((float) b, (byte) -59),
 		      1.0F);
-	h.a(118, at.I);
+	h.a(118, at.ki);
 	h.T(-69);
 	h.y(9);
 	h.j((byte) -70);
@@ -198,7 +198,7 @@ final class fo extends f
 	var_mga.a(f, 0.0F, f_31_, (byte) -82);
 	var_mga_39_.b(l.a(false, (float) s), 18543, l.a((float) b, (byte) -59),
 		      1.0F);
-	h.a(101, at.I);
+	h.a(101, at.ki);
 	h.T(115);
 	h.y(9);
 	h.j((byte) -70);
@@ -231,7 +231,7 @@ final class fo extends f
 	mga var_mga = h.Y(12083);
 	mga var_mga_64_ = h.E(96);
 	ao var_ao = (ao) var_ua;
-	ls var_ls = ((ao) var_ao).g;
+	ls var_ls = ((ao) var_ao).ls;
 	l.a(!A && !z && (i & 0x1) != 0 ? dda.d : eg.T, 15590);
 	h.d((byte) 25);
 	h.a(l, 0);
@@ -252,7 +252,7 @@ final class fo extends f
 	}
 	var_mga_64_.b(l.a(false, (float) s), 18543, l.a((float) b, (byte) -59),
 		      1.0F);
-	h.a(124, at.I);
+	h.a(124, at.ki);
 	h.e(0, 1);
 	h.a(var_ls, 0);
 	h.a(ku.k, true, Class_rf.e);
@@ -262,7 +262,7 @@ final class fo extends f
 	var_mga_67_.U(-i_62_, -i_63_, 0);
 	var_mga_67_.a((byte) 103, var_ls.a(false, 1.0F),
 		      var_ls.a(1.0F, (byte) -59), 1.0F);
-	h.a(120, at.I);
+	h.a(120, at.ki);
 	h.T(-28);
 	h.y(9);
 	h.j((byte) -70);
@@ -300,7 +300,7 @@ final class fo extends f
 		    while (i_76_ >= i_81_) {
 			var_mga_74_.b(l.a(false, (float) s), 18543,
 				      l.a((float) b, (byte) -59), 1.0F);
-			h.a(110, at.I);
+			h.a(110, at.ki);
 			int i_82_ = i + e;
 			for (int i_83_ = i_82_ + s; i_77_ >= i_83_;
 			     i_83_ += i_78_) {
@@ -314,7 +314,7 @@ final class fo extends f
 			    int i_84_ = i_77_ - i_82_;
 			    var_mga_74_.b(l.a(false, (float) i_84_), 18543,
 					  l.a((float) b, (byte) -59), 1.0F);
-			    h.a(118, at.I);
+			    h.a(118, at.ki);
 			    var_mga.b((float) i_84_, 18543, (float) b, 0.0F);
 			    var_mga.U(i_82_, i_80_, 0);
 			    h.T(-10);
@@ -327,7 +327,7 @@ final class fo extends f
 			int i_85_ = i_76_ - i_80_;
 			var_mga_74_.b(l.a(false, (float) s), 18543,
 				      l.a((float) i_85_, (byte) -59), 1.0F);
-			h.a(119, at.I);
+			h.a(119, at.ki);
 			int i_86_ = i + e;
 			for (int i_87_ = s + i_86_; i_77_ >= i_87_;
 			     i_87_ += i_78_) {
@@ -342,7 +342,7 @@ final class fo extends f
 			    var_mga_74_.b(l.a(false, (float) i_88_), 18543,
 					  l.a((float) i_85_, (byte) -59),
 					  1.0F);
-			    h.a(108, at.I);
+			    h.a(108, at.ki);
 			    var_mga.b((float) i_88_, 18543, (float) i_85_,
 				      0.0F);
 			    var_mga.U(i_86_, i_80_, 0);
@@ -355,7 +355,7 @@ final class fo extends f
 		    int i_90_ = A();
 		    var_mga_74_.b(l.a(false, (float) s), 18543,
 				  l.a((float) i_70_, (byte) -59), 1.0F);
-		    h.a(118, at.I);
+		    h.a(118, at.ki);
 		    int i_91_ = i + e;
 		    int i_92_ = i_91_ + s;
 		    while (i_92_ <= i_89_) {
@@ -370,7 +370,7 @@ final class fo extends f
 			int i_93_ = i_89_ - i_91_;
 			var_mga_74_.b(l.a(false, (float) i_93_), 18543,
 				      l.a((float) i_70_, (byte) -59), 1.0F);
-			h.a(101, at.I);
+			h.a(101, at.ki);
 			var_mga.b((float) i_93_, 18543, (float) i_70_, 0.0F);
 			var_mga.U(i_91_, i_68_, 0);
 			h.T(-56);
@@ -382,7 +382,7 @@ final class fo extends f
 		int i_95_ = ca();
 		var_mga_74_.b(l.a(false, (float) i_69_), 18543,
 			      l.a((float) b, (byte) -59), 1.0F);
-		h.a(108, at.I);
+		h.a(108, at.ki);
 		int i_96_ = i_68_ + w;
 		int i_97_ = i_96_ + b;
 		while (i_94_ >= i_97_) {
@@ -397,7 +397,7 @@ final class fo extends f
 		    int i_98_ = i_94_ - i_96_;
 		    var_mga_74_.b(l.a(false, (float) i_69_), 18543,
 				  l.a((float) i_98_, (byte) -59), 1.0F);
-		    h.a(110, at.I);
+		    h.a(110, at.ki);
 		    var_mga.b((float) i_69_, 18543, (float) i_98_, 0.0F);
 		    var_mga.U(i, i_96_, 0);
 		    h.T(-113);
@@ -409,7 +409,7 @@ final class fo extends f
 			  l.a((float) i_70_, (byte) -59), 1.0F);
 	    var_mga.b((float) i_69_, 18543, (float) i_70_, 0.0F);
 	    var_mga.U(i, i_68_, 0);
-	    h.a(119, at.I);
+	    h.a(119, at.ki);
 	    h.T(118);
 	    h.y(9);
 	}

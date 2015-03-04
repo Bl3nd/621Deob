@@ -2,8 +2,8 @@
  * Visit http://jode.sourceforge.net/
  */
 
-final class ISAAC
-{
+public final class ISAAC {
+
     static byte a;
     private int[] keySetArray;
     static int initKeySets;
@@ -16,210 +16,210 @@ final class ISAAC
     private int j;
     static int k = 2;
     private int l;
-    static int getNextKeyAndPrepareNexts;
+    static int getNextKeyAndPrepareNext;
     private int[] cryptArray;
     static int[] o = new int[32];
     private int p;
     static int q;
-    
-    static final void a(int i, Class_r class_r) {
-	ir.d = new bq[th.j.length];
-	if (i != 8)
-	    e = false;
-	f++;
-	for (int i_0_ = 0; th.j.length > i_0_; i_0_++) {
-	    int i_1_ = th.j[i_0_];
-	    sa var_sa = GameOutPacket.a(lm.vh, i_1_, (byte) 32);
-	    la var_la = class_r.a(var_sa, aga.a(GameText.wb, i_1_), true);
-	    ir.d[i_0_] = new bq(var_la, var_sa);
-	}
+
+    public static void a(int i, Class_r class_r) {
+        ir.d = new bq[th.j.length];
+        if (i != 8) {
+            e = false;
+        }
+        f++;
+        for (int index = 0; th.j.length > index; index++) {
+            int j = th.j[index];
+            sa sa = GameOutPacket.a(lm.vh, j);
+            la la = class_r.a(sa, aga.a(GameText.wb, j), true);
+            ir.d[index] = new bq(la, sa);
+        }
     }
-    
-    final int getNextKeyAndPrepareNext(int dummy) {
-		if (keyArrayIndex == 0) {
-		    generateNextKeySet((int) -1);
-		    keyArrayIndex = 256;
-		}
-		int i_2_ = 60 % ((69 - dummy) / 46);
-		getNextKeyAndPrepareNexts++;
-		return keySetArray[--keyArrayIndex];
+
+    public final int getNextKeyAndPrepareNext(int dummy) {
+        if (keyArrayIndex == 0) {
+            generateNextKeySet();
+            keyArrayIndex = 256;
+        }
+        getNextKeyAndPrepareNext++;
+        return keySetArray[--keyArrayIndex];
     }
-    
-    private final void initKeySet(byte dummy) {
-	initKeySets++;
-	int i_4_;
-	int i_5_;
-	int i_6_;
-	int i_7_;
-	int i_8_;
-	int i_9_;
-	int i_10_;
-	int i_3_ = i_4_ = i_5_ = i_6_ = i_7_ = i_8_ = i_9_ = i_10_ = -1640531527;
-	for (int i_11_ = 0; i_11_ < 4; i_11_++) {
-	    i_3_ ^= i_4_ << 11;
-	    i_4_ += i_5_;
-	    i_6_ += i_3_;
-	    i_4_ ^= i_5_ >>> 2;
-	    i_7_ += i_4_;
-	    i_5_ += i_6_;
-	    i_5_ ^= i_6_ << 8;
-	    i_6_ += i_7_;
-	    i_8_ += i_5_;
-	    i_6_ ^= i_7_ >>> 16;
-	    i_9_ += i_6_;
-	    i_7_ += i_8_;
-	    i_7_ ^= i_8_ << 10;
-	    i_8_ += i_9_;
-	    i_10_ += i_7_;
-	    i_8_ ^= i_9_ >>> 4;
-	    i_3_ += i_8_;
-	    i_9_ += i_10_;
-	    i_9_ ^= i_10_ << 8;
-	    i_4_ += i_9_;
-	    i_10_ += i_3_;
-	    i_10_ ^= i_3_ >>> 9;
-	    i_3_ += i_4_;
-	    i_5_ += i_10_;
-	}
-	for (int i_12_ = 0; i_12_ < 256; i_12_ += 8) {
-	    i_6_ += keySetArray[i_12_ + 3];
-	    i_10_ += keySetArray[i_12_ + 7];
-	    i_3_ += keySetArray[i_12_];
-	    i_8_ += keySetArray[i_12_ + 5];
-	    i_7_ += keySetArray[i_12_ + 4];
-	    i_9_ += keySetArray[i_12_ + 6];
-	    i_5_ += keySetArray[i_12_ + 2];
-	    i_4_ += keySetArray[i_12_ + 1];
-	    i_3_ ^= i_4_ << 11;
-	    i_6_ += i_3_;
-	    i_4_ += i_5_;
-	    i_4_ ^= i_5_ >>> 2;
-	    i_7_ += i_4_;
-	    i_5_ += i_6_;
-	    i_5_ ^= i_6_ << 8;
-	    i_8_ += i_5_;
-	    i_6_ += i_7_;
-	    i_6_ ^= i_7_ >>> 16;
-	    i_7_ += i_8_;
-	    i_9_ += i_6_;
-	    i_7_ ^= i_8_ << 10;
-	    i_8_ += i_9_;
-	    i_10_ += i_7_;
-	    i_8_ ^= i_9_ >>> 4;
-	    i_3_ += i_8_;
-	    i_9_ += i_10_;
-	    i_9_ ^= i_10_ << 8;
-	    i_10_ += i_3_;
-	    i_4_ += i_9_;
-	    i_10_ ^= i_3_ >>> 9;
-	    i_5_ += i_10_;
-	    i_3_ += i_4_;
-	    cryptArray[i_12_] = i_3_;
-	    cryptArray[i_12_ + 1] = i_4_;
-	    cryptArray[i_12_ + 2] = i_5_;
-	    cryptArray[i_12_ + 3] = i_6_;
-	    cryptArray[i_12_ + 4] = i_7_;
-	    cryptArray[i_12_ + 5] = i_8_;
-	    cryptArray[i_12_ + 6] = i_9_;
-	    cryptArray[i_12_ + 7] = i_10_;
-	}
-	int i_13_ = 0;
-	if (dummy != 126)
-	    o = null;
-	for (/**/; i_13_ < 256; i_13_ += 8) {
-	    i_10_ += cryptArray[i_13_ + 7];
-	    i_9_ += cryptArray[i_13_ + 6];
-	    i_5_ += cryptArray[i_13_ + 2];
-	    i_4_ += cryptArray[i_13_ + 1];
-	    i_8_ += cryptArray[i_13_ + 5];
-	    i_3_ += cryptArray[i_13_];
-	    i_7_ += cryptArray[i_13_ + 4];
-	    i_6_ += cryptArray[i_13_ + 3];
-	    i_3_ ^= i_4_ << 11;
-	    i_4_ += i_5_;
-	    i_6_ += i_3_;
-	    i_4_ ^= i_5_ >>> 2;
-	    i_5_ += i_6_;
-	    i_7_ += i_4_;
-	    i_5_ ^= i_6_ << 8;
-	    i_8_ += i_5_;
-	    i_6_ += i_7_;
-	    i_6_ ^= i_7_ >>> 16;
-	    i_7_ += i_8_;
-	    i_9_ += i_6_;
-	    i_7_ ^= i_8_ << 10;
-	    i_8_ += i_9_;
-	    i_10_ += i_7_;
-	    i_8_ ^= i_9_ >>> 4;
-	    i_3_ += i_8_;
-	    i_9_ += i_10_;
-	    i_9_ ^= i_10_ << 8;
-	    i_4_ += i_9_;
-	    i_10_ += i_3_;
-	    i_10_ ^= i_3_ >>> 9;
-	    i_3_ += i_4_;
-	    i_5_ += i_10_;
-	    cryptArray[i_13_] = i_3_;
-	    cryptArray[i_13_ + 1] = i_4_;
-	    cryptArray[i_13_ + 2] = i_5_;
-	    cryptArray[i_13_ + 3] = i_6_;
-	    cryptArray[i_13_ + 4] = i_7_;
-	    cryptArray[i_13_ + 5] = i_8_;
-	    cryptArray[i_13_ + 6] = i_9_;
-	    cryptArray[i_13_ + 7] = i_10_;
-	}
-	generateNextKeySet((int) -1);
-	keyArrayIndex = 256;
+
+    private void initKeySet(byte dummy) {
+        initKeySets++;
+        int i;
+        int j;
+        int k;
+        int i1;
+        int j1;
+        int k1;
+        int i2;
+        int j2 = i = j = k = i1 = j1 = k1 = i2 = -1640531527;
+        for (int count = 0; count < 4; count++) {
+            j2 ^= i << 11;
+            i += j;
+            k += j2;
+            i ^= j >>> 2;
+            i1 += i;
+            j += k;
+            j ^= k << 8;
+            k += i1;
+            j1 += j;
+            k ^= i1 >>> 16;
+            k1 += k;
+            i1 += j1;
+            i1 ^= j1 << 10;
+            j1 += k1;
+            i2 += i1;
+            j1 ^= k1 >>> 4;
+            j2 += j1;
+            k1 += i2;
+            k1 ^= i2 << 8;
+            i += k1;
+            i2 += j2;
+            i2 ^= j2 >>> 9;
+            j2 += i;
+            j += i2;
+        }
+        for (int index = 0; index < 256; index += 8) {
+            k += keySetArray[index + 3];
+            i2 += keySetArray[index + 7];
+            j2 += keySetArray[index];
+            j1 += keySetArray[index + 5];
+            i1 += keySetArray[index + 4];
+            k1 += keySetArray[index + 6];
+            j += keySetArray[index + 2];
+            i += keySetArray[index + 1];
+            j2 ^= i << 11;
+            k += j2;
+            i += j;
+            i ^= j >>> 2;
+            i1 += i;
+            j += k;
+            j ^= k << 8;
+            j1 += j;
+            k += i1;
+            k ^= i1 >>> 16;
+            i1 += j1;
+            k1 += k;
+            i1 ^= j1 << 10;
+            j1 += k1;
+            i2 += i1;
+            j1 ^= k1 >>> 4;
+            j2 += j1;
+            k1 += i2;
+            k1 ^= i2 << 8;
+            i2 += j2;
+            i += k1;
+            i2 ^= j2 >>> 9;
+            j += i2;
+            j2 += i;
+            cryptArray[index] = j2;
+            cryptArray[index + 1] = i;
+            cryptArray[index + 2] = j;
+            cryptArray[index + 3] = k;
+            cryptArray[index + 4] = i1;
+            cryptArray[index + 5] = j1;
+            cryptArray[index + 6] = k1;
+            cryptArray[index + 7] = i2;
+        }
+        int index = 0;
+        if (dummy != 126) {
+            o = null;
+        }
+        for (/**/; index < 256; index += 8) {
+            i2 += cryptArray[index + 7];
+            k1 += cryptArray[index + 6];
+            j += cryptArray[index + 2];
+            i += cryptArray[index + 1];
+            j1 += cryptArray[index + 5];
+            j2 += cryptArray[index];
+            i1 += cryptArray[index + 4];
+            k += cryptArray[index + 3];
+            j2 ^= i << 11;
+            i += j;
+            k += j2;
+            i ^= j >>> 2;
+            j += k;
+            i1 += i;
+            j ^= k << 8;
+            j1 += j;
+            k += i1;
+            k ^= i1 >>> 16;
+            i1 += j1;
+            k1 += k;
+            i1 ^= j1 << 10;
+            j1 += k1;
+            i2 += i1;
+            j1 ^= k1 >>> 4;
+            j2 += j1;
+            k1 += i2;
+            k1 ^= i2 << 8;
+            i += k1;
+            i2 += j2;
+            i2 ^= j2 >>> 9;
+            j2 += i;
+            j += i2;
+            cryptArray[index] = j2;
+            cryptArray[index + 1] = i;
+            cryptArray[index + 2] = j;
+            cryptArray[index + 3] = k;
+            cryptArray[index + 4] = i1;
+            cryptArray[index + 5] = j1;
+            cryptArray[index + 6] = k1;
+            cryptArray[index + 7] = i2;
+        }
+        generateNextKeySet();
+        keyArrayIndex = 256;
     }
-    
-    private final void generateNextKeySet(int dummy) {
-	ISAAC.generateNextKeySets++;
-	j += ++l;
-	if (dummy != -1)
-	    l = -120;
-	for (int i_14_ = 0; i_14_ < 256; i_14_++) {
-	    int i_15_ = cryptArray[i_14_];
-	    if ((i_14_ & 0x2) == 0) {
-			if ((i_14_ & 0x1) == 0)
-			    p ^= p << 13;
-			else
-			    p ^= p >>> 6;
-	    } else if ((0x1 & i_14_) != 0)
-	    	p ^= p >>> 16;
-	    else
-	    	p ^= p << 2;
-	    p += cryptArray[0xff & i_14_ + 128];
-	    int i_16_;
-	    cryptArray[i_14_] = i_16_ = cryptArray[uca.a(i_15_, 1020) >> 2] + (p + j);
-	    keySetArray[i_14_] = j = cryptArray[uca.a(255, i_16_ >> 8 >> 2)] + i_15_;
-	}
+
+    private void generateNextKeySet() {
+        ISAAC.generateNextKeySets++;
+        j += ++l;
+        for (int index = 0; index < 256; index++) {
+            int i = cryptArray[index];
+            if ((index & 0x2) == 0) {
+                if ((index & 0x1) == 0) {
+                    p ^= p << 13;
+                } else {
+                    p ^= p >>> 6;
+                }
+            } else if ((0x1 & index) != 0) {
+                p ^= p >>> 16;
+            } else {
+                p ^= p << 2;
+            }
+            p += cryptArray[0xff & index + 128];
+            int j;
+            cryptArray[index] = j = cryptArray[uca.a(i, 1020) >> 2] + (p + this.j);
+            keySetArray[index] = this.j = cryptArray[uca.a(255, j >> 8 >> 2)] + i;
+        }
     }
-    
-    public static void c(int i) {
-	int i_17_ = 70 % ((-60 - i) / 61);
-	o = null;
-	h = null;
+
+    public static void nullLoader() {
+        o = null;
+        h = null;
     }
-    
+
     private ISAAC() {
-	/* empty */
+    /* empty */
     }
-    
-    ISAAC(int[] keys) {
-		cryptArray = new int[256];
-		keySetArray = new int[256];
-		for (int loopID = 0; loopID < keys.length; loopID++)
-		    keySetArray[loopID] = keys[loopID];
-		initKeySet((byte) 126);
+
+    public ISAAC(int[] keys) {
+        cryptArray = new int[256];
+        keySetArray = new int[256];
+        for (int loopID = 0; loopID < keys.length; loopID++) {
+            keySetArray[loopID] = keys[loopID];
+        }
+        initKeySet((byte) 126);
     }
-    
-    final int getNextKey(byte i) {
-		if (keyArrayIndex == 0) {
-		    generateNextKeySet((int) -1);
-		    keyArrayIndex = 256;
-		}
-		getNextKeys++;
-		int i_18_ = 17 / ((-65 - i) / 51);
-		return keySetArray[keyArrayIndex - 1];
+
+    public final int getNextKey() {
+        if (keyArrayIndex == 0) {
+            generateNextKeySet();
+            keyArrayIndex = 256;
+        }
+        getNextKeys++;
+        return keySetArray[keyArrayIndex - 1];
     }
 }

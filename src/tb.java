@@ -49,8 +49,7 @@ final class tb
 	    && (!ar.a(i_1_, (byte) 98) || !ar.a(i_3_, (byte) 98))) {
 	    if (((qj) var_qj).vf)
 		return new ar(var_qj, 34037, i_4_, i_2_, i_1_, i_3_, true);
-	    return new ar(var_qj, i_4_, i_2_, i_1_, i_3_, dfa.a(i_1_, i + 215),
-			  dfa.a(i_3_, i ^ ~0xd6), true);
+	    return new ar(var_qj, i_4_, i_2_, i_1_, i_3_, dfa.a(i_1_, i + 215), dfa.a(i_3_, i ^ ~0xd6));
 	}
 	return new ar(var_qj, 3553, i_4_, i_2_, i_1_, i_3_, true);
     }

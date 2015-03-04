@@ -17,7 +17,7 @@ final class hs
     static int k;
     static int l;
     int m;
-    static long n = -1L;
+    static long currentTime = -1L;
     int o;
     int p;
     int q;

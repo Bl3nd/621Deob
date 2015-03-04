@@ -425,7 +425,7 @@ final class rea
 		= bool_32_ & (H != ((ObjectDef) var_bda).objectID
 			      || (f != null && cs.g.b(on.performance, -128) >= 2
 				  && (m != v
-				      || (((dr) f).C || vm.r) && G != m)));
+				      || (((dr) f).C || vm.isTweening) && G != m)));
 	}
 	if (bool != true)
 	    C = -12;

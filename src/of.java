@@ -61,7 +61,7 @@ abstract class of
     abstract boolean e(int i);
     
     public static void b(boolean bool) {
-	if (bool == true) {
+	if (bool) {
 	    b = null;
 	    d = null;
 	    e = null;

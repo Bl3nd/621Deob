@@ -4,13 +4,13 @@
 
 final class tj
 {
-    static tj a = new tj();
+    static tj tj3 = new tj();
     static int b;
     static int c;
     static int d;
-    static tj e = new tj();
-    static tj f = new tj();
-    static tj g = new tj();
+    static tj tj = new tj();
+    static tj tj1 = new tj();
+    static tj tj2 = new tj();
     static Interface h = null;
     static rca i = new rca();
     
@@ -26,12 +26,12 @@ final class tj
     public static void a(int i) {
 	h = null;
 	tj.i = null;
-	e = null;
-	a = null;
-	f = null;
+	tj = null;
+	tj3 = null;
+	tj1 = null;
 	if (i != -1743)
-	    g = null;
-	g = null;
+	    tj2 = null;
+	tj2 = null;
     }
     
     public tj() {

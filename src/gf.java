@@ -35,15 +35,15 @@ final class gf
 	    pu.p[i_0_] = true;
 	    return true;
 	}
-	if (aa.o[i_0_] == null)
-	    aa.o[i_0_] = new Interface[i_1_];
+	if (Node_Sub.o[i_0_] == null)
+	    Node_Sub.o[i_0_] = new Interface[i_1_];
 	if (i <= 79)
 	    return false;
 	for (int i_2_ = 0; i_1_ > i_2_; i_2_++) {
-	    if (aa.o[i_0_][i_2_] == null) {
+	    if (Node_Sub.o[i_0_][i_2_] == null) {
 		byte[] is = Class_fc.a.b(i_2_, 59, i_0_);
 		if (is != null) {
-		    Interface var_kp = aa.o[i_0_][i_2_] = new Interface();
+		    Interface var_kp = Node_Sub.o[i_0_][i_2_] = new Interface();
 		    ((Interface) var_kp).interfaceID = (i_0_ << 16) + i_2_;
 		    if ((is[0] ^ 0xffffffff) != 0)
 			throw new IllegalStateException("if1");

@@ -930,7 +930,7 @@ final class daa extends Class_i
 		    int i_207_ = (((rn) ofa.I).f[i_205_] & 0x3fff) - BytesParser.thisPlayersRegionY;
 		    int i_208_ = 4 * i_206_ + 2 - i_201_ / 128;
 		    int i_209_ = 4 * i_207_ + 2 - i_202_ / 128;
-		    GameText.a(-95, i_197_, var_ua, i_209_, var_kp, i_208_,
+		    GameText.a(i_197_, var_ua, i_209_, var_kp, i_208_,
 			 ((rn) ofa.I).b[i_205_], i_196_, class_r);
 		}
 		for (int i_210_ = 0; on.j > i_210_; i_210_++) {
@@ -942,7 +942,7 @@ final class daa extends Class_i
 			if (var_bda == null || ((ObjectDef) var_bda).R == -1)
 			    continue;
 		    }
-		    GameText.a(-99, i_197_, var_ua, i_212_, var_kp, i_211_,
+		    GameText.a(i_197_, var_ua, i_212_, var_kp, i_211_,
 			 ((ObjectDef) var_bda).R, i_196_, class_r);
 		}
 		for (sba var_sba = (sba) jt.a.b((byte) 124); var_sba != null;
@@ -980,7 +980,7 @@ final class daa extends Class_i
 					       lh.k[1], i_196_, (byte) 85,
 					       var_ua);
 				else
-				    GameText.a(-17, i_197_, var_ua, i_220_, var_kp,
+				    GameText.a(i_197_, var_ua, i_220_, var_kp,
 					 i_219_, ((NPCDef) var_du).z, i_196_,
 					 class_r);
 			    }
@@ -1082,8 +1082,8 @@ final class daa extends Class_i
 		if (ll.x != 4) {
 		    if (bca.c != 0) {
 			int i_236_ = (-(i_201_ / 128) + 2
-				      + (4 * bca.c + (2 * up.thisPlayer.i(-1) - 2)));
-			int i_237_ = 4 * uaa.h + 2 * up.thisPlayer.i(-1) - i_202_ / 128;
+				      + (4 * bca.c + (2 * up.thisPlayer.getNPCDefinition(-1) - 2)));
+			int i_237_ = 4 * uaa.h + 2 * up.thisPlayer.getNPCDefinition(-1) - i_202_ / 128;
 			Class_kb.a(i_197_, i_237_, i_236_, var_kp,
 				   qfa.a[po.d ? 1 : 0], i_196_, (byte) 108,
 				   var_ua);

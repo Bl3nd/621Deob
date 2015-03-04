@@ -45,7 +45,7 @@ final class fr extends fm
 	if (i != 0)
 	    z = 6;
 	q++;
-	u.a((byte) 51);
+	u.setNewInputStream();
 	r.c(i ^ 0x28d6);
     }
     
@@ -53,7 +53,7 @@ final class fr extends fm
 	s++;
 	if (i <= 39)
 	    finalize();
-	return u.a(49, i_4_, is, i_3_);
+	return u.a(i_4_, is, i_3_);
     }
     
     final void d(int i) {
@@ -65,7 +65,7 @@ final class fr extends fm
 	    /* empty */
 	}
 	l++;
-	u.a(17575);
+	u.close();
 	r.b(i - 111);
     }
     

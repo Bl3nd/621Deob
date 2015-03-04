@@ -83,13 +83,13 @@ final class raa
 	    var_eg.a(0, (int) 0, -128, -21519);
 	    for (int i = 0; i <= 24; i++) {
 		int i_19_ = i * 8192 / 24;
-		int i_20_ = GameInPacket.h[i_19_];
-		int i_21_ = GameInPacket.i[i_19_];
+		int i_20_ = GameInPacket.ints1[i_19_];
+		int i_21_ = GameInPacket.ints2[i_19_];
 		for (int i_22_ = 1; i_22_ < 24; i_22_++) {
 		    int i_23_ = i_22_ * 8192 / 24;
-		    int i_24_ = GameInPacket.i[i_23_] >> 7;
-		    int i_25_ = GameInPacket.h[i_23_] * i_20_ >> 21;
-		    int i_26_ = GameInPacket.h[i_23_] * i_21_ >> 21;
+		    int i_24_ = GameInPacket.ints2[i_23_] >> 7;
+		    int i_25_ = GameInPacket.ints1[i_23_] * i_20_ >> 21;
+		    int i_26_ = GameInPacket.ints1[i_23_] * i_21_ >> 21;
 		    var_eg.a(i_26_, -i_25_, i_24_, -21519);
 		}
 		if (i > 0) {
@@ -169,16 +169,16 @@ final class raa
 	    }
 	    if (c != 0) {
 		int i_37_ = -c & 0x3fff;
-		int i_38_ = GameInPacket.h[i_37_];
-		int i_39_ = GameInPacket.i[i_37_];
+		int i_38_ = GameInPacket.ints1[i_37_];
+		int i_39_ = GameInPacket.ints2[i_37_];
 		int i_40_ = i_35_ * i_39_ - i_36_ * i_38_ >> 14;
 		i_36_ = i_35_ * i_38_ + i_36_ * i_39_ >> 14;
 		i_35_ = i_40_;
 	    }
 	    if (o != 0) {
 		int i_41_ = -o & 0x3fff;
-		int i_42_ = GameInPacket.h[i_41_];
-		int i_43_ = GameInPacket.i[i_41_];
+		int i_42_ = GameInPacket.ints1[i_41_];
+		int i_43_ = GameInPacket.ints2[i_41_];
 		int i_44_ = i_36_ * i_42_ + i * i_43_ >> 14;
 		i_36_ = i_36_ * i_43_ - i * i_42_ >> 14;
 		i = i_44_;
@@ -283,15 +283,15 @@ final class raa
 	    }
 	}
 	if (c != 0) {
-	    int i_61_ = GameInPacket.h[c];
-	    int i_62_ = GameInPacket.i[c];
+	    int i_61_ = GameInPacket.ints1[c];
+	    int i_62_ = GameInPacket.ints2[c];
 	    int i_63_ = i_59_ * i_62_ - i_60_ * i_61_ >> 14;
 	    i_60_ = i_59_ * i_61_ + i_60_ * i_62_ >> 14;
 	    i_59_ = i_63_;
 	}
 	if (o != 0) {
-	    int i_64_ = GameInPacket.h[o];
-	    int i_65_ = GameInPacket.i[o];
+	    int i_64_ = GameInPacket.ints1[o];
+	    int i_65_ = GameInPacket.ints2[o];
 	    int i_66_ = i_60_ * i_64_ + i * i_65_ >> 14;
 	    i_60_ = i_60_ * i_65_ - i * i_64_ >> 14;
 	    i = i_66_;

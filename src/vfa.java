@@ -5,9 +5,9 @@
 public class vfa {
     vfa a;
     public int priority;
-    int c;
+    int worldPort;
     public volatile Object hostName;
     Object number;
     public volatile int f = 0;
-    int g;
+    int lobbyAddress;
 }

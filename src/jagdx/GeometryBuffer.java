@@ -2,31 +2,32 @@
  * Visit http://jode.sourceforge.net/
  */
 package jagdx;
+
 import jaclib.memory.Buffer;
 import jaclib.peer.am;
 import jaclib.peer.pa;
 
-public class GeometryBuffer extends pa implements Buffer
-{
+public class GeometryBuffer extends pa implements Buffer {
+
     public final native long getAddress();
-    
-    public GeometryBuffer(am var_am) {
-	super(var_am);
-	init();
+
+    public GeometryBuffer(am am) {
+        super(am);
+        init();
     }
-    
-    private final native void getub(byte[] is, int i, int i_0_, int i_1_);
-    
-    private final native void init();
-    
+
+    private native void getub(byte[] is, int i, int i_0_, int i_1_);
+
+    private native void init();
+
     public final native int getSize();
-    
-    public final void a(byte[] is, int i, int i_2_, int i_3_) {
-	if (i_2_ < 0 | (i + i_3_ > is.length | (is == null | i < 0))
-	    || getSize() < i_3_ + i_2_)
-	    throw new bs();
-	putub(is, i, i_2_, i_3_);
+
+    public final void put(byte[] buf, int i, int j, int k) {
+        if (j < 0 | (i + k > buf.length | (buf == null | i < 0)) || getSize() < k + j) {
+            throw new bs();
+        }
+        putub(buf, i, j, k);
     }
-    
+
     private final native void putub(byte[] is, int i, int i_4_, int i_5_);
 }
